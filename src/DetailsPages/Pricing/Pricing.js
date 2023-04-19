@@ -91,7 +91,7 @@ const Pricing = () => {
     return (
         <div className={`${style.block} ${style["block--white"]}`}>
 
-            <Ads dataAdSlot="7017372242" />
+            <Ads dataAdSlot="7135941684" />
 
 
             <div className={style.block__container}>
