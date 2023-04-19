@@ -62,7 +62,7 @@ const MergePDF = () => {
 
     // 👇 Uploading the files using the fetch API to the server
     try {
-      const url = "http://pdflover.stackholic.io/public/api/merge";
+      const url = "https://pdflover.stackholic.io/public/api/merge";
       const response = await fetch(url, requestOptions);
 
       if (!response.ok) {

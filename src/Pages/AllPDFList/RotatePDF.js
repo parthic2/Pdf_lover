@@ -84,7 +84,7 @@ const RotatePDF = () => {
 
     // 👇 Uploading the files using the fetch API to the server
     try {
-      const url = "http://pdflover.stackholic.io/public/api/rotate-pdf";
+      const url = "https://pdflover.stackholic.io/public/api/rotate-pdf";
       const response = await fetch(url, requestOptions);
 
       if (!response.ok) {
@@ -94,7 +94,7 @@ const RotatePDF = () => {
       const data = await response.json();
       setFileList(data);
       // console.log(data);
-      navigate("/");
+      // navigate("/");
     } catch (error) {
       // DOMException: The user aborted a request.
       console.log("Error: ", error);
@@ -176,6 +176,7 @@ const RotatePDF = () => {
                     <div className={style["button-70"]} onClick={rotateRight}>
                       Right
                     </div>
+                    {rotation}
 
                     {/* <div className={style["button-70"]} onClick={rotateRight}>
                       Right
