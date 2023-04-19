@@ -17,8 +17,8 @@ function Ads(props) {
         <div>
             <ins className="adsbygoogle"
                 style={{ display: "block" }}
-                data-ad-client="ca-pub-4831098370069577"
-                data-ad-slot={dataAdSlot}
+                data-ad-client="ca-pub-5305155098388318"
+                data-ad-slot="7135941684"
                 data-ad-format="auto"
                 data-full-width-responsive="true"
             />
