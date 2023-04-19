@@ -1,0 +1,247 @@
+.main {
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+.tool {
+    height: calc(100vh - 60px);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.tool__workarea {
+    text-align: center;
+    height: 100%;
+    padding: 24px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-flex: 1 1;
+    flex: 1 1;
+    background-color: #f3f0ec;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.tool__header {
+    padding: 6px 24px 30px;
+}
+
+.tool__header__title {
+    font-size: 42px;
+    letter-spacing: 0;
+    font-weight: 600;
+    color: #383e45;
+    margin-bottom: 8px;
+    line-height: 46px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.tool__header__subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    color: #383e45;
+    letter-spacing: 0;
+    line-height: 32px;
+}
+
+.uploader {
+    /* display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 72px;
+    text-align: center;
+    position: relative;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#pickFiles {
+    background: #FE4F62;
+    padding: 20px 50px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 32px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: all .1s linear;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
+    text-transform: none;
+}
+
+.btn-icon {
+    width: 36px;
+    margin-right: 10px;
+    /* min-width: 0;
+    padding: 0; */
+    height: 36px;
+    border-radius: 100%;
+    background: #FE4F62;
+    color: #fff;
+    text-decoration: none;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
+}
+
+.btn-icon:hover,
+#pickFiles:hover {
+    background-color: black;
+}
+
+@media (max-width: 365px) {
+    #pickFiles {
+        padding: 15px 22px;
+        font-size: 20px;
+    }
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    bottom: 0;
+    background: hsla(0, 0%, 100%, .6);
+    padding: 12px 24px;
+    font-size: 12px;
+}
+
+.footer__copy {
+    float: left;
+    color: #161616;
+}
+
+/* Sidebar css */
+.tool__sidebar {
+    width: 19em;
+    height: 35em;
+}
+
+.option__panel--active {
+    display: block;
+    left: 0;
+    z-index: 99;
+}
+
+.option__panel {
+    width: 100%;
+    transition: all .4s ease-out;
+    padding-bottom: 120px;
+}
+
+.option__panel__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: 0;
+    color: #383e45;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 21px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    position: relative;
+    background-color: #fff;
+}
+
+@media (max-width: 90em) {
+
+    .option__panel__title {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 90em) {
+    .option__panel__content {
+        padding: 12px 16px 4px;
+    }
+}
+
+.option__panel .info {
+    margin-bottom: 16px;
+    border: 0;
+    border-radius: 4px;
+}
+
+.info {
+    margin-bottom: 20px;
+    border-radius: 2px;
+    text-align: left;
+    background-position: 12px;
+    background-repeat: no-repeat;
+    padding: 24px;
+    color: #383e45;
+    background-color: #d9edf7;
+    border: solid #004083;
+    border-width: 1px 1px 3px;
+}
+
+.info {
+    color: #383e45 !important;
+}
+
+.btn--red {
+    min-width: 230px;
+    height: 55px;
+    padding: 10px 24px 14px;
+    text-shadow: none;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    letter-spacing: 0;
+    cursor: pointer;
+    color: #fff;
+    background-color: #FE4F62;
+    position: fixed;
+    right: 40px;
+    font-size: 24px;
+}
+
+.btn--red:hover {
+    background-color: black;
+}
+
+.btn--grey {
+    min-width: 230px;
+    height: 55px;
+    padding: 10px 24px 14px;
+    text-shadow: none;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    letter-spacing: 0;
+    cursor: pointer;
+    color: #fff;
+    background-color: grey;
+    position: fixed;
+    right: 40px;
+    font-size: 24px;
+}
+
+.alert__text {
+    font-size: 15px;
+    text-align: center;
+    color: red;
+}

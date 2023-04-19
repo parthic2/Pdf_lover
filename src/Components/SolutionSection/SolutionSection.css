@@ -1,0 +1,57 @@
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 460px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.card {
+    width: 20em;
+    height: 90%;
+    background-color: white;
+    border-radius: 2em;
+    box-shadow: 0px 0px 2em rgba(0, 0, 0, 0.2);
+    padding: 2em 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* .swiper-3d .swiper-slide-shadow-left {
+    background-image: linear-gradient(to left,rgba(0,0,0,.5),rgba(0,0,0,0));
+} */
+
+.swiper-3d .swiper-slide-shadow-left {
+    background-image: none;
+}
+
+.swiper-3d .swiper-slide-shadow-right {
+    background-image: none;
+}
+
+.title__padding {
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.carousel-item-text {
+    padding: 0px 20px 0 20px;
+}
+
+@media screen and (max-width:370px) {
+    .card {
+        width: 17em;
+        margin-left: 23px;
+    }
+}

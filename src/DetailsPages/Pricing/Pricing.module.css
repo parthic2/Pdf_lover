@@ -1,0 +1,230 @@
+.block--white {
+    background: #fff;
+}
+
+@media (max-width: 46.25em) {
+
+    .block,
+    .new-block {
+        padding: 48px 0 64px;
+    }
+}
+
+@media (max-width: 75em) {
+
+    .block,
+    .new-block {
+        padding: 72px 0 96px;
+    }
+}
+
+.block,
+.new-block {
+    padding: 96px 0 124px;
+}
+
+@media (max-width: 46.25em) {
+    .block {
+        padding: 48px 0 64px;
+    }
+}
+
+@media (max-width: 75em) {
+    .block {
+        padding: 72px 0 96px;
+    }
+}
+
+.block__container {
+    /* width: 100%; */
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.block__header {
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block__header+.block__body {
+    margin-top: 64px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+@media (max-width:500px) {
+    .block__header+.block__body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.payment-period {
+    margin-top: 43px;
+    margin-bottom: 73px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment-period__payments {
+    width: fit-content;
+    display: flex;
+    row-gap: 12px;
+    padding: 4px;
+    background-color: #e5e5e9;
+    border-radius: 8px;
+}
+
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pricing__account {
+    background: #f2f3f8;
+    position: relative;
+    margin: 16px;
+    border-radius: 8px;
+    flex: 1 0;
+}
+
+.pricing__account__header {
+    padding: 32px 32px 12px;
+    min-height: 168px;
+}
+
+.pricing__account__tier {
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 34px;
+    font-weight: 500;
+}
+
+.pricing__account__price {
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+.pricing__account__action {
+    padding: 10px 32px;
+    min-height: 66px;
+}
+
+.btn--white {
+    min-width: 200px;
+    padding: 10px 24px 14px;
+    text-shadow: none;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all .2s linear;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0;
+    cursor: pointer;
+    background-color: #fff;
+    color: #161616;
+}
+
+.btn--white:hover {
+    color: #FE4F62;
+}
+
+.pricing__account__body {
+    padding: 18px 32px 32px;
+}
+
+.pricing__account__body p {
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 30px;
+    margin-bottom: 24px;
+}
+
+.listCheck li {
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.listCheck__item {
+    font-size: 15px;
+    letter-spacing: .3px;
+    line-height: 24px;
+}
+
+.pricing__account__price__resume {
+    font-size: 15px;
+    letter-spacing: .3px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-top: 1em;
+}
+
+.pricing__account--premium {
+    background: #383e45;
+    color: #fff;
+}
+
+.small {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+
+.btn--orange {
+    /* margin-left: 30px; */
+    min-width: 200px;
+    padding: 10px 24px 14px;
+    text-shadow: none;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all .2s linear;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0;
+    cursor: pointer;
+    background-color: #fff;
+    color: #161616;
+    background-color: #ffb400;
+}
+
+.btn--orange:hover {
+    background-color: #ffedc2;
+}
+
+@media (max-width: 380px) {
+    .payment-period__payments {
+        display: block;
+    }
+}
+
+.listCheck__item i {
+    color: #59d93f;
+    padding-right: 5px;
+}
+
+.block--grey-light {
+    background: #f6f6f8;
+}
