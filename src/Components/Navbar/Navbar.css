@@ -9,7 +9,6 @@
     text-decoration: none;
 }
 
-
 .main-menu .nav li a.nav__item--active,
 .main-menu .nav li span.nav__item--active {
     color: #FE4F62;
@@ -453,7 +452,7 @@
     content: "";
     width: 8px;
     height: 12px;
-    /* background: url("../../Assets/image/arrow.svg") no-repeat 50%; */
+    background: url("../../Assets/image/Arrow.svg") no-repeat 50%;
     position: absolute;
     right: 8px;
     top: 50%;
@@ -1066,4 +1065,19 @@
     line-height: 39px;
     background: #ebebf4;
     border-radius: 4px;
+}
+
+@media (max-width: 450px) {
+    .top-menu .nav__item--sub ul {
+        min-width: 160px;
+    }
+
+    .top-menu .nav__item--sub ul a {
+        background: none;
+    }
+
+    .top-menu .nav__item--sub .nav__item--sub ul {
+        right: 160px;
+        width: 75%;
+    }
 }

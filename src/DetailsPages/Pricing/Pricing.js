@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Container, ThemeProvider, Typography, createTheme } from '@mui/material';
-
-import style from './Pricing.module.css';
-import "./Pricing.css";
-import Ads from '../../Ads';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPricingApi } from '../../Redux/Action/DetailsPages/Pricing/PricingAction';
 import { getFreeDataApi } from '../../Redux/Action/DetailsPages/Pricing/FreeCardAction';
 import { getBusinessDataApi } from '../../Redux/Action/DetailsPages/Pricing/BusinessCardAction';
 import { getPremiumDataApi } from '../../Redux/Action/DetailsPages/Pricing/PremiumCardAction';
+
+import style from './Pricing.module.css';
+import "./Pricing.css";
+import Ads from '../../Ads';
 
 const Pricing = () => {
 
@@ -92,7 +92,6 @@ const Pricing = () => {
         <div className={`${style.block} ${style["block--white"]}`}>
 
             <Ads dataAdSlot="7135941684" />
-
 
             <div className={style.block__container}>
                 <div className={style.block__header}>

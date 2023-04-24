@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+// import { Adsense } from '@ctrl/react-adsense';
 
 function Ads(props) {
 
@@ -15,6 +16,15 @@ function Ads(props) {
 
     return (
         <div>
+
+            {/* <Adsense
+                client="ca-pub-5305155098388318"
+                slot={dataAdSlot}
+                style={{ display: 'block' }}
+                layout="in-article"
+                format="fluid"
+            /> */}
+
             <ins className="adsbygoogle"
                 style={{ display: "block" }}
                 data-ad-client="ca-pub-5305155098388318"
