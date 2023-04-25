@@ -214,29 +214,28 @@
       "solution": "Solution",
       "company": "Company",
       "pdfLoverLink": [
-        { "id": 1, "link": "Home" },
-        { "id": 2, "link": "Feature" },
-        { "id": 3, "link": "Pricing" },
-        { "id": 4, "link": "Tools" },
-        { "id": 5, "link": "FAQ" }
+        { "id": 1, "title": "Home", "link": "/" },
+        { "id": 2, "title": "Pricing", "link": "Pricing" },
+        { "id": 3, "title": "Tools", "link": "Tools" },
+        { "id": 4, "title": "FAQ", "link": "FAQ" }
       ],
       "productLink": [
-        { "id": 1, "link": "PDFLover Desktop" },
-        { "id": 2, "link": "PDFLover Mobile" },
-        { "id": 3, "link": "Developer" },
-        { "id": 4, "link": "Wordpress Plugin" },
-        { "id": 5, "link": "iloveimg.com" }
+        { "id": 1, "title": "PDFLover Desktop" },
+        { "id": 2, "title": "PDFLover Mobile" },
+        { "id": 3, "title": "Developer" },
+        { "id": 4, "title": "Wordpress Plugin" },
+        { "id": 5, "title": "iloveimg.com" }
       ],
       "solutionLink": [
-        { "id": 1, "link": "Business" },
-        { "id": 2, "link": "Education" }
+        { "id": 1, "title": "Business" },
+        { "id": 2, "title": "Education" }
       ],
       "companyLink": [
-        { "id": 1, "link": "Our Story" },
-        { "id": 2, "link": "Blog" },
-        { "id": 3, "link": "Press" },
-        { "id": 4, "link": "Legal & Privacy" },
-        { "id": 5, "link": "Contact" }
+        { "id": 1, "title": "Our Story" },
+        { "id": 2, "title": "Blog" },
+        { "id": 3, "title": "Press" },
+        { "id": 4, "title": "Legal & Privacy", "link": "Legal" },
+        { "id": 5, "title": "Contact" }
       ]
     }
   },

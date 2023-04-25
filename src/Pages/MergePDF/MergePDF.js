@@ -129,16 +129,16 @@ const MergePDF = () => {
                     ))}
                   </ul>
                 </div>
+                {/* <div className={style.sideTools}>
+                  <span id={style.settingsToogle} className={`${style["btn-icon"]} ${style["btn-icon--white"]}`}>
+                    setting
+                  </span>
+                </div> */}
               </div>
 
               {/* sidebar  */}
               {fileList.length >= 1 && (
-                <div className={style.tool__sidebar} id="sidebar">
-                  {/* <div className={style.tool__sidebar__inactive}>
-                    <p>please select a file</p>
-                    <p>Please add a file to activate options</p>
-                  </div> */}
-
+                <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
                   <div
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
                     <div className={style.option__panel__title}>Merge pdf</div>
@@ -163,7 +163,9 @@ const MergePDF = () => {
 
                       <button
                         onClick={handleUploadClick}
-                        className={style["btn--red"]}>
+                        className={style["btn--red"]}
+                        id={style.processTask}
+                      >
                         Merge PDF
                         <i
                           className="fa-sharp fa-regular fa-circle-right"
@@ -173,13 +175,15 @@ const MergePDF = () => {
                     </>
                   ) : (
                     <>
-                      <p className={style.alert__text}>
-                        Please select one more file for Merge PDF
-                      </p>
+                      <div className={style.alert__text}>
+                        <p>Please add one more file to activate options</p>
+                      </div>
                       <button
                         onClick={handleUploadClick}
                         className={style["btn--grey"]}
-                        disabled>
+                        disabled
+                        id={style.processTask}
+                      >
                         Merge PDF
                         <i
                           className="fa-sharp fa-regular fa-circle-right"

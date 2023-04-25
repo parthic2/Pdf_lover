@@ -132,12 +132,7 @@ const RepairPDF = () => {
 
               {/* sidebar  */}
               {fileList.length >= 1 && (
-                <div className={style.tool__sidebar} id="sidebar">
-                  {/* <div className={style.tool__sidebar__inactive}>
-                    <p>please select a file</p>
-                    <p>Please add a file to activate options</p>
-                  </div> */}
-
+                <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
                   <div
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
                     <div className={style.option__panel__title}>REPAIR PDF</div>
@@ -160,7 +155,9 @@ const RepairPDF = () => {
 
                   <button
                     onClick={handleUploadClick}
-                    className={style["btn--red"]}>
+                    className={style["btn--red"]}
+                    id={style.processTask}
+                  >
                     Repair PDF
                     <i
                       className="fa-sharp fa-regular fa-circle-right"

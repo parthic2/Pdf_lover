@@ -126,21 +126,10 @@ const SplitPDF = () => {
 
               {/* sidebar  */}
               {fileList.length >= 1 && (
-                <div className={style.tool__sidebar} id="sidebar">
-                  {/* <div className={style.tool__sidebar__inactive}>
-                    <p>please select a file</p>
-                    <p>Please add a file to activate options</p>
-                  </div> */}
+                <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
                   <div
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
                     <div className={style.option__panel__title}>SPLIT PDF</div>
-
-                    {/* <div className={style.option__panel__content}>
-                      <div className={style.info}>
-                        Mouse over PDF file below and a icon will appear, click
-                        on it to rotate your PDFs.
-                      </div>
-                    </div> */}
                   </div>
 
                   {open && <Backdrop
@@ -152,7 +141,9 @@ const SplitPDF = () => {
 
                   <button
                     onClick={handleUploadClick}
-                    className={style["btn--red"]}>
+                    className={style["btn--red"]}
+                    id={style.processTask}
+                  >
                     Split PDF
                     <i
                       className="fa-sharp fa-regular fa-circle-right"

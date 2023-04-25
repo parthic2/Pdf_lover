@@ -7,15 +7,15 @@ import store from './Redux/Store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const ads = process.env.NODE_ENV === 'production' &&
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-  />
+// const ads = process.env.NODE_ENV === 'production' &&
+//   <script
+//     async
+//     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+//   />
 
 root.render(
   <Provider store={store}>
-    {ads && ads}
+    {/* {ads && ads} */}
     <App />
   </Provider>
 );

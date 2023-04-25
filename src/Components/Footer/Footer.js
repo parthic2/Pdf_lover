@@ -48,16 +48,18 @@ const Footer = () => {
                   </Typography>{" "}
                   {pdfLoverLink &&
                     pdfLoverLink.map((item) => {
-                      const { id, link } = item;
+                      const { id, title, link } = item;
                       return (
-                        <li key={id}>
-                          <Typography
-                            variant="subtitle1"
-                            className={style.subHeading}
-                            sx={{ margin: "15px" }}>
-                            {link}
-                          </Typography>
-                        </li>
+                        <Link to={link}>
+                          <li key={id}>
+                            <Typography
+                              variant="subtitle1"
+                              className={style.subHeading}
+                              sx={{ margin: "15px" }}>
+                              {title}
+                            </Typography>
+                          </li>
+                        </Link>
                       );
                     })}
                 </Grid>
@@ -71,16 +73,18 @@ const Footer = () => {
                   </Typography>
                   {productLink &&
                     productLink.map((item) => {
-                      const { id, link } = item;
+                      const { id, title, link } = item;
                       return (
-                        <li key={id}>
-                          <Typography
-                            variant="subtitle1"
-                            className={style.subHeading}
-                            sx={{ margin: "15px" }}>
-                            {link}
-                          </Typography>
-                        </li>
+                        <Link to={link}>
+                          <li key={id}>
+                            <Typography
+                              variant="subtitle1"
+                              className={style.subHeading}
+                              sx={{ margin: "15px" }}>
+                              {title}
+                            </Typography>
+                          </li>
+                        </Link>
                       );
                     })}
                 </Grid>
@@ -94,16 +98,18 @@ const Footer = () => {
                   </Typography>
                   {solutionLink &&
                     solutionLink.map((item) => {
-                      const { id, link } = item;
+                      const { id, title, link } = item;
                       return (
-                        <li key={id}>
-                          <Typography
-                            variant="subtitle1"
-                            className={style.subHeading}
-                            sx={{ margin: "15px" }}>
-                            {link}
-                          </Typography>
-                        </li>
+                        <Link to={link}>
+                          <li key={id}>
+                            <Typography
+                              variant="subtitle1"
+                              className={style.subHeading}
+                              sx={{ margin: "15px" }}>
+                              {title}
+                            </Typography>
+                          </li>
+                        </Link>
                       );
                     })}
                 </Grid>
@@ -117,16 +123,18 @@ const Footer = () => {
                   </Typography>
                   {companyLink &&
                     companyLink.map((item) => {
-                      const { id, link } = item;
+                      const { id, title, link } = item;
                       return (
-                        <li key={id}>
-                          <Typography
-                            variant="subtitle1"
-                            className={style.subHeading}
-                            sx={{ margin: "15px" }}>
-                            {link}
-                          </Typography>
-                        </li>
+                        <Link to={link}>
+                          <li key={id}>
+                            <Typography
+                              variant="subtitle1"
+                              className={style.subHeading}
+                              sx={{ margin: "15px" }}>
+                              {title}
+                            </Typography>
+                          </li>
+                        </Link>
                       );
                     })}
                 </Grid>

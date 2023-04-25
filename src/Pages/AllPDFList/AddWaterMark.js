@@ -272,7 +272,7 @@ const AddWaterMark = () => {
               {/* sidebar  */}
               {fileList.length >= 1 && (
                 <>
-                  <div className={style.tool__sidebar} id="sidebar">
+                  <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
 
                     <div
                       className={`${style.option__panel} ${style["option__panel--active"]}`}>
@@ -356,6 +356,7 @@ const AddWaterMark = () => {
                         watermarkImage();
                       }}
                       className={style["btn--red"]}
+                      id={style.processTask}
                     >
                       Add WaterMark
                       <i
