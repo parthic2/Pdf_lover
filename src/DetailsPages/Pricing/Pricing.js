@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Container, ThemeProvider, Typography, createTheme } from '@mui/material';
+import { ThemeProvider, Typography, createTheme } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPricingApi } from '../../Redux/Action/DetailsPages/Pricing/PricingAction';
 import { getFreeDataApi } from '../../Redux/Action/DetailsPages/Pricing/FreeCardAction';
 import { getBusinessDataApi } from '../../Redux/Action/DetailsPages/Pricing/BusinessCardAction';
 import { getPremiumDataApi } from '../../Redux/Action/DetailsPages/Pricing/PremiumCardAction';
+// import Ads from '../../Ads';
 
 import style from './Pricing.module.css';
-import "./Pricing.css";
-import Ads from '../../Ads';
 
 const Pricing = () => {
 
@@ -91,7 +90,7 @@ const Pricing = () => {
     return (
         <div className={`${style.block} ${style["block--white"]}`}>
 
-            <Ads dataAdSlot="7135941684" />
+            {/* <Ads dataAdSlot="7135941684" /> */}
 
             <div className={style.block__container}>
                 <div className={style.block__header}>
@@ -102,12 +101,13 @@ const Pricing = () => {
                     </ThemeProvider>
                 </div>
 
+                {/* Tabs */}
                 <div className={style["payment-period"]}>
                     <div className={style["payment-period__payments"]}>
                         <span
                             className={toggleState === 1 ?
-                                "payment-period__payments__item payment-period__payments__item--active" :
-                                "payment-period__payments__item"
+                                `${style["payment-period__payments__item"]} ${style["payment-period__payments__item--active"]}` :
+                                `${style["payment-period__payments__item"]}`
                             }
                             onClick={() => handleToggleTab(1)}
                         >
@@ -115,8 +115,8 @@ const Pricing = () => {
                         </span>
                         <span
                             className={toggleState === 2 ?
-                                "payment-period__payments__item payment-period__payments__item--active" :
-                                "payment-period__payments__item"
+                                `${style["payment-period__payments__item"]} ${style["payment-period__payments__item--active"]}` :
+                                `${style["payment-period__payments__item"]}`
                             }
                             onClick={() => handleToggleTab(2)}
                         >
@@ -126,9 +126,125 @@ const Pricing = () => {
                     </div>
                 </div>
 
-                <div className={style.pricing}>
-
+                <section className={style.pricing}>
                     {/* 1st */}
+                    <div className={style["card-wrapper"]}>
+                        <div className={style["card-header"]}>
+                            <h2>{freeData.title}</h2>
+                        </div>
+
+                        <div className={style["h-100"]}>
+                            {listData && listData.map((item) => {
+                                const { id, data } = item;
+                                return (
+                                    <div className={style["card-detail"]} key={id}>
+                                        <p className={style["price_details"]}>
+                                            <span className="fa-solid fa-check" id={style.check} />
+                                            {data}
+                                        </p>
+                                    </div>
+                                )
+                            })}
+                        </div>
+
+                        <div className={style["card-price"]}>
+                            <p><sup>₹ </sup>{freeData.price}</p>
+                        </div>
+
+                        <button className={style["card-button"]}>{freeData.button}</button>
+                    </div>
+
+                    {/* 2nd */}
+                    <div className={style["card-wrapper"]}>
+                        <div className={toggleState === 1 ? `{style["pricing__account--premium"]}` : "content"}
+                        >
+                            <div className={style["card-header"]}>
+                                <h2>{premiumData.title}</h2>
+                            </div>
+
+                            {premiumListData && premiumListData.map((item) => {
+                                const { id, data } = item;
+                                return (
+                                    <div className={style["card-detail"]} key={id}>
+                                        <p className={style.price_details}>
+                                            <span className="fa-solid fa-check" id={style.check} />
+                                            {data}
+                                        </p>
+                                    </div>
+                                )
+                            })}
+
+                            <div className={style["card-price"]}>
+                                <p><sup>₹ </sup>{premiumData.price} <sub>/month </sub></p>
+                            </div>
+
+                            <button className={style["card-button"]}>{premiumData.button}</button>
+                        </div>
+
+                        <div className={toggleState === 2 ? `{style["pricing__account--premium"]}` : "content"}
+                        >
+                            <div className={style["card-header"]}>
+                                <h2>{premiumData.title}</h2>
+                            </div>
+
+                            {premiumListData && premiumListData.map((item) => {
+                                const { id, data } = item;
+                                return (
+                                    <div className={style["card-detail"]} key={id}>
+                                        <p className={style.price_details}>
+                                            <span className="fa-solid fa-check" id={style.check} />
+                                            {data}
+                                        </p>
+                                    </div>
+                                )
+                            })}
+
+                            <div className={style["card-price"]}>
+                                <p><sup>₹ </sup>{premiumData.yearPrice}<sub>/month </sub></p>
+                            </div>
+
+                            <p className={style.pricing__account__price__resume}>
+                                {premiumData.small}
+                                <br />
+                                {premiumData.smallData} <strong>{premiumData.strong}</strong>
+                            </p>
+
+                            <button className={style["card-button"]}>{premiumData.button}</button>
+                        </div>
+                    </div>
+
+                    {/* 3rd */}
+                    <div className={style["card-wrapper"]}>
+                        <div className={style["card-header"]}>
+                            <h2>{businessData.title}</h2>
+                        </div>
+
+                        <div className={style["h-100"]}>
+                            {businessListData && businessListData.map((item) => {
+                                const { id, data } = item;
+                                return (
+                                    <div className={style["card-detail"]} key={id}>
+                                        <p className={style.price_details}>
+                                            <span className="fa-solid fa-check" id={style.check} />
+                                            {data}
+                                        </p>
+                                    </div>
+                                )
+                            })}
+                        </div>
+
+                        <div className={style.pricing__account__price__resume}>
+                            <p><strong>{businessData.price}</strong></p>
+                            <p>{businessData.desc}</p>
+                        </div>
+
+                        <button className={style["card-button"]}>{businessData.button}</button>
+                    </div>
+                </section>
+
+                {/* <div className={style.pricing}>
+
+                    1st
                     <div className={`${style.pricing__account}`}>
                         <div className={style.pricing__account__header}>
                             <h3 className={style.pricing__account__tier}>
@@ -162,7 +278,7 @@ const Pricing = () => {
                         </div>
                     </div>
 
-                    {/* 2nd */}
+                    2nd
                     <div className={`${style.pricing__account} ${style["pricing__account--premium"]}`}>
                         <div
                             className={toggleState === 1 ? `{style["pricing__account--premium"]}` : "content"}
@@ -240,7 +356,7 @@ const Pricing = () => {
                         </div>
                     </div>
 
-                    {/* 3rd */}
+                    3rd
                     <div className={`${style.pricing__account}`}>
                         <div className={style.pricing__account__header}>
                             <h3 className={style.pricing__account__tier}>
@@ -278,10 +394,10 @@ const Pricing = () => {
                         </div>
                     </div>
 
-                </div>
+                </div> */}
             </div>
 
-            <Container>
+            {/* <Container>
                 <div className={`${style.block} ${style["block--grey-admin"]}`}>
                     <Container>
                         <div className={style.block__header}>
@@ -314,7 +430,7 @@ const Pricing = () => {
                         </ThemeProvider>
                     </div>
                 </div>
-            </Container>
+            </Container> */}
         </div>
     )
 }

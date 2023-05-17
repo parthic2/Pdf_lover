@@ -50,8 +50,8 @@ const Footer = () => {
                     pdfLoverLink.map((item) => {
                       const { id, title, link } = item;
                       return (
-                        <Link to={link}>
-                          <li key={id}>
+                        <Link key={id} to={link}>
+                          <li>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}
@@ -75,8 +75,8 @@ const Footer = () => {
                     productLink.map((item) => {
                       const { id, title, link } = item;
                       return (
-                        <Link to={link}>
-                          <li key={id}>
+                        <Link key={id} to={link}>
+                          <li>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}
@@ -100,8 +100,8 @@ const Footer = () => {
                     solutionLink.map((item) => {
                       const { id, title, link } = item;
                       return (
-                        <Link to={link}>
-                          <li key={id}>
+                        <Link key={id} to={link}>
+                          <li>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}
@@ -125,8 +125,8 @@ const Footer = () => {
                     companyLink.map((item) => {
                       const { id, title, link } = item;
                       return (
-                        <Link to={link}>
-                          <li key={id}>
+                        <Link key={id} to={link}>
+                          <li>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}
