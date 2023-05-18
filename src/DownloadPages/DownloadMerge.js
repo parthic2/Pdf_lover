@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 
-import style from "../Pages/MergePDF/MergePDF.module.css";
+import style from "./MergePDF.module.css";
 
 const DownloadMerge = () => {
   return (

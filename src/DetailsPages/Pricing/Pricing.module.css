@@ -206,7 +206,7 @@
 }
 
 .payment-period__payments__item--active {
-    color: #2bb4c0;
+    color: #FE4F62;
     font-weight: 600;
     background-color: #fff;
     -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, .2);

@@ -252,7 +252,6 @@ input[type="file"] {
 }
 
 .alert__text {
-    padding-top: 127px;
     font-size: 15px;
     text-align: center;
     color: red;
@@ -504,88 +503,42 @@ textarea {
     border: 1px solid #1d9d58;
 }
 
+@media (max-width:400px) {
+    #processTask {
+        width: 10em;
+        right: 10%;
+    }
+}
+
+@media (max-width:355px) {
+    #processTask {
+        width: 10em;
+        right: 10%;
+    }
+}
+
+@media (max-width:355px) {
+    #processTask {
+        width: 9em;
+        right: 11%;
+    }
+}
+
+@media (max-width:320px) {
+    #processTask {
+        width: 9em;
+        right: 9%;
+    }
+}
+
+
 /* Responsive side bar */
-.sideTools {
-    position: fixed;
-    right: 464px;
-    display: none;
-    flex-direction: column;
-    z-index: 99;
-    align-items: center;
-}
-
-@media (max-width: 840px) {
-    .tool__sidebar {
-        display: none;
-    }
-
-    .sideTools {
-        right: 12px;
-        display: block;
-    }
-}
-
-@media (max-width: 1440px) {
-    .sideTools {
-        right: 324px;
-    }
-}
-
-.sideTools {
-    right: 464px;
-    background-size: 440px;
-}
-
-@media (max-width: 840px) {
-    .sideTools {
-        right: 8px;
-        -webkit-transition: all .4s ease-in;
-        -o-transition: all .4s ease-in;
-        transition: all .4s ease-in;
-    }
-}
-
-.sideTools {
-    display: -ms-flexbox;
-    display: flex;
-}
-
-@media (max-width: 1440px) {
-    .sideTools {
-        right: 404px;
-    }
-}
-
-@media (max-width: 840px) {
-    #settingsToogle {
-        display: block;
-    }
-}
-
-#settingsToogle {
+/* .responsive__sidebar {
     display: none;
 }
 
-.sideTools .btn-icon,
-.sideTools .uploader.box .uploader__btn,
-.uploader.box .sideTools .uploader__btn {
-    margin-bottom: 8px;
-}
-
-.btn-icon--white {
-    background: #fff;
-    color: #161616;
-}
-
-.btn-icon,
-.uploader.box .uploader__btn {
-    width: 36px;
-    min-width: 0;
-    padding: 0;
-    height: 36px;
-    border-radius: 100%;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
-}
+@media (max-width: 840px) {
+    .tool__sidebar__res {
+        display: block;
+    }
+} */
