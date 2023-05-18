@@ -1,37 +1,41 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RootLayout from "./Components/Layout/RootLayout";
-import Index from "./Components/Main/Index";
-import DownloadMerge from "./DownloadPages/DownloadMerge";
-import Login from "./Form/Login/Login";
-import ResetPassword from "./Form/ResetPassword/ResetPassword";
-import Register from "./Form/SignUp/Register";
-import AddPageNumber from "./Pages/AllPDFList/AddPageNumber";
+import { lazy } from "react";
+
 import AddWaterMark from "./Pages/AllPDFList/AddWaterMark";
-import EditPDF from "./Pages/AllPDFList/EditPDF";
-import OcrPDF from "./Pages/AllPDFList/OcrPDF";
-import OrganizePDF from "./Pages/AllPDFList/OrganizePDF";
-import ProtectPDF from "./Pages/AllPDFList/ProtectPDF";
-import RemovePDFPage from "./Pages/AllPDFList/RemovePDFPage";
-import RepairPDF from "./Pages/AllPDFList/RepairPDF";
-import RotatePDF from "./Pages/AllPDFList/RotatePDF";
-import SignPDF from "./Pages/AllPDFList/SignPDF";
-import UnlockPDF from "./Pages/AllPDFList/UnlockPDF";
-import CompressPDF from "./Pages/CompressPDF/CompressPDF";
-import EXCELToPDF from "./Pages/ConvertPDFList/EXCELToPDF";
-import JPGToPDF from "./Pages/ConvertPDFList/JPGToPDF";
-import PDFToEXCEL from "./Pages/ConvertPDFList/PDFToEXCEL";
-import PDFToJPG from "./Pages/ConvertPDFList/PDFToJPG";
-import PDFToPDFa from "./Pages/ConvertPDFList/PDFToPDFa";
-import PDFToPowerPoint from "./Pages/ConvertPDFList/PDFToPowerPoint";
-import PDFToWORD from "./Pages/ConvertPDFList/PDFToWORD";
-import PowerPointToPDF from "./Pages/ConvertPDFList/PowerPointToPDF";
-import WORDToPDF from "./Pages/ConvertPDFList/WORDToPDF";
-import MergePDF from "./Pages/MergePDF/MergePDF";
-import SplitPDF from "./Pages/SplitPDF/SplitPDF";
-import FAQ from "./DetailsPages/Help/FAQ/FAQ";
-import Tools from "./DetailsPages/Help/Tools/Tools";
-import LegalPrivacy from "./DetailsPages/Help/Legal&Privacy/LegalPrivacy";
-import Pricing from "./DetailsPages/Pricing/Pricing";
+import { Suspense } from "react";
+
+const RootLayout = lazy(() => import("./Components/Layout/RootLayout"));
+const Index = lazy(() => import("./Components/Main/Index"));
+const DownloadMerge = lazy(() => import("./DownloadPages/DownloadMerge"));
+const Login = lazy(() => import("./Form/Login/Login"));
+const ResetPassword = lazy(() => import("./Form/ResetPassword/ResetPassword"));
+const Register = lazy(() => import("./Form/SignUp/Register"));
+const FAQ = lazy(() => import("./DetailsPages/Help/FAQ/FAQ"));
+const Tools = lazy(() => import("./DetailsPages/Help/Tools/Tools"));
+const LegalPrivacy = lazy(() => import("./DetailsPages/Help/Legal&Privacy/LegalPrivacy"));
+const Pricing = lazy(() => import("./DetailsPages/Pricing/Pricing"));
+const MergePDF = lazy(() => import("./Pages/MergePDF/MergePDF"));
+const SplitPDF = lazy(() => import("./Pages/SplitPDF/SplitPDF"));
+const CompressPDF = lazy(() => import("./Pages/CompressPDF/CompressPDF"));
+const AddPageNumber = lazy(() => import("./Pages/AllPDFList/AddPageNumber"));
+const EditPDF = lazy(() => import("./Pages/AllPDFList/EditPDF"));
+const OcrPDF = lazy(() => import("./Pages/AllPDFList/OcrPDF"));
+const OrganizePDF = lazy(() => import("./Pages/AllPDFList/OrganizePDF"));
+const ProtectPDF = lazy(() => import("./Pages/AllPDFList/ProtectPDF"));
+const RemovePDFPage = lazy(() => import("./Pages/AllPDFList/RemovePDFPage"));
+const RepairPDF = lazy(() => import("./Pages/AllPDFList/RepairPDF"));
+const RotatePDF = lazy(() => import("./Pages/AllPDFList/RotatePDF"));
+const SignPDF = lazy(() => import("./Pages/AllPDFList/SignPDF"));
+const UnlockPDF = lazy(() => import("./Pages/AllPDFList/UnlockPDF"));
+const EXCELToPDF = lazy(() => import("./Pages/ConvertPDFList/EXCELToPDF"));
+const JPGToPDF = lazy(() => import("./Pages/ConvertPDFList/JPGToPDF"));
+const PDFToEXCEL = lazy(() => import("./Pages/ConvertPDFList/PDFToEXCEL"));
+const PDFToJPG = lazy(() => import("./Pages/ConvertPDFList/PDFToJPG"));
+const PDFToPDFa = lazy(() => import("./Pages/ConvertPDFList/PDFToPDFa"));
+const PDFToPowerPoint = lazy(() => import("./Pages/ConvertPDFList/PDFToPowerPoint"));
+const PDFToWORD = lazy(() => import("./Pages/ConvertPDFList/PDFToWORD"));
+const PowerPointToPDF = lazy(() => import("./Pages/ConvertPDFList/PowerPointToPDF"));
+const WORDToPDF = lazy(() => import("./Pages/ConvertPDFList/WORDToPDF"));
 
 const Router = createBrowserRouter([
   {
@@ -160,7 +164,11 @@ const Router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={Router} />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <RouterProvider router={Router} />
+    </Suspense>
+  )
 }
 
 export default App;

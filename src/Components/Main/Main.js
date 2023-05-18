@@ -36,7 +36,7 @@ const Main = () => {
                     <Box sx={{ minWidth: 270 }}>
                       <Card variant="outlined" className={style.card__item}>
                         <React.Fragment>
-                          <CardContent>
+                          <CardContent sx={{ padding: 0 }}>
                             <div className={style.tools__item__icon}>
                               <img src={img} alt={title} />
                             </div>

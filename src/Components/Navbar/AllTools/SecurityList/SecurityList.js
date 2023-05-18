@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Unlock from "../../../../Assets/image/Unlock.png";
-import Protect from "../../../../Assets/image/Protect.png";
-import Sign from "../../../../Assets/image/Sign.png";
+import Unlock from "../../../../Assets/image/Unlock.svg";
+import Protect from "../../../../Assets/image/Protect.svg";
+import Sign from "../../../../Assets/image/Sign.svg";
 
 const SecurityList = () => {
   return (
@@ -22,6 +22,12 @@ const SecurityList = () => {
               Unlock PDF
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -32,6 +38,12 @@ const SecurityList = () => {
               Protect PDF
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -42,6 +54,7 @@ const SecurityList = () => {
               Sign PDF
             </NavLink>
           </li>
+
         </ul>
       </li>
     </>

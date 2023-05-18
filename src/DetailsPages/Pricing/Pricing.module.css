@@ -167,7 +167,7 @@
 
 @media (max-width: 380px) {
     .payment-period__payments {
-        display: block;
+        display: block !important;
     }
 }
 

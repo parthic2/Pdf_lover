@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Rotate from "../../../../Assets/image/Rotate.png";
-import PageNumber from "../../../../Assets/image/PageNumber.png";
-import Watermark from "../../../../Assets/image/Watermark.png";
-import Edit from "../../../../Assets/image/Edit.png";
+import Rotate from "../../../../Assets/image/Rotate.svg";
+import PageNumber from "../../../../Assets/image/PageNumber.svg";
+import Watermark from "../../../../Assets/image/Watermark.svg";
+import Edit from "../../../../Assets/image/Edit.svg";
 
 const EditList = () => {
   return (
@@ -23,6 +23,12 @@ const EditList = () => {
               Rotate PDF
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -33,6 +39,12 @@ const EditList = () => {
               Add page numbers
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -43,6 +55,12 @@ const EditList = () => {
               Add watermark
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -53,6 +71,12 @@ const EditList = () => {
               Edit PDF
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
         </ul>
       </li>
     </>

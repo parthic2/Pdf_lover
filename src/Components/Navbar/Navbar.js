@@ -126,6 +126,24 @@ const Navbar = () => {
                 <HumBurgerList />
               </li>
             </ul>
+
+            <div className="header__nav responsive__nav">
+              <div className="main-menu" id="menuBig">
+                <ul className="nav">
+                  <li className="dropdown dropdown-full" id="menuSmall">
+                    <span
+                      className="nav__icon__res"
+                      data-toggle="dropdown">
+                      <i className="fa-solid fa-bars-staggered" />
+                    </span>
+
+                    <ul className="dropdown-menu mega menu-full" style={{ height: "35em" }}>
+                      <AllToolsList />
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

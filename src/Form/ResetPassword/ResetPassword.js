@@ -54,7 +54,7 @@ const ResetPassword = ({ setAuth }) => {
                     <Link to="/Login" style={{ cursor: "pointer", color: "#FE4F62" }}>Login</Link>
                     <HeadingStyle component={motion.div} {...fadeInUp}>
                         <Link to="/">
-                            <img src={Logo} alt="logo" />
+                            <img src={Logo} alt="logo" style={{ width: "37%" }} />
                         </Link>
 
                         <Box height={15} />

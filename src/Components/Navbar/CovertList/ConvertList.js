@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import PtoE from "../../../Assets/image/PtoE.png";
-import PtoP from "../../../Assets/image/PtoP.png";
-import PtoW from "../../../Assets/image/PtoW.png";
-import PtoJ from "../../../Assets/image/PtoJ.png";
-import JtoP from "../../../Assets/image/JtoP.png";
+import PtoE from "../../../Assets/image/PtoE.svg";
+import PtoP from "../../../Assets/image/PtoP.svg";
+import PtoW from "../../../Assets/image/PtoW.svg";
+import PtoJ from "../../../Assets/image/PtoJ.svg";
+import JtoP from "../../../Assets/image/JtoP.svg";
 
 const ConvertList = () => {
   return (

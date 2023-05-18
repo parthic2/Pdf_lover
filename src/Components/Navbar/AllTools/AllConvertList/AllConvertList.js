@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import PtoE from "../../../../Assets/image/PtoE.png";
-import PtoP from "../../../../Assets/image/PtoP.png";
-import PtoW from "../../../../Assets/image/PtoW.png";
-import PtoJ from "../../../../Assets/image/PtoJ.png";
-import JtoP from "../../../../Assets/image/JtoP.png";
+import PtoE from "../../../../Assets/image/PtoE.svg";
+import PtoP from "../../../../Assets/image/PtoP.svg";
+import PtoW from "../../../../Assets/image/PtoW.svg";
+import PtoJ from "../../../../Assets/image/PtoJ.svg";
+import JtoP from "../../../../Assets/image/JtoP.svg";
 
 const AllConvertList = () => {
   return (
@@ -24,6 +24,12 @@ const AllConvertList = () => {
               JPG to PDF
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -34,6 +40,12 @@ const AllConvertList = () => {
               WORD to PDF
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -44,6 +56,12 @@ const AllConvertList = () => {
               POWERPOINT to PDF
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -54,6 +72,12 @@ const AllConvertList = () => {
               EXCEL to PDF
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
         </ul>
       </li>
 
@@ -72,6 +96,12 @@ const AllConvertList = () => {
               PDF to JPG
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -82,6 +112,12 @@ const AllConvertList = () => {
               PDF to WORD
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -92,6 +128,12 @@ const AllConvertList = () => {
               PDF to POWERPOINT
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -102,6 +144,12 @@ const AllConvertList = () => {
               PDF to EXCEL
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
           <li>
             <NavLink
               className={({ isActive }) =>
@@ -112,6 +160,12 @@ const AllConvertList = () => {
               PDF to PDF/A
             </NavLink>
           </li>
+
+          <li className="divider" style={{
+            border: "1px solid #f6f6f8",
+            margin: "7px 20px 7px 5px"
+          }}></li>
+
         </ul>
       </li>
     </>

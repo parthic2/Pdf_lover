@@ -72,7 +72,7 @@ const PDFToJPG = () => {
       const data = await response.json();
       setFileList(data);
       // console.log(data);
-      // navigate("/");
+      navigate("/Download_Merge_PDF");
     } catch (error) {
       // DOMException: The user aborted a request.
       console.log("Error: ", error);

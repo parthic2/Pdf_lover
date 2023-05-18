@@ -80,10 +80,10 @@ const Pricing = () => {
     };
 
     // For Active tabs
-    const [toggleState, setToggleState] = useState(1);
+    const [togglePriceState, setTogglePriceState] = useState(1);
 
     const handleToggleTab = (index) => {
-        setToggleState(index);
+        setTogglePriceState(index);
         // console.log(index);
     }
 
@@ -105,7 +105,7 @@ const Pricing = () => {
                 <div className={style["payment-period"]}>
                     <div className={style["payment-period__payments"]}>
                         <span
-                            className={toggleState === 1 ?
+                            className={togglePriceState === 1 ?
                                 `${style["payment-period__payments__item"]} ${style["payment-period__payments__item--active"]}` :
                                 `${style["payment-period__payments__item"]}`
                             }
@@ -114,7 +114,7 @@ const Pricing = () => {
                             {pricingData.tab1}
                         </span>
                         <span
-                            className={toggleState === 2 ?
+                            className={togglePriceState === 2 ?
                                 `${style["payment-period__payments__item"]} ${style["payment-period__payments__item--active"]}` :
                                 `${style["payment-period__payments__item"]}`
                             }
@@ -156,7 +156,7 @@ const Pricing = () => {
 
                     {/* 2nd */}
                     <div className={style["card-wrapper"]}>
-                        <div className={toggleState === 1 ? `{style["pricing__account--premium"]}` : "content"}
+                        <div className={togglePriceState === 1 ? `{style["pricing__account--premium"]}` : "content"}
                         >
                             <div className={style["card-header"]}>
                                 <h2>{premiumData.title}</h2>
@@ -181,7 +181,7 @@ const Pricing = () => {
                             <button className={style["card-button"]}>{premiumData.button}</button>
                         </div>
 
-                        <div className={toggleState === 2 ? `{style["pricing__account--premium"]}` : "content"}
+                        <div className={togglePriceState === 2 ? `{style["pricing__account--premium"]}` : "content"}
                         >
                             <div className={style["card-header"]}>
                                 <h2>{premiumData.title}</h2>
@@ -234,7 +234,10 @@ const Pricing = () => {
                         </div>
 
                         <div className={style.pricing__account__price__resume}>
-                            <p><strong>{businessData.price}</strong></p>
+                            <p style={{
+                                fontWeight: 800,
+                                paddingTop: "14px"
+                            }}>{businessData.price}</p>
                             <p>{businessData.desc}</p>
                         </div>
 

@@ -13,8 +13,11 @@ import CircularProgress from '@mui/material/CircularProgress'
 
 import style from "../Pages.module.css";
 import '../Tabs.css';
+import { useNavigate } from "react-router-dom";
 
 const AddWaterMark = () => {
+
+  const navigate = useNavigate();
 
   // For Change title dynamically
   useEffect(() => {
@@ -81,7 +84,7 @@ const AddWaterMark = () => {
   const [mosaic, setMosaic] = useState(false);
 
   // For Font color
-  const [color, setColor] = useState("#000000");
+  const [color, setColor] = useState("");
 
   // For Rotation
   const [rotation, setRotation] = useState(0);
@@ -106,10 +109,10 @@ const AddWaterMark = () => {
   }
 
   // For Active tabs
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleStateWater, setToggleStateWater] = useState(1);
 
   const handleToggleTab = (index) => {
-    setToggleState(index);
+    setToggleStateWater(index);
     // console.log(index);
   }
 
@@ -176,7 +179,7 @@ const AddWaterMark = () => {
       const data = await response.json();
       setFileList(data);
       // console.log(data);
-      // navigate("/");
+      navigate("/Download_Merge_PDF");
     } catch (error) {
       // DOMException: The user aborted a request.
       console.log("Error: ", error);
@@ -208,7 +211,7 @@ const AddWaterMark = () => {
       const data = await response.json();
       setFileList(data);
       // console.log(data);
-      // navigate("/");
+      navigate("/Download_Merge_PDF");
     } catch (error) {
       // DOMException: The user aborted a request.
       console.log("Error: ", error);
@@ -281,7 +284,7 @@ const AddWaterMark = () => {
                       <div className={style.option__tab}>
                         <div className="bloc-tabs">
                           <button
-                            className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+                            className={toggleStateWater === 1 ? "tabs active-tabs" : "tabs"}
                             onClick={() => handleToggleTab(1)}
                           >
                             <div>
@@ -290,7 +293,7 @@ const AddWaterMark = () => {
                             Place text
                           </button>
                           <button
-                            className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+                            className={toggleStateWater === 2 ? "tabs active-tabs" : "tabs"}
                             onClick={() => handleToggleTab(2)}
                           >
                             <div>
@@ -302,7 +305,7 @@ const AddWaterMark = () => {
 
                         <div className="content-tabs">
                           <div
-                            className={toggleState === 1 ? "content  active-content" : "content"}
+                            className={toggleStateWater === 1 ? "content  active-content" : "content"}
                           >
                             <WatermarkText
                               isOpen={isOpen}
@@ -332,7 +335,7 @@ const AddWaterMark = () => {
                           </div>
 
                           <div
-                            className={toggleState === 2 ? "content  active-content" : "content"}
+                            className={toggleStateWater === 2 ? "content  active-content" : "content"}
                           >
                             <WatermarkImages
                               imgData={imgData}

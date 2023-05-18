@@ -11,7 +11,10 @@ const Banner = () => {
   const theme = createTheme();
 
   theme.typography.h3 = {
-    fontSize: "50px",
+    fontSize: "40px",
+    fontWeight: "400",
+    lineHeight: "46px",
+    margin: "15px auto 0px",
     "@media (min-width:600px)": {
       fontSize: "1.5rem",
     },
@@ -24,6 +27,8 @@ const Banner = () => {
   };
 
   theme.typography.body1 = {
+    fontSize: "20px",
+    lineHeight: "30px",
     "@media (max-width:590px)": {
       fontSize: "1.2rem",
     },
@@ -48,9 +53,8 @@ const Banner = () => {
         <div className={style["home-title"]}>
           <>
             <ThemeProvider theme={theme}>
-              <Typography variant="h3" sx={{ color: "white" }}>
+              <Typography variant="h3" sx={{ color: "black" }}>
                 {mainData.title}
-                {/* Every tool you need to work with PDFs in one place */}
               </Typography>
             </ThemeProvider>
 
@@ -58,13 +62,12 @@ const Banner = () => {
               <Typography
                 variant="body1"
                 sx={{
-                  color: "#fff",
+                  color: "#383e45",
                   maxWidth: "980px",
-                  margin: "auto auto 28px",
-                  fontSize: "22px",
+                  margin: "15px auto 28px",
+                  fontSize: "20px",
                 }}>
                 {mainData.subtitle}
-                {/* Every tool you need to use PDFs, at your fingertips. All are 100% FREE and easy to use! Merge, split, compress, convert, rotate, unlock and watermark PDFs with just a few clicks. */}
               </Typography>
             </ThemeProvider>
           </>

@@ -89,6 +89,10 @@
     margin-right: 12px;
 }
 
+.docs__item__img img {
+    width: 45px;
+}
+
 .docs__item__content h3 {
     font-size: 20px;
     font-weight: 600;

@@ -5,48 +5,48 @@
     "main": {
       "id": 1,
       "title": "Every tool you need to work with PDFs in one place",
-      "subtitle": "Every tool you need to use PDFs, at your fingertips. All are 100% FREE and easy to use! Merge, split, compress, convert, rotate, unlock and watermark PDFs with just a few clicks."
+      "subtitle": "One location for all the tools you need to work with PDFs. You have access to all the tools that are required to use PDFs. Each is totally free and simple to use. You may combine, divide, compress, convert, rotate, unlock, and watermark PDF files with only a few clicks."
     },
 
     "details": [
       {
         "id": 1,
-        "img": "image/Merge.png",
+        "img": "image/Merger.svg",
         "link": "Merge_PDF",
         "title": "Merge PDF",
         "description": "Combine PDFs in the order you want with the easiest PDF merger available."
       },
       {
         "id": 2,
-        "img": "image/Split.png",
+        "img": "image/Split.svg",
         "link": "Split_PDF",
         "title": "Split PDF",
         "description": "Separate one page or a whole set for easy conversion into independent PDF files."
       },
       {
         "id": 3,
-        "img": "image/Compress.png",
+        "img": "image/Compress.svg",
         "link": "Compress_PDF",
         "title": "Compress PDF",
         "description": "Reduce file size while optimizing for maximal PDF quality."
       },
       {
         "id": 4,
-        "img": "image/PtoW.png",
+        "img": "image/PtoW.svg",
         "link": "pdf_to_word",
         "title": "PDF to Word",
         "description": "Easily convert your PDF files into easy to edit DOC and DOCX documents. The converted WORD document is almost 100% accurate."
       },
       {
         "id": 5,
-        "img": "image/PtoP.png",
+        "img": "image/PtoP.svg",
         "link": "pdf_to_powerpoint",
         "title": "PDF to Powerpoint",
         "description": "Turn your PDF files into easy to edit PPT and PPTX slideshows."
       },
       {
         "id": 6,
-        "img": "image/PtoE.png",
+        "img": "image/PtoE.svg",
         "link": "pdf_to_excel",
         "title": "PDF to Excel",
         "description": "Pull data straight from PDFs into Excel spreadsheets in a few short seconds."
@@ -71,63 +71,63 @@
       },
       {
         "id": 10,
-        "img": "image/Edit.png",
+        "img": "image/Edit.svg",
         "link": "Edit_PDF",
         "title": "Edit PDF",
         "description": "Add text, images, shapes or freehand annotations to a PDF document. Edit the size, font, and color of the added content."
       },
       {
         "id": 11,
-        "img": "image/PtoJ.png",
+        "img": "image/PtoJ.svg",
         "link": "pdf_to_jpg",
         "title": "PDF to JPG",
         "description": "Convert each PDF page into a JPG or extract all images contained in a PDF."
       },
       {
         "id": 12,
-        "img": "image/JtoP.png",
+        "img": "image/JtoP.svg",
         "link": "jpg_to_pdf",
         "title": "JPG to PDF",
         "description": "Convert JPG images to PDF in seconds. Easily adjust orientation and margins."
       },
       {
         "id": 13,
-        "img": "image/Sign.png",
+        "img": "image/Sign.svg",
         "link": "Sign_PDF",
         "title": "Sign PDF",
         "description": "Sign yourself or request electronic signatures from others."
       },
       {
         "id": 14,
-        "img": "image/Watermark.png",
+        "img": "image/Watermark.svg",
         "link": "Add_watermark",
         "title": "Watermark",
         "description": "Stamp an image or text over your PDF in seconds. Choose the typography, transparency and position."
       },
       {
         "id": 15,
-        "img": "image/Rotate.png",
+        "img": "image/Rotate.svg",
         "link": "Rotate_PDF",
         "title": "Rotate PDF",
         "description": "Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!"
       },
       {
         "id": 16,
-        "img": "image/Unlock.png",
+        "img": "image/Unlock.svg",
         "link": "Unlock_PDF",
         "title": "Unlock PDF",
         "description": "Remove PDF password security, giving you the freedom to use your PDFs as you want."
       },
       {
         "id": 17,
-        "img": "image/Protect.png",
+        "img": "image/Protect.svg",
         "link": "Protect_PDF",
         "title": "Protect PDF",
         "description": "Protect PDF files with a password. Encrypt PDF documents to prevent unauthorized access."
       },
       {
         "id": 18,
-        "img": "image/Organize.png",
+        "img": "image/Organize.svg",
         "link": "Organize_PDF",
         "title": "Organize PDF",
         "description": "Sort pages of your PDF file however you like. Delete PDF pages or add PDF pages to your document at your convenience."
@@ -140,14 +140,14 @@
       },
       {
         "id": 20,
-        "img": "image/Repair.png",
+        "img": "image/Repair.svg",
         "link": "Repair_PDF",
         "title": "Repair PDF",
         "description": "Repair a damaged PDF and recover data from corrupt PDF. Fix PDF files with our Repair tool."
       },
       {
         "id": 21,
-        "img": "image/PageNumber.png",
+        "img": "image/PageNumber.svg",
         "link": "Add_page_numbers",
         "title": "Page numbers",
         "description": "Add page numbers into PDFs with ease. Choose your positions, dimensions, typography."
@@ -508,14 +508,14 @@
       "organize": [
         {
           "id": 1,
-          "img": "image/Merge.png",
+          "img": "image/Merger.svg",
           "heading": "Merge PDF",
           "desc": "To merge two or more PDFs, select the documents from your device or from your Google Drive or Dropbox account. You can arrange the files however you like before merging them.",
           "subDesc": "You can also combine several password-protected documents into one. Upload the selected files, process them, and then download your merged file. Check 'Merge PDF' limits for each account type."
         },
         {
           "id": 2,
-          "img": "image/Split.png",
+          "img": "image/Split.svg",
           "heading": "Split PDF",
           "desc": "To split a PDF into different files, select the document from your device or from your cloud storage accounts such as Google Drive or Dropbox. You can also divide password-protected documents.",
           "subDesc": "Upload the file to split. You can either split your file by ranges or extract all pages. You can also merge all ranges in one PDF file. Hit the Split PDF button and you'll be good to go. Check 'Split PDF' limits for each account type."
@@ -535,7 +535,7 @@
         {
           "id": 5,
           "heading": "Organize PDF",
-          "img": "image/Organize.png",
+          "img": "image/Organize.svg",
           "desc": "To organize the pages from a PDF file, upload your file from your device or download it straight from the cloud through your Google Drive or Dropbox account. You can remove pages from password protected documents as well.",
           "subDesc": "You will see a thumbnail of every page of your file. When uploading more than one file, the thumbnails of each file will be framed in a different color. Then you can remove or drag and drop the thumbnails to rearrange PDF pages however you like. Hit the 'Organize PDF' button to download your new PDF. Check 'Organize PDF' limits for each account type."
         }
@@ -544,7 +544,7 @@
       "optimize": [
         {
           "id": 1,
-          "img": "image/Compress.png",
+          "img": "image/Compress.svg",
           "heading": "Compress PDF",
           "desc": "To compress PDF files, select the documents from your device or from your Google Drive or Dropbox account. Upload the file or files to optimize. Choose between extreme, high or regular compression level and then hit the Compress PDF button. The higher compression, the lower file size and quality.",
           "subDesc": "Click 'Compress PDF' button to download your reduced PDF or save it back to the cloud. Check 'Compress PDF' limits for each account type."
@@ -554,7 +554,7 @@
       "edit": [
         {
           "id": 1,
-          "img": "image/Edit.png",
+          "img": "image/Edit.svg",
           "heading": "Edit PDF",
           "desc": "Once inside the PDF viewer, use the top toolbar to navigate through your document. Click on the wheel icon to decide your page setup. You can view a single page or multiple pages at once. To move in and around individual pages, select the hand icon.Use the magnifying glasses to zoom in and out on specific sections of the document.",
           "subDesc": "To add elements or text to a page, scroll down to the page which you want to edit. Choose from the Text, Image or Shape icons available in the Edit PDF toolbar at the top of the viewer. Use your mouse to resize or move any element as you wish on the same page where it was created.",
@@ -562,21 +562,21 @@
         },
         {
           "id": 2,
-          "img": "image/PageNumber.png",
+          "img": "image/PageNumber.svg",
           "heading": "Add page numbers",
           "desc": "To number PDF pages, upload your files from your device or from your Google Drive or Dropbox account. Choose if you want to number all pages or just facing pages. Choose the page range to number. You can also edit the position of your number, and its format (typo, size color, opacity…) in the toolbar.",
           "subDesc": "Then hit 'Add Page Numbers' button and download or save back to the cloud your numbered PDF. Check 'Page Numbers' limits for each account type."
         },
         {
           "id": 3,
-          "img": "image/Watermark.png",
+          "img": "image/Watermark.svg",
           "heading": "Add watermark",
           "desc": "To watermark PDF files, upload your PDF from your device or from your Google Drive or Dropbox account. You can combine text and image in your watermark, which will be stamped in the same position in all the pages of your file. You can custom format, orientation and opacity.",
           "subDesc": "Then hit 'Add watermark' button and download or save back to the cloud your watermarked PDF. Check 'Watermark' limits for each account type."
         },
         {
           "id": 4,
-          "img": "image/Repair.png",
+          "img": "image/Repair.svg",
           "heading": "Repair PDF",
           "desc": "To repair a PDF, upload your damaged or corrupt PDF file from your device or from your Google Drive or Dropbox account. Our tool will try to analyze, repair or recover content from your corrupt file.",
           "subDesc": "Then hit 'Repair' button and download or save back to the cloud your repaired PDF. Check 'Repair PDF' limits for each account type."
@@ -586,7 +586,7 @@
       "CtoP": [
         {
           "id": 1,
-          "img": "image/JtoP.png",
+          "img": "image/JtoP.svg",
           "heading": "JPG to PDF",
           "desc": "To convert one or multiple files JPG to PDF, upload your images form your device or straight from your Google Drive or Dropbox accounts.",
           "subDesc": "Choose if you want your output PDF into portrait or landscape mode and if you want it with margin or without. You can also merge all images in a single PDF file. Then, download your PDF or save it back to the cloud. Check 'JPG to PDF' limits for each account type."
@@ -614,28 +614,28 @@
       "CFromP": [
         {
           "id": 1,
-          "img": "image/PtoJ.png",
+          "img": "image/PtoJ.svg",
           "heading": "PDF to JPG",
           "desc": "To convert a PDF to a JPG image, select the file from your device or from your Google Drive or Dropbox account.",
           "subDesc": "You can transform your PDF into a JPG or extract all the pictures in a .zip file. Then, hit the 'Convert to JPG' button to transform your PDF to JPG. Check the 'PDF to JPG' limits for each account type."
         },
         {
           "id": 2,
-          "img": "image/PtoW.png",
+          "img": "image/PtoW.svg",
           "heading": "PDF to WORD",
           "desc": "To convert one or more documents from PDF to Word, select the documents from your device or from your cloud storage accounts such as Google Drive or Dropbox account.",
           "subDesc": "Click on 'Convert to Word' to transform your PDF into an editable document. Then, download your .docx file or save it back to the cloud. Check 'PDF to Word' limits for each account type."
         },
         {
           "id": 3,
-          "img": "image/PtoP.png",
+          "img": "image/PtoP.svg",
           "heading": "PDF to POWERPOINT",
           "desc": "To convert PDF files to Power Point, upload the documents from your device or straight from the cloud through Google Drive or Dropbox.",
           "subDesc": "Click on 'Convert to Power Point' to transform your PDF into an editable document. All the pictures, text and graphics from your PDF will be converted to a PDF file. When converting a document of multiple pages, each page will be transformed into a .pptx slide. Then, download your .pptx file or save it back to the cloud. Check 'PDF to Power Point' limits for each account type."
         },
         {
           "id": 4,
-          "img": "image/PtoE.png",
+          "img": "image/PtoE.svg",
           "heading": "PDF to EXCEL",
           "desc": "To convert one or multiple files from PDF to Excel, upload the documents from your device or straight from your Google Drive or Dropbox account.",
           "subDesc": "Click on 'Convert to Excel' to transform your PDF into an editable document. All the tables and graphics from your PDF will be converted to a .xlsx document. Then, download your Excel file or save it back to the cloud. Check 'PDF to Excel' limits for each account type."
@@ -645,14 +645,14 @@
       "security": [
         {
           "id": 1,
-          "img": "image/Unlock.png",
+          "img": "image/Unlock.svg",
           "heading": "Unlock PDF",
           "desc": "To remove the password from a PDF file, upload the document from your device or straight from your Google Drive or Dropbox account.",
           "subDesc": "Then click the 'Unlock PDF' button. Our tool will unlock your document by removing its password. Check the 'Unlock PDF' limits for each account type."
         },
         {
           "id": 2,
-          "img": "image/Protect.png",
+          "img": "image/Protect.svg",
           "heading": "Protect PDF",
           "desc": "To secure a PDF with a password, upload the document from your device or straight from your Google Drive or Dropbox account.",
           "subDesc": "Choose a user password to encrypt and secure your PDF. Then, hit the 'Protect PDF' button to add the password to your file. Check the 'Protect PDF' limits for each account type."
@@ -665,7 +665,7 @@
         },
         {
           "id": 4,
-          "img": "image/Sign.png",
+          "img": "image/Sign.svg",
           "heading": "Sign PDF",
           "title": "To sign your own document",
           "desc": "Upload the document to our Sign PDF tool. Sign. Choose your preferred signature adoption from the sidebar menu to customize your signature. You can either draw your signature, upload an existing one or sign with text. You can add other fields to your signature such as date and initials. Download. Click the ‘Sign PDF’ button to download your signed PDF or save it back to the Cloud.",

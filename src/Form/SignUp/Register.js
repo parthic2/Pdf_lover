@@ -55,7 +55,7 @@ const Register = ({ setAuth }) => {
         <ContentStyle>
           <HeadingStyle component={motion.div} {...fadeInUp}>
             <RouterLink to="/">
-              <img src={Logo} alt="logo" />
+              <img src={Logo} alt="logo" style={{ width: "37%" }} />
             </RouterLink>
 
             <Box height={15} />
