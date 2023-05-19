@@ -20,7 +20,7 @@ const Main = () => {
   }, [dispatch]);
 
   return (
-    <div className={style.main}>
+    <>
       <Container>
         <Grid
           container
@@ -58,7 +58,7 @@ const Main = () => {
             })}
         </Grid>
       </Container>
-    </div>
+    </>
   );
 };
 

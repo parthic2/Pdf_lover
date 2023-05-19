@@ -7,6 +7,10 @@
     text-decoration: none;
 }
 
+body {
+    font-family: "Nunito Sans";
+}
+
 .main-menu .nav li a.nav__item--active,
 .main-menu .nav li span.nav__item--active {
     color: #FE4F62;

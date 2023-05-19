@@ -36,15 +36,15 @@ const Footer = () => {
         <div className={style["footer-main"]}>
           <Container>
             {/* Footer  */}
-            <Container>
-              <Grid container spacing={3}>
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                  <Typography
-                    variant="h6"
-                    className={style.heading}
-                    sx={{ margin: "15px" }}>
-                    {footerData.pdfLover}
-                  </Typography>{" "}
+            <Grid container spacing={3}>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <Typography
+                  variant="h6"
+                  className={style.heading}
+                  sx={{ margin: "15px" }}>
+                  {footerData.pdfLover}
+                </Typography>{" "}
+                <ul>
                   {pdfLoverLink &&
                     pdfLoverLink.map((item) => {
                       const { id, title, link } = item;
@@ -61,15 +61,17 @@ const Footer = () => {
                         </Link>
                       );
                     })}
-                </Grid>
+                </ul>
+              </Grid>
 
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                  <Typography
-                    variant="h6"
-                    className={style.heading}
-                    sx={{ margin: "15px" }}>
-                    {footerData.product}
-                  </Typography>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <Typography
+                  variant="h6"
+                  className={style.heading}
+                  sx={{ margin: "15px" }}>
+                  {footerData.product}
+                </Typography>
+                <ul>
                   {productLink &&
                     productLink.map((item) => {
                       const { id, title, link } = item;
@@ -86,15 +88,17 @@ const Footer = () => {
                         </Link>
                       );
                     })}
-                </Grid>
+                </ul>
+              </Grid>
 
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                  <Typography
-                    variant="h6"
-                    className={style.heading}
-                    sx={{ margin: "15px" }}>
-                    {footerData.solution}
-                  </Typography>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <Typography
+                  variant="h6"
+                  className={style.heading}
+                  sx={{ margin: "15px" }}>
+                  {footerData.solution}
+                </Typography>
+                <ul>
                   {solutionLink &&
                     solutionLink.map((item) => {
                       const { id, title, link } = item;
@@ -111,15 +115,17 @@ const Footer = () => {
                         </Link>
                       );
                     })}
-                </Grid>
+                </ul>
+              </Grid>
 
-                <Grid item xs={12} sm={6} md={4} lg={3}>
-                  <Typography
-                    variant="h6"
-                    className={style.heading}
-                    sx={{ margin: "15px" }}>
-                    {footerData.company}
-                  </Typography>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <Typography
+                  variant="h6"
+                  className={style.heading}
+                  sx={{ margin: "15px" }}>
+                  {footerData.company}
+                </Typography>
+                <ul>
                   {companyLink &&
                     companyLink.map((item) => {
                       const { id, title, link } = item;
@@ -136,9 +142,9 @@ const Footer = () => {
                         </Link>
                       );
                     })}
-                </Grid>
+                </ul>
               </Grid>
-            </Container>
+            </Grid>
 
             {/* Download Link  */}
             <ul className={style.app__store}>

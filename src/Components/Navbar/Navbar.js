@@ -18,7 +18,7 @@ const Navbar = () => {
             <div className="brand">
               <div className="brand__logo">
                 <Link to="/" title="PDFLover">
-                  <img src={Logo} alt="PDFLover" />
+                  <img src={Logo} alt="PDFLover" loading="lazy" />
                 </Link>
               </div>
             </div>

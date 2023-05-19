@@ -1,19 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 
 import AddWaterMark from "./Pages/AllPDFList/AddWaterMark";
-import { Suspense } from "react";
 
 const RootLayout = lazy(() => import("./Components/Layout/RootLayout"));
 const Index = lazy(() => import("./Components/Main/Index"));
 const DownloadMerge = lazy(() => import("./DownloadPages/DownloadMerge"));
-const Login = lazy(() => import("./Form/Login/Login"));
-const ResetPassword = lazy(() => import("./Form/ResetPassword/ResetPassword"));
-const Register = lazy(() => import("./Form/SignUp/Register"));
-const FAQ = lazy(() => import("./DetailsPages/Help/FAQ/FAQ"));
-const Tools = lazy(() => import("./DetailsPages/Help/Tools/Tools"));
-const LegalPrivacy = lazy(() => import("./DetailsPages/Help/Legal&Privacy/LegalPrivacy"));
-const Pricing = lazy(() => import("./DetailsPages/Pricing/Pricing"));
 const MergePDF = lazy(() => import("./Pages/MergePDF/MergePDF"));
 const SplitPDF = lazy(() => import("./Pages/SplitPDF/SplitPDF"));
 const CompressPDF = lazy(() => import("./Pages/CompressPDF/CompressPDF"));
@@ -38,18 +30,6 @@ const PowerPointToPDF = lazy(() => import("./Pages/ConvertPDFList/PowerPointToPD
 const WORDToPDF = lazy(() => import("./Pages/ConvertPDFList/WORDToPDF"));
 
 const Router = createBrowserRouter([
-  {
-    path: "/Register",
-    element: <Register />,
-  },
-  {
-    path: "/Login",
-    element: <Login />,
-  },
-  {
-    path: "/ForgotPassword",
-    element: <ResetPassword />,
-  },
   {
     path: "/",
     element: <RootLayout />,
@@ -150,16 +130,6 @@ const Router = createBrowserRouter([
   {
     path: "/Download_Merge_PDF",
     element: <DownloadMerge />,
-  },
-  {
-    path: "/",
-    element: <RootLayout />,
-    children: [
-      { path: "/FAQ", element: <FAQ /> },
-      { path: "/Tools", element: <Tools /> },
-      { path: "/Legal", element: <LegalPrivacy /> },
-      { path: "/Pricing", element: <Pricing /> }
-    ],
   }
 ]);
 
