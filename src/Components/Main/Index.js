@@ -1,7 +1,7 @@
 import React from "react";
 import PreSection from "../PreSection/PreSection";
-import SolutionSection from "../SolutionSection/SolutionSection";
-import TrustSection from "../TrustSection/TrustSection";
+// import SolutionSection from "../SolutionSection/SolutionSection";
+// import TrustSection from "../TrustSection/TrustSection";
 import Banner from "./Banner/Banner";
 import Main from "./Main";
 import { useEffect } from "react";
