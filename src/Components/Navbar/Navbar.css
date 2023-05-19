@@ -747,7 +747,7 @@
 
 .main-menu .nav li.dropdown .dropdown-menu {
     display: none;
-    margin: 0;
+    margin: 0px 45px 0 45px;
     border-radius: 0
 }
 
@@ -838,7 +838,7 @@
 
 .main-menu .nav li ul.menu-full {
     font-size: 14px;
-    width: 100%;
+    /* width: 100%; */
     height: auto;
     left: 0;
     padding: 12px;
