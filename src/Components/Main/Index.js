@@ -17,8 +17,8 @@ const Index = () => {
     <div>
       <Banner />
       <Main />
-      <SolutionSection />
-      <TrustSection />
+      {/* <SolutionSection />
+      <TrustSection /> */}
       <PreSection />
     </div>
   );

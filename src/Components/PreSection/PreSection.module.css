@@ -1,27 +1,14 @@
-/* <!-- HTML !-->
-<button class="button-71" role="button">Button 71</button> */
-
 /* CSS */
 .button-71 {
-  background-color: #0078d0;
+  background-color: white;
   border: 0;
-  border-radius: 15px;
-  color: #fff;
+  border-radius: 5px;
+  color: #FE4F62;
   cursor: pointer;
-  display: inline-block;
-  font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
   font-size: 18px;
   font-weight: 600;
-  outline: 0;
-  padding: 16px 21px;
-  position: relative;
+  padding: 16px 48px;
   text-align: center;
-  text-decoration: none;
-  transition: all .3s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -38,12 +25,12 @@
   width: 92%;
 }
 
-.button-71:hover {
+/* .button-71:hover {
   box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
   transform: scale(1.05);
-}
+} */
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .button-71 {
     padding: 16px 48px;
     margin-top: 10px;
