@@ -70,7 +70,7 @@ const Navbar = () => {
                         <i className="fa-solid fa-wrench" />
                       </span>
 
-                      <ul className="dropdown-menu mega menu-full" style={{ height: "35em" }}>
+                      <ul className="dropdown-menu mega menu-full" style={{ overflowX: "auto" }}>
                         <AllToolsList />
                       </ul>
                     </li>
@@ -78,6 +78,7 @@ const Navbar = () => {
                 </div>
               </div>
 
+              {/* responsive nav */}
               <div className="header__nav responsive__nav">
                 <div className="main-menu" id="menuBig">
                   <ul className="nav">
@@ -88,7 +89,7 @@ const Navbar = () => {
                         <i className="fa-solid fa-bars-staggered" />
                       </span>
 
-                      <ul className="dropdown-menu mega menu-full" style={{ height: "35em" }}>
+                      <ul className="dropdown-menu mega menu-full" style={{ overflowX: "auto" }}>
                         <AllToolsList />
                       </ul>
                     </li>

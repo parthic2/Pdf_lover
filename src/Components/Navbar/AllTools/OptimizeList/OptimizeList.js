@@ -50,7 +50,7 @@ const OptimizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/OCR_PDF">
-              <img src="" alt="OCR PDF" />
+              <img src={Compress} alt="OCR PDF" />
               OCR PDF
             </NavLink>
           </li>

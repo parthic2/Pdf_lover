@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Merger from "../../../../Assets/image/Merger.svg";
 // import Split from "../../../../Assets/image/Split.svg";
 import Organize from "../../../../Assets/image/Organize.svg";
+import Scan from "../../../../Assets/image/Scan.svg";
 
 const OrganizeList = () => {
   return (
@@ -51,7 +52,7 @@ const OrganizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Remove_pages">
-              <img src="" alt="Remove pages" />
+              <img src={Merger} alt="Remove pages" />
               Remove pages
             </NavLink>
           </li>
@@ -67,7 +68,7 @@ const OrganizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Split_PDF">
-              <img src="" alt="Extract pages" />
+              <img src={Merger} alt="Extract pages" />
               Extract pages
             </NavLink>
           </li>
@@ -99,7 +100,7 @@ const OrganizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="">
-              <img src="" alt="Scan to PDF" />
+              <img src={Scan} alt="Scan to PDF" />
               Scan to PDF
             </NavLink>
           </li>

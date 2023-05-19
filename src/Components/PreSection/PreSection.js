@@ -10,10 +10,9 @@ import style from "./PreSection.module.css";
 const PreSection = () => {
   const CustomContainer = styled(Box)(({ theme }) => ({
     backgroundColor: "#FE4F62",
-    padding: "25px",
+    padding: "50px",
     display: "flex",
     flexDirection: "column",
-    paddingLeft: "10px",
     alignItems: "center",
     [theme.breakpoints.down("md")]: {
       height: "auto",
@@ -36,10 +35,10 @@ const PreSection = () => {
       {premiumData && (
         <>
           <Box sx={{ textAlign: "center" }}>
-            <Typography
-              sx={{ fontSize: "35px", color: "white", fontWeight: "700" }}>
+            <h1
+              style={{ fontSize: "35px", color: "white", fontWeight: "700" }}>
               {premiumData.heading}
-            </Typography>
+            </h1>
 
             <Typography
               sx={{

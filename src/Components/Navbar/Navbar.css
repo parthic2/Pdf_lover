@@ -2,9 +2,7 @@
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
-    vertical-align: baseline;
     list-style: none;
     text-decoration: none;
 }
@@ -655,7 +653,7 @@
 
 .main-menu {
     border-top: 1px solid #e5e5e9;
-    font-size: 14px
+    /* font-size: 14px */
 }
 
 @media (min-width: 840px) {
@@ -747,7 +745,6 @@
 
 .main-menu .nav li.dropdown .dropdown-menu {
     display: none;
-    margin: 0px 45px 0 45px;
     border-radius: 0
 }
 
@@ -765,7 +762,6 @@
     box-shadow: 0 3px 6px 0 rgba(50, 50, 50, .3);
     text-align: left;
     max-height: 85vh;
-    overflow-x: auto
 }
 
 .main-menu .nav li ul li {
@@ -837,42 +833,17 @@
 }
 
 .main-menu .nav li ul.menu-full {
-    font-size: 14px;
-    /* width: 100%; */
     height: auto;
+    width: 90%;
+    position: absolute;
     left: 0;
+    right: 0;
+    margin: auto;
     padding: 12px;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-pack: center;
     justify-content: center;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     border-top: 5px solid #FE4F62;
-}
-
-.main-menu .nav li ul.menu-full--convert,
-.main-menu .nav li ul.menu-full--double {
-    width: 600px;
-    left: auto;
-    padding: 12px 24px 16px
-}
-
-.main-menu .nav li ul.menu-full--convert>li,
-.main-menu .nav li ul.menu-full--double>li {
-    -ms-flex: 1 0 10% !important;
-    flex: 1 0 10% !important
-}
-
-.main-menu .nav li ul.menu-full--single {
-    width: 300px;
-    left: auto;
-    padding: 12px 24px 16px
-}
-
-.main-menu .nav li ul.menu-full--single>li {
-    -ms-flex: 1 0 10% !important;
-    flex: 1 0 10% !important
 }
 
 .main-menu .nav li ul.menu-full div {
@@ -880,7 +851,7 @@
     font-weight: 600;
     font-size: 14px;
     padding: 12px;
-    text-transform: uppercase
+    /* text-transform: uppercase */
 }
 
 .main-menu .nav li ul.menu-full>li {
@@ -919,10 +890,6 @@
 .main-menu .nav li ul.menu-full ul li {
     font-weight: 400
 }
-
-/* .main-menu .nav li ul.menu-full ul li a {
-    padding: 12px
-  } */
 
 .main-menu .nav li ul.menu-full ul li a img {
     margin-right: 12px;

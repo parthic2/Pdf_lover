@@ -1,822 +1,828 @@
 {
-  "homepage": {
-    "main": {
-      "id": 1,
-      "title": "Every tool you need to work with PDFs in one place",
-      "subtitle": "One location for all the tools you need to work with PDFs. You have access to all the tools that are required to use PDFs. Each is totally free and simple to use. You may combine, divide, compress, convert, rotate, unlock, and watermark PDF files with only a few clicks."
-    },
+	"homepage": {
+		"main": {
+			"id": 1,
+			"title": "Every tool you need to work with PDFs in one place",
+			"subtitle": "One location for all the tools you need to work with PDFs. You have access to all the tools that are required to use PDFs. Each is totally free and simple to use. You may combine, divide, compress, convert, rotate, unlock, and watermark PDF files with only a few clicks."
+		},
 
-    "details": [
-      {
-        "id": 1,
-        "img": "image/Merger.svg",
-        "link": "Merge_PDF",
-        "title": "Merge PDF",
-        "description": "Combine PDFs in the order you want with the easiest PDF merger available."
-      },
-      {
-        "id": 2,
-        "img": "image/Split.svg",
-        "link": "Split_PDF",
-        "title": "Split PDF",
-        "description": "Separate one page or a whole set for easy conversion into independent PDF files."
-      },
-      {
-        "id": 3,
-        "img": "image/Compress.svg",
-        "link": "Compress_PDF",
-        "title": "Compress PDF",
-        "description": "Reduce file size while optimizing for maximal PDF quality."
-      },
-      {
-        "id": 4,
-        "img": "image/PtoW.svg",
-        "link": "pdf_to_word",
-        "title": "PDF to Word",
-        "description": "Easily convert your PDF files into easy to edit DOC and DOCX documents. The converted WORD document is almost 100% accurate."
-      },
-      {
-        "id": 5,
-        "img": "image/PtoP.svg",
-        "link": "pdf_to_powerpoint",
-        "title": "PDF to Powerpoint",
-        "description": "Turn your PDF files into easy to edit PPT and PPTX slideshows."
-      },
-      {
-        "id": 6,
-        "img": "image/PtoE.svg",
-        "link": "pdf_to_excel",
-        "title": "PDF to Excel",
-        "description": "Pull data straight from PDFs into Excel spreadsheets in a few short seconds."
-      },
-      {
-        "id": 7,
-        "link": "word_to_pdf",
-        "title": "Word to PDF",
-        "description": "Make DOC and DOCX files easy to read by converting them to PDF."
-      },
-      {
-        "id": 8,
-        "link": "powerpoint_to_pdf",
-        "title": "Powerpoint to PDF",
-        "description": "Make PPT and PPTX slideshows easy to view by converting them to PDF."
-      },
-      {
-        "id": 9,
-        "link": "excel_to_pdf",
-        "title": "Excel to PDF",
-        "description": "Make EXCEL spreadsheets easy to read by converting them to PDF."
-      },
-      {
-        "id": 10,
-        "img": "image/Edit.svg",
-        "link": "Edit_PDF",
-        "title": "Edit PDF",
-        "description": "Add text, images, shapes or freehand annotations to a PDF document. Edit the size, font, and color of the added content."
-      },
-      {
-        "id": 11,
-        "img": "image/PtoJ.svg",
-        "link": "pdf_to_jpg",
-        "title": "PDF to JPG",
-        "description": "Convert each PDF page into a JPG or extract all images contained in a PDF."
-      },
-      {
-        "id": 12,
-        "img": "image/JtoP.svg",
-        "link": "jpg_to_pdf",
-        "title": "JPG to PDF",
-        "description": "Convert JPG images to PDF in seconds. Easily adjust orientation and margins."
-      },
-      {
-        "id": 13,
-        "img": "image/Sign.svg",
-        "link": "Sign_PDF",
-        "title": "Sign PDF",
-        "description": "Sign yourself or request electronic signatures from others."
-      },
-      {
-        "id": 14,
-        "img": "image/Watermark.svg",
-        "link": "Add_watermark",
-        "title": "Watermark",
-        "description": "Stamp an image or text over your PDF in seconds. Choose the typography, transparency and position."
-      },
-      {
-        "id": 15,
-        "img": "image/Rotate.svg",
-        "link": "Rotate_PDF",
-        "title": "Rotate PDF",
-        "description": "Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!"
-      },
-      {
-        "id": 16,
-        "img": "image/Unlock.svg",
-        "link": "Unlock_PDF",
-        "title": "Unlock PDF",
-        "description": "Remove PDF password security, giving you the freedom to use your PDFs as you want."
-      },
-      {
-        "id": 17,
-        "img": "image/Protect.svg",
-        "link": "Protect_PDF",
-        "title": "Protect PDF",
-        "description": "Protect PDF files with a password. Encrypt PDF documents to prevent unauthorized access."
-      },
-      {
-        "id": 18,
-        "img": "image/Organize.svg",
-        "link": "Organize_PDF",
-        "title": "Organize PDF",
-        "description": "Sort pages of your PDF file however you like. Delete PDF pages or add PDF pages to your document at your convenience."
-      },
-      {
-        "id": 19,
-        "link": "pdf_to_pdf/a",
-        "title": "PDF to PDF/A",
-        "description": "Transform your PDF to PDF/A, the ISO-standardized version of PDF for long-term archiving. Your PDF will preserve formatting when accessed in the future."
-      },
-      {
-        "id": 20,
-        "img": "image/Repair.svg",
-        "link": "Repair_PDF",
-        "title": "Repair PDF",
-        "description": "Repair a damaged PDF and recover data from corrupt PDF. Fix PDF files with our Repair tool."
-      },
-      {
-        "id": 21,
-        "img": "image/PageNumber.svg",
-        "link": "Add_page_numbers",
-        "title": "Page numbers",
-        "description": "Add page numbers into PDFs with ease. Choose your positions, dimensions, typography."
-      },
-      {
-        "id": 22,
-        "link": "Scan_PDF",
-        "title": "Scan to PDF",
-        "description": "Capture document scans from your mobile device and send them instantly to your browser."
-      },
-      {
-        "id": 23,
-        "link": "OCR_PDF",
-        "title": "OCR PDF",
-        "description": "Easily convert scanned PDF into searchable and selectable documents."
-      }
-    ],
+		"details": [
+			{
+				"id": 1,
+				"img": "image/Merger.svg",
+				"link": "Merge_PDF",
+				"title": "Merge PDF",
+				"description": "Combine PDFs in the order you want with the easiest PDF merger available."
+			},
+			{
+				"id": 2,
+				"img": "image/Merger.svg",
+				"link": "Split_PDF",
+				"title": "Split PDF",
+				"description": "Separate one page or a whole set for easy conversion into independent PDF files."
+			},
+			{
+				"id": 3,
+				"img": "image/Compress.svg",
+				"link": "Compress_PDF",
+				"title": "Compress PDF",
+				"description": "Reduce file size while optimizing for maximal PDF quality."
+			},
+			{
+				"id": 4,
+				"img": "image/PtoW.svg",
+				"link": "pdf_to_word",
+				"title": "PDF to Word",
+				"description": "Easily convert your PDF files into easy to edit DOC and DOCX documents. The converted WORD document is almost 100% accurate."
+			},
+			{
+				"id": 5,
+				"img": "image/PtoP.svg",
+				"link": "pdf_to_powerpoint",
+				"title": "PDF to Powerpoint",
+				"description": "Turn your PDF files into easy to edit PPT and PPTX slideshows."
+			},
+			{
+				"id": 6,
+				"img": "image/PtoE.svg",
+				"link": "pdf_to_excel",
+				"title": "PDF to Excel",
+				"description": "Pull data straight from PDFs into Excel spreadsheets in a few short seconds."
+			},
+			{
+				"id": 7,
+				"img": "image/PtoP.svg",
+				"link": "word_to_pdf",
+				"title": "Word to PDF",
+				"description": "Make DOC and DOCX files easy to read by converting them to PDF."
+			},
+			{
+				"id": 8,
+				"img": "image/PtoE.svg",
+				"link": "powerpoint_to_pdf",
+				"title": "Powerpoint to PDF",
+				"description": "Make PPT and PPTX slideshows easy to view by converting them to PDF."
+			},
+			{
+				"id": 9,
+				"img": "image/PtoJ.svg",
+				"link": "excel_to_pdf",
+				"title": "Excel to PDF",
+				"description": "Make EXCEL spreadsheets easy to read by converting them to PDF."
+			},
+			{
+				"id": 10,
+				"img": "image/Edit.svg",
+				"link": "Edit_PDF",
+				"title": "Edit PDF",
+				"description": "Add text, images, shapes or freehand annotations to a PDF document. Edit the size, font, and color of the added content."
+			},
+			{
+				"id": 11,
+				"img": "image/PtoJ.svg",
+				"link": "pdf_to_jpg",
+				"title": "PDF to JPG",
+				"description": "Convert each PDF page into a JPG or extract all images contained in a PDF."
+			},
+			{
+				"id": 12,
+				"img": "image/JtoP.svg",
+				"link": "jpg_to_pdf",
+				"title": "JPG to PDF",
+				"description": "Convert JPG images to PDF in seconds. Easily adjust orientation and margins."
+			},
+			{
+				"id": 13,
+				"img": "image/Sign.svg",
+				"link": "Sign_PDF",
+				"title": "Sign PDF",
+				"description": "Sign yourself or request electronic signatures from others."
+			},
+			{
+				"id": 14,
+				"img": "image/Watermark.svg",
+				"link": "Add_watermark",
+				"title": "Watermark",
+				"description": "Stamp an image or text over your PDF in seconds. Choose the typography, transparency and position."
+			},
+			{
+				"id": 15,
+				"img": "image/Rotate.svg",
+				"link": "Rotate_PDF",
+				"title": "Rotate PDF",
+				"description": "Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!"
+			},
+			{
+				"id": 16,
+				"img": "image/Unlock.svg",
+				"link": "Unlock_PDF",
+				"title": "Unlock PDF",
+				"description": "Remove PDF password security, giving you the freedom to use your PDFs as you want."
+			},
+			{
+				"id": 17,
+				"img": "image/Protect.svg",
+				"link": "Protect_PDF",
+				"title": "Protect PDF",
+				"description": "Protect PDF files with a password. Encrypt PDF documents to prevent unauthorized access."
+			},
+			{
+				"id": 18,
+				"img": "image/Organize.svg",
+				"link": "Organize_PDF",
+				"title": "Organize PDF",
+				"description": "Sort pages of your PDF file however you like. Delete PDF pages or add PDF pages to your document at your convenience."
+			},
+			{
+				"id": 19,
+				"img": "image/Unlock.svg",
+				"link": "pdf_to_pdf/a",
+				"title": "PDF to PDF/A",
+				"description": "Transform your PDF to PDF/A, the ISO-standardized version of PDF for long-term archiving. Your PDF will preserve formatting when accessed in the future."
+			},
+			{
+				"id": 20,
+				"img": "image/Repair.svg",
+				"link": "Repair_PDF",
+				"title": "Repair PDF",
+				"description": "Repair a damaged PDF and recover data from corrupt PDF. Fix PDF files with our Repair tool."
+			},
+			{
+				"id": 21,
+				"img": "image/PageNumber.svg",
+				"link": "Add_page_numbers",
+				"title": "Page numbers",
+				"description": "Add page numbers into PDFs with ease. Choose your positions, dimensions, typography."
+			},
+			{
+				"id": 22,
+				"img": "image/Scan.svg",
+				"link": "Scan_PDF",
+				"title": "Scan to PDF",
+				"description": "Capture document scans from your mobile device and send them instantly to your browser."
+			},
+			{
+				"id": 23,
+				"img": "image/Unlock.svg",
+				"link": "OCR_PDF",
+				"title": "OCR PDF",
+				"description": "Easily convert scanned PDF into searchable and selectable documents."
+			}
+		],
 
-    "slider": [
-      {
-        "id": 1,
-        "heading": "PDFLover Desktop",
-        "description": "Download iLovePDF Desktop App to work with your favorite PDF tools on your Mac or Windows PC. Get a lightweight PDF app that helps you process heavy PDF tasks offline in seconds.",
-        "img": "image/Desktop.svg"
-      },
-      {
-        "id": 2,
-        "heading": " PDFLover Mobile",
-        "description": "Get the PDFLover Mobile App to manage documents remotely or on the move. Turn your Android or iPhone device into a PDF Editor & Scanner to annotate, sign, and share documents with ease.",
-        "img": "image/Mobile.svg"
-      },
-      {
-        "id": 3,
-        "heading": "iLoveIMG",
-        "description": "iLoveIMG is the web app that helps you modify images in bulk for free. Crop, resize, compress, convert, and more. All the tools you need to enhance your images in just a few clicks.",
-        "img": "image/Image.svg"
-      }
-    ],
+		"slider": [
+			{
+				"id": 1,
+				"heading": "PDFLover Desktop",
+				"description": "Download iLovePDF Desktop App to work with your favorite PDF tools on your Mac or Windows PC. Get a lightweight PDF app that helps you process heavy PDF tasks offline in seconds.",
+				"img": "image/Desktop.svg"
+			},
+			{
+				"id": 2,
+				"heading": " PDFLover Mobile",
+				"description": "Get the PDFLover Mobile App to manage documents remotely or on the move. Turn your Android or iPhone device into a PDF Editor & Scanner to annotate, sign, and share documents with ease.",
+				"img": "image/Mobile.svg"
+			},
+			{
+				"id": 3,
+				"heading": "iLoveIMG",
+				"description": "iLoveIMG is the web app that helps you modify images in bulk for free. Crop, resize, compress, convert, and more. All the tools you need to enhance your images in just a few clicks.",
+				"img": "image/Image.svg"
+			}
+		],
 
-    "trusted": {
-      "id": 1,
-      "heading": "The PDF software trusted by millions of users",
-      "subHeading": "PDFLover is your number 1 web app for editing PDF with ease. Enjoy all the tools you need to work efficiently with your digital documents while keeping your data safe and secure."
-    },
+		"trusted": {
+			"id": 1,
+			"heading": "The PDF software trusted by millions of users",
+			"subHeading": "PDFLover is your number 1 web app for editing PDF with ease. Enjoy all the tools you need to work efficiently with your digital documents while keeping your data safe and secure."
+		},
 
-    "premium": {
-      "id": 1,
-      "heading": "Premium Offers More",
-      "subHeading": "With batch processing of data, you may finish tasks more quickly. ",
-      "subHeading1": "You can also use OCR to convert scanned documents and e-sign contracts for your organization.",
-      "button": "Get Premium"
-    },
+		"premium": {
+			"id": 1,
+			"heading": "Premium Offers More",
+			"subHeading": "With batch processing of data, you may finish tasks more quickly. ",
+			"subHeading1": "You can also use OCR to convert scanned documents and e-sign contracts for your organization.",
+			"button": "Get Premium"
+		},
 
-    "footer": {
-      "googleDrive": "image/GooglePlay.png",
-      "appStore": "image/AppStore.png",
-      "copyRightText": "© LoverPDF 2023 ® - Your PDF Editor",
-      "twitter": "image/twitter.svg",
-      "facebook": "image/facebook.svg",
-      "linkedin": "image/linkedin.svg",
-      "instagram": "image/instagram.svg",
-      "pdfLover": "PDFLover",
-      "product": "Product",
-      "solution": "Solution",
-      "company": "Company",
-      "pdfLoverLink": [
-        { "id": 1, "title": "Home", "link": "/" },
-        { "id": 2, "title": "Pricing", "link": "Pricing" },
-        { "id": 3, "title": "Tools", "link": "Tools" },
-        { "id": 4, "title": "FAQ", "link": "FAQ" }
-      ],
-      "productLink": [
-        { "id": 1, "title": "PDFLover Desktop" },
-        { "id": 2, "title": "PDFLover Mobile" },
-        { "id": 3, "title": "Developer" },
-        { "id": 4, "title": "Wordpress Plugin" },
-        { "id": 5, "title": "iloveimg.com" }
-      ],
-      "solutionLink": [
-        { "id": 1, "title": "Business" },
-        { "id": 2, "title": "Education" }
-      ],
-      "companyLink": [
-        { "id": 1, "title": "Our Story" },
-        { "id": 2, "title": "Blog" },
-        { "id": 3, "title": "Press" },
-        { "id": 4, "title": "Legal & Privacy", "link": "Legal" },
-        { "id": 5, "title": "Contact" }
-      ]
-    }
-  },
+		"footer": {
+			"googleDrive": "image/GooglePlay.png",
+			"appStore": "image/AppStore.png",
+			"copyRightText": "© LoverPDF 2023 ® - Your PDF Editor",
+			"twitter": "image/twitter.svg",
+			"facebook": "image/facebook.svg",
+			"linkedin": "image/linkedin.svg",
+			"instagram": "image/instagram.svg",
+			"pdfLover": "PDFLover",
+			"product": "Product",
+			"solution": "Solution",
+			"company": "Company",
+			"pdfLoverLink": [
+				{ "id": 1, "title": "Home", "link": "/" },
+				{ "id": 2, "title": "Pricing", "link": "Pricing" },
+				{ "id": 3, "title": "Tools", "link": "Tools" },
+				{ "id": 4, "title": "FAQ", "link": "FAQ" }
+			],
+			"productLink": [
+				{ "id": 1, "title": "PDFLover Desktop" },
+				{ "id": 2, "title": "PDFLover Mobile" },
+				{ "id": 3, "title": "Developer" },
+				{ "id": 4, "title": "Wordpress Plugin" },
+				{ "id": 5, "title": "iloveimg.com" }
+			],
+			"solutionLink": [
+				{ "id": 1, "title": "Business" },
+				{ "id": 2, "title": "Education" }
+			],
+			"companyLink": [
+				{ "id": 1, "title": "Our Story" },
+				{ "id": 2, "title": "Blog" },
+				{ "id": 3, "title": "Press" },
+				{ "id": 4, "title": "Legal & Privacy", "link": "Legal" },
+				{ "id": 5, "title": "Contact" }
+			]
+		}
+	},
 
-  "detailsPage": {
-    "merge": {
-      "id": 1,
-      "title": "Merge PDF files",
-      "subTitle": "Combine PDFs in the order you want with the easiest PDF merger available.",
-      "button": "Select PDF files",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+	"detailsPage": {
+		"merge": {
+			"id": 1,
+			"title": "Merge PDF files",
+			"subTitle": "Combine PDFs in the order you want with the easiest PDF merger available.",
+			"button": "Select PDF files",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "split": {
-      "id": 2,
-      "title": "Split PDF file",
-      "subTitle": "Separate one page or a whole set for easy conversion into independent PDF files.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"split": {
+			"id": 2,
+			"title": "Split PDF file",
+			"subTitle": "Separate one page or a whole set for easy conversion into independent PDF files.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "compress": {
-      "id": 3,
-      "title": "Compress PDF file",
-      "subTitle": "Reduce file size while optimizing for maximal PDF quality.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"compress": {
+			"id": 3,
+			"title": "Compress PDF file",
+			"subTitle": "Reduce file size while optimizing for maximal PDF quality.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "jpg_to_pdf": {
-      "id": 4,
-      "title": "JPG to PDF",
-      "subTitle": "Convert JPG images to PDF in seconds. Easily adjust orientation and margins.",
-      "button": "Select JPG images",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"jpg_to_pdf": {
+			"id": 4,
+			"title": "JPG to PDF",
+			"subTitle": "Convert JPG images to PDF in seconds. Easily adjust orientation and margins.",
+			"button": "Select JPG images",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "word_to_pdf": {
-      "id": 5,
-      "title": "Convert WORD to PDF",
-      "subTitle": "Make DOC and DOCX files easy to read by converting them to PDF.",
-      "button": "Select WORD files",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"word_to_pdf": {
+			"id": 5,
+			"title": "Convert WORD to PDF",
+			"subTitle": "Make DOC and DOCX files easy to read by converting them to PDF.",
+			"button": "Select WORD files",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "powerpoint_to_pdf": {
-      "id": 6,
-      "title": "Convert POWERPOINT to PDF",
-      "subTitle": "Make PPT and PPTX slideshows easy to view by converting them to PDF.",
-      "button": "Select POWERPOINT files",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"powerpoint_to_pdf": {
+			"id": 6,
+			"title": "Convert POWERPOINT to PDF",
+			"subTitle": "Make PPT and PPTX slideshows easy to view by converting them to PDF.",
+			"button": "Select POWERPOINT files",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "excel_to_pdf": {
-      "id": 7,
-      "title": "Convert EXCEL to PDF",
-      "subTitle": "Make EXCEL spreadsheets easy to read by converting them to PDF.",
-      "button": "Select EXCEL files",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"excel_to_pdf": {
+			"id": 7,
+			"title": "Convert EXCEL to PDF",
+			"subTitle": "Make EXCEL spreadsheets easy to read by converting them to PDF.",
+			"button": "Select EXCEL files",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "pdf_to_jpg": {
-      "id": 8,
-      "title": "PDF to JPG",
-      "subTitle": "Convert each PDF page into a JPG or extract all images contained in a PDF.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"pdf_to_jpg": {
+			"id": 8,
+			"title": "PDF to JPG",
+			"subTitle": "Convert each PDF page into a JPG or extract all images contained in a PDF.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "pdf_to_word": {
-      "id": 9,
-      "title": "PDF to WORD Converter",
-      "subTitle": "Convert your PDF to WORD documents with incredible accuracy.Powered by Solid Documents.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"pdf_to_word": {
+			"id": 9,
+			"title": "PDF to WORD Converter",
+			"subTitle": "Convert your PDF to WORD documents with incredible accuracy.Powered by Solid Documents.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "pdf_to_powerpoint": {
-      "id": 10,
-      "title": "Convert PDF to POWERPOINT",
-      "subTitle": "Convert your PDFs to POWERPOINT. Powered by Solid Documents.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"pdf_to_powerpoint": {
+			"id": 10,
+			"title": "Convert PDF to POWERPOINT",
+			"subTitle": "Convert your PDFs to POWERPOINT. Powered by Solid Documents.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "pdf_to_excel": {
-      "id": 11,
-      "title": "Convert PDF to EXCEL",
-      "subTitle": "Convert PDF Data to EXCEL Spreadsheets. Powered by Solid Documents.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"pdf_to_excel": {
+			"id": 11,
+			"title": "Convert PDF to EXCEL",
+			"subTitle": "Convert PDF Data to EXCEL Spreadsheets. Powered by Solid Documents.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "pdf_to_pdfa": {
-      "id": 12,
-      "title": "PDF to PDF/A",
-      "subTitle": "Convert PDF documents to PDF/A for archiving and long-term preservation. Convert to a specific PDF/A ISO conformance level.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"pdf_to_pdfa": {
+			"id": 12,
+			"title": "PDF to PDF/A",
+			"subTitle": "Convert PDF documents to PDF/A for archiving and long-term preservation. Convert to a specific PDF/A ISO conformance level.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "remove_pages": {
-      "id": 13,
-      "title": "Remove PDF pages",
-      "subTitle": "Select and remove the PDF pages you don’t need. Get a new file without your deleted pages.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"remove_pages": {
+			"id": 13,
+			"title": "Remove PDF pages",
+			"subTitle": "Select and remove the PDF pages you don’t need. Get a new file without your deleted pages.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "organize": {
-      "id": 14,
-      "title": "Organize PDF",
-      "subTitle": "Sort, add and delete PDF pages. Drag and drop the page thumbnails and sort them in our PDF organizer.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"organize": {
+			"id": 14,
+			"title": "Organize PDF",
+			"subTitle": "Sort, add and delete PDF pages. Drag and drop the page thumbnails and sort them in our PDF organizer.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "repair": {
-      "id": 15,
-      "title": "Repair PDF file",
-      "subTitle": "Upload a corrupt PDF and we will try to fix it. Depending on how much the PDF is damaged we will be able to recover it partially or completely.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"repair": {
+			"id": 15,
+			"title": "Repair PDF file",
+			"subTitle": "Upload a corrupt PDF and we will try to fix it. Depending on how much the PDF is damaged we will be able to recover it partially or completely.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "ocr": {
-      "id": 16,
-      "title": "OCR PDF",
-      "subTitle": "Convert non-selectable PDF files into selectable and searchable PDF with high accuracy.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"ocr": {
+			"id": 16,
+			"title": "OCR PDF",
+			"subTitle": "Convert non-selectable PDF files into selectable and searchable PDF with high accuracy.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "rotate": {
-      "id": 17,
-      "title": "Rotate PDF",
-      "subTitle": "Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!",
-      "button": "Select PDF files",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"rotate": {
+			"id": 17,
+			"title": "Rotate PDF",
+			"subTitle": "Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!",
+			"button": "Select PDF files",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "add_page_numbers": {
-      "id": 18,
-      "title": "Add PDF page numbers",
-      "subTitle": "Add page numbers into PDFs with ease. Choose your positions, dimensions, typography.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"add_page_numbers": {
+			"id": 18,
+			"title": "Add PDF page numbers",
+			"subTitle": "Add page numbers into PDFs with ease. Choose your positions, dimensions, typography.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "watermark": {
-      "id": 19,
-      "title": "Add watermark into a PDF",
-      "subTitle": "Stamp an image or text over your PDF in seconds. Choose the typography, transparency and position.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"watermark": {
+			"id": 19,
+			"title": "Add watermark into a PDF",
+			"subTitle": "Stamp an image or text over your PDF in seconds. Choose the typography, transparency and position.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "edit": {
-      "id": 20,
-      "title": "PDF Editor",
-      "subTitle": "Edit PDF by adding text, shapes, comments and highlights. Your secure and simple tool to edit PDF.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"edit": {
+			"id": 20,
+			"title": "PDF Editor",
+			"subTitle": "Edit PDF by adding text, shapes, comments and highlights. Your secure and simple tool to edit PDF.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "unlock": {
-      "id": 21,
-      "title": "Unlock PDF",
-      "subTitle": "Remove PDF password security, giving you the freedom to use your PDFs as you want.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"unlock": {
+			"id": 21,
+			"title": "Unlock PDF",
+			"subTitle": "Remove PDF password security, giving you the freedom to use your PDFs as you want.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "protect": {
-      "id": 22,
-      "title": "Protect PDF file",
-      "subTitle": "Encrypt your PDF with a password to keep sensitive data confidential.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    },
+		"protect": {
+			"id": 22,
+			"title": "Protect PDF file",
+			"subTitle": "Encrypt your PDF with a password to keep sensitive data confidential.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		},
 
-    "sign": {
-      "id": 23,
-      "title": "Sign PDF",
-      "subTitle": "Your tool to eSign documents. Sign a document yourself or send a signature request to others.",
-      "button": "Select PDF file",
-      "footer": "© PDFLover 2023 ® - Your PDF Editor"
-    }
-  },
+		"sign": {
+			"id": 23,
+			"title": "Sign PDF",
+			"subTitle": "Your tool to eSign documents. Sign a document yourself or send a signature request to others.",
+			"button": "Select PDF file",
+			"footer": "© PDFLover 2023 ® - Your PDF Editor"
+		}
+	},
 
-  "informationData": {
-    "faq": {
-      "id": 1,
-      "title": "Our support team answers the following questions nearly every day",
-      "subTitle": "We thought they could be useful for you too",
-      "firstQue": {
-        "id": 1,
-        "stuff": "Absolutely not.",
-        "question": "Do you keep a copy of my processed files?",
-        "answers": "Your files are only yours. While your files are in our servers, they are strictly secured and no one can access them. We just keep them for a maximum of 2 hours so you can download them. Right after, they are completely removed forever from our servers. You can also delete the document by yourself at the end of each conversion. We won’t check, copy or analyze your files in any way."
-      },
+	"informationData": {
+		"faq": {
+			"id": 1,
+			"title": "Our support team answers the following questions nearly every day",
+			"subTitle": "We thought they could be useful for you too",
+			"firstQue": {
+				"id": 1,
+				"stuff": "Absolutely not.",
+				"question": "Do you keep a copy of my processed files?",
+				"answers": "Your files are only yours. While your files are in our servers, they are strictly secured and no one can access them. We just keep them for a maximum of 2 hours so you can download them. Right after, they are completely removed forever from our servers. You can also delete the document by yourself at the end of each conversion. We won’t check, copy or analyze your files in any way."
+			},
 
-      "secondQue": {
-        "id": 2,
-        "stuff": "Yes.",
-        "question": "Are company files safe with your service?",
-        "answers": "All uploads use https/SSL and include our end-to-end encryption for further privacy. These additional steps increase security and satisfy most corporate data privacy policies. Put simply, your data is processed as safely as possible. We comply with EU Data Protection Regulation, which is one of the strictest safety standards in the world (GDPR)."
-      },
+			"secondQue": {
+				"id": 2,
+				"stuff": "Yes.",
+				"question": "Are company files safe with your service?",
+				"answers": "All uploads use https/SSL and include our end-to-end encryption for further privacy. These additional steps increase security and satisfy most corporate data privacy policies. Put simply, your data is processed as safely as possible. We comply with EU Data Protection Regulation, which is one of the strictest safety standards in the world (GDPR)."
+			},
 
-      "thirdQue": {
-        "id": 3,
-        "stuff": "basic system requirements.",
-        "question": "What are your system requirements?",
-        "str": "We have very",
-        "answers": "To run smoothly our tools, we recommend you to work with the following browsers: Chrome, Firefox, Explorer +10 and Safari. If at any point would you experience issues within the download screen, we recommend you to set your browser to Incognito mode."
-      },
+			"thirdQue": {
+				"id": 3,
+				"stuff": "basic system requirements.",
+				"question": "What are your system requirements?",
+				"str": "We have very",
+				"answers": "To run smoothly our tools, we recommend you to work with the following browsers: Chrome, Firefox, Explorer +10 and Safari. If at any point would you experience issues within the download screen, we recommend you to set your browser to Incognito mode."
+			},
 
-      "fourthQue": {
-        "id": 4,
-        "stuff": "sometimes it may take some time.",
-        "question": "Why did I not receive the confirmation of my email address?",
-        "str": "The confirmation email should be delivered to your email account immediately. Although,",
-        "answers": "If after 30 minutes nothing makes it into your inbox, check your Spam/Trash Folder or shoot us an email."
-      },
+			"fourthQue": {
+				"id": 4,
+				"stuff": "sometimes it may take some time.",
+				"question": "Why did I not receive the confirmation of my email address?",
+				"str": "The confirmation email should be delivered to your email account immediately. Although,",
+				"answers": "If after 30 minutes nothing makes it into your inbox, check your Spam/Trash Folder or shoot us an email."
+			},
 
-      "fifthQue": {
-        "id": 5,
-        "question": "How can I upload my files?",
-        "answers": "The easiest way is to drag and drop your files straight to our canvas. You can also click on ‘Select files’ button or import your files from the main cloud storage systems such as Google Drive or Dropbox."
-      },
+			"fifthQue": {
+				"id": 5,
+				"question": "How can I upload my files?",
+				"answers": "The easiest way is to drag and drop your files straight to our canvas. You can also click on ‘Select files’ button or import your files from the main cloud storage systems such as Google Drive or Dropbox."
+			},
 
-      "sixQue": {
-        "id": 6,
-        "stuff": "To convert a scanned PDF",
-        "stuff2": "OCR (Optical Character Recognition)",
-        "question": "Can I convert my scanned PDFs to an editable document?",
-        "str": "to an editable or another editable format, it is required,",
-        "answers": "a system that converts non-selectable and scanned text to office documents. Since our last release, it is possible to make Scanned PDF to Office conversions."
-      },
+			"sixQue": {
+				"id": 6,
+				"stuff": "To convert a scanned PDF",
+				"stuff2": "OCR (Optical Character Recognition)",
+				"question": "Can I convert my scanned PDFs to an editable document?",
+				"str": "to an editable or another editable format, it is required,",
+				"answers": "a system that converts non-selectable and scanned text to office documents. Since our last release, it is possible to make Scanned PDF to Office conversions."
+			},
 
-      "sevenQue": {
-        "id": 7,
-        "question": "Why does my conversion take so long?",
-        "answers": "Unfortunately, this is not entirely in our hands. Processing speed so the time that will take you to get your files converted will depend as well on your own Internet connection speed, the size of the selected files and, mostly, on how busy our servers are."
-      },
+			"sevenQue": {
+				"id": 7,
+				"question": "Why does my conversion take so long?",
+				"answers": "Unfortunately, this is not entirely in our hands. Processing speed so the time that will take you to get your files converted will depend as well on your own Internet connection speed, the size of the selected files and, mostly, on how busy our servers are."
+			},
 
-      "eightQue": {
-        "id": 8,
-        "stuff": "Yes!",
-        "stuff2": "PDFLover App",
-        "question": "Can I work from the cloud?",
-        "str": "from your mobile device or tablet as it helps you reduce mobile data usage.",
-        "answers": "The files that you want to process don’t even need to be on the device you are working from. If you have a Google Drive or Dropbox Account, you can import files straight to our page, process them and save them back to the cloud. In fact, this is the perfect method when using"
-      }
-    },
+			"eightQue": {
+				"id": 8,
+				"stuff": "Yes!",
+				"stuff2": "PDFLover App",
+				"question": "Can I work from the cloud?",
+				"str": "from your mobile device or tablet as it helps you reduce mobile data usage.",
+				"answers": "The files that you want to process don’t even need to be on the device you are working from. If you have a Google Drive or Dropbox Account, you can import files straight to our page, process them and save them back to the cloud. In fact, this is the perfect method when using"
+			}
+		},
 
-    "topic": {
-      "heading": "Welcome to our user's guide",
-      "subHeading": "Although we have tried to make it really simple, here is a short guidance to help you through the editing process.",
-      "orgTitle": "Organize PDF",
-      "optiTitle": "Optimize PDF",
-      "editTitle": "Edit PDF",
-      "CtoPTitle": "Convert to PDF",
-      "CFromPTitle": "Convert from PDF",
-      "secTitle": "PDF Security",
-      "techTitle": "Tech concepts"
-    },
+		"topic": {
+			"heading": "Welcome to our user's guide",
+			"subHeading": "Although we have tried to make it really simple, here is a short guidance to help you through the editing process.",
+			"orgTitle": "Organize PDF",
+			"optiTitle": "Optimize PDF",
+			"editTitle": "Edit PDF",
+			"CtoPTitle": "Convert to PDF",
+			"CFromPTitle": "Convert from PDF",
+			"secTitle": "PDF Security",
+			"techTitle": "Tech concepts"
+		},
 
-    "tools": {
-      "organize": [
-        {
-          "id": 1,
-          "img": "image/Merger.svg",
-          "heading": "Merge PDF",
-          "desc": "To merge two or more PDFs, select the documents from your device or from your Google Drive or Dropbox account. You can arrange the files however you like before merging them.",
-          "subDesc": "You can also combine several password-protected documents into one. Upload the selected files, process them, and then download your merged file. Check 'Merge PDF' limits for each account type."
-        },
-        {
-          "id": 2,
-          "img": "image/Split.svg",
-          "heading": "Split PDF",
-          "desc": "To split a PDF into different files, select the document from your device or from your cloud storage accounts such as Google Drive or Dropbox. You can also divide password-protected documents.",
-          "subDesc": "Upload the file to split. You can either split your file by ranges or extract all pages. You can also merge all ranges in one PDF file. Hit the Split PDF button and you'll be good to go. Check 'Split PDF' limits for each account type."
-        },
-        {
-          "id": 3,
-          "heading": "Remove Pages",
-          "desc": "To remove pages from one or multiple PDFs, upload your file from your device or download it from your cloud-connected accounts as Google Drive or Dropbox. You can remove pages from password protected documents as well.",
-          "subDesc": "You will see a thumbnail of every page of your file. When uploading multiple files, the thumbnails of each file will be framed in a different color. You can click on each thumbnail to remove that page. After clicking, a red cross will appear over the thumbnail, showing that the page will be removed. Hit on Remove Pages button to download your processed PDF. Check 'Remove Pages' limits for each account type."
-        },
-        {
-          "id": 4,
-          "heading": "Extract Pages",
-          "desc": "To extract pages from a PDF, file, upload your file from your device or from your cloud storage accounts as Google Drive or Dropbox. You can remove pages from password protected documents too.",
-          "subDesc": "You will see a thumbnail of every page of your file. When uploading more than one file, the thumbnails of each file will be framed in a different color. Click on the pages you want to extract. Choose if you want to merge all the extracted pages into a new PDF or download it in a .zip folder. Then, hit the Extract Pages button. Check 'Extract Pages' limits for each account type."
-        },
-        {
-          "id": 5,
-          "heading": "Organize PDF",
-          "img": "image/Organize.svg",
-          "desc": "To organize the pages from a PDF file, upload your file from your device or download it straight from the cloud through your Google Drive or Dropbox account. You can remove pages from password protected documents as well.",
-          "subDesc": "You will see a thumbnail of every page of your file. When uploading more than one file, the thumbnails of each file will be framed in a different color. Then you can remove or drag and drop the thumbnails to rearrange PDF pages however you like. Hit the 'Organize PDF' button to download your new PDF. Check 'Organize PDF' limits for each account type."
-        }
-      ],
+		"tools": {
+			"organize": [
+				{
+					"id": 1,
+					"img": "image/Merger.svg",
+					"heading": "Merge PDF",
+					"desc": "To merge two or more PDFs, select the documents from your device or from your Google Drive or Dropbox account. You can arrange the files however you like before merging them.",
+					"subDesc": "You can also combine several password-protected documents into one. Upload the selected files, process them, and then download your merged file. Check 'Merge PDF' limits for each account type."
+				},
+				{
+					"id": 2,
+					"img": "image/Split.svg",
+					"heading": "Split PDF",
+					"desc": "To split a PDF into different files, select the document from your device or from your cloud storage accounts such as Google Drive or Dropbox. You can also divide password-protected documents.",
+					"subDesc": "Upload the file to split. You can either split your file by ranges or extract all pages. You can also merge all ranges in one PDF file. Hit the Split PDF button and you'll be good to go. Check 'Split PDF' limits for each account type."
+				},
+				{
+					"id": 3,
+					"heading": "Remove Pages",
+					"desc": "To remove pages from one or multiple PDFs, upload your file from your device or download it from your cloud-connected accounts as Google Drive or Dropbox. You can remove pages from password protected documents as well.",
+					"subDesc": "You will see a thumbnail of every page of your file. When uploading multiple files, the thumbnails of each file will be framed in a different color. You can click on each thumbnail to remove that page. After clicking, a red cross will appear over the thumbnail, showing that the page will be removed. Hit on Remove Pages button to download your processed PDF. Check 'Remove Pages' limits for each account type."
+				},
+				{
+					"id": 4,
+					"heading": "Extract Pages",
+					"desc": "To extract pages from a PDF, file, upload your file from your device or from your cloud storage accounts as Google Drive or Dropbox. You can remove pages from password protected documents too.",
+					"subDesc": "You will see a thumbnail of every page of your file. When uploading more than one file, the thumbnails of each file will be framed in a different color. Click on the pages you want to extract. Choose if you want to merge all the extracted pages into a new PDF or download it in a .zip folder. Then, hit the Extract Pages button. Check 'Extract Pages' limits for each account type."
+				},
+				{
+					"id": 5,
+					"heading": "Organize PDF",
+					"img": "image/Organize.svg",
+					"desc": "To organize the pages from a PDF file, upload your file from your device or download it straight from the cloud through your Google Drive or Dropbox account. You can remove pages from password protected documents as well.",
+					"subDesc": "You will see a thumbnail of every page of your file. When uploading more than one file, the thumbnails of each file will be framed in a different color. Then you can remove or drag and drop the thumbnails to rearrange PDF pages however you like. Hit the 'Organize PDF' button to download your new PDF. Check 'Organize PDF' limits for each account type."
+				}
+			],
 
-      "optimize": [
-        {
-          "id": 1,
-          "img": "image/Compress.svg",
-          "heading": "Compress PDF",
-          "desc": "To compress PDF files, select the documents from your device or from your Google Drive or Dropbox account. Upload the file or files to optimize. Choose between extreme, high or regular compression level and then hit the Compress PDF button. The higher compression, the lower file size and quality.",
-          "subDesc": "Click 'Compress PDF' button to download your reduced PDF or save it back to the cloud. Check 'Compress PDF' limits for each account type."
-        }
-      ],
+			"optimize": [
+				{
+					"id": 1,
+					"img": "image/Compress.svg",
+					"heading": "Compress PDF",
+					"desc": "To compress PDF files, select the documents from your device or from your Google Drive or Dropbox account. Upload the file or files to optimize. Choose between extreme, high or regular compression level and then hit the Compress PDF button. The higher compression, the lower file size and quality.",
+					"subDesc": "Click 'Compress PDF' button to download your reduced PDF or save it back to the cloud. Check 'Compress PDF' limits for each account type."
+				}
+			],
 
-      "edit": [
-        {
-          "id": 1,
-          "img": "image/Edit.svg",
-          "heading": "Edit PDF",
-          "desc": "Once inside the PDF viewer, use the top toolbar to navigate through your document. Click on the wheel icon to decide your page setup. You can view a single page or multiple pages at once. To move in and around individual pages, select the hand icon.Use the magnifying glasses to zoom in and out on specific sections of the document.",
-          "subDesc": "To add elements or text to a page, scroll down to the page which you want to edit. Choose from the Text, Image or Shape icons available in the Edit PDF toolbar at the top of the viewer. Use your mouse to resize or move any element as you wish on the same page where it was created.",
-          "subDesc1": "To add elements to a different page, navigate to the page and then select a new item from the toolbar. Change the color, transparency, border color, rotation, format or line thickness of your images, shapes or texts using their property bars. Click the ‘Edit PDF’ button to process your file."
-        },
-        {
-          "id": 2,
-          "img": "image/PageNumber.svg",
-          "heading": "Add page numbers",
-          "desc": "To number PDF pages, upload your files from your device or from your Google Drive or Dropbox account. Choose if you want to number all pages or just facing pages. Choose the page range to number. You can also edit the position of your number, and its format (typo, size color, opacity…) in the toolbar.",
-          "subDesc": "Then hit 'Add Page Numbers' button and download or save back to the cloud your numbered PDF. Check 'Page Numbers' limits for each account type."
-        },
-        {
-          "id": 3,
-          "img": "image/Watermark.svg",
-          "heading": "Add watermark",
-          "desc": "To watermark PDF files, upload your PDF from your device or from your Google Drive or Dropbox account. You can combine text and image in your watermark, which will be stamped in the same position in all the pages of your file. You can custom format, orientation and opacity.",
-          "subDesc": "Then hit 'Add watermark' button and download or save back to the cloud your watermarked PDF. Check 'Watermark' limits for each account type."
-        },
-        {
-          "id": 4,
-          "img": "image/Repair.svg",
-          "heading": "Repair PDF",
-          "desc": "To repair a PDF, upload your damaged or corrupt PDF file from your device or from your Google Drive or Dropbox account. Our tool will try to analyze, repair or recover content from your corrupt file.",
-          "subDesc": "Then hit 'Repair' button and download or save back to the cloud your repaired PDF. Check 'Repair PDF' limits for each account type."
-        }
-      ],
+			"edit": [
+				{
+					"id": 1,
+					"img": "image/Edit.svg",
+					"heading": "Edit PDF",
+					"desc": "Once inside the PDF viewer, use the top toolbar to navigate through your document. Click on the wheel icon to decide your page setup. You can view a single page or multiple pages at once. To move in and around individual pages, select the hand icon.Use the magnifying glasses to zoom in and out on specific sections of the document.",
+					"subDesc": "To add elements or text to a page, scroll down to the page which you want to edit. Choose from the Text, Image or Shape icons available in the Edit PDF toolbar at the top of the viewer. Use your mouse to resize or move any element as you wish on the same page where it was created.",
+					"subDesc1": "To add elements to a different page, navigate to the page and then select a new item from the toolbar. Change the color, transparency, border color, rotation, format or line thickness of your images, shapes or texts using their property bars. Click the ‘Edit PDF’ button to process your file."
+				},
+				{
+					"id": 2,
+					"img": "image/PageNumber.svg",
+					"heading": "Add page numbers",
+					"desc": "To number PDF pages, upload your files from your device or from your Google Drive or Dropbox account. Choose if you want to number all pages or just facing pages. Choose the page range to number. You can also edit the position of your number, and its format (typo, size color, opacity…) in the toolbar.",
+					"subDesc": "Then hit 'Add Page Numbers' button and download or save back to the cloud your numbered PDF. Check 'Page Numbers' limits for each account type."
+				},
+				{
+					"id": 3,
+					"img": "image/Watermark.svg",
+					"heading": "Add watermark",
+					"desc": "To watermark PDF files, upload your PDF from your device or from your Google Drive or Dropbox account. You can combine text and image in your watermark, which will be stamped in the same position in all the pages of your file. You can custom format, orientation and opacity.",
+					"subDesc": "Then hit 'Add watermark' button and download or save back to the cloud your watermarked PDF. Check 'Watermark' limits for each account type."
+				},
+				{
+					"id": 4,
+					"img": "image/Repair.svg",
+					"heading": "Repair PDF",
+					"desc": "To repair a PDF, upload your damaged or corrupt PDF file from your device or from your Google Drive or Dropbox account. Our tool will try to analyze, repair or recover content from your corrupt file.",
+					"subDesc": "Then hit 'Repair' button and download or save back to the cloud your repaired PDF. Check 'Repair PDF' limits for each account type."
+				}
+			],
 
-      "CtoP": [
-        {
-          "id": 1,
-          "img": "image/JtoP.svg",
-          "heading": "JPG to PDF",
-          "desc": "To convert one or multiple files JPG to PDF, upload your images form your device or straight from your Google Drive or Dropbox accounts.",
-          "subDesc": "Choose if you want your output PDF into portrait or landscape mode and if you want it with margin or without. You can also merge all images in a single PDF file. Then, download your PDF or save it back to the cloud. Check 'JPG to PDF' limits for each account type."
-        },
-        {
-          "id": 2,
-          "heading": "WORD to PDF",
-          "desc": "To convert one or more documents from WORD to PDF, select the documents from your device or from your cloud storage accounts such as Google Drive or Dropbox account.",
-          "subDesc": "Click on Convert to PDF to transform your .docx into a non-editable document. Then, download your PDF or save it back to the cloud. Check 'Word to PDF' limits for each account type."
-        },
-        {
-          "id": 3,
-          "heading": "POWERPOINT to PDF",
-          "desc": "To convert one or multiple files from Power Point to PDF, upload the documents from your device or straight from the Cloud through Google Drive or Dropbox.",
-          "subDesc": "Click on Convert to PDF to transform your .pptx into a non-editable document. All the pictures and text from your .pptx presentation will be converted to a PDF file. Then, download your PDF or save it back to the cloud. Check 'Power Point to PDF' limits for each account type."
-        },
-        {
-          "id": 4,
-          "heading": "EXCEL to PDF",
-          "desc": "To convert one or multiple files from Excel to PDF, upload the documents from your device or straight from your Google Drive or Dropbox account.",
-          "subDesc": "Click on 'Convert to PDF' to transform your .xlsx into a non-editable document. All the tables and graphics from your Excel will be converted to a PDF document. Then, download your PDF or save it back to the cloud. Check 'Excel to PDF' limits for each account type."
-        }
-      ],
+			"CtoP": [
+				{
+					"id": 1,
+					"img": "image/JtoP.svg",
+					"heading": "JPG to PDF",
+					"desc": "To convert one or multiple files JPG to PDF, upload your images form your device or straight from your Google Drive or Dropbox accounts.",
+					"subDesc": "Choose if you want your output PDF into portrait or landscape mode and if you want it with margin or without. You can also merge all images in a single PDF file. Then, download your PDF or save it back to the cloud. Check 'JPG to PDF' limits for each account type."
+				},
+				{
+					"id": 2,
+					"heading": "WORD to PDF",
+					"desc": "To convert one or more documents from WORD to PDF, select the documents from your device or from your cloud storage accounts such as Google Drive or Dropbox account.",
+					"subDesc": "Click on Convert to PDF to transform your .docx into a non-editable document. Then, download your PDF or save it back to the cloud. Check 'Word to PDF' limits for each account type."
+				},
+				{
+					"id": 3,
+					"heading": "POWERPOINT to PDF",
+					"desc": "To convert one or multiple files from Power Point to PDF, upload the documents from your device or straight from the Cloud through Google Drive or Dropbox.",
+					"subDesc": "Click on Convert to PDF to transform your .pptx into a non-editable document. All the pictures and text from your .pptx presentation will be converted to a PDF file. Then, download your PDF or save it back to the cloud. Check 'Power Point to PDF' limits for each account type."
+				},
+				{
+					"id": 4,
+					"heading": "EXCEL to PDF",
+					"desc": "To convert one or multiple files from Excel to PDF, upload the documents from your device or straight from your Google Drive or Dropbox account.",
+					"subDesc": "Click on 'Convert to PDF' to transform your .xlsx into a non-editable document. All the tables and graphics from your Excel will be converted to a PDF document. Then, download your PDF or save it back to the cloud. Check 'Excel to PDF' limits for each account type."
+				}
+			],
 
-      "CFromP": [
-        {
-          "id": 1,
-          "img": "image/PtoJ.svg",
-          "heading": "PDF to JPG",
-          "desc": "To convert a PDF to a JPG image, select the file from your device or from your Google Drive or Dropbox account.",
-          "subDesc": "You can transform your PDF into a JPG or extract all the pictures in a .zip file. Then, hit the 'Convert to JPG' button to transform your PDF to JPG. Check the 'PDF to JPG' limits for each account type."
-        },
-        {
-          "id": 2,
-          "img": "image/PtoW.svg",
-          "heading": "PDF to WORD",
-          "desc": "To convert one or more documents from PDF to Word, select the documents from your device or from your cloud storage accounts such as Google Drive or Dropbox account.",
-          "subDesc": "Click on 'Convert to Word' to transform your PDF into an editable document. Then, download your .docx file or save it back to the cloud. Check 'PDF to Word' limits for each account type."
-        },
-        {
-          "id": 3,
-          "img": "image/PtoP.svg",
-          "heading": "PDF to POWERPOINT",
-          "desc": "To convert PDF files to Power Point, upload the documents from your device or straight from the cloud through Google Drive or Dropbox.",
-          "subDesc": "Click on 'Convert to Power Point' to transform your PDF into an editable document. All the pictures, text and graphics from your PDF will be converted to a PDF file. When converting a document of multiple pages, each page will be transformed into a .pptx slide. Then, download your .pptx file or save it back to the cloud. Check 'PDF to Power Point' limits for each account type."
-        },
-        {
-          "id": 4,
-          "img": "image/PtoE.svg",
-          "heading": "PDF to EXCEL",
-          "desc": "To convert one or multiple files from PDF to Excel, upload the documents from your device or straight from your Google Drive or Dropbox account.",
-          "subDesc": "Click on 'Convert to Excel' to transform your PDF into an editable document. All the tables and graphics from your PDF will be converted to a .xlsx document. Then, download your Excel file or save it back to the cloud. Check 'PDF to Excel' limits for each account type."
-        }
-      ],
+			"CFromP": [
+				{
+					"id": 1,
+					"img": "image/PtoJ.svg",
+					"heading": "PDF to JPG",
+					"desc": "To convert a PDF to a JPG image, select the file from your device or from your Google Drive or Dropbox account.",
+					"subDesc": "You can transform your PDF into a JPG or extract all the pictures in a .zip file. Then, hit the 'Convert to JPG' button to transform your PDF to JPG. Check the 'PDF to JPG' limits for each account type."
+				},
+				{
+					"id": 2,
+					"img": "image/PtoW.svg",
+					"heading": "PDF to WORD",
+					"desc": "To convert one or more documents from PDF to Word, select the documents from your device or from your cloud storage accounts such as Google Drive or Dropbox account.",
+					"subDesc": "Click on 'Convert to Word' to transform your PDF into an editable document. Then, download your .docx file or save it back to the cloud. Check 'PDF to Word' limits for each account type."
+				},
+				{
+					"id": 3,
+					"img": "image/PtoP.svg",
+					"heading": "PDF to POWERPOINT",
+					"desc": "To convert PDF files to Power Point, upload the documents from your device or straight from the cloud through Google Drive or Dropbox.",
+					"subDesc": "Click on 'Convert to Power Point' to transform your PDF into an editable document. All the pictures, text and graphics from your PDF will be converted to a PDF file. When converting a document of multiple pages, each page will be transformed into a .pptx slide. Then, download your .pptx file or save it back to the cloud. Check 'PDF to Power Point' limits for each account type."
+				},
+				{
+					"id": 4,
+					"img": "image/PtoE.svg",
+					"heading": "PDF to EXCEL",
+					"desc": "To convert one or multiple files from PDF to Excel, upload the documents from your device or straight from your Google Drive or Dropbox account.",
+					"subDesc": "Click on 'Convert to Excel' to transform your PDF into an editable document. All the tables and graphics from your PDF will be converted to a .xlsx document. Then, download your Excel file or save it back to the cloud. Check 'PDF to Excel' limits for each account type."
+				}
+			],
 
-      "security": [
-        {
-          "id": 1,
-          "img": "image/Unlock.svg",
-          "heading": "Unlock PDF",
-          "desc": "To remove the password from a PDF file, upload the document from your device or straight from your Google Drive or Dropbox account.",
-          "subDesc": "Then click the 'Unlock PDF' button. Our tool will unlock your document by removing its password. Check the 'Unlock PDF' limits for each account type."
-        },
-        {
-          "id": 2,
-          "img": "image/Protect.svg",
-          "heading": "Protect PDF",
-          "desc": "To secure a PDF with a password, upload the document from your device or straight from your Google Drive or Dropbox account.",
-          "subDesc": "Choose a user password to encrypt and secure your PDF. Then, hit the 'Protect PDF' button to add the password to your file. Check the 'Protect PDF' limits for each account type."
-        },
-        {
-          "id": 3,
-          "heading": "PDF to PDF/A",
-          "desc": "To convert or batch convert your PDF to PDF/A, upload the document from your device or straight from your Google Drive or Dropbox account.",
-          "subDesc": "Then hit the 'PDF to PDF/A' button and download or save back to the cloud your converted PDF for long-term archiving and preservation. Check the 'PDF to PDF/A' limits for each account type."
-        },
-        {
-          "id": 4,
-          "img": "image/Sign.svg",
-          "heading": "Sign PDF",
-          "title": "To sign your own document",
-          "desc": "Upload the document to our Sign PDF tool. Sign. Choose your preferred signature adoption from the sidebar menu to customize your signature. You can either draw your signature, upload an existing one or sign with text. You can add other fields to your signature such as date and initials. Download. Click the ‘Sign PDF’ button to download your signed PDF or save it back to the Cloud.",
-          "title1": "To collect e-Signatures",
-          "subDesc": "To create a signature request, upload the document to our Sign PDF tool. Once you have uploaded your PDF document, create a signature request. You will need to add signers, include signing fields, adjust security parameters, and then send. Sign. All signers will receive an email with access to the document, and they will be able to read it and sign it. Download. Once the signature process has been completed, you will receive a copy of the signed document along with the option to download an Audit trail. The Audit trail can be used as evidence in legal proceedings."
-        }
-      ],
+			"security": [
+				{
+					"id": 1,
+					"img": "image/Unlock.svg",
+					"heading": "Unlock PDF",
+					"desc": "To remove the password from a PDF file, upload the document from your device or straight from your Google Drive or Dropbox account.",
+					"subDesc": "Then click the 'Unlock PDF' button. Our tool will unlock your document by removing its password. Check the 'Unlock PDF' limits for each account type."
+				},
+				{
+					"id": 2,
+					"img": "image/Protect.svg",
+					"heading": "Protect PDF",
+					"desc": "To secure a PDF with a password, upload the document from your device or straight from your Google Drive or Dropbox account.",
+					"subDesc": "Choose a user password to encrypt and secure your PDF. Then, hit the 'Protect PDF' button to add the password to your file. Check the 'Protect PDF' limits for each account type."
+				},
+				{
+					"id": 3,
+					"heading": "PDF to PDF/A",
+					"desc": "To convert or batch convert your PDF to PDF/A, upload the document from your device or straight from your Google Drive or Dropbox account.",
+					"subDesc": "Then hit the 'PDF to PDF/A' button and download or save back to the cloud your converted PDF for long-term archiving and preservation. Check the 'PDF to PDF/A' limits for each account type."
+				},
+				{
+					"id": 4,
+					"img": "image/Sign.svg",
+					"heading": "Sign PDF",
+					"title": "To sign your own document",
+					"desc": "Upload the document to our Sign PDF tool. Sign. Choose your preferred signature adoption from the sidebar menu to customize your signature. You can either draw your signature, upload an existing one or sign with text. You can add other fields to your signature such as date and initials. Download. Click the ‘Sign PDF’ button to download your signed PDF or save it back to the Cloud.",
+					"title1": "To collect e-Signatures",
+					"subDesc": "To create a signature request, upload the document to our Sign PDF tool. Once you have uploaded your PDF document, create a signature request. You will need to add signers, include signing fields, adjust security parameters, and then send. Sign. All signers will receive an email with access to the document, and they will be able to read it and sign it. Download. Once the signature process has been completed, you will receive a copy of the signed document along with the option to download an Audit trail. The Audit trail can be used as evidence in legal proceedings."
+				}
+			],
 
-      "tech": [
-        {
-          "id": 1,
-          "heading": "Password-protected files",
-          "desc": "If you process a password-protected file, we will ask you to help us open it. Once it has been opened and processed, we commit to not storing this password on our servers."
-        },
-        {
-          "id": 2,
-          "heading": "Rotating files",
-          "desc": "You can rotate your files by hovering the mouse over a file and clicking the () icon. But if you want to rotate more than 10 files at once, you can do so automatically in the pop-up window that will appear. Before you can do it, you will have to render all the pages to rotate them in the same direction."
-        },
-        {
-          "id": 3,
-          "heading": "JPG to PDF rotation",
-          "desc": "Rotating an image in a PDF document only affects the image. Afterwards, you will be able to choose the page orientation (vertical or horizontal) with the newly rotated image."
-        },
-        {
-          "id": 4,
-          "heading": "Organizing files",
-          "desc": "Files can be organized in different ways. Drag and drop them however like; you can also arrange them alphabetically by clicking the () icon; and you also have the option of arranging them in inverse alphabetical order clicking the () icon."
-        },
-        {
-          "id": 5,
-          "heading": "Compressing files",
-          "desc": "After processing your files, you will see the original file size and by what percentage they've been reduced. In the case of PDF files that are already optimized, we won't be able to compress them any further."
-        },
-        {
-          "id": 6,
-          "heading": "Uploading and processing",
-          "desc": "The uploading and processing time for files will depend on your Internet connection and on the size of the files you have selected. If the browser closes while your files are being processed, you can verify their processing status in the 'My Account' menu, in the 'Last files processed' section."
-        },
-        {
-          "id": 7,
-          "heading": "Downloading",
-          "desc": "The output files will be deleted from our servers after a period of time, depending on your user type. You can also save it straight back to the cloud, on your Google Drive or Dropbox accounts. You can cancel the validity of the download link whenever you want."
-        },
-        {
-          "id": 8,
-          "heading": "Working from the cloud",
-          "desc": "You don't need to have the files you want to process stored on your device. If you have a Google Drive or Dropbox Account, you can download them straight to our page. Once your files have been processed, you can save them back to the cloud. To process cloud-stored files, you'll need to enter the password of your cloud account the first time you use this feature. Your passwords won't be stored in our system. This is feature is especially useful when working from a mobile device or tablet."
-        },
-        {
-          "id": 9,
-          "heading": "Select files to upload",
-          "desc": "To select files from your computer, you can do it by hitting on the 'Select images' button. If you want to select more than one file at the same time, hold the 'Ctrl' key while clicking on the files. If the files are in consecutive order, click on the first and the last, while holding on the 'Shift' key You can also drag and drop them straight to our canvas."
-        },
-        {
-          "id": 10,
-          "heading": "Minimum requirements",
-          "desc": "We recommend using our tools from the following browsers: Chrome, Firefox, Explorer +10 and Safari. When working from Explorer version 8 and 9, the rendering option for document pages will be disabled. iLovePDF needs to work with Javascript enabled."
-        },
-        {
-          "id": 11,
-          "heading": "Technical issues",
-          "desc": "This new version of iLovePDF has been designed to be much easier to work with, and we have tried to tackle any technical issue. However, if you ever face any problem, do not hesitate to reach out. If the file does not contain confidential material, attach it to your e-mail so we can solve the problem faster. We will do our everything on our hands to come up with a solution."
-        }
-      ]
-    },
+			"tech": [
+				{
+					"id": 1,
+					"heading": "Password-protected files",
+					"desc": "If you process a password-protected file, we will ask you to help us open it. Once it has been opened and processed, we commit to not storing this password on our servers."
+				},
+				{
+					"id": 2,
+					"heading": "Rotating files",
+					"desc": "You can rotate your files by hovering the mouse over a file and clicking the () icon. But if you want to rotate more than 10 files at once, you can do so automatically in the pop-up window that will appear. Before you can do it, you will have to render all the pages to rotate them in the same direction."
+				},
+				{
+					"id": 3,
+					"heading": "JPG to PDF rotation",
+					"desc": "Rotating an image in a PDF document only affects the image. Afterwards, you will be able to choose the page orientation (vertical or horizontal) with the newly rotated image."
+				},
+				{
+					"id": 4,
+					"heading": "Organizing files",
+					"desc": "Files can be organized in different ways. Drag and drop them however like; you can also arrange them alphabetically by clicking the () icon; and you also have the option of arranging them in inverse alphabetical order clicking the () icon."
+				},
+				{
+					"id": 5,
+					"heading": "Compressing files",
+					"desc": "After processing your files, you will see the original file size and by what percentage they've been reduced. In the case of PDF files that are already optimized, we won't be able to compress them any further."
+				},
+				{
+					"id": 6,
+					"heading": "Uploading and processing",
+					"desc": "The uploading and processing time for files will depend on your Internet connection and on the size of the files you have selected. If the browser closes while your files are being processed, you can verify their processing status in the 'My Account' menu, in the 'Last files processed' section."
+				},
+				{
+					"id": 7,
+					"heading": "Downloading",
+					"desc": "The output files will be deleted from our servers after a period of time, depending on your user type. You can also save it straight back to the cloud, on your Google Drive or Dropbox accounts. You can cancel the validity of the download link whenever you want."
+				},
+				{
+					"id": 8,
+					"heading": "Working from the cloud",
+					"desc": "You don't need to have the files you want to process stored on your device. If you have a Google Drive or Dropbox Account, you can download them straight to our page. Once your files have been processed, you can save them back to the cloud. To process cloud-stored files, you'll need to enter the password of your cloud account the first time you use this feature. Your passwords won't be stored in our system. This is feature is especially useful when working from a mobile device or tablet."
+				},
+				{
+					"id": 9,
+					"heading": "Select files to upload",
+					"desc": "To select files from your computer, you can do it by hitting on the 'Select images' button. If you want to select more than one file at the same time, hold the 'Ctrl' key while clicking on the files. If the files are in consecutive order, click on the first and the last, while holding on the 'Shift' key You can also drag and drop them straight to our canvas."
+				},
+				{
+					"id": 10,
+					"heading": "Minimum requirements",
+					"desc": "We recommend using our tools from the following browsers: Chrome, Firefox, Explorer +10 and Safari. When working from Explorer version 8 and 9, the rendering option for document pages will be disabled. iLovePDF needs to work with Javascript enabled."
+				},
+				{
+					"id": 11,
+					"heading": "Technical issues",
+					"desc": "This new version of iLovePDF has been designed to be much easier to work with, and we have tried to tackle any technical issue. However, if you ever face any problem, do not hesitate to reach out. If the file does not contain confidential material, attach it to your e-mail so we can solve the problem faster. We will do our everything on our hands to come up with a solution."
+				}
+			]
+		},
 
-    "legal": {
-      "heading": "PDFLover Data Security and Privacy policies",
-      "security": {
-        "id": 1,
-        "title": "Security",
-        "desc": "iLovePDF is certified for meeting the requirements established by the international standard ISO / IEC 27001.",
-        "button": "See more"
-      },
-      "privacy": {
-        "id": 1,
-        "title": "Privacy",
-        "desc": "Files you upload and process are encrypted and deleted from our servers within 2 hours, protecting your data and privacy.",
-        "button": "See more"
-      },
-      "terms": {
-        "id": 1,
-        "title": "Terms",
-        "desc": "Here are the rules you must follow to get your work done in iLovePDF. By using iLovePDF, you agree to our Terms and Conditions.",
-        "button": "See more"
-      },
-      "cookie": {
-        "id": 1,
-        "title": "Cookie",
-        "desc": "As per European Law, we're happy to tell you exactly what cookies we're using and what they do. You can see what those are by clicking!",
-        "button": "See more"
-      }
-    }
-  },
+		"legal": {
+			"heading": "PDFLover Data Security and Privacy policies",
+			"security": {
+				"id": 1,
+				"title": "Security",
+				"desc": "iLovePDF is certified for meeting the requirements established by the international standard ISO / IEC 27001.",
+				"button": "See more"
+			},
+			"privacy": {
+				"id": 1,
+				"title": "Privacy",
+				"desc": "Files you upload and process are encrypted and deleted from our servers within 2 hours, protecting your data and privacy.",
+				"button": "See more"
+			},
+			"terms": {
+				"id": 1,
+				"title": "Terms",
+				"desc": "Here are the rules you must follow to get your work done in iLovePDF. By using iLovePDF, you agree to our Terms and Conditions.",
+				"button": "See more"
+			},
+			"cookie": {
+				"id": 1,
+				"title": "Cookie",
+				"desc": "As per European Law, we're happy to tell you exactly what cookies we're using and what they do. You can see what those are by clicking!",
+				"button": "See more"
+			}
+		}
+	},
 
-  "pricing": {
-    "topics": {
-      "heading": "Choose the plan that's right for you",
-      "tab1": "Monthly Billing",
-      "tab2": "Yearly Billing"
-    },
+	"pricing": {
+		"topics": {
+			"heading": "Choose the plan that's right for you",
+			"tab1": "Monthly Billing",
+			"tab2": "Yearly Billing"
+		},
 
-    "free": {
-      "id": 1,
-      "title": "Free",
-      "price": "0",
-      "button": "Get Started",
-      "label": "Free features include:",
-      "list": [
-        { "id": 1, "data": "Access to PDFLover tools" },
-        { "id": 2, "data": "Limited document processing" },
-        { "id": 3, "data": "Work on Web" }
-      ]
-    },
+		"free": {
+			"id": 1,
+			"title": "Free",
+			"price": "0",
+			"button": "Get Started",
+			"label": "Free features include:",
+			"list": [
+				{ "id": 1, "data": "Access to PDFLover tools" },
+				{ "id": 2, "data": "Limited document processing" },
+				{ "id": 3, "data": "Work on Web" }
+			]
+		},
 
-    "premium": {
-      "id": 1,
-      "title": "Premium",
-      "price": "500",
-      "yearPrice": "200",
-      "small": "Billed annually",
-      "smallData": "Billed as one payment of",
-      "strong": "₹ 2,400",
-      "month": "/ month",
-      "button": "Get Premium",
-      "label": "Premium features include:",
-      "list": [
-        { "id": 1, "data": "Full access to PDFLover tools" },
-        { "id": 2, "data": "Unlimited document processing" },
-        { "id": 3, "data": "Work on Web, Mobile and Desktop" },
-        {
-          "id": 4,
-          "data": "Convert scanned PDF to Word with OCR, sign with digital signatures, convert to PDF/A"
-        },
-        { "id": 5, "data": "No Ads" },
-        { "id": 6, "data": "Customer support" }
-      ]
-    },
+		"premium": {
+			"id": 1,
+			"title": "Premium",
+			"price": "500",
+			"yearPrice": "200",
+			"small": "Billed annually",
+			"smallData": "Billed as one payment of",
+			"strong": "₹ 2,400",
+			"month": "/ month",
+			"button": "Get Premium",
+			"label": "Premium features include:",
+			"list": [
+				{ "id": 1, "data": "Full access to PDFLover tools" },
+				{ "id": 2, "data": "Unlimited document processing" },
+				{ "id": 3, "data": "Work on Web, Mobile and Desktop" },
+				{
+					"id": 4,
+					"data": "Convert scanned PDF to Word with OCR, sign with digital signatures, convert to PDF/A"
+				},
+				{ "id": 5, "data": "No Ads" },
+				{ "id": 6, "data": "Customer support" }
+			]
+		},
 
-    "business": {
-      "id": 1,
-      "title": "Business",
-      "price": "Custom pricing",
-      "desc": "Pricing plan tailored for your business",
-      "button": "Contact Sales",
-      "label": "Business features include all Premium features plus:",
-      "list": [
-        { "id": 1, "data": "Flexible payment options" },
-        { "id": 2, "data": "Custom contract" },
-        { "id": 3, "data": "Dedicated customer success" },
-        { "id": 4, "data": "Dedicated hardware" }
-      ]
-    }
-  }
+		"business": {
+			"id": 1,
+			"title": "Business",
+			"price": "Custom pricing",
+			"desc": "Pricing plan tailored for your business",
+			"button": "Contact Sales",
+			"label": "Business features include all Premium features plus:",
+			"list": [
+				{ "id": 1, "data": "Flexible payment options" },
+				{ "id": 2, "data": "Custom contract" },
+				{ "id": 3, "data": "Dedicated customer success" },
+				{ "id": 4, "data": "Dedicated hardware" }
+			]
+		}
+	}
 }

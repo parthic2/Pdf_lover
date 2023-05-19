@@ -45,9 +45,9 @@ const Main = () => {
                               {title}
                             </Typography>
 
-                            <Typography variant="body2">
+                            <p>
                               {description}
-                            </Typography>
+                            </p>
                           </CardContent>
                         </React.Fragment>
                       </Card>
