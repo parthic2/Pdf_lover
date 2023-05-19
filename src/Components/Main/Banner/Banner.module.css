@@ -15,10 +15,5 @@ main {
 
 .home-title {
     position: relative;
-    /* padding: 40px 45px; */
     text-align: center;
-    /* background: -webkit-gradient(linear, left top, right top, color-stop(0, #882e27), color-stop(50%, #6d869a), to(#231641)) #44287d;
-    background: -webkit-linear-gradient(left, #882e27, #6d869a 50%, #231641) #44287d;
-    background: -o-linear-gradient(left, #882e27 0, #6d869a 50%, #231641 100%) #44287d;
-    background: linear-gradient(90deg, #882e27, #6d869a 50%, #231641) #44287d; */
 }

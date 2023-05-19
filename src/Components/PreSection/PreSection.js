@@ -26,7 +26,6 @@ const PreSection = () => {
   const dispatch = useDispatch();
 
   const premiumData = useSelector((state) => state.premiumReducers.premiumData);
-  // console.log(premiumData);
 
   useEffect(() => {
     dispatch(getPremiumApi());

@@ -1,7 +1,5 @@
 {
   "homepage": {
-    "header": {},
-
     "main": {
       "id": 1,
       "title": "Every tool you need to work with PDFs in one place",
@@ -195,9 +193,9 @@
 
     "premium": {
       "id": 1,
-      "heading": "Get more with Premium",
-      "subHeading": "Complete projects faster with batch file processing, ",
-      "subHeading1": "convert scanned documents with OCR and e-sign your business agreements.",
+      "heading": "Premium Offers More",
+      "subHeading": "With batch processing of data, you may finish tasks more quickly. ",
+      "subHeading1": "You can also use OCR to convert scanned documents and e-sign contracts for your organization.",
       "button": "Get Premium"
     },
 

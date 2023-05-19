@@ -12,7 +12,6 @@ const Footer = () => {
   const dispatch = useDispatch();
 
   const footerData = useSelector((state) => state.footerReducer.footerData);
-  // console.log(footerData);
 
   const pdfLoverLink = useSelector(
     (state) => state.footerReducer.footerData.pdfLoverLink

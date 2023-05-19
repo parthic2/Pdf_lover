@@ -41,7 +41,6 @@ const Banner = () => {
   const dispatch = useDispatch();
 
   const mainData = useSelector((state) => state.mainReducers.mainData);
-  // console.log(mainData);
 
   useEffect(() => {
     dispatch(getMainApi());
