@@ -43,22 +43,22 @@ const Footer = () => {
                   className={style.heading}
                   sx={{ margin: "15px" }}>
                   {footerData.pdfLover}
-                </Typography>{" "}
+                </Typography>
                 <ul>
                   {pdfLoverLink &&
                     pdfLoverLink.map((item) => {
                       const { id, title, link } = item;
                       return (
-                        <Link key={id} to={link}>
-                          <li>
+                        <li key={id}>
+                          <Link to={link}>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}
                               sx={{ margin: "15px" }}>
                               {title}
                             </Typography>
-                          </li>
-                        </Link>
+                          </Link>
+                        </li>
                       );
                     })}
                 </ul>
@@ -76,16 +76,16 @@ const Footer = () => {
                     productLink.map((item) => {
                       const { id, title, link } = item;
                       return (
-                        <Link key={id} to={link}>
-                          <li>
+                        <li key={id} >
+                          <Link to={link}>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}
                               sx={{ margin: "15px" }}>
                               {title}
                             </Typography>
-                          </li>
-                        </Link>
+                          </Link>
+                        </li>
                       );
                     })}
                 </ul>
@@ -103,16 +103,16 @@ const Footer = () => {
                     solutionLink.map((item) => {
                       const { id, title, link } = item;
                       return (
-                        <Link key={id} to={link}>
-                          <li>
+                        <li key={id}>
+                          <Link to={link}>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}
                               sx={{ margin: "15px" }}>
                               {title}
                             </Typography>
-                          </li>
-                        </Link>
+                          </Link>
+                        </li>
                       );
                     })}
                 </ul>
@@ -130,16 +130,16 @@ const Footer = () => {
                     companyLink.map((item) => {
                       const { id, title, link } = item;
                       return (
-                        <Link key={id} to={link}>
-                          <li>
+                        <li key={id}>
+                          <Link to={link}>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}
                               sx={{ margin: "15px" }}>
                               {title}
                             </Typography>
-                          </li>
-                        </Link>
+                          </Link>
+                        </li>
                       );
                     })}
                 </ul>
