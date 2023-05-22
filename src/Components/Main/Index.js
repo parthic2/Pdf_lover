@@ -1,7 +1,7 @@
 import React from "react";
 import PreSection from "../PreSection/PreSection";
 import Banner from "./Banner/Banner";
-// import Main from "./Main";
+import Main from "./Main";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div>
       <Banner />
-      {/* <Main /> */}
+      <Main />
       <PreSection />
     </div>
   );
