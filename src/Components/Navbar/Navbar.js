@@ -1,11 +1,12 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import AllToolsList from "./AllTools/AllToolsList";
+import { Container } from "@mui/material";
+import { FaEllipsisV ,FaSortDown} from 'react-icons/fa';
 
 import Logo from "../../Assets/image/Logo.png";
 
 import "./Navbar.css";
-import { Container } from "@mui/material";
 
 const Navbar = () => {
   return (
@@ -58,10 +59,9 @@ const Navbar = () => {
                     <li className="dropdown dropdown-full" id="menuSmall">
                       <span>
                         All PDF tools{" "}
-                        <i
-                          className="fa-solid fa-caret-down"
-                          style={{ marginLeft: "10px" }}
-                        />
+                        <i className="dropdown__icon">
+                          <FaSortDown />
+                        </i>
                       </span>
 
                       <span
@@ -86,7 +86,7 @@ const Navbar = () => {
                       <span
                         className="nav__icon__res"
                         data-toggle="dropdown">
-                        <i className="fa-solid fa-bars-staggered" />
+                        <FaEllipsisV />
                       </span>
 
                       <ul className="dropdown-menu mega menu-full" style={{ overflowX: "auto" }}>

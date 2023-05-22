@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div>
       <Banner />
-      <Main />
+      {/* <Main /> */}
       <PreSection />
     </div>
   );

@@ -1093,3 +1093,8 @@ body {
         width: 75%;
     }
 }
+
+.dropdown__icon {
+    margin-left: 10px;
+    font-size: 20px;
+}
