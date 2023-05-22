@@ -2,8 +2,6 @@ import { combineReducers } from "redux";
 
 import { mainReducers } from "./HomePage/MainReducers";
 import { detailsReducer } from "./HomePage/DetailsReducers";
-import { SolutionSliderReducer } from "./HomePage/SolutionSectionReducers";
-import { trustedReducers } from "./HomePage/TrustedReducers";
 import { premiumReducers } from "./HomePage/PremiumReducers";
 import { footerReducer } from "./Footer/FooterReducers";
 import { mergeReducer } from "./Pages/MergeReducer";
@@ -29,26 +27,10 @@ import { editReducer } from "./Pages/EditPDFReducer";
 import { unlockReducer } from "./Pages/UnlockPDFReducer";
 import { protectReducer } from "./Pages/ProtectPDFReducer";
 import { signReducer } from "./Pages/SignPDFReducer";
-import { faqReducer } from './DetailsPages/FAQReducer';
-import { organizeToolsReducer } from './DetailsPages/OrganizeToolReducer';
-import { optimizeToolsReducer } from './DetailsPages/OptimizeToolReducer';
-import { editToolsReducer } from './DetailsPages/EditToolReducer';
-import { CtoPToolsReducer } from './DetailsPages/CtoPToolReducer';
-import { CFromPToolsReducer } from './DetailsPages/CFromPToolReducer';
-import { securityToolsReducer } from './DetailsPages/SecurityToolReducer';
-import { techToolsReducer } from './DetailsPages/TechToolReducer';
-import { legalReducer } from './DetailsPages/LegalReducer';
-import { toolsTopicReducer } from './DetailsPages/ToolsTopicReducer';
-import { pricingReducer } from './DetailsPages/Pricing/PricingReducer';
-import { freeDataReducer } from './DetailsPages/Pricing/FreeCardReducer';
-import { businessDataReducer } from './DetailsPages/Pricing/BusinessCardReducer';
-import { premiumDataReducer } from './DetailsPages/Pricing/PremiumCardReducer';
 
 const rootReducer = combineReducers({
   mainReducers,
   detailsReducer,
-  SolutionSliderReducer,
-  trustedReducers,
   premiumReducers,
   footerReducer,
   mergeReducer,
@@ -74,20 +56,6 @@ const rootReducer = combineReducers({
   unlockReducer,
   protectReducer,
   signReducer,
-  faqReducer,
-  organizeToolsReducer,
-  optimizeToolsReducer,
-  editToolsReducer,
-  CtoPToolsReducer,
-  CFromPToolsReducer,
-  securityToolsReducer,
-  techToolsReducer,
-  legalReducer,
-  toolsTopicReducer,
-  pricingReducer,
-  freeDataReducer,
-  businessDataReducer,
-  premiumDataReducer
 });
 
 export default rootReducer;
