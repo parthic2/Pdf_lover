@@ -35,11 +35,13 @@ const PDFToEXCEL = () => {
                 <div className={style.tool__header}>
                   <Typography
                     variant="h4"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__title}>
                     {PtoEData.title}
                   </Typography>
                   <Typography
                     variant="subtitle1"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__subtitle}>
                     {PtoEData.subTitle}
                   </Typography>

@@ -1,10 +1,11 @@
 import { Button, Typography } from "@mui/material";
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import { getPdfToJpgApi } from "../../Redux/Action/Pages/PDFToJPGAction";
+
+import { AiOutlineSetting } from 'react-icons/ai';
 
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -83,6 +84,14 @@ const PDFToJPG = () => {
   // 👇 files is not an array, but it's iterable, spread to get an array of files
   const files = fileList ? [...fileList] : [];
 
+  // For Sidebar
+  const [sidebar, setSidebar] = useState(false);
+  const ref = useRef();
+
+  const toggleCart = () => {
+    setSidebar(!sidebar);
+  };
+
   return (
     <>
       <Navbar />
@@ -95,14 +104,22 @@ const PDFToJPG = () => {
                 <div className={style.tool__header}>
                   <Typography
                     variant="h4"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__title}>
                     {PtoJData.title}
                   </Typography>
                   <Typography
                     variant="subtitle1"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__subtitle}>
                     {PtoJData.subTitle}
                   </Typography>
+                </div>
+
+                <div className={style.side_btn}>
+                  <button className={style.toggle__btn} onClick={toggleCart}>
+                    <AiOutlineSetting />
+                  </button>
                 </div>
 
                 {/* Uploader button */}
@@ -166,6 +183,58 @@ const PDFToJPG = () => {
                   </button>
                 </div>
               )}
+
+
+              {/* Mobile phone */}
+              {
+                sidebar && (
+                  <div className={style.mobile__sidebar}>
+                    {
+                      sidebar && (
+                        <div>
+                          {fileList.length >= 1 && (
+                            <>
+                              <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
+                                <div
+                                  className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                                  <div className={style.option__panel__title}>
+                                    PDF TO JPG OPTIONS
+                                  </div>
+
+                                  <div className={style.option__panel__content}>
+                                    <div className={style.info}>
+                                      Every page of this PDF will be converted into a JPG file.
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {open && <Backdrop
+                                  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                  open={open}
+                                >
+                                  <CircularProgress color="inherit" />
+                                </Backdrop>}
+
+                                <button
+                                  onClick={handleUploadClick}
+                                  className={style["btn--red"]}
+                                  id={style.processTask}
+                                >
+                                  Convert to JPG
+                                  <i
+                                    className="fa-sharp fa-regular fa-circle-right"
+                                    style={{ marginLeft: "15px" }}
+                                  />
+                                </button>
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      )
+                    }
+                  </div>
+                )
+              }
             </div>
           </div>
 

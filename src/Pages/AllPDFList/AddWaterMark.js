@@ -1,5 +1,5 @@
 import { Button, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../Components/Navbar/Navbar";
 import { getAddWatermarkApi } from "../../Redux/Action/Pages/AddWaterMarkAction";
@@ -9,7 +9,9 @@ import WatermarkImages from "../WatermarkImage/WatermarkImages";
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import Backdrop from '@mui/material/Backdrop';
-import CircularProgress from '@mui/material/CircularProgress'
+import CircularProgress from '@mui/material/CircularProgress';
+
+import { AiOutlineSetting } from 'react-icons/ai';
 
 import style from "../Pages.module.css";
 import '../Tabs.css';
@@ -222,6 +224,14 @@ const AddWaterMark = () => {
   // 👇 files is not an array, but it's iterable, spread to get an array of files
   const files = fileList ? [...fileList] : [];
 
+  // For Sidebar
+  const [sidebar, setSidebar] = useState(false);
+  const ref = useRef();
+
+  const toggleCart = () => {
+    setSidebar(!sidebar);
+  };
+
   return (
     <>
       <Navbar />
@@ -234,14 +244,22 @@ const AddWaterMark = () => {
                 <div className={style.tool__header}>
                   <Typography
                     variant="h4"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__title}>
                     {watermarkData.title}
                   </Typography>
                   <Typography
                     variant="subtitle1"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__subtitle}>
                     {watermarkData.subTitle}
                   </Typography>
+                </div>
+
+                <div className={style.side_btn}>
+                  <button className={style.toggle__btn} onClick={toggleCart}>
+                    <AiOutlineSetting />
+                  </button>
                 </div>
 
                 {/* Uploader button */}
@@ -369,6 +387,115 @@ const AddWaterMark = () => {
                   </div>
                 </>
               )}
+
+              {/* Mobile phone */}
+              {
+                sidebar && (
+                  <div className={style.mobile__sidebar}>
+                    {
+                      sidebar && (
+                        <div>
+                          {fileList.length >= 1 && (
+                            <>
+                              <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
+                                <div
+                                  className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                                  <div className={style.option__panel__title}>WATERMARK OPTIONS</div>
+
+                                  <div className={style.option__tab}>
+                                    <div className="bloc-tabs">
+                                      <button
+                                        className={toggleStateWater === 1 ? "tabs active-tabs" : "tabs"}
+                                        onClick={() => handleToggleTab(1)}
+                                      >
+                                        <div>
+                                          <FormatColorTextIcon />
+                                        </div>
+                                        Place text
+                                      </button>
+                                      <button
+                                        className={toggleStateWater === 2 ? "tabs active-tabs" : "tabs"}
+                                        onClick={() => handleToggleTab(2)}
+                                      >
+                                        <div>
+                                          <AddPhotoAlternateIcon />
+                                        </div>
+                                        Place Image
+                                      </button>
+                                    </div>
+
+                                    <div className="content-tabs">
+                                      <div
+                                        className={toggleStateWater === 1 ? "content  active-content" : "content"}
+                                      >
+                                        <WatermarkText
+                                          isOpen={isOpen}
+                                          setIsOpen={setIsOpen}
+                                          text={text}
+                                          changeText={changeText}
+                                          currentFont={currentFont}
+                                          changeFont={changeFont}
+                                          fontSize={fontSize}
+                                          setFontSize={setFontSize}
+                                          incrementFontSize={incrementFontSize}
+                                          decrementFontSize={decrementFontSize}
+                                          transparency={transparency}
+                                          changeTransparency={changeTransparency}
+                                          textStyle={textStyle}
+                                          handleStyle={handleStyle}
+                                          mosaic={mosaic}
+                                          setMosaic={setMosaic}
+                                          rotation={rotation}
+                                          setColor={setColor}
+                                          changeRotation={changeRotation}
+                                          verticalPos={verticalPos}
+                                          changeVerPosition={changeVerPosition}
+                                          horizontalPos={horizontalPos}
+                                          changeHorPosition={changeHorPosition}
+                                        />
+                                      </div>
+
+                                      <div
+                                        className={toggleStateWater === 2 ? "content  active-content" : "content"}
+                                      >
+                                        <WatermarkImages
+                                          imgData={imgData}
+                                          handleImage={handleImage}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {open && <Backdrop
+                                  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                  open={open}
+                                >
+                                  <CircularProgress color="inherit" />
+                                </Backdrop>}
+
+                                <button
+                                  onClick={() => {
+                                    watermarkText();
+                                    watermarkImage();
+                                  }}
+                                  className={style["btn--red"]}
+                                  id={style.processTask}
+                                >
+                                  Add WaterMark
+                                  <i
+                                    className="fa-sharp fa-regular fa-circle-right"
+                                    style={{ marginLeft: "15px" }} />
+                                </button>
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      )
+                    }
+                  </div>
+                )
+              }
 
             </div>
           </div>

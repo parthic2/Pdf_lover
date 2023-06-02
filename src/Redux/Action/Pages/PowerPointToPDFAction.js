@@ -3,7 +3,7 @@ import { actionTypes } from "../../Types/actionTypes";
 // With redux-thunk
 export const getPowerToPDFApi = () => {
   return async (dispatch, getState) => {
-    const response = await fetch("https://pdf-lover-data.onrender.com/detailsPage");
+    const response = await fetch("https://pdf-lover-data.onrender.com/detailsPages");
     const data = await response.json();
     // console.log(data.powerpoint_to_pdf);
 

@@ -217,7 +217,7 @@
 		}
 	},
 
-	"detailsPage": {
+	"detailsPages": {
 		"merge": {
 			"id": 1,
 			"title": "Merge PDF files",

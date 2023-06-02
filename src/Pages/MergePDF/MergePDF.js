@@ -1,5 +1,5 @@
 import { Button, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -7,6 +7,8 @@ import { getMergeApi } from "../../Redux/Action/Pages/MergeAction";
 
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
+
+import { AiOutlineSetting } from 'react-icons/ai';
 
 import style from "../Pages.module.css";
 
@@ -82,6 +84,14 @@ const MergePDF = () => {
   // 👇 files is not an array, but it's iterable, spread to get an array of files
   const files = fileList ? [...fileList] : [];
 
+  // For Sidebar
+  const [sidebar, setSidebar] = useState(false);
+  const ref = useRef();
+
+  const toggleCart = () => {
+    setSidebar(!sidebar);
+  };
+
   return (
     <>
       <Navbar />
@@ -94,15 +104,23 @@ const MergePDF = () => {
                 <div className={style.tool__header}>
                   <Typography
                     variant="h4"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__title}>
                     {mergeData.title}
                   </Typography>
 
                   <Typography
                     variant="subtitle1"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__subtitle}>
                     {mergeData.subTitle}
                   </Typography>
+                </div>
+
+                <div className={style.side_btn}>
+                  <button className={style.toggle__btn} onClick={toggleCart}>
+                    <AiOutlineSetting />
+                  </button>
                 </div>
 
                 {/* Uploader button */}
@@ -190,6 +208,81 @@ const MergePDF = () => {
                   </div>
                 </>
               )}
+
+
+              {/* Mobile phone */}
+              {
+                sidebar && (
+                  <div className={style.mobile__sidebar}>
+                    {
+                      sidebar && (
+                        <div>
+                          {fileList.length >= 1 && (
+                            <>
+                              <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
+                                <div
+                                  className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                                  <div className={style.option__panel__title}>Merge pdf</div>
+
+                                  <div className={style.option__panel__content}>
+                                    <div className={style.info}>
+                                      Please, select more PDF files by clicking again on
+                                      ’Select PDF files’. <br />
+                                      Select multiple files by maintaining pressed ’Ctrl’
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {fileList.length >= 2 ? (
+                                  <>
+                                    {open && <Backdrop
+                                      sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                      open={open}
+                                    >
+                                      <CircularProgress color="inherit" />
+                                    </Backdrop>}
+
+                                    <button
+                                      onClick={handleUploadClick}
+                                      className={style["btn--red"]}
+                                      id={style.processTask}
+                                    >
+                                      Merge PDF
+                                      <i
+                                        className="fa-sharp fa-regular fa-circle-right"
+                                        style={{ marginLeft: "15px" }}
+                                      />
+                                    </button>
+                                  </>
+                                ) : (
+                                  <>
+                                    <div className={style.alert__text}>
+                                      <p>Please add one more file to activate options</p>
+                                    </div>
+                                    <button
+                                      onClick={handleUploadClick}
+                                      className={style["btn--grey"]}
+                                      disabled
+                                      id={style.processTask}
+                                    >
+                                      Merge PDF
+                                      <i
+                                        className="fa-sharp fa-regular fa-circle-right"
+                                        style={{ marginLeft: "15px" }}
+                                      />
+                                    </button>
+                                  </>
+                                )}
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      )
+                    }
+                  </div>
+                )
+              }
+
             </div>
           </div>
 

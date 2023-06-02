@@ -35,11 +35,13 @@ const WORDToPDF = () => {
                 <div className={style.tool__header}>
                   <Typography
                     variant="h4"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__title}>
                     {wtoPData.title}
                   </Typography>
                   <Typography
                     variant="subtitle1"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__subtitle}>
                     {wtoPData.subTitle}
                   </Typography>

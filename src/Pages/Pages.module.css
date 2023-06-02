@@ -5,12 +5,9 @@
 
 .tool {
     height: calc(100vh - 60px);
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
     align-items: center;
     overflow: auto;
     overflow-x: hidden;
@@ -20,9 +17,7 @@
     text-align: center;
     height: 100%;
     padding: 24px;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -ms-flex: 1 1;
     flex: 1 1;
     background-color: #f3f0ec;
     overflow-y: auto;
@@ -55,10 +50,6 @@
 }
 
 .uploader {
-    /* display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap; */
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 72px;
@@ -82,26 +73,19 @@ input[type="file"] {
     transition: all .1s linear;
     border-radius: 8px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
-    text-transform: none;
 }
 
 .btn-icon {
     width: 36px;
     margin-right: 10px;
-    /* min-width: 0;
-    padding: 0; */
     height: 36px;
     border-radius: 100%;
     background: #FE4F62;
     color: #fff;
     text-decoration: none;
-    display: -ms-inline-flexbox;
     display: inline-flex;
-    -ms-flex-pack: center;
     justify-content: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
 }
 
@@ -149,7 +133,6 @@ input[type="file"] {
 .option__panel {
     width: 100%;
     transition: all .4s ease-out;
-    padding-bottom: 50px;
 }
 
 .option__panel__title {
@@ -232,7 +215,7 @@ input[type="file"] {
     box-shadow: 0 2px 8px 0 rgba(50, 50, 50, .3);
     transition: none;
     line-height: 28px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 24px;
     min-height: 64px;
 }
@@ -533,12 +516,68 @@ textarea {
 
 
 /* Responsive side bar */
-/* .responsive__sidebar {
+.toggle__btn {
     display: none;
 }
 
-@media (max-width: 840px) {
-    .tool__sidebar__res {
-        display: block;
+.mobile__sidebar {
+    display: none;
+}
+
+@media screen and (max-width:1020px) {
+    .toggle__btn {
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FE4F62;
+        color: #fff;
+        width: 36px;
+        min-width: 0;
+        margin-left: -116%;
+        height: 36px;
+        border-radius: 30%;
+        text-decoration: none;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
     }
-} */
+
+    .side_btn {
+        position: absolute;
+        left: 93%;
+        top: 7%;
+    }
+
+    .tool__sidebar {
+        display: none;
+    }
+
+    .mobile__sidebar {
+        display: block;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width:420px) {
+    .mobile__sidebar {
+        width: 22em;
+    }
+}
+
+.option__select__item {
+    border-bottom: 1px solid #aeaeb2;
+    padding: 22px 20px 22px 22px;
+    cursor: pointer;
+}
+
+.option__select__item_title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #FE4F62;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.option__description {
+    color: #383e45;
+}

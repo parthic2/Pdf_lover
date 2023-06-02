@@ -1,5 +1,5 @@
 import { Button, Typography } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { getSplitApi } from "../../Redux/Action/Pages/SplitAction";
@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
+
+import { AiOutlineSetting } from 'react-icons/ai';
 
 import style from "../Pages.module.css";
 
@@ -83,6 +85,13 @@ const SplitPDF = () => {
     }
   };
 
+  // For Sidebar
+  const [sidebar, setSidebar] = useState(false);
+  const ref = useRef();
+
+  const toggleCart = () => {
+    setSidebar(!sidebar);
+  };
 
   return (
     <>
@@ -96,14 +105,22 @@ const SplitPDF = () => {
                 <div className={style.tool__header}>
                   <Typography
                     variant="h4"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__title}>
                     {splitData.title}
                   </Typography>
                   <Typography
                     variant="subtitle1"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__subtitle}>
                     {splitData.subTitle}
                   </Typography>
+                </div>
+
+                <div className={style.side_btn}>
+                  <button className={style.toggle__btn} onClick={toggleCart}>
+                    <AiOutlineSetting />
+                  </button>
                 </div>
 
                 {/* Uploader button */}
@@ -152,6 +169,48 @@ const SplitPDF = () => {
                   </button>
                 </div>
               )}
+
+
+              {/* Mobile phone */}
+              {
+                sidebar && (
+                  <div className={style.mobile__sidebar}>
+                    {
+                      sidebar && (
+                        <div>
+                          {fileList.length >= 1 && (
+                            <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
+                              <div
+                                className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                                <div className={style.option__panel__title}>SPLIT PDF</div>
+                              </div>
+
+                              {open && <Backdrop
+                                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                open={open}
+                              >
+                                <CircularProgress color="inherit" />
+                              </Backdrop>}
+
+                              <button
+                                onClick={handleUploadClick}
+                                className={style["btn--red"]}
+                                id={style.processTask}
+                              >
+                                Split PDF
+                                <i
+                                  className="fa-sharp fa-regular fa-circle-right"
+                                  style={{ marginLeft: "15px" }}
+                                />
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      )
+                    }
+                  </div>
+                )
+              }
             </div>
           </div>
 

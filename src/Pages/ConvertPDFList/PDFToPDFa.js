@@ -8,10 +8,10 @@ import style from "../Pages.module.css";
 
 const PDFToPDFa = () => {
 
-// For Change title dynamically
-useEffect(() => {
-  document.title = "Convert PDF to PDF/A.";
-}, []);
+  // For Change title dynamically
+  useEffect(() => {
+    document.title = "Convert PDF to PDF/A.";
+  }, []);
 
   // For Redux
   const dispatch = useDispatch();
@@ -35,11 +35,13 @@ useEffect(() => {
                 <div className={style.tool__header}>
                   <Typography
                     variant="h4"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__title}>
                     {PtoPaData.title}
                   </Typography>
                   <Typography
                     variant="subtitle1"
+                    sx={{ textTransform: "capitalize" }}
                     className={style.tool__header__subtitle}>
                     {PtoPaData.subTitle}
                   </Typography>
