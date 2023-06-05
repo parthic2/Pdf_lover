@@ -4,7 +4,7 @@ import style from "./WatermarkImages.module.css";
 
 const WatermarkImages = ({ handleImage, imgData }) => {
     return (
-        <>
+        <div className={style.image__style}>
             <Button
                 variant="contained"
                 component="label"
@@ -18,8 +18,8 @@ const WatermarkImages = ({ handleImage, imgData }) => {
                 />
                 <span>Choose Image</span>
             </Button>
-            <div>{imgData.name}</div>
-        </>
+            <div style={{ marginTop: "10px" }}>{imgData.name}</div>
+        </div>
     )
 }
 

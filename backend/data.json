@@ -191,10 +191,10 @@
 			"solution": "Solution",
 			"company": "Company",
 			"pdfLoverLink": [
-				{ "id": 1, "title": "Home", "link": "/" },
-				{ "id": 2, "title": "Pricing", "link": "Pricing" },
-				{ "id": 3, "title": "Tools", "link": "Tools" },
-				{ "id": 4, "title": "FAQ", "link": "FAQ" }
+				{ "id": 1, "title": "Home" },
+				{ "id": 2, "title": "Pricing" },
+				{ "id": 3, "title": "Tools" },
+				{ "id": 4, "title": "FAQ" }
 			],
 			"productLink": [
 				{ "id": 1, "title": "PDFLover Desktop" },
@@ -211,7 +211,7 @@
 				{ "id": 1, "title": "Our Story" },
 				{ "id": 2, "title": "Blog" },
 				{ "id": 3, "title": "Press" },
-				{ "id": 4, "title": "Legal & Privacy", "link": "Legal" },
+				{ "id": 4, "title": "Legal & Privacy" },
 				{ "id": 5, "title": "Contact" }
 			]
 		}

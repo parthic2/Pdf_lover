@@ -323,7 +323,7 @@ const AddWaterMark = () => {
 
                         <div className="content-tabs">
                           <div
-                            className={toggleStateWater === 1 ? "content  active-content" : "content"}
+                            className={toggleStateWater === 1 ? "content active-content" : "content"}
                           >
                             <WatermarkText
                               isOpen={isOpen}

@@ -1,10 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import PtoE from "../../../Assets/image/PtoE.svg";
-import PtoP from "../../../Assets/image/PtoP.svg";
-import PtoW from "../../../Assets/image/PtoW.svg";
-import PtoJ from "../../../Assets/image/PtoJ.svg";
-import JtoP from "../../../Assets/image/JtoP.svg";
 
 const ConvertList = () => {
   return (
@@ -20,7 +15,7 @@ const ConvertList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/jpg_to_pdf">
-              <img src={JtoP} alt="JPG to PDF" />
+              <img src="/image/JtoP.svg" alt="JPG to PDF" />
               JPG to PDF
             </NavLink>
           </li>
@@ -68,7 +63,7 @@ const ConvertList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/pdf_to_jpg">
-              <img src={PtoJ} alt="PDF to JPG" />
+              <img src="/image/PtoJ.svg" alt="PDF to JPG" />
               PDF to JPG
             </NavLink>
           </li>
@@ -78,7 +73,7 @@ const ConvertList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/pdf_to_word">
-              <img src={PtoW} alt="PDF to WORD" />
+              <img src="/image/PtoW.svg" alt="PDF to WORD" />
               PDF to WORD
             </NavLink>
           </li>
@@ -88,7 +83,7 @@ const ConvertList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/pdf_to_powerpoint">
-              <img src={PtoP} alt="PDF to POWERPOINT" />
+              <img src="/image/PtoP.svg" alt="PDF to POWERPOINT" />
               PDF to POWERPOINT
             </NavLink>
           </li>
@@ -98,7 +93,7 @@ const ConvertList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/pdf_to_excel">
-              <img src={PtoE} alt="PDF to EXCEL" />
+              <img src="/image/PtoE.svg" alt="PDF to EXCEL" />
               PDF to EXCEL
             </NavLink>
           </li>

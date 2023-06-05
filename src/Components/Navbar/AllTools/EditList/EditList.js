@@ -1,9 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Rotate from "../../../../Assets/image/Rotate.svg";
-import PageNumber from "../../../../Assets/image/PageNumber.svg";
-import Watermark from "../../../../Assets/image/Watermark.svg";
-import Edit from "../../../../Assets/image/Edit.svg";
 
 const EditList = () => {
   return (
@@ -19,7 +15,7 @@ const EditList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Rotate_PDF">
-              <img src={Rotate} alt="Rotate PDF" />
+              <img src="/image/Rotate.svg" alt="Rotate PDF" />
               Rotate PDF
             </NavLink>
           </li>
@@ -35,7 +31,7 @@ const EditList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Add_page_numbers">
-              <img src={PageNumber} alt="Add page numbers" />
+              <img src="/image/PageNumber.svg" alt="Add page numbers" />
               Add page numbers
             </NavLink>
           </li>
@@ -51,7 +47,7 @@ const EditList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Add_watermark">
-              <img src={Watermark} alt="Add watermark" />
+              <img src="/image/Watermark.svg" alt="Add watermark" />
               Add watermark
             </NavLink>
           </li>
@@ -67,7 +63,7 @@ const EditList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Edit_PDF">
-              <img src={Edit} alt="Edit PDF" />
+              <img src="/image/Edit.svg" alt="Edit PDF" />
               Edit PDF
             </NavLink>
           </li>

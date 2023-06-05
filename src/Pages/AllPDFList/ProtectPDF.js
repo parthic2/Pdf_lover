@@ -239,6 +239,7 @@ const ProtectPDF = () => {
                             {formError.confirmPassword}
                           </p>
 
+                          <p>Note : Password and Confirm Password are same</p>
                           {/* <button type="submit" className="btn" value="Submit">
                             submit
                           </button> */}
@@ -321,6 +322,7 @@ const ProtectPDF = () => {
                                           {formError.confirmPassword}
                                         </p>
 
+                                        <p>Note : Password and Confirm Password are same</p>
                                         {/* <button type="submit" className="btn" value="Submit">
                                               submit
                                             </button> */}

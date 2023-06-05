@@ -177,23 +177,25 @@ const RotatePDF = () => {
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
                     <div className={style.option__panel__title}>ROTATE PDF</div>
 
-                    <div className={style.option__panel__content}>
-                      <div className={style.info}>
-                        Mouse over PDF file below and a icon will appear, click
-                        on it to rotate your PDFs.
+                    <div className={style.option__tab}>
+                      <div className={style.option__panel__content}>
+                        <div className={style.info}>
+                          Mouse over PDF file below and a icon will appear, click
+                          on it to rotate your PDFs.
+                        </div>
+                      </div>
+                      <p className={style.rotate}>ROTATION</p>
+                      <div style={{ display: "flex", justifyContent: "center" }}>
+                        <div className={style["button-70"]} onClick={rotateRight}>
+                          Right
+                        </div>
+                        {rotation}
+
+                        {/* <div className={style["button-70"]} onClick={rotateRight}>
+                              Right
+                            </div> */}
                       </div>
                     </div>
-                  </div>
-                  <p className={style.rotate}>ROTATION</p>
-                  <div style={{ display: "flex", justifyContent: "center" }}>
-                    <div className={style["button-70"]} onClick={rotateRight}>
-                      Right
-                    </div>
-                    {rotation}
-
-                    {/* <div className={style["button-70"]} onClick={rotateRight}>
-                      Right
-                    </div> */}
                   </div>
 
                   {open && <Backdrop
@@ -232,23 +234,25 @@ const RotatePDF = () => {
                                   className={`${style.option__panel} ${style["option__panel--active"]}`}>
                                   <div className={style.option__panel__title}>ROTATE PDF</div>
 
-                                  <div className={style.option__panel__content}>
-                                    <div className={style.info}>
-                                      Mouse over PDF file below and a icon will appear, click
-                                      on it to rotate your PDFs.
+                                  <div className={style.option__tab}>
+                                    <div className={style.option__panel__content}>
+                                      <div className={style.info}>
+                                        Mouse over PDF file below and a icon will appear, click
+                                        on it to rotate your PDFs.
+                                      </div>
                                     </div>
-                                  </div>
-                                </div>
-                                <p className={style.rotate}>ROTATION</p>
-                                <div style={{ display: "flex", justifyContent: "center" }}>
-                                  <div className={style["button-70"]} onClick={rotateRight}>
-                                    Right
-                                  </div>
-                                  {rotation}
+                                    <p className={style.rotate}>ROTATION</p>
+                                    <div style={{ display: "flex", justifyContent: "center" }}>
+                                      <div className={style["button-70"]} onClick={rotateRight}>
+                                        Right
+                                      </div>
+                                      {rotation}
 
-                                  {/* <div className={style["button-70"]} onClick={rotateRight}>
+                                      {/* <div className={style["button-70"]} onClick={rotateRight}>
                                       Right
                                     </div> */}
+                                    </div>
+                                  </div>
                                 </div>
 
                                 {open && <Backdrop

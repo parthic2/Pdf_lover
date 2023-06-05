@@ -1,9 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import Compress from "../../../../Assets/image/Compress.svg";
-import Repair from "../../../../Assets/image/Repair.svg";
-
 const OptimizeList = () => {
   return (
     <>
@@ -18,7 +15,7 @@ const OptimizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Compress_PDF">
-              <img src={Compress} alt="Compress PDF" />
+              <img src="/image/Compress.svg" alt="Compress PDF" />
               Compress PDF
             </NavLink>
           </li>
@@ -34,7 +31,7 @@ const OptimizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Repair_PDF">
-              <img src={Repair} alt="Repair PDF" />
+              <img src="/image/Repair.svg" alt="Repair PDF" />
               Repair PDF
             </NavLink>
           </li>
@@ -50,7 +47,7 @@ const OptimizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/OCR_PDF">
-              <img src={Compress} alt="OCR PDF" />
+              <img src="/image/Compress.svg" alt="OCR PDF" />
               OCR PDF
             </NavLink>
           </li>

@@ -1,8 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Unlock from "../../../../Assets/image/Unlock.svg";
-import Protect from "../../../../Assets/image/Protect.svg";
-import Sign from "../../../../Assets/image/Sign.svg";
 
 const SecurityList = () => {
   return (
@@ -18,7 +15,7 @@ const SecurityList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Unlock_PDF">
-              <img src={Unlock} alt="Unlock PDF" />
+              <img src="/image/Unlock.svg" alt="Unlock PDF" />
               Unlock PDF
             </NavLink>
           </li>
@@ -34,7 +31,7 @@ const SecurityList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Protect_PDF">
-              <img src={Protect} alt="Protect PDF" />
+              <img src="/image/Protect.svg" alt="Protect PDF" />
               Protect PDF
             </NavLink>
           </li>
@@ -50,7 +47,7 @@ const SecurityList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Sign_PDF">
-              <img src={Sign} alt="Sign PDF" />
+              <img src="/image/Sign.svg" alt="Sign PDF" />
               Sign PDF
             </NavLink>
           </li>

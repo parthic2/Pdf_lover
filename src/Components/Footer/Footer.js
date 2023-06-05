@@ -47,10 +47,10 @@ const Footer = () => {
                 <ul>
                   {pdfLoverLink &&
                     pdfLoverLink.map((item) => {
-                      const { id, title, link } = item;
+                      const { id, title } = item;
                       return (
                         <li key={id}>
-                          <Link to={link}>
+                          <Link>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}
@@ -74,10 +74,10 @@ const Footer = () => {
                 <ul>
                   {productLink &&
                     productLink.map((item) => {
-                      const { id, title, link } = item;
+                      const { id, title } = item;
                       return (
                         <li key={id} >
-                          <Link to={link}>
+                          <Link>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}
@@ -101,10 +101,10 @@ const Footer = () => {
                 <ul>
                   {solutionLink &&
                     solutionLink.map((item) => {
-                      const { id, title, link } = item;
+                      const { id, title } = item;
                       return (
                         <li key={id}>
-                          <Link to={link}>
+                          <Link>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}
@@ -128,10 +128,10 @@ const Footer = () => {
                 <ul>
                   {companyLink &&
                     companyLink.map((item) => {
-                      const { id, title, link } = item;
+                      const { id, title } = item;
                       return (
                         <li key={id}>
-                          <Link to={link}>
+                          <Link>
                             <Typography
                               variant="subtitle1"
                               className={style.subHeading}

@@ -156,12 +156,14 @@ const CompressPDF = () => {
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
                     <div className={style.option__panel__title}>COMPRESSION PDF</div>
 
-                    <div className={style.option__select__item}>
-                      <div className={style.option__select__item_title}>
-                        Recommended Compression
-                      </div>
-                      <div className={style.option__description}>
-                        Good quality, good compression
+                    <div className={style.option__tab}>
+                      <div className={style.option__select__item}>
+                        <div className={style.option__select__item_title}>
+                          Recommended Compression
+                        </div>
+                        <div className={style.option__description}>
+                          Good quality, good compression
+                        </div>
                       </div>
                     </div>
                   </div>

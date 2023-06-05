@@ -2,9 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import AllToolsList from "./AllTools/AllToolsList";
 import { Container } from "@mui/material";
-import { FaEllipsisV ,FaSortDown} from 'react-icons/fa';
-
-import Logo from "../../Assets/image/Logo.png";
+import { FaEllipsisV, FaSortDown } from 'react-icons/fa';
 
 import "./Navbar.css";
 
@@ -19,7 +17,7 @@ const Navbar = () => {
             <div className="brand">
               <div className="brand__logo">
                 <Link to="/" title="PDFLover">
-                  <img src={Logo} alt="PDFLover" />
+                  <img src="/image/Logo.png" alt="PDFLover" />
                 </Link>
               </div>
             </div>

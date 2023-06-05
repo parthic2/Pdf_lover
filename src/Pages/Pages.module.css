@@ -121,6 +121,7 @@ input[type="file"] {
 .tool__sidebar {
     width: 22em;
     height: 100%;
+    /* padding: 0 0 120px; */
     /* overflow-y: auto; */
 }
 
@@ -132,6 +133,7 @@ input[type="file"] {
 
 .option__panel {
     width: 100%;
+    padding: 0 0 120px;
     transition: all .4s ease-out;
 }
 
@@ -402,6 +404,10 @@ textarea {
 }
 
 /* add watermark */
+/* .option__tab {
+    padding: 0 0 120px;
+} */
+
 .option__tab__select {
     display: flex;
 }

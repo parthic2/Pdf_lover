@@ -1,11 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import Merger from "../../../../Assets/image/Merger.svg";
-// import Split from "../../../../Assets/image/Split.svg";
-import Organize from "../../../../Assets/image/Organize.svg";
-import Scan from "../../../../Assets/image/Scan.svg";
-
 const OrganizeList = () => {
   return (
     <>
@@ -20,7 +15,7 @@ const OrganizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Merge_PDF">
-              <img src={Merger} alt="Merger PDF" />
+              <img src="/image/Merger.svg" alt="Merger PDF" />
               Merger PDF
             </NavLink>
           </li>
@@ -36,7 +31,7 @@ const OrganizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Split_PDF">
-              <img src={Merger} alt="Split PDF" />
+              <img src="/image/Merger.svg" alt="Split PDF" />
               Split PDF
             </NavLink>
           </li>
@@ -52,7 +47,7 @@ const OrganizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Remove_pages">
-              <img src={Merger} alt="Remove pages" />
+              <img src="/image/Merger.svg" alt="Remove pages" />
               Remove pages
             </NavLink>
           </li>
@@ -68,7 +63,7 @@ const OrganizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Split_PDF">
-              <img src={Merger} alt="Extract pages" />
+              <img src="/image/Merger.svg" alt="Extract pages" />
               Extract pages
             </NavLink>
           </li>
@@ -84,7 +79,7 @@ const OrganizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Organize_PDF">
-              <img src={Organize} alt="Organize PDF" />
+              <img src="/image/Organize.svg" alt="Organize PDF" />
               Organize PDF
             </NavLink>
           </li>
@@ -99,8 +94,8 @@ const OrganizeList = () => {
               className={({ isActive }) =>
                 isActive ? "nav__item--active" : undefined
               }
-              to="">
-              <img src={Scan} alt="Scan to PDF" />
+              to="/">
+              <img src="/image/Scan.svg" alt="Scan to PDF" />
               Scan to PDF
             </NavLink>
           </li>
