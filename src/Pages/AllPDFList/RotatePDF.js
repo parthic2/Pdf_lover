@@ -186,14 +186,14 @@ const RotatePDF = () => {
                       </div>
                       <p className={style.rotate}>ROTATION</p>
                       <div style={{ display: "flex", justifyContent: "center" }}>
+                        <div className={style.rotation_text}>{rotation}</div>
                         <div className={style["button-70"]} onClick={rotateRight}>
                           Right
                         </div>
-                        {rotation}
 
                         {/* <div className={style["button-70"]} onClick={rotateRight}>
-                              Right
-                            </div> */}
+                          Right
+                        </div> */}
                       </div>
                     </div>
                   </div>
@@ -243,14 +243,14 @@ const RotatePDF = () => {
                                     </div>
                                     <p className={style.rotate}>ROTATION</p>
                                     <div style={{ display: "flex", justifyContent: "center" }}>
+                                      <div className={style.rotation_text}>{rotation}</div>
                                       <div className={style["button-70"]} onClick={rotateRight}>
                                         Right
                                       </div>
-                                      {rotation}
 
                                       {/* <div className={style["button-70"]} onClick={rotateRight}>
-                                      Right
-                                    </div> */}
+                                        Right
+                                      </div> */}
                                     </div>
                                   </div>
                                 </div>

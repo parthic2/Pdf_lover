@@ -220,6 +220,7 @@ input[type="file"] {
     font-weight: 500;
     font-size: 24px;
     min-height: 64px;
+    text-transform: uppercase;
 }
 
 .btn--grey {
@@ -381,6 +382,18 @@ textarea {
 
 /* rotate css */
 
+.rotation_text{
+    width: 3em;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 5px;
+    padding: 10px 10px;
+    text-align: center;
+    color: black;
+}
+
 .rotate {
     padding-left: 15px;
     color: red;
@@ -396,18 +409,12 @@ textarea {
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
-    font-family: Montserrat, sans-serif;
-    font-size: .9em;
     margin: 5px;
     padding: 10px 15px;
     text-align: center;
 }
 
 /* add watermark */
-/* .option__tab {
-    padding: 0 0 120px;
-} */
-
 .option__tab__select {
     display: flex;
 }
@@ -560,6 +567,8 @@ textarea {
     .mobile__sidebar {
         display: block;
         height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 }
 
@@ -586,4 +595,29 @@ textarea {
 
 .option__description {
     color: #383e45;
+}
+
+.page__range {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#startPageInput,
+#lastPageInput {
+    width: 20%;
+}
+
+.range_mode {
+    text-transform: capitalize;
+    color: #FE4F62;
+    font-size: 18px;
+    padding: 15px 15px 0px 15px;
+    margin-bottom: 0px;
+}
+
+.error-message{
+    color: red;
+    padding-top: 10px;
 }

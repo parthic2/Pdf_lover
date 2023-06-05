@@ -43,7 +43,7 @@ const AddWaterMark = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   // For Text
-  const [text, setText] = useState("pdfLover");
+  const [text, setText] = useState("PDFLover");
   const changeText = (e) => {
     setText(e);
   }
@@ -76,7 +76,7 @@ const AddWaterMark = () => {
   }
 
   // For transparency
-  const [transparency, setTransparency] = useState("100");
+  const [transparency, setTransparency] = useState("No transparency");
 
   const changeTransparency = (e) => {
     setTransparency(e);
@@ -118,17 +118,68 @@ const AddWaterMark = () => {
     // console.log(index);
   }
 
+  // For Page Range
+  const [pageCount, setPageCount] = useState(0);
+  const [startPage, setStartPage] = useState(0);
+  const [endPage, setEndPage] = useState(0);
+
+  const handleStartPageChange = (e) => {
+    const value = Number(e.target.value);
+    setStartPage(value);
+    setEndPage(Math.max(value, endPage));
+  };
+
+  const handleLastPageChange = (e) => {
+    const value = Number(e.target.value);
+    setEndPage(value);
+    setStartPage(Math.min(value, startPage));
+  };
 
   // For Loading data
   const [open, setOpen] = useState(false);
 
-  // For Upload Files
 
-  const [fileList, setFileList] = useState(0);
+  // For Upload Files
+  const [fileList, setFileList] = useState(null);
   const [imgData, setImgData] = useState("");
 
   const handleFileChange = (e) => {
-    setFileList(e.target.files);
+    const selectedFile = e.target.files[0];
+    setFileList(selectedFile);
+    setPageCount(0);
+    setStartPage(0);
+    setEndPage(0);
+
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      const typedArray = new Uint8Array(event.target.result);
+      const pdf = await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.js';
+        script.onload = () => {
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.js';
+
+          const loadingTask = window.pdfjsLib.getDocument(typedArray);
+          loadingTask.promise.then((pdfDocument) => {
+            resolve(pdfDocument);
+          }).catch((error) => {
+            reject(error);
+          });
+        };
+        document.body.appendChild(script);
+      });
+
+      const numPages = pdf.numPages;
+      setPageCount(numPages);
+      setStartPage(1);
+      setEndPage(numPages);
+    };
+
+    reader.onerror = (error) => {
+      console.error('Error reading file:', error);
+    };
+
+    reader.readAsArrayBuffer(selectedFile);
   };
 
   const handleImage = (e) => {
@@ -145,12 +196,10 @@ const AddWaterMark = () => {
 
     // 👇 Create new FormData object and append files
     var formData = new FormData();
-    for (let i = 0; i < fileList.length; i++) {
-      formData.append("file", fileList[i]);
-    }
+    formData.append("file", fileList);
     formData.append("mode", "text");
     formData.append("text", text);
-    formData.append("pages", "all");
+    formData.append("pages", `${startPage}-${endPage}`);
     formData.append("vertical_position", verticalPos);
     formData.append("horizontal_position", horizontalPos);
     formData.append("mosaic", mosaic);
@@ -221,9 +270,6 @@ const AddWaterMark = () => {
     }
   }
 
-  // 👇 files is not an array, but it's iterable, spread to get an array of files
-  const files = fileList ? [...fileList] : [];
-
   // For Sidebar
   const [sidebar, setSidebar] = useState(false);
   const ref = useRef();
@@ -277,21 +323,11 @@ const AddWaterMark = () => {
                     />
                     <span>{watermarkData.button}</span>
                   </Button>
-
-                  <ul>
-                    {files.map((file, i) => (
-                      <div key={i}>
-                        <li>
-                          {file.name} - {file.type}
-                        </li>
-                      </div>
-                    ))}
-                  </ul>
                 </div>
               </div>
 
               {/* sidebar  */}
-              {fileList.length >= 1 && (
+              {fileList && (
                 <>
                   <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
 
@@ -349,6 +385,11 @@ const AddWaterMark = () => {
                               changeVerPosition={changeVerPosition}
                               horizontalPos={horizontalPos}
                               changeHorPosition={changeHorPosition}
+                              pageCount={pageCount}
+                              startPage={startPage}
+                              handleStartPageChange={handleStartPageChange}
+                              endPage={endPage}
+                              handleLastPageChange={handleLastPageChange}
                             />
                           </div>
 
@@ -395,7 +436,7 @@ const AddWaterMark = () => {
                     {
                       sidebar && (
                         <div>
-                          {fileList.length >= 1 && (
+                          {fileList && (
                             <>
                               <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
                                 <div
@@ -452,6 +493,11 @@ const AddWaterMark = () => {
                                           changeVerPosition={changeVerPosition}
                                           horizontalPos={horizontalPos}
                                           changeHorPosition={changeHorPosition}
+                                          pageCount={pageCount}
+                                          startPage={startPage}
+                                          handleStartPageChange={handleStartPageChange}
+                                          endPage={endPage}
+                                          handleLastPageChange={handleLastPageChange}
                                         />
                                       </div>
 

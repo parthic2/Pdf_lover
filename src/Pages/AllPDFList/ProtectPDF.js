@@ -47,9 +47,7 @@ const ProtectPDF = () => {
     });
   };
 
-  const validateFormInput = (event) => {
-    event.preventDefault();
-
+  const validateFormInput = () => {
     let inputError = {
       password: "",
       confirmPassword: "",
@@ -58,9 +56,9 @@ const ProtectPDF = () => {
     if (formInput.confirmPassword !== formInput.password) {
       setFormError({
         ...inputError,
-        confirmPassword: "Password and confirm password should be same",
+        confirmPassword: "Password and confirm password should be the same",
       });
-      return;
+      return false;
     }
 
     if (!formInput.password) {
@@ -68,10 +66,11 @@ const ProtectPDF = () => {
         ...inputError,
         password: "Password should not be empty",
       });
-      return;
+      return false;
     }
 
     setFormError(inputError);
+    return true;
   };
 
   // For Loading data
@@ -90,6 +89,12 @@ const ProtectPDF = () => {
     if (!fileList) {
       return;
       // console.log("error");
+    }
+
+    const isValid = validateFormInput();
+
+    if (!isValid) {
+      return;
     }
 
     // 👇 Create new FormData object and append files
@@ -199,52 +204,44 @@ const ProtectPDF = () => {
                   <div
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
                     <div className={style.option__panel__title}>
-                      PROTECT PDF
+                      protect pdf
                     </div>
 
                     <div className={style.option__panel__content}>
-                      <div className="card-header">
-                        <h4 className={style.option__title}>
-                          SET A PASSWORD TO PROTECT YOUR PDF FILE
-                        </h4>
-                      </div>
 
-                      <div className="card-body">
-                        <form onSubmit={validateFormInput}>
-                          <p className="label">Password</p>
-                          <input
-                            value={formInput.password}
-                            onChange={({ target }) => {
-                              handleUserInput(target.name, target.value);
-                            }}
-                            name="password"
-                            type="password"
-                            className="input"
-                            placeholder="Password"
-                          />
-                          <p className="error-message">{formError.password}</p>
+                      <h4 className={style.option__title}>
+                        set a password to protect your pdf file
+                      </h4>
 
-                          <p className="label">Confirm Password</p>
-                          <input
-                            value={formInput.confirmPassword}
-                            onChange={({ target }) => {
-                              handleUserInput(target.name, target.value);
-                            }}
-                            name="confirmPassword"
-                            type="password"
-                            className="input"
-                            placeholder="Confirm Password"
-                          />
-                          <p className="error-message">
-                            {formError.confirmPassword}
-                          </p>
+                      <form>
+                        <p>Password</p>
+                        <input
+                          value={formInput.password}
+                          onChange={({ target }) => {
+                            handleUserInput(target.name, target.value);
+                          }}
+                          name="password"
+                          type="password"
+                          className="input"
+                          placeholder="Password"
+                        />
+                        <p className={style["error-message"]}>{formError.password}</p>
 
-                          <p>Note : Password and Confirm Password are same</p>
-                          {/* <button type="submit" className="btn" value="Submit">
-                            submit
-                          </button> */}
-                        </form>
-                      </div>
+                        <p>Confirm Password</p>
+                        <input
+                          value={formInput.confirmPassword}
+                          onChange={({ target }) => {
+                            handleUserInput(target.name, target.value);
+                          }}
+                          name="confirmPassword"
+                          type="password"
+                          className="input"
+                          placeholder="Confirm Password"
+                        />
+                        <p className={style["error-message"]}>
+                          {formError.confirmPassword}
+                        </p>
+                      </form>
                     </div>
                   </div>
 
@@ -282,52 +279,44 @@ const ProtectPDF = () => {
                                 <div
                                   className={`${style.option__panel} ${style["option__panel--active"]}`}>
                                   <div className={style.option__panel__title}>
-                                    PROTECT PDF
+                                    protect pdf
                                   </div>
 
                                   <div className={style.option__panel__content}>
-                                    <div className="card-header">
-                                      <h4 className={style.option__title}>
-                                        SET A PASSWORD TO PROTECT YOUR PDF FILE
-                                      </h4>
-                                    </div>
 
-                                    <div className="card-body">
-                                      <form onSubmit={validateFormInput}>
-                                        <p className="label">Password</p>
-                                        <input
-                                          value={formInput.password}
-                                          onChange={({ target }) => {
-                                            handleUserInput(target.name, target.value);
-                                          }}
-                                          name="password"
-                                          type="password"
-                                          className="input"
-                                          placeholder="Password"
-                                        />
-                                        <p className="error-message">{formError.password}</p>
+                                    <h4 className={style.option__title}>
+                                      set a password to protect your pdf file
+                                    </h4>
 
-                                        <p className="label">Confirm Password</p>
-                                        <input
-                                          value={formInput.confirmPassword}
-                                          onChange={({ target }) => {
-                                            handleUserInput(target.name, target.value);
-                                          }}
-                                          name="confirmPassword"
-                                          type="password"
-                                          className="input"
-                                          placeholder="Confirm Password"
-                                        />
-                                        <p className="error-message">
-                                          {formError.confirmPassword}
-                                        </p>
+                                    <form>
+                                      <p>Password</p>
+                                      <input
+                                        value={formInput.password}
+                                        onChange={({ target }) => {
+                                          handleUserInput(target.name, target.value);
+                                        }}
+                                        name="password"
+                                        type="password"
+                                        className="input"
+                                        placeholder="Password"
+                                      />
+                                      <p className={style["error-message"]}>{formError.password}</p>
 
-                                        <p>Note : Password and Confirm Password are same</p>
-                                        {/* <button type="submit" className="btn" value="Submit">
-                                              submit
-                                            </button> */}
-                                      </form>
-                                    </div>
+                                      <p>Confirm Password</p>
+                                      <input
+                                        value={formInput.confirmPassword}
+                                        onChange={({ target }) => {
+                                          handleUserInput(target.name, target.value);
+                                        }}
+                                        name="confirmPassword"
+                                        type="password"
+                                        className="input"
+                                        placeholder="Confirm Password"
+                                      />
+                                      <p className={style["error-message"]}>
+                                        {formError.confirmPassword}
+                                      </p>
+                                    </form>
                                   </div>
                                 </div>
 

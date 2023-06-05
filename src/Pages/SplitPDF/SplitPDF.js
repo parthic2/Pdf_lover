@@ -35,27 +35,71 @@ const SplitPDF = () => {
   // For Upload files
   const navigate = useNavigate();
 
-  const [fileList, setFileList] = useState(0);
-
-  const [range, setRange] = useState(0);
+  const [fileList, setFileList] = useState(null);
+  const [pageCount, setPageCount] = useState(0);
+  const [startPage, setStartPage] = useState(0);
+  const [endPage, setEndPage] = useState(0);
 
   const handleFileChange = (e) => {
-    setFileList(e.target.files);
-    setRange("1-5");
+    const selectedFile = e.target.files[0];
+    setFileList(selectedFile);
+    setPageCount(0);
+    setStartPage(0);
+    setEndPage(0);
+
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      const typedArray = new Uint8Array(event.target.result);
+      const pdf = await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.js';
+        script.onload = () => {
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.js';
+
+          const loadingTask = window.pdfjsLib.getDocument(typedArray);
+          loadingTask.promise.then((pdfDocument) => {
+            resolve(pdfDocument);
+          }).catch((error) => {
+            reject(error);
+          });
+        };
+        document.body.appendChild(script);
+      });
+
+      const numPages = pdf.numPages;
+      setPageCount(numPages);
+      setStartPage(1);
+      setEndPage(numPages);
+    };
+
+    reader.onerror = (error) => {
+      console.error('Error reading file:', error);
+    };
+
+    reader.readAsArrayBuffer(selectedFile);
+  };
+
+  const handleStartPageChange = (e) => {
+    const value = Number(e.target.value);
+    setStartPage(value);
+    setEndPage(Math.max(value, endPage));
+  };
+
+  const handleLastPageChange = (e) => {
+    const value = Number(e.target.value);
+    setEndPage(value);
+    setStartPage(Math.min(value, startPage));
   };
 
   const handleUploadClick = async () => {
     if (!fileList) {
       return;
-      // console.log("error");
     }
 
     // 👇 Create new FormData object and append files
     var formData = new FormData();
-    for (let i = 0; i < fileList.length; i++) {
-      formData.append("file", fileList[i]);
-    }
-    formData.append("range", range);
+    formData.append("file", fileList);
+    formData.append("range", `${startPage}-${endPage}`);
 
     var requestOptions = {
       method: 'POST',
@@ -142,31 +186,54 @@ const SplitPDF = () => {
               </div>
 
               {/* sidebar  */}
-              {fileList.length >= 1 && (
+              {fileList && (
                 <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
                   <div
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
                     <div className={style.option__panel__title}>SPLIT PDF</div>
+
+                    {open && <Backdrop
+                      sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                      open={open}
+                    >
+                      <CircularProgress color="inherit" />
+                    </Backdrop>}
+
+                    <p className={style.range_mode}>custom mode:</p>
+
+                    <div className={style.page__range}>
+                      <label htmlFor="startPageInput">From Page:</label>
+                      <input
+                        type="number"
+                        id={style.startPageInput}
+                        min={1}
+                        max={pageCount}
+                        value={startPage}
+                        onChange={handleStartPageChange}
+                      />
+                      <label htmlFor="lastPageInput">To Page:</label>
+                      <input
+                        type="number"
+                        id={style.lastPageInput}
+                        min={1}
+                        max={pageCount}
+                        value={endPage}
+                        onChange={handleLastPageChange}
+                      />
+                    </div>
+
+                    <button
+                      onClick={handleUploadClick}
+                      className={style["btn--red"]}
+                      id={style.processTask}
+                    >
+                      Split PDF
+                      <i
+                        className="fa-sharp fa-regular fa-circle-right"
+                        style={{ marginLeft: "15px" }}
+                      />
+                    </button>
                   </div>
-
-                  {open && <Backdrop
-                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                    open={open}
-                  >
-                    <CircularProgress color="inherit" />
-                  </Backdrop>}
-
-                  <button
-                    onClick={handleUploadClick}
-                    className={style["btn--red"]}
-                    id={style.processTask}
-                  >
-                    Split PDF
-                    <i
-                      className="fa-sharp fa-regular fa-circle-right"
-                      style={{ marginLeft: "15px" }}
-                    />
-                  </button>
                 </div>
               )}
 
@@ -178,31 +245,55 @@ const SplitPDF = () => {
                     {
                       sidebar && (
                         <div>
-                          {fileList.length >= 1 && (
+                          {fileList && (
                             <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
                               <div
                                 className={`${style.option__panel} ${style["option__panel--active"]}`}>
                                 <div className={style.option__panel__title}>SPLIT PDF</div>
+
+
+                                {open && <Backdrop
+                                  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                  open={open}
+                                >
+                                  <CircularProgress color="inherit" />
+                                </Backdrop>}
+
+                                <p className={style.range_mode}>custom mode:</p>
+
+                                <div className={style.page__range}>
+                                  <label htmlFor="startPageInput">From Page:</label>
+                                  <input
+                                    type="number"
+                                    id={style.startPageInput}
+                                    min={1}
+                                    max={pageCount}
+                                    value={startPage}
+                                    onChange={handleStartPageChange}
+                                  />
+                                  <label htmlFor="lastPageInput">To Page:</label>
+                                  <input
+                                    type="number"
+                                    id={style.lastPageInput}
+                                    min={1}
+                                    max={pageCount}
+                                    value={endPage}
+                                    onChange={handleLastPageChange}
+                                  />
+                                </div>
+
+                                <button
+                                  onClick={handleUploadClick}
+                                  className={style["btn--red"]}
+                                  id={style.processTask}
+                                >
+                                  Split PDF
+                                  <i
+                                    className="fa-sharp fa-regular fa-circle-right"
+                                    style={{ marginLeft: "15px" }}
+                                  />
+                                </button>
                               </div>
-
-                              {open && <Backdrop
-                                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                                open={open}
-                              >
-                                <CircularProgress color="inherit" />
-                              </Backdrop>}
-
-                              <button
-                                onClick={handleUploadClick}
-                                className={style["btn--red"]}
-                                id={style.processTask}
-                              >
-                                Split PDF
-                                <i
-                                  className="fa-sharp fa-regular fa-circle-right"
-                                  style={{ marginLeft: "15px" }}
-                                />
-                              </button>
                             </div>
                           )}
                         </div>

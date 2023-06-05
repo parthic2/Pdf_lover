@@ -1,8 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
-import AddWaterMark from "./Pages/AllPDFList/AddWaterMark";
-
 const RootLayout = lazy(() => import("./Components/Layout/RootLayout"));
 const Index = lazy(() => import("./Components/Main/Index"));
 const DownloadMerge = lazy(() => import("./DownloadPages/DownloadMerge"));
@@ -28,6 +26,7 @@ const PDFToPowerPoint = lazy(() => import("./Pages/ConvertPDFList/PDFToPowerPoin
 const PDFToWORD = lazy(() => import("./Pages/ConvertPDFList/PDFToWORD"));
 const PowerPointToPDF = lazy(() => import("./Pages/ConvertPDFList/PowerPointToPDF"));
 const WORDToPDF = lazy(() => import("./Pages/ConvertPDFList/WORDToPDF"));
+const AddWaterMark = lazy(() => import("./Pages/AllPDFList/AddWaterMark"));
 
 const Router = createBrowserRouter([
   {

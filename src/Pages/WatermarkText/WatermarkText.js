@@ -25,7 +25,12 @@ const WatermarkText = ({
   changeVerPosition,
   verticalPos,
   changeHorPosition,
-  horizontalPos
+  horizontalPos,
+  pageCount,
+  startPage,
+  endPage,
+  handleStartPageChange,
+  handleLastPageChange
 }) => {
 
   return (
@@ -45,7 +50,7 @@ const WatermarkText = ({
 
         <div style={{ marginTop: "10px" }}></div>
 
-        <p>Text format:</p>
+        <p className={style.option__title}>Text format:</p>
 
         <div className={style.editor__toolbar__options} id="textFormatOptions">
           <div className={style.editor__toolbar__block}>
@@ -293,7 +298,7 @@ const WatermarkText = ({
                     value={transparency}
                     onChange={(event) => changeTransparency(event.target.value)}
                   >
-                    <option value="100">No transparency</option>
+                    <option value="No transparency">No transparency</option>
                     <option value="75">75%</option>
                     <option value="50">50%</option>
                     <option value="25">25%</option>
@@ -320,6 +325,31 @@ const WatermarkText = ({
             </div>
           </div>
 
+
+          {/* Page Range */}
+
+          <div className={style.option__title} style={{ marginTop: "10px" }}>Pages:</div>
+
+          <div className={style.page__range}>
+            <label htmlFor="startPageInput">From Page:</label>
+            <input
+              type="number"
+              id={style.startPageInput}
+              min={1}
+              max={pageCount}
+              value={startPage}
+              onChange={handleStartPageChange}
+            />
+            <label htmlFor="lastPageInput">To Page:</label>
+            <input
+              type="number"
+              id={style.lastPageInput}
+              min={1}
+              max={pageCount}
+              value={endPage}
+              onChange={handleLastPageChange}
+            />
+          </div>
         </div>
       </div>
     </>
