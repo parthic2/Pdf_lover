@@ -218,7 +218,7 @@ const SplitPDF = () => {
               </div>
 
               {/* sidebar  */}
-              {fileList && (
+              {fileList.length >= 1 && (
                 <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
                   <div
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
@@ -367,7 +367,7 @@ const SplitPDF = () => {
                     {
                       sidebar && (
                         <div>
-                          {fileList && (
+                          {fileList.length >= 1 && (
                             <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
                               <div
                                 className={`${style.option__panel} ${style["option__panel--active"]}`}>

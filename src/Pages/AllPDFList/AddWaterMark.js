@@ -350,7 +350,7 @@ const AddWaterMark = () => {
               </div>
 
               {/* sidebar  */}
-              {fileList && (
+              {fileList.length >= 1 && (
                 <>
                   <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
 
@@ -459,7 +459,7 @@ const AddWaterMark = () => {
                     {
                       sidebar && (
                         <div>
-                          {fileList && (
+                          {fileList.length >= 1 && (
                             <>
                               <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
                                 <div
