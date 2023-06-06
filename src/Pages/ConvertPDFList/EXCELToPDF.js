@@ -37,8 +37,6 @@ const EXCELToPDF = () => {
 
   const [fileList, setFileList] = useState(0);
 
-  const pageNumber = 1;
-
   const handleFileChange = (e) => {
     const fileList = e.target.files;
     const fileArray = Array.from(fileList);
