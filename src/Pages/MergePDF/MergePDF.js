@@ -138,13 +138,27 @@ const MergePDF = () => {
                     />
                     <span>{mergeData.button}</span>
                   </Button>
-                  <ul>
-                    {files.map((file, i) => (
-                      <li key={i}>
-                        {file.name} - {file.type}
-                      </li>
-                    ))}
-                  </ul>
+                </div>
+
+
+                <div className={style.tool__workarea__display}>
+                  {files.map((file, i) => (
+                    <div className={style.tool__workarea__rendered} key={i}>
+                      <div className={style.file}>
+                        <div className={style.file__canvas}>
+                          <ul>
+                            <li>
+                              {file.name} - {file.type}
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div className={style.file__info}>
+                          <span className={style.file__info__name}>{file.name}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 

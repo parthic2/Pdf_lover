@@ -69,7 +69,6 @@ input[type="file"] {
     line-height: 32px;
     color: #fff;
     text-decoration: none;
-    margin-bottom: 12px;
     transition: all .1s linear;
     border-radius: 8px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
@@ -382,7 +381,7 @@ textarea {
 
 /* rotate css */
 
-.rotation_text{
+.rotation_text {
     width: 3em;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
@@ -501,8 +500,8 @@ textarea {
 
 @media (max-width:400px) {
     #processTask {
-        width: 10em;
-        right: 10%;
+        width: 11em;
+        right: 8%;
     }
 }
 
@@ -599,7 +598,7 @@ textarea {
 }
 
 .page__range {
-    margin: 20px;
+    margin: 15px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -619,7 +618,118 @@ textarea {
     margin-bottom: 0px;
 }
 
-.error-message{
+.error-message {
     color: red;
     padding-top: 10px;
+}
+
+.page__range label {
+    font-size: 15px;
+}
+
+/* pdf view */
+.tool__workarea__rendered {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 5% 0;
+    flex-wrap: wrap;
+}
+
+.file {
+    margin: 4px;
+    width: 198px;
+    height: 244px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-around;
+    justify-content: center;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0);
+    background: #f6f6f8;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2);
+}
+
+.file__canvas {
+    cursor: move;
+    position: relative;
+    align-items: center;
+    width: 90%;
+}
+
+.file__info {
+    position: absolute;
+    height: 32px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+@media (max-width: 1440px) {
+    .file__info {
+        height: 28px;
+    }
+}
+
+.file__info__name {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 6px 8px;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+@media (max-width: 1440px) {
+    .file__info__name {
+        padding: 4px;
+    }
+}
+
+.file__info:hover .file__info__name {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    position: absolute;
+    min-width: 150px;
+    left: 50%;
+    right: 0;
+    cursor: default;
+    white-space: pre-wrap;
+    overflow: visible;
+    text-overflow: clip;
+    width: max-content;
+    transform: translateX(-50%);
+}
+
+.tool__workarea__display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pdf__document {
+    width: 100%;
+    height: 100%;
+}
+
+.pdf__page {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.file__canvas:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .35);
+    opacity: .4;
+    transition: opacity .3s ease-in-out;
+    z-index: 0;
 }

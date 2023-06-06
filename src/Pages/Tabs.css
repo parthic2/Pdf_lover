@@ -5,12 +5,12 @@
 .tabs {
     padding: 15px;
     text-align: center;
-    width: 50%;
+    width: 100%;
     background: rgba(128, 128, 128, 0.075);
     cursor: pointer;
     border-bottom: 1px solid rgba(0, 0, 0, 0.274);
     box-sizing: content-box;
-    position: relative;
+    /* position: relative; */
     outline: none;
 }
 
@@ -63,7 +63,7 @@ button {
 }
 
 .content p {
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
 }
 

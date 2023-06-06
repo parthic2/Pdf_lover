@@ -331,7 +331,7 @@ const WatermarkText = ({
           <div className={style.option__title} style={{ marginTop: "10px" }}>Pages:</div>
 
           <div className={style.page__range}>
-            <label htmlFor="startPageInput">From Page:</label>
+            <label htmlFor="startPageInput" style={{ fontSize: "15px" }}>From Page:</label>
             <input
               type="number"
               id={style.startPageInput}
@@ -340,7 +340,7 @@ const WatermarkText = ({
               value={startPage}
               onChange={handleStartPageChange}
             />
-            <label htmlFor="lastPageInput">To Page:</label>
+            <label htmlFor="lastPageInput" style={{ fontSize: "15px" }}>To Page:</label>
             <input
               type="number"
               id={style.lastPageInput}
