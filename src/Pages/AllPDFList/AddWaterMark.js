@@ -13,6 +13,9 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 import { AiOutlineSetting } from 'react-icons/ai';
 
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
 import style from "../Pages.module.css";
 import '../Tabs.css';
 import { useNavigate } from "react-router-dom";
@@ -140,12 +143,14 @@ const AddWaterMark = () => {
 
 
   // For Upload Files
-  const [fileList, setFileList] = useState(null);
+  const [fileList, setFileList] = useState([]);
   const [imgData, setImgData] = useState("");
+
+  const pageNumber = 1;
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
-    setFileList(selectedFile);
+    setFileList([selectedFile]);
     setPageCount(0);
     setStartPage(0);
     setEndPage(0);
@@ -317,12 +322,30 @@ const AddWaterMark = () => {
                     title={watermarkData.button}>
                     <input
                       type="file"
-                      multiple
                       onChange={handleFileChange}
                       accept=".pdf"
                     />
                     <span>{watermarkData.button}</span>
                   </Button>
+                </div>
+
+                {/* For Pdf View */}
+                <div className={style.tool__workarea__display}>
+                  {fileList.map((file, i) => (
+                    <div className={style.tool__workarea__rendered} key={i}>
+                      <div className={style.file}>
+                        <div className={style.file__canvas}>
+                          <Document file={file}>
+                            <Page pageNumber={pageNumber} />
+                          </Document>
+                        </div>
+
+                        <div className={style.file__info}>
+                          <span className={style.file__info__name}>{file.name}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 

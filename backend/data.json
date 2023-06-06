@@ -236,7 +236,7 @@
 
 		"compress": {
 			"id": 3,
-			"title": "Compress PDF file",
+			"title": "Compress PDF files",
 			"subTitle": "Reduce file size while optimizing for maximal PDF quality.",
 			"button": "Select PDF file",
 			"footer": "© PDFLover 2023 ® - Your PDF Editor"
@@ -278,7 +278,7 @@
 			"id": 8,
 			"title": "PDF to JPG",
 			"subTitle": "Convert each PDF page into a JPG or extract all images contained in a PDF.",
-			"button": "Select PDF file",
+			"button": "Select PDF files",
 			"footer": "© PDFLover 2023 ® - Your PDF Editor"
 		},
 
@@ -382,7 +382,7 @@
 			"id": 21,
 			"title": "Unlock PDF",
 			"subTitle": "Remove PDF password security, giving you the freedom to use your PDFs as you want.",
-			"button": "Select PDF file",
+			"button": "Select PDF files",
 			"footer": "© PDFLover 2023 ® - Your PDF Editor"
 		},
 

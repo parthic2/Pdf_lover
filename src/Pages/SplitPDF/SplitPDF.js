@@ -10,6 +10,9 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 import { AiOutlineSetting } from 'react-icons/ai';
 
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
 import style from "../Pages.module.css";
 import '../Tabs.css';
 
@@ -36,14 +39,16 @@ const SplitPDF = () => {
   // For Upload files
   const navigate = useNavigate();
 
-  const [fileList, setFileList] = useState(null);
+  const [fileList, setFileList] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [startPage, setStartPage] = useState(0);
   const [endPage, setEndPage] = useState(0);
 
+  const pageNumber = 1;
+
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
-    setFileList(selectedFile);
+    setFileList([selectedFile]);
     setPageCount(0);
     setStartPage(0);
     setEndPage(0);
@@ -192,12 +197,23 @@ const SplitPDF = () => {
                   </Button>
                 </div>
 
-                <div className={style.tool__workarea__rendered}>
-                  <div className={style.file}>
-                    <div className={style.file__canvas}>
+                {/* For Pdf View */}
+                <div className={style.tool__workarea__display}>
+                  {fileList.map((file, i) => (
+                    <div className={style.tool__workarea__rendered} key={i}>
+                      <div className={style.file}>
+                        <div className={style.file__canvas}>
+                          <Document file={file}>
+                            <Page pageNumber={pageNumber} />
+                          </Document>
+                        </div>
 
+                        <div className={style.file__info}>
+                          <span className={style.file__info__name}>{file.name}</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 

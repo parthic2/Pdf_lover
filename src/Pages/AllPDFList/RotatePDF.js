@@ -9,6 +9,9 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 import { AiOutlineSetting } from 'react-icons/ai';
 
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
 import style from "../Pages.module.css";
 import { useNavigate } from "react-router-dom";
 
@@ -58,8 +61,12 @@ const RotatePDF = () => {
   //   // setRotation(90);
   // };
 
+  const pageNumber = 1;
+
   const handleFileChange = (e) => {
-    setFileList(e.target.files);
+    const fileList = e.target.files;
+    const fileArray = Array.from(fileList);
+    setFileList(fileArray);
   };
 
   const handleUploadClick = async () => {
@@ -159,14 +166,25 @@ const RotatePDF = () => {
                     />
                     <span>{rotateData.button}</span>
                   </Button>
+                </div>
 
-                  <ul>
-                    {files.map((file, i) => (
-                      <li key={i}>
-                        {file.name} - {file.type}
-                      </li>
-                    ))}
-                  </ul>
+                {/* For Pdf View */}
+                <div className={style.tool__workarea__display}>
+                  {files.map((file, i) => (
+                    <div className={style.tool__workarea__rendered} key={i}>
+                      <div className={style.file}>
+                        <div className={style.file__canvas}>
+                          <Document file={file}>
+                            <Page pageNumber={pageNumber} />
+                          </Document>
+                        </div>
+
+                        <div className={style.file__info}>
+                          <span className={style.file__info__name}>{file.name}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 

@@ -631,7 +631,7 @@ textarea {
 .tool__workarea__rendered {
     display: flex;
     justify-content: center;
-    padding: 0 0 20% 0;
+    padding: 0 0 5% 0;
     flex-wrap: wrap;
 }
 
@@ -653,8 +653,7 @@ textarea {
 .file__canvas {
     cursor: move;
     position: relative;
-    align-items: center;
-    width: 90%;
+    width: 80%;
 }
 
 .file__info {
@@ -732,4 +731,13 @@ textarea {
     opacity: .4;
     transition: opacity .3s ease-in-out;
     z-index: 0;
+}
+
+.file__canvas canvas {
+    width: 100% !important;
+    height: 180px !important;
+}
+
+.canvas_image {
+    width: 100% !important;
 }

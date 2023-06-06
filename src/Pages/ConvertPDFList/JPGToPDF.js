@@ -37,8 +37,16 @@ const JPGToPDF = () => {
 
   const [fileList, setFileList] = useState(0);
 
+  const [selectedImages, setSelectedImages] = useState([]);
+
   const handleFileChange = (e) => {
-    setFileList(e.target.files);
+    const files = e.target.files;
+    const fileArray = Array.from(files);
+    setFileList(fileArray);
+
+    // Create an array of image URLs
+    const imageUrls = fileArray.map((file) => URL.createObjectURL(file));
+    setSelectedImages(imageUrls);
   };
 
   const handleUploadClick = async () => {
@@ -137,14 +145,25 @@ const JPGToPDF = () => {
                     />
                     <span>{jtoPData.button}</span>
                   </Button>
+                </div>
 
-                  <ul>
-                    {files.map((file, i) => (
-                      <li key={i}>
-                        {file.name} - {file.type}
-                      </li>
-                    ))}
-                  </ul>
+                {/* For Pdf View */}
+                <div className={style.tool__workarea__display}>
+                  {files.map((file, i) => (
+                    <div className={style.tool__workarea__rendered} key={i}>
+                      <div className={style.file}>
+                        {selectedImages && (
+                          <div className={style.file__canvas}>
+                            <img src={URL.createObjectURL(file)} alt="Selected" className={style.canvas_image} />
+                          </div>
+                        )}
+
+                        <div className={style.file__info}>
+                          <span className={style.file__info__name}>{file.name}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 

@@ -8,6 +8,9 @@ import { getMergeApi } from "../../Redux/Action/Pages/MergeAction";
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
 import { AiOutlineSetting } from 'react-icons/ai';
 
 import style from "../Pages.module.css";
@@ -37,8 +40,12 @@ const MergePDF = () => {
 
   const [fileList, setFileList] = useState(0);
 
+  const pageNumber = 1;
+
   const handleFileChange = (e) => {
-    setFileList(e.target.files);
+    const fileList = e.target.files;
+    const fileArray = Array.from(fileList);
+    setFileList(fileArray);
   };
 
   const handleUploadClick = async () => {
@@ -140,17 +147,15 @@ const MergePDF = () => {
                   </Button>
                 </div>
 
-
+                {/* For Pdf View */}
                 <div className={style.tool__workarea__display}>
                   {files.map((file, i) => (
                     <div className={style.tool__workarea__rendered} key={i}>
                       <div className={style.file}>
                         <div className={style.file__canvas}>
-                          <ul>
-                            <li>
-                              {file.name} - {file.type}
-                            </li>
-                          </ul>
+                          <Document file={file}>
+                            <Page pageNumber={pageNumber} />
+                          </Document>
                         </div>
 
                         <div className={style.file__info}>
