@@ -566,6 +566,7 @@ textarea {
 
     .mobile__sidebar {
         display: block;
+        width: 100%;
         height: 100%;
         overflow-y: auto;
         overflow-x: hidden;
@@ -607,6 +608,7 @@ textarea {
 #startPageInput,
 #lastPageInput {
     width: 20%;
+    padding: 0 0 0px 10px;
 }
 
 .range_mode {
