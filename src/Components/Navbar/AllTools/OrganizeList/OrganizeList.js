@@ -46,57 +46,9 @@ const OrganizeList = () => {
               className={({ isActive }) =>
                 isActive ? "nav__item--active" : undefined
               }
-              to="/Remove_pages">
-              <img src="/image/Merger.svg" alt="Remove pages" />
-              Remove pages
-            </NavLink>
-          </li>
-
-          <li className="divider" style={{
-            border: "1px solid #f6f6f8",
-            margin: "7px 20px 7px 5px"
-          }}></li>
-
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "nav__item--active" : undefined
-              }
               to="/Split_PDF">
               <img src="/image/Merger.svg" alt="Extract pages" />
               Extract pages
-            </NavLink>
-          </li>
-
-          <li className="divider" style={{
-            border: "1px solid #f6f6f8",
-            margin: "7px 20px 7px 5px"
-          }}></li>
-
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "nav__item--active" : undefined
-              }
-              to="/Organize_PDF">
-              <img src="/image/Organize.svg" alt="Organize PDF" />
-              Organize PDF
-            </NavLink>
-          </li>
-
-          <li className="divider" style={{
-            border: "1px solid #f6f6f8",
-            margin: "7px 20px 7px 5px"
-          }}></li>
-
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "nav__item--active" : undefined
-              }
-              to="/">
-              <img src="/image/Scan.svg" alt="Scan to PDF" />
-              Scan to PDF
             </NavLink>
           </li>
 

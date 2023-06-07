@@ -354,7 +354,7 @@ const AddWaterMark = () => {
                 fileList.length >= 1 && (
                   <>
                     {/* Desktop */}
-                    <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
+                    <div className={style.tool__sidebar} id={style.sidebar} style={{ overflowY: "auto" }}>
 
                       <div
                         className={`${style.option__panel} ${style["option__panel--active"]}`}>
@@ -366,7 +366,7 @@ const AddWaterMark = () => {
                               className={toggleStateWater === 1 ? `${style.tabs} ${style["active-tabs"]}` : `${style.tabs}`}
                               onClick={() => handleToggleTab(1)}
                             >
-                              <div>
+                              <div className={style.svg__icon}>
                                 <FormatColorTextIcon />
                               </div>
                               Place text
@@ -375,7 +375,7 @@ const AddWaterMark = () => {
                               className={toggleStateWater === 2 ? `${style.tabs} ${style["active-tabs"]}` : `${style.tabs}`}
                               onClick={() => handleToggleTab(2)}
                             >
-                              <div>
+                              <div className={style.svg__icon}>
                                 <AddPhotoAlternateIcon />
                               </div>
                               Place Image
@@ -468,7 +468,7 @@ const AddWaterMark = () => {
                                       className={toggleStateWater === 1 ? `${style.tabs} ${style["active-tabs"]}` : `${style.tabs}`}
                                       onClick={() => handleToggleTab(1)}
                                     >
-                                      <div>
+                                      <div className={style.svg__icon}>
                                         <FormatColorTextIcon />
                                       </div>
                                       Place text
@@ -477,7 +477,7 @@ const AddWaterMark = () => {
                                       className={toggleStateWater === 2 ? `${style.tabs} ${style["active-tabs"]}` : `${style.tabs}`}
                                       onClick={() => handleToggleTab(2)}
                                     >
-                                      <div>
+                                      <div className={style.svg__icon}>
                                         <AddPhotoAlternateIcon />
                                       </div>
                                       Place Image

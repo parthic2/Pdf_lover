@@ -638,13 +638,12 @@ textarea {
 }
 
 .file {
-    margin: 4px;
+    margin: 10px;
     width: 198px;
     height: 244px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: space-around;
     justify-content: center;
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0);
@@ -655,7 +654,7 @@ textarea {
 .file__canvas {
     cursor: move;
     position: relative;
-    width: 80%;
+    /* width: 80%; */
 }
 
 .file__info {
@@ -824,4 +823,20 @@ button {
     width: 48px;
     height: 48px;
     margin-bottom: 5px;
+}
+
+.svg__icon {
+    color: #FE4F62;
+}
+
+#sidebar::after,
+#mobileSidebar::after {
+    content: "";
+    width: 375px;
+    position: fixed;
+    height: 140px;
+    bottom: 0;
+    background: #fff;
+    background: linear-gradient(0deg, #fff, #fff 70%, hsla(0, 0%, 100%, .5) 95%, hsla(0, 0%, 100%, 0));
+    z-index: 222;
 }

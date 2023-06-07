@@ -41,22 +41,6 @@ const OptimizeList = () => {
             margin: "7px 20px 7px 5px"
           }}></li>
 
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "nav__item--active" : undefined
-              }
-              to="/OCR_PDF">
-              <img src="/image/Compress.svg" alt="OCR PDF" />
-              OCR PDF
-            </NavLink>
-          </li>
-
-          <li className="divider" style={{
-            border: "1px solid #f6f6f8",
-            margin: "7px 20px 7px 5px"
-          }}></li>
-
         </ul>
       </li>
     </>

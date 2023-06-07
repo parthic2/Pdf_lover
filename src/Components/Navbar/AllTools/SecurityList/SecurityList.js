@@ -41,22 +41,6 @@ const SecurityList = () => {
             margin: "7px 20px 7px 5px"
           }}></li>
 
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "nav__item--active" : undefined
-              }
-              to="/Sign_PDF">
-              <img src="/image/Sign.svg" alt="Sign PDF" />
-              Sign PDF
-            </NavLink>
-          </li>
-
-          <li className="divider" style={{
-            border: "1px solid #f6f6f8",
-            margin: "7px 20px 7px 5px"
-          }}></li>
-
         </ul>
       </li>
     </>

@@ -173,7 +173,7 @@ const CompressPDF = () => {
                 fileList.length >= 1 && (
                   <>
                     {/* Desktop */}
-                    <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
+                    <div className={style.tool__sidebar} id={style.sidebar} style={{ overflowY: "auto" }}>
                       <div
                         className={`${style.option__panel} ${style["option__panel--active"]}`}>
                         <div className={style.option__panel__title}>COMPRESSION PDF</div>

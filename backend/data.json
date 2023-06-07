@@ -30,143 +30,59 @@
 			},
 			{
 				"id": 4,
-				"img": "image/PtoW.svg",
-				"link": "pdf_to_word",
-				"title": "PDF to Word",
-				"description": "Easily convert your PDF files into easy to edit DOC and DOCX documents. The converted WORD document is almost 100% accurate."
-			},
-			{
-				"id": 5,
-				"img": "image/PtoP.svg",
-				"link": "pdf_to_powerpoint",
-				"title": "PDF to Powerpoint",
-				"description": "Turn your PDF files into easy to edit PPT and PPTX slideshows."
-			},
-			{
-				"id": 6,
-				"img": "image/PtoE.svg",
-				"link": "pdf_to_excel",
-				"title": "PDF to Excel",
-				"description": "Pull data straight from PDFs into Excel spreadsheets in a few short seconds."
-			},
-			{
-				"id": 7,
-				"img": "image/PtoP.svg",
-				"link": "word_to_pdf",
-				"title": "Word to PDF",
-				"description": "Make DOC and DOCX files easy to read by converting them to PDF."
-			},
-			{
-				"id": 8,
-				"img": "image/PtoE.svg",
-				"link": "powerpoint_to_pdf",
-				"title": "Powerpoint to PDF",
-				"description": "Make PPT and PPTX slideshows easy to view by converting them to PDF."
-			},
-			{
-				"id": 9,
 				"img": "image/PtoJ.svg",
 				"link": "excel_to_pdf",
 				"title": "Excel to PDF",
 				"description": "Make EXCEL spreadsheets easy to read by converting them to PDF."
 			},
 			{
-				"id": 10,
-				"img": "image/Edit.svg",
-				"link": "Edit_PDF",
-				"title": "Edit PDF",
-				"description": "Add text, images, shapes or freehand annotations to a PDF document. Edit the size, font, and color of the added content."
-			},
-			{
-				"id": 11,
+				"id": 5,
 				"img": "image/PtoJ.svg",
 				"link": "pdf_to_jpg",
 				"title": "PDF to JPG",
 				"description": "Convert each PDF page into a JPG or extract all images contained in a PDF."
 			},
 			{
-				"id": 12,
+				"id": 6,
 				"img": "image/JtoP.svg",
 				"link": "jpg_to_pdf",
 				"title": "JPG to PDF",
 				"description": "Convert JPG images to PDF in seconds. Easily adjust orientation and margins."
 			},
 			{
-				"id": 13,
-				"img": "image/Sign.svg",
-				"link": "Sign_PDF",
-				"title": "Sign PDF",
-				"description": "Sign yourself or request electronic signatures from others."
-			},
-			{
-				"id": 14,
+				"id": 7,
 				"img": "image/Watermark.svg",
 				"link": "Add_watermark",
 				"title": "Watermark",
 				"description": "Stamp an image or text over your PDF in seconds. Choose the typography, transparency and position."
 			},
 			{
-				"id": 15,
+				"id": 8,
 				"img": "image/Rotate.svg",
 				"link": "Rotate_PDF",
 				"title": "Rotate PDF",
 				"description": "Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!"
 			},
 			{
-				"id": 16,
+				"id": 9,
 				"img": "image/Unlock.svg",
 				"link": "Unlock_PDF",
 				"title": "Unlock PDF",
 				"description": "Remove PDF password security, giving you the freedom to use your PDFs as you want."
 			},
 			{
-				"id": 17,
+				"id": 10,
 				"img": "image/Protect.svg",
 				"link": "Protect_PDF",
 				"title": "Protect PDF",
 				"description": "Protect PDF files with a password. Encrypt PDF documents to prevent unauthorized access."
 			},
 			{
-				"id": 18,
-				"img": "image/Organize.svg",
-				"link": "Organize_PDF",
-				"title": "Organize PDF",
-				"description": "Sort pages of your PDF file however you like. Delete PDF pages or add PDF pages to your document at your convenience."
-			},
-			{
-				"id": 19,
-				"img": "image/Unlock.svg",
-				"link": "pdf_to_pdf/a",
-				"title": "PDF to PDF/A",
-				"description": "Transform your PDF to PDF/A, the ISO-standardized version of PDF for long-term archiving. Your PDF will preserve formatting when accessed in the future."
-			},
-			{
-				"id": 20,
+				"id": 11,
 				"img": "image/Repair.svg",
 				"link": "Repair_PDF",
 				"title": "Repair PDF",
 				"description": "Repair a damaged PDF and recover data from corrupt PDF. Fix PDF files with our Repair tool."
-			},
-			{
-				"id": 21,
-				"img": "image/PageNumber.svg",
-				"link": "Add_page_numbers",
-				"title": "Page numbers",
-				"description": "Add page numbers into PDFs with ease. Choose your positions, dimensions, typography."
-			},
-			{
-				"id": 22,
-				"img": "image/Scan.svg",
-				"link": "Scan_PDF",
-				"title": "Scan to PDF",
-				"description": "Capture document scans from your mobile device and send them instantly to your browser."
-			},
-			{
-				"id": 23,
-				"img": "image/Unlock.svg",
-				"link": "OCR_PDF",
-				"title": "OCR PDF",
-				"description": "Easily convert scanned PDF into searchable and selectable documents."
 			}
 		],
 
@@ -250,24 +166,8 @@
 			"footer": "© PDFLover 2023 ® - Your PDF Editor"
 		},
 
-		"word_to_pdf": {
-			"id": 5,
-			"title": "Convert WORD to PDF",
-			"subTitle": "Make DOC and DOCX files easy to read by converting them to PDF.",
-			"button": "Select WORD files",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
-		"powerpoint_to_pdf": {
-			"id": 6,
-			"title": "Convert POWERPOINT to PDF",
-			"subTitle": "Make PPT and PPTX slideshows easy to view by converting them to PDF.",
-			"button": "Select POWERPOINT files",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
 		"excel_to_pdf": {
-			"id": 7,
+			"id": 5,
 			"title": "Convert EXCEL to PDF",
 			"subTitle": "Make EXCEL spreadsheets easy to read by converting them to PDF.",
 			"button": "Select EXCEL files",
@@ -275,111 +175,39 @@
 		},
 
 		"pdf_to_jpg": {
-			"id": 8,
+			"id": 6,
 			"title": "PDF to JPG",
 			"subTitle": "Convert each PDF page into a JPG or extract all images contained in a PDF.",
 			"button": "Select PDF files",
 			"footer": "© PDFLover 2023 ® - Your PDF Editor"
 		},
 
-		"pdf_to_word": {
-			"id": 9,
-			"title": "PDF to WORD Converter",
-			"subTitle": "Convert your PDF to WORD documents with incredible accuracy.Powered by Solid Documents.",
-			"button": "Select PDF file",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
-		"pdf_to_powerpoint": {
-			"id": 10,
-			"title": "Convert PDF to POWERPOINT",
-			"subTitle": "Convert your PDFs to POWERPOINT. Powered by Solid Documents.",
-			"button": "Select PDF file",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
-		"pdf_to_excel": {
-			"id": 11,
-			"title": "Convert PDF to EXCEL",
-			"subTitle": "Convert PDF Data to EXCEL Spreadsheets. Powered by Solid Documents.",
-			"button": "Select PDF file",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
-		"pdf_to_pdfa": {
-			"id": 12,
-			"title": "PDF to PDF/A",
-			"subTitle": "Convert PDF documents to PDF/A for archiving and long-term preservation. Convert to a specific PDF/A ISO conformance level.",
-			"button": "Select PDF file",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
-		"remove_pages": {
-			"id": 13,
-			"title": "Remove PDF pages",
-			"subTitle": "Select and remove the PDF pages you don’t need. Get a new file without your deleted pages.",
-			"button": "Select PDF file",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
-		"organize": {
-			"id": 14,
-			"title": "Organize PDF",
-			"subTitle": "Sort, add and delete PDF pages. Drag and drop the page thumbnails and sort them in our PDF organizer.",
-			"button": "Select PDF file",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
 		"repair": {
-			"id": 15,
+			"id": 7,
 			"title": "Repair PDF file",
 			"subTitle": "Upload a corrupt PDF and we will try to fix it. Depending on how much the PDF is damaged we will be able to recover it partially or completely.",
 			"button": "Select PDF file",
 			"footer": "© PDFLover 2023 ® - Your PDF Editor"
 		},
 
-		"ocr": {
-			"id": 16,
-			"title": "OCR PDF",
-			"subTitle": "Convert non-selectable PDF files into selectable and searchable PDF with high accuracy.",
-			"button": "Select PDF file",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
 		"rotate": {
-			"id": 17,
+			"id": 8,
 			"title": "Rotate PDF",
 			"subTitle": "Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!",
 			"button": "Select PDF files",
 			"footer": "© PDFLover 2023 ® - Your PDF Editor"
 		},
 
-		"add_page_numbers": {
-			"id": 18,
-			"title": "Add PDF page numbers",
-			"subTitle": "Add page numbers into PDFs with ease. Choose your positions, dimensions, typography.",
-			"button": "Select PDF file",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
 		"watermark": {
-			"id": 19,
+			"id": 9,
 			"title": "Add watermark into a PDF",
 			"subTitle": "Stamp an image or text over your PDF in seconds. Choose the typography, transparency and position.",
 			"button": "Select PDF file",
 			"footer": "© PDFLover 2023 ® - Your PDF Editor"
 		},
 
-		"edit": {
-			"id": 20,
-			"title": "PDF Editor",
-			"subTitle": "Edit PDF by adding text, shapes, comments and highlights. Your secure and simple tool to edit PDF.",
-			"button": "Select PDF file",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
 		"unlock": {
-			"id": 21,
+			"id": 10,
 			"title": "Unlock PDF",
 			"subTitle": "Remove PDF password security, giving you the freedom to use your PDFs as you want.",
 			"button": "Select PDF files",
@@ -387,17 +215,9 @@
 		},
 
 		"protect": {
-			"id": 22,
+			"id": 11,
 			"title": "Protect PDF file",
 			"subTitle": "Encrypt your PDF with a password to keep sensitive data confidential.",
-			"button": "Select PDF file",
-			"footer": "© PDFLover 2023 ® - Your PDF Editor"
-		},
-
-		"sign": {
-			"id": 23,
-			"title": "Sign PDF",
-			"subTitle": "Your tool to eSign documents. Sign a document yourself or send a signature request to others.",
 			"button": "Select PDF file",
 			"footer": "© PDFLover 2023 ® - Your PDF Editor"
 		}
