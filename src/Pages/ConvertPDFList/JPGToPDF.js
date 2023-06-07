@@ -167,99 +167,94 @@ const JPGToPDF = () => {
                 </div>
               </div>
 
-              {/* sidebar  */}
-              {fileList.length >= 1 && (
-                <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
-                  <div
-                    className={`${style.option__panel} ${style["option__panel--active"]}`}>
-                    <div className={style.option__panel__title}>
-                      IMAGE TO PDF OPTIONS
-                    </div>
-
-                    <div className={style.option__panel__content}>
-                      <div className={style.info}>
-                        Please, select more images by clicking again on ’Select
-                        JPG images’. <br />
-                        Select multiple images by maintaining pressed ’Ctrl’
-                      </div>
-                    </div>
-                  </div>
-
-                  {open && <Backdrop
-                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                    open={open}
-                  >
-                    <CircularProgress color="inherit" />
-                  </Backdrop>}
-
-                  <button
-                    onClick={handleUploadClick}
-                    className={style["btn--red"]}
-                    id={style.processTask}
-                  >
-                    Convert to PDF
-                    <i
-                      className="fa-sharp fa-regular fa-circle-right"
-                      style={{ marginLeft: "15px" }}
-                    />
-                  </button>
-                </div>
-              )}
-
-
-              {/* Mobile phone */}
+              {/* For Sidebar */}
               {
-                sidebar && (
-                  <div className={style.mobile__sidebar}>
-                    {
-                      sidebar && (
-                        <div>
-                          {fileList.length >= 1 && (
-                            <>
-                              <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
-                                <div
-                                  className={`${style.option__panel} ${style["option__panel--active"]}`}>
-                                  <div className={style.option__panel__title}>
-                                    IMAGE TO PDF OPTIONS
-                                  </div>
+                fileList.length >= 1 && (
+                  <>
+                    {/* Desktop */}
+                    <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
+                      <div
+                        className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                        <div className={style.option__panel__title}>
+                          IMAGE TO PDF OPTIONS
+                        </div>
 
-                                  <div className={style.option__panel__content}>
-                                    <div className={style.info}>
-                                      Please, select more images by clicking again on ’Select
-                                      JPG images’. <br />
-                                      Select multiple images by maintaining pressed ’Ctrl’
-                                    </div>
-                                  </div>
+                        <div className={style.option__panel__content}>
+                          <div className={style.info}>
+                            Please, select more images by clicking again on ’Select
+                            JPG images’. <br />
+                            Select multiple images by maintaining pressed ’Ctrl’
+                          </div>
+                        </div>
+                      </div>
+
+                      {open && <Backdrop
+                        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                        open={open}
+                      >
+                        <CircularProgress color="inherit" />
+                      </Backdrop>}
+
+                      <button
+                        onClick={handleUploadClick}
+                        className={style["btn--red"]}
+                        id={style.processTask}
+                      >
+                        Convert to PDF
+                        <i
+                          className="fa-sharp fa-regular fa-circle-right"
+                          style={{ marginLeft: "15px" }}
+                        />
+                      </button>
+                    </div>
+
+                    {/* Mobile */}
+                    {sidebar && (
+                      <div className={style.mobile__sidebar}>
+                        {fileList.length >= 1 && (
+                          <>
+                            <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
+                              <div
+                                className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                                <div className={style.option__panel__title}>
+                                  IMAGE TO PDF OPTIONS
                                 </div>
 
-                                {open && <Backdrop
-                                  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                                  open={open}
-                                >
-                                  <CircularProgress color="inherit" />
-                                </Backdrop>}
-
-                                <button
-                                  onClick={handleUploadClick}
-                                  className={style["btn--red"]}
-                                  id={style.processTask}
-                                >
-                                  Convert to PDF
-                                  <i
-                                    className="fa-sharp fa-regular fa-circle-right"
-                                    style={{ marginLeft: "15px" }}
-                                  />
-                                </button>
+                                <div className={style.option__panel__content}>
+                                  <div className={style.info}>
+                                    Please, select more images by clicking again on ’Select
+                                    JPG images’. <br />
+                                    Select multiple images by maintaining pressed ’Ctrl’
+                                  </div>
+                                </div>
                               </div>
-                            </>
-                          )}
-                        </div>
-                      )
-                    }
-                  </div>
+
+                              {open && <Backdrop
+                                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                open={open}
+                              >
+                                <CircularProgress color="inherit" />
+                              </Backdrop>}
+
+                              <button
+                                onClick={handleUploadClick}
+                                className={style["btn--red"]}
+                                id={style.processTask}
+                              >
+                                Convert to PDF
+                                <i
+                                  className="fa-sharp fa-regular fa-circle-right"
+                                  style={{ marginLeft: "15px" }}
+                                />
+                              </button>
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    )}
+                  </>
                 )
               }
-
             </div>
           </div>
 

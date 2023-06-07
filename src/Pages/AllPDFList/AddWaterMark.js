@@ -17,7 +17,6 @@ import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 import style from "../Pages.module.css";
-import '../Tabs.css';
 import { useNavigate } from "react-router-dom";
 
 const AddWaterMark = () => {
@@ -349,223 +348,218 @@ const AddWaterMark = () => {
                 </div>
               </div>
 
-              {/* sidebar  */}
-              {fileList.length >= 1 && (
-                <>
-                  <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
 
-                    <div
-                      className={`${style.option__panel} ${style["option__panel--active"]}`}>
-                      <div className={style.option__panel__title}>WATERMARK OPTIONS</div>
+              {/* For Sidebar */}
+              {
+                fileList.length >= 1 && (
+                  <>
+                    {/* Desktop */}
+                    <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
 
-                      <div className={style.option__tab}>
-                        <div className="bloc-tabs">
-                          <button
-                            className={toggleStateWater === 1 ? "tabs active-tabs" : "tabs"}
-                            onClick={() => handleToggleTab(1)}
-                          >
-                            <div style={{ marginBottom: "5px" }}>
-                              <FormatColorTextIcon />
-                            </div>
-                            Place text
-                          </button>
-                          <button
-                            className={toggleStateWater === 2 ? "tabs active-tabs" : "tabs"}
-                            onClick={() => handleToggleTab(2)}
-                          >
-                            <div style={{ marginBottom: "5px" }}>
-                              <AddPhotoAlternateIcon />
-                            </div>
-                            Place Image
-                          </button>
-                        </div>
+                      <div
+                        className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                        <div className={style.option__panel__title}>WATERMARK OPTIONS</div>
 
-                        <div className="content-tabs">
-                          <div
-                            className={toggleStateWater === 1 ? "content active-content" : "content"}
-                          >
-                            <WatermarkText
-                              isOpen={isOpen}
-                              setIsOpen={setIsOpen}
-                              text={text}
-                              changeText={changeText}
-                              currentFont={currentFont}
-                              changeFont={changeFont}
-                              fontSize={fontSize}
-                              setFontSize={setFontSize}
-                              incrementFontSize={incrementFontSize}
-                              decrementFontSize={decrementFontSize}
-                              transparency={transparency}
-                              changeTransparency={changeTransparency}
-                              textStyle={textStyle}
-                              handleStyle={handleStyle}
-                              mosaic={mosaic}
-                              setMosaic={setMosaic}
-                              rotation={rotation}
-                              setColor={setColor}
-                              changeRotation={changeRotation}
-                              verticalPos={verticalPos}
-                              changeVerPosition={changeVerPosition}
-                              horizontalPos={horizontalPos}
-                              changeHorPosition={changeHorPosition}
-                              pageCount={pageCount}
-                              startPage={startPage}
-                              handleStartPageChange={handleStartPageChange}
-                              endPage={endPage}
-                              handleLastPageChange={handleLastPageChange}
-                            />
+                        <div className={style.option__tab}>
+                          <div className={style["bloc-tabs"]}>
+                            <button
+                              className={toggleStateWater === 1 ? `${style.tabs} ${style["active-tabs"]}` : `${style.tabs}`}
+                              onClick={() => handleToggleTab(1)}
+                            >
+                              <div>
+                                <FormatColorTextIcon />
+                              </div>
+                              Place text
+                            </button>
+                            <button
+                              className={toggleStateWater === 2 ? `${style.tabs} ${style["active-tabs"]}` : `${style.tabs}`}
+                              onClick={() => handleToggleTab(2)}
+                            >
+                              <div>
+                                <AddPhotoAlternateIcon />
+                              </div>
+                              Place Image
+                            </button>
                           </div>
 
-                          <div
-                            className={toggleStateWater === 2 ? "content  active-content" : "content"}
-                          >
-                            <WatermarkImages
-                              imgData={imgData}
-                              handleImage={handleImage}
-                            />
+                          <div className={style["content-tabs"]}>
+                            <div
+                              className={toggleStateWater === 1 ? `${style.content} ${style["active-content"]}` : `${style.content}`}
+                            >
+                              <WatermarkText
+                                isOpen={isOpen}
+                                setIsOpen={setIsOpen}
+                                text={text}
+                                changeText={changeText}
+                                currentFont={currentFont}
+                                changeFont={changeFont}
+                                fontSize={fontSize}
+                                setFontSize={setFontSize}
+                                incrementFontSize={incrementFontSize}
+                                decrementFontSize={decrementFontSize}
+                                transparency={transparency}
+                                changeTransparency={changeTransparency}
+                                textStyle={textStyle}
+                                handleStyle={handleStyle}
+                                mosaic={mosaic}
+                                setMosaic={setMosaic}
+                                rotation={rotation}
+                                setColor={setColor}
+                                changeRotation={changeRotation}
+                                verticalPos={verticalPos}
+                                changeVerPosition={changeVerPosition}
+                                horizontalPos={horizontalPos}
+                                changeHorPosition={changeHorPosition}
+                                pageCount={pageCount}
+                                startPage={startPage}
+                                handleStartPageChange={handleStartPageChange}
+                                endPage={endPage}
+                                handleLastPageChange={handleLastPageChange}
+                              />
+                            </div>
+
+                            <div
+                              className={toggleStateWater === 2 ? `${style.content} ${style["active-content"]}` : `${style.content}`}
+                            >
+                              <WatermarkImages
+                                imgData={imgData}
+                                handleImage={handleImage}
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
+
+                      {open && <Backdrop
+                        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                        open={open}
+                      >
+                        <CircularProgress color="inherit" />
+                      </Backdrop>}
+
+                      <button
+                        onClick={() => {
+                          watermarkText();
+                          watermarkImage();
+                        }}
+                        className={style["btn--red"]}
+                        id={style.processTask}
+                      >
+                        Add WaterMark
+                        <i
+                          className="fa-sharp fa-regular fa-circle-right"
+                          style={{ marginLeft: "15px" }} />
+                      </button>
                     </div>
 
-                    {open && <Backdrop
-                      sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                      open={open}
-                    >
-                      <CircularProgress color="inherit" />
-                    </Backdrop>}
+                    {/* Mobile */}
+                    {sidebar && (
+                      <div className={style.mobile__sidebar}>
+                        {fileList.length >= 1 && (
+                          <>
+                            <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
+                              <div
+                                className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                                <div className={style.option__panel__title}>WATERMARK OPTIONS</div>
 
-                    <button
-                      onClick={() => {
-                        watermarkText();
-                        watermarkImage();
-                      }}
-                      className={style["btn--red"]}
-                      id={style.processTask}
-                    >
-                      Add WaterMark
-                      <i
-                        className="fa-sharp fa-regular fa-circle-right"
-                        style={{ marginLeft: "15px" }} />
-                    </button>
-                  </div>
-                </>
-              )}
+                                <div className={style.option__tab}>
+                                  <div className={style["bloc-tabs"]}>
+                                    <button
+                                      className={toggleStateWater === 1 ? `${style.tabs} ${style["active-tabs"]}` : `${style.tabs}`}
+                                      onClick={() => handleToggleTab(1)}
+                                    >
+                                      <div>
+                                        <FormatColorTextIcon />
+                                      </div>
+                                      Place text
+                                    </button>
+                                    <button
+                                      className={toggleStateWater === 2 ? `${style.tabs} ${style["active-tabs"]}` : `${style.tabs}`}
+                                      onClick={() => handleToggleTab(2)}
+                                    >
+                                      <div>
+                                        <AddPhotoAlternateIcon />
+                                      </div>
+                                      Place Image
+                                    </button>
+                                  </div>
 
-              {/* Mobile phone */}
-              {
-                sidebar && (
-                  <div className={style.mobile__sidebar}>
-                    {
-                      sidebar && (
-                        <div>
-                          {fileList.length >= 1 && (
-                            <>
-                              <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
-                                <div
-                                  className={`${style.option__panel} ${style["option__panel--active"]}`}>
-                                  <div className={style.option__panel__title}>WATERMARK OPTIONS</div>
-
-                                  <div className={style.option__tab}>
-                                    <div className="bloc-tabs">
-                                      <button
-                                        className={toggleStateWater === 1 ? "tabs active-tabs" : "tabs"}
-                                        onClick={() => handleToggleTab(1)}
-                                      >
-                                        <div style={{ marginBottom: "5px" }}>
-                                          <FormatColorTextIcon />
-                                        </div>
-                                        Place text
-                                      </button>
-                                      <button
-                                        className={toggleStateWater === 2 ? "tabs active-tabs" : "tabs"}
-                                        onClick={() => handleToggleTab(2)}
-                                      >
-                                        <div style={{ marginBottom: "5px" }}>
-                                          <AddPhotoAlternateIcon />
-                                        </div>
-                                        Place Image
-                                      </button>
+                                  <div className={style["content-tabs"]}>
+                                    <div
+                                      className={toggleStateWater === 1 ? `${style.content} ${style["active-content"]}` : `${style.content}`}
+                                    >
+                                      <WatermarkText
+                                        isOpen={isOpen}
+                                        setIsOpen={setIsOpen}
+                                        text={text}
+                                        changeText={changeText}
+                                        currentFont={currentFont}
+                                        changeFont={changeFont}
+                                        fontSize={fontSize}
+                                        setFontSize={setFontSize}
+                                        incrementFontSize={incrementFontSize}
+                                        decrementFontSize={decrementFontSize}
+                                        transparency={transparency}
+                                        changeTransparency={changeTransparency}
+                                        textStyle={textStyle}
+                                        handleStyle={handleStyle}
+                                        mosaic={mosaic}
+                                        setMosaic={setMosaic}
+                                        rotation={rotation}
+                                        setColor={setColor}
+                                        changeRotation={changeRotation}
+                                        verticalPos={verticalPos}
+                                        changeVerPosition={changeVerPosition}
+                                        horizontalPos={horizontalPos}
+                                        changeHorPosition={changeHorPosition}
+                                        pageCount={pageCount}
+                                        startPage={startPage}
+                                        handleStartPageChange={handleStartPageChange}
+                                        endPage={endPage}
+                                        handleLastPageChange={handleLastPageChange}
+                                      />
                                     </div>
 
-                                    <div className="content-tabs">
-                                      <div
-                                        className={toggleStateWater === 1 ? "content  active-content" : "content"}
-                                      >
-                                        <WatermarkText
-                                          isOpen={isOpen}
-                                          setIsOpen={setIsOpen}
-                                          text={text}
-                                          changeText={changeText}
-                                          currentFont={currentFont}
-                                          changeFont={changeFont}
-                                          fontSize={fontSize}
-                                          setFontSize={setFontSize}
-                                          incrementFontSize={incrementFontSize}
-                                          decrementFontSize={decrementFontSize}
-                                          transparency={transparency}
-                                          changeTransparency={changeTransparency}
-                                          textStyle={textStyle}
-                                          handleStyle={handleStyle}
-                                          mosaic={mosaic}
-                                          setMosaic={setMosaic}
-                                          rotation={rotation}
-                                          setColor={setColor}
-                                          changeRotation={changeRotation}
-                                          verticalPos={verticalPos}
-                                          changeVerPosition={changeVerPosition}
-                                          horizontalPos={horizontalPos}
-                                          changeHorPosition={changeHorPosition}
-                                          pageCount={pageCount}
-                                          startPage={startPage}
-                                          handleStartPageChange={handleStartPageChange}
-                                          endPage={endPage}
-                                          handleLastPageChange={handleLastPageChange}
-                                        />
-                                      </div>
-
-                                      <div
-                                        className={toggleStateWater === 2 ? "content  active-content" : "content"}
-                                      >
-                                        <WatermarkImages
-                                          imgData={imgData}
-                                          handleImage={handleImage}
-                                        />
-                                      </div>
+                                    <div
+                                      className={toggleStateWater === 2 ? `${style.content} ${style["active-content"]}` : `${style.content}`}
+                                    >
+                                      <WatermarkImages
+                                        imgData={imgData}
+                                        handleImage={handleImage}
+                                      />
                                     </div>
                                   </div>
                                 </div>
-
-                                {open && <Backdrop
-                                  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                                  open={open}
-                                >
-                                  <CircularProgress color="inherit" />
-                                </Backdrop>}
-
-                                <button
-                                  onClick={() => {
-                                    watermarkText();
-                                    watermarkImage();
-                                  }}
-                                  className={style["btn--red"]}
-                                  id={style.processTask}
-                                >
-                                  Add WaterMark
-                                  <i
-                                    className="fa-sharp fa-regular fa-circle-right"
-                                    style={{ marginLeft: "15px" }} />
-                                </button>
                               </div>
-                            </>
-                          )}
-                        </div>
-                      )
-                    }
-                  </div>
+
+                              {open && <Backdrop
+                                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                open={open}
+                              >
+                                <CircularProgress color="inherit" />
+                              </Backdrop>}
+
+                              <button
+                                onClick={() => {
+                                  watermarkText();
+                                  watermarkImage();
+                                }}
+                                className={style["btn--red"]}
+                                id={style.processTask}
+                              >
+                                Add WaterMark
+                                <i
+                                  className="fa-sharp fa-regular fa-circle-right"
+                                  style={{ marginLeft: "15px" }} />
+                              </button>
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    )}
+                  </>
                 )
               }
-
             </div>
           </div>
 

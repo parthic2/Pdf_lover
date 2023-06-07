@@ -283,6 +283,7 @@ body {
     display: inline-block;
     position: relative;
     /* padding-right: 20px; */
+    text-transform: uppercase;
 }
 
 .main-menu .nav li a,

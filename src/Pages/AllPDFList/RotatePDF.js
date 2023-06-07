@@ -42,14 +42,13 @@ const RotatePDF = () => {
   const [rotation, setRotation] = useState(0);
 
   const rotateRight = () => {
-    if (rotation === 360) {
+    if (rotation === 270) {
       setRotation(0);
     } else {
       setRotation(rotation + 90);
     }
-
-    // setRotation(90);
   };
+
 
   // const rotateLeft = () => {
   //   if (rotation === 360) {
@@ -175,7 +174,7 @@ const RotatePDF = () => {
                       <div className={style.file}>
                         <div className={style.file__canvas}>
                           <Document file={file}>
-                            <Page pageNumber={pageNumber} />
+                            <Page pageNumber={pageNumber} rotate={rotation} />
                           </Document>
                         </div>
 
@@ -188,117 +187,114 @@ const RotatePDF = () => {
                 </div>
               </div>
 
-              {/* sidebar  */}
-              {fileList.length >= 1 && (
-                <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
-                  <div
-                    className={`${style.option__panel} ${style["option__panel--active"]}`}>
-                    <div className={style.option__panel__title}>ROTATE PDF</div>
+              {/* For Sidebar */}
+              {
+                fileList.length >= 1 && (
+                  <>
+                    {/* Desktop */}
+                    <div className={style.tool__sidebar} id="sidebar" style={{ overflowY: "auto" }}>
+                      <div
+                        className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                        <div className={style.option__panel__title}>ROTATE PDF</div>
 
-                    <div className={style.option__tab}>
-                      <div className={style.option__panel__content}>
-                        <div className={style.info}>
-                          Mouse over PDF file below and a icon will appear, click
-                          on it to rotate your PDFs.
-                        </div>
-                      </div>
-                      <p className={style.rotate}>ROTATION</p>
-                      <div style={{ display: "flex", justifyContent: "center" }}>
-                        <div className={style.rotation_text}>{rotation}</div>
-                        <div className={style["button-70"]} onClick={rotateRight}>
-                          Right
-                        </div>
+                        <div className={style.option__tab}>
+                          <div className={style.option__panel__content}>
+                            <div className={style.info}>
+                              Mouse over PDF file below and a icon will appear, click
+                              on it to rotate your PDFs.
+                            </div>
+                          </div>
+                          <p className={style.rotate}>ROTATION</p>
+                          <div style={{ display: "flex", justifyContent: "center" }}>
+                            <div className={style.rotation_text}>{rotation}</div>
+                            <div className={style["button-70"]} onClick={rotateRight}>
+                              Right
+                            </div>
 
-                        {/* <div className={style["button-70"]} onClick={rotateRight}>
+                            {/* <div className={style["button-70"]} onClick={rotateRight}>
                           Right
                         </div> */}
+                          </div>
+                        </div>
                       </div>
+
+                      {open && <Backdrop
+                        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                        open={open}
+                      >
+                        <CircularProgress color="inherit" />
+                      </Backdrop>}
+
+                      <Box height={25} />
+                      <button
+                        onClick={handleUploadClick}
+                        className={style["btn--red"]}
+                        id={style.processTask}
+                      >
+                        Rotate PDF
+                        <i
+                          className="fa-sharp fa-regular fa-circle-right"
+                          style={{ marginLeft: "15px" }}
+                        />
+                      </button>
                     </div>
-                  </div>
 
-                  {open && <Backdrop
-                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                    open={open}
-                  >
-                    <CircularProgress color="inherit" />
-                  </Backdrop>}
+                    {/* Mobile */}
+                    {sidebar && (
+                      <div className={style.mobile__sidebar}>
+                        {fileList.length >= 1 && (
+                          <>
+                            <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
+                              <div
+                                className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                                <div className={style.option__panel__title}>ROTATE PDF</div>
 
-                  <Box height={25} />
-                  <button
-                    onClick={handleUploadClick}
-                    className={style["btn--red"]}
-                    id={style.processTask}
-                  >
-                    Rotate PDF
-                    <i
-                      className="fa-sharp fa-regular fa-circle-right"
-                      style={{ marginLeft: "15px" }}
-                    />
-                  </button>
-                </div>
-              )}
-
-              {/* Mobile phone */}
-              {
-                sidebar && (
-                  <div className={style.mobile__sidebar}>
-                    {
-                      sidebar && (
-                        <div>
-                          {fileList.length >= 1 && (
-                            <>
-                              <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
-                                <div
-                                  className={`${style.option__panel} ${style["option__panel--active"]}`}>
-                                  <div className={style.option__panel__title}>ROTATE PDF</div>
-
-                                  <div className={style.option__tab}>
-                                    <div className={style.option__panel__content}>
-                                      <div className={style.info}>
-                                        Mouse over PDF file below and a icon will appear, click
-                                        on it to rotate your PDFs.
-                                      </div>
-                                    </div>
-                                    <p className={style.rotate}>ROTATION</p>
-                                    <div style={{ display: "flex", justifyContent: "center" }}>
-                                      <div className={style.rotation_text}>{rotation}</div>
-                                      <div className={style["button-70"]} onClick={rotateRight}>
-                                        Right
-                                      </div>
-
-                                      {/* <div className={style["button-70"]} onClick={rotateRight}>
-                                        Right
-                                      </div> */}
+                                <div className={style.option__tab}>
+                                  <div className={style.option__panel__content}>
+                                    <div className={style.info}>
+                                      Mouse over PDF file below and a icon will appear, click
+                                      on it to rotate your PDFs.
                                     </div>
                                   </div>
+                                  <p className={style.rotate}>ROTATION</p>
+                                  <div style={{ display: "flex", justifyContent: "center" }}>
+                                    <div className={style.rotation_text}>{rotation}</div>
+                                    <div className={style["button-70"]} onClick={rotateRight}>
+                                      Right
+                                    </div>
+
+                                    {/* <div className={style["button-70"]} onClick={rotateRight}>
+                                        Right
+                                      </div> */}
+                                  </div>
                                 </div>
-
-                                {open && <Backdrop
-                                  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                                  open={open}
-                                >
-                                  <CircularProgress color="inherit" />
-                                </Backdrop>}
-
-                                <Box height={25} />
-                                <button
-                                  onClick={handleUploadClick}
-                                  className={style["btn--red"]}
-                                  id={style.processTask}
-                                >
-                                  Rotate PDF
-                                  <i
-                                    className="fa-sharp fa-regular fa-circle-right"
-                                    style={{ marginLeft: "15px" }}
-                                  />
-                                </button>
                               </div>
-                            </>
-                          )}
-                        </div>
-                      )
-                    }
-                  </div>
+
+                              {open && <Backdrop
+                                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                open={open}
+                              >
+                                <CircularProgress color="inherit" />
+                              </Backdrop>}
+
+                              <Box height={25} />
+                              <button
+                                onClick={handleUploadClick}
+                                className={style["btn--red"]}
+                                id={style.processTask}
+                              >
+                                Rotate PDF
+                                <i
+                                  className="fa-sharp fa-regular fa-circle-right"
+                                  style={{ marginLeft: "15px" }}
+                                />
+                              </button>
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    )}
+                  </>
                 )
               }
             </div>
