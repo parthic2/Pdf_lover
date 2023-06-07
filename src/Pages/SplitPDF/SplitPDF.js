@@ -230,7 +230,7 @@ const SplitPDF = () => {
                           className={toggleStateSplit === 1 ? "tabs active-tabs" : "tabs"}
                           onClick={() => handleToggleTab(1)}
                         >
-                          <div>
+                          <div style={{ marginBottom: "5px" }}>
                             <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
                             >
                               <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -269,7 +269,7 @@ const SplitPDF = () => {
                           className={toggleStateSplit === 2 ? "tabs active-tabs" : "tabs"}
                           onClick={() => handleToggleTab(2)}
                         >
-                          <div>
+                          <div style={{ marginBottom: "5px" }}>
                             <svg width="47px" height="48px" viewBox="0 0 47 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
                             >
                               <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -379,7 +379,7 @@ const SplitPDF = () => {
                                       className={toggleStateSplit === 1 ? "tabs active-tabs" : "tabs"}
                                       onClick={() => handleToggleTab(1)}
                                     >
-                                      <div>
+                                      <div style={{ marginBottom: "5px" }}>
                                         <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         >
                                           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -418,7 +418,7 @@ const SplitPDF = () => {
                                       className={toggleStateSplit === 2 ? "tabs active-tabs" : "tabs"}
                                       onClick={() => handleToggleTab(2)}
                                     >
-                                      <div>
+                                      <div style={{ marginBottom: "5px" }}>
                                         <svg width="47px" height="48px" viewBox="0 0 47 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         >
                                           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

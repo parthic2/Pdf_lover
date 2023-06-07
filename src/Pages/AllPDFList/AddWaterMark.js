@@ -364,7 +364,7 @@ const AddWaterMark = () => {
                             className={toggleStateWater === 1 ? "tabs active-tabs" : "tabs"}
                             onClick={() => handleToggleTab(1)}
                           >
-                            <div>
+                            <div style={{ marginBottom: "5px" }}>
                               <FormatColorTextIcon />
                             </div>
                             Place text
@@ -373,7 +373,7 @@ const AddWaterMark = () => {
                             className={toggleStateWater === 2 ? "tabs active-tabs" : "tabs"}
                             onClick={() => handleToggleTab(2)}
                           >
-                            <div>
+                            <div style={{ marginBottom: "5px" }}>
                               <AddPhotoAlternateIcon />
                             </div>
                             Place Image
@@ -472,7 +472,7 @@ const AddWaterMark = () => {
                                         className={toggleStateWater === 1 ? "tabs active-tabs" : "tabs"}
                                         onClick={() => handleToggleTab(1)}
                                       >
-                                        <div>
+                                        <div style={{ marginBottom: "5px" }}>
                                           <FormatColorTextIcon />
                                         </div>
                                         Place text
@@ -481,7 +481,7 @@ const AddWaterMark = () => {
                                         className={toggleStateWater === 2 ? "tabs active-tabs" : "tabs"}
                                         onClick={() => handleToggleTab(2)}
                                       >
-                                        <div>
+                                        <div style={{ marginBottom: "5px" }}>
                                           <AddPhotoAlternateIcon />
                                         </div>
                                         Place Image
