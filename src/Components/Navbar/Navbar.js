@@ -87,7 +87,7 @@ const Navbar = () => {
                         <FaEllipsisV />
                       </span>
 
-                      <ul className="dropdown-menu mega menu-full" style={{ overflowX: "auto", height: "80vh" }}>
+                      <ul className="dropdown-menu mega menu-full" style={{ overflowX: "auto", height: "75vh" }}>
                         <AllToolsList />
                       </ul>
                     </li>
