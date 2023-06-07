@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Typography, createTheme, ThemeProvider, Skeleton } from "@mui/material";
+import { Typography, createTheme, ThemeProvider, Box } from "@mui/material";
 import { getMainApi } from "../../../Redux/Action/HomePage/MainAction";
+import Skeleton from "react-loading-skeleton";
 
 import style from "./Banner.module.css";
 
@@ -49,32 +50,43 @@ const Banner = () => {
     <div className={style["home-title"]}>
       <div className={style["skeleton-container"]}>
         <ThemeProvider theme={theme}>
-          <Skeleton
-            variant="rectangular"
-            width={300}
-            height={46}
-            animation="wave"
-            style={{ marginBottom: 15 }}
-          />
+          <Box
+            sx={{
+              backgroundColor: "rgba(0, 0, 0, 0.11)",
+              p: 2,
+              mb: 2,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "30%",
+              height: "10px",
+            }}
+          >
+            <Skeleton width="100%" height="100%" />
+          </Box>
         </ThemeProvider>
         <ThemeProvider theme={theme}>
-          <Skeleton
-            variant="rectangular"
-            width={600}
-            height={30}
-            animation="wave"
-          />
+          <Box
+            sx={{
+              backgroundColor: "rgba(0, 0, 0, 0.11)",
+              p: 2,
+              mb: 2,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "60%",
+              height: "10px",
+            }}
+          >
+            <Skeleton width="100%" height="100%" />
+          </Box>
         </ThemeProvider>
       </div>
     </div>
   );
 
-  if (isLoading) {
+  if (isLoading || !mainData) {
     return renderSkeleton();
-  }
-
-  if (!mainData) {
-    return null; // Return null if mainData is not available
   }
 
   const { title, subtitle } = mainData;
