@@ -2,6 +2,7 @@ import { actionTypes } from "../../Types/actionTypes";
 
 const initialState = {
     mainData: {},
+    isLoading: false,
 };
 
 export const mainReducers = (state = initialState, action) => {
@@ -9,10 +10,17 @@ export const mainReducers = (state = initialState, action) => {
         case actionTypes.FETCH_MAIN:
             return {
                 ...state,
-                mainData: action.payload // data update
-            }
+                mainData: action.payload,
+                isLoading: false,
+            };
+
+        case actionTypes.FETCH_MAIN_START:
+            return {
+                ...state,
+                isLoading: true,
+            };
 
         default:
             return state;
     }
-}
+};

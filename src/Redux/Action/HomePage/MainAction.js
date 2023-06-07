@@ -1,18 +1,23 @@
 import { actionTypes } from "../../Types/actionTypes";
 
-// with redux-thunk
 export const getMainApi = () => {
-  return async (dispatch, getState) => {
-    const response = await fetch("https://pdf-lover-data.onrender.com/homepage");
-    const data = await response.json();
-    // console.log(data.main);
+  return async (dispatch) => {
+    dispatch({ type: actionTypes.FETCH_MAIN_START });
 
-    dispatch({
-      type: actionTypes.FETCH_MAIN,
-      payload: data.main,
-    });
+    try {
+      const response = await fetch("https://pdf-lover-data.onrender.com/homepage");
+      const data = await response.json();
+
+      dispatch({
+        type: actionTypes.FETCH_MAIN,
+        payload: data.main,
+      });
+    } catch (error) {
+      // Handle error if needed
+    }
   };
 };
+
 
 // with only redux
 // export const fetchMainData = (data) => {

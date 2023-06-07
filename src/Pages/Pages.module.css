@@ -654,7 +654,7 @@ textarea {
 .file__canvas {
     cursor: move;
     position: relative;
-    /* width: 80%; */
+    width: 80%;
 }
 
 .file__info {

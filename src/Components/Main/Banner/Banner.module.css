@@ -11,3 +11,10 @@ main {
     text-align: center;
     padding: 24px
 }
+
+.skeleton-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
