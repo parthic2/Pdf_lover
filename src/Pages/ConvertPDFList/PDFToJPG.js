@@ -9,8 +9,8 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import Navbar from "../../Components/Navbar/Navbar";
 import { getPdfToJpgApi } from "../../Redux/Action/Pages/PDFToJPGAction";
-import style from "../Pages.module.css";
 import Skeleton from "react-loading-skeleton";
+import style from "../Pages.module.css";
 
 const PDFToJPG = () => {
 

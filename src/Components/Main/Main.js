@@ -3,11 +3,9 @@ import { Card, CardContent, Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-
-import style from "./Main.module.css";
-
 import { useDispatch, useSelector } from "react-redux";
 import { getDetailsApi } from "../../Redux/Action/HomePage/DetailsTypesAction";
+import style from "./Main.module.css";
 
 const SkeletonCard = () => (
   <Card variant="outlined" className={style.card__item}>

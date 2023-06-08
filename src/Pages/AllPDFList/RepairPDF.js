@@ -9,8 +9,8 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import Navbar from "../../Components/Navbar/Navbar";
 import { getRepairApi } from "../../Redux/Action/Pages/RepairPDFAction";
-import style from "../Pages.module.css";
 import Skeleton from "react-loading-skeleton";
+import style from "../Pages.module.css";
 
 const RepairPDF = () => {
 

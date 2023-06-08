@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import AllToolsList from "./AllTools/AllToolsList";
 import { Container } from "@mui/material";
 import { FaEllipsisV, FaSortDown, FaWrench } from 'react-icons/fa';
-
 import "./Navbar.css";
 
 const Navbar = () => {

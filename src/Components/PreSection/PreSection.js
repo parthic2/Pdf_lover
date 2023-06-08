@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getPremiumApi } from "../../Redux/Action/HomePage/PremiumAction";
 import Skeleton from "react-loading-skeleton";
-
 import style from "./PreSection.module.css";
 
 const PreSection = () => {
