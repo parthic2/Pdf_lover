@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import AllToolsList from "./AllTools/AllToolsList";
 import { Container } from "@mui/material";
-import { FaEllipsisV, FaSortDown } from 'react-icons/fa';
+import { FaEllipsisV, FaSortDown, FaWrench } from 'react-icons/fa';
 
 import "./Navbar.css";
 
@@ -23,13 +23,14 @@ const Navbar = () => {
             </div>
 
             <div className="top-menu">
+              {/* Desktop */}
               <div className="header__nav">
-                <div className="main-menu" id="menuBig">
+                <div className="main-menu">
                   <ul className="nav">
                     <li>
                       <NavLink
                         className={({ isActive }) =>
-                          isActive ? "nav__item--active" : undefined
+                          isActive ? "nav__item--active" : ""
                         }
                         to="/Merge_PDF">
                         Merge PDF
@@ -38,7 +39,7 @@ const Navbar = () => {
                     <li>
                       <NavLink
                         className={({ isActive }) =>
-                          isActive ? "nav__item--active" : undefined
+                          isActive ? "nav__item--active" : ""
                         }
                         to="/Split_PDF">
                         Split PDF
@@ -47,25 +48,23 @@ const Navbar = () => {
                     <li>
                       <NavLink
                         className={({ isActive }) =>
-                          isActive ? "nav__item--active" : undefined
+                          isActive ? "nav__item--active" : ""
                         }
                         to="/Compress_PDF">
                         Compress PDF
                       </NavLink>
                     </li>
 
-                    <li className="dropdown dropdown-full" id="menuSmall">
+                    <li className="dropdown dropdown-full">
                       <span>
-                        All PDF tools{" "}
+                        All PDF tools
                         <i className="dropdown__icon">
                           <FaSortDown />
                         </i>
                       </span>
 
-                      <span
-                        className="nav__icon dropdown-toggle"
-                        data-toggle="dropdown">
-                        <i className="fa-solid fa-wrench" />
+                      <span className="nav__icon dropdown-toggle" data-toggle="dropdown">
+                        <FaWrench />
                       </span>
 
                       <ul className="dropdown-menu mega menu-full" style={{ overflowX: "auto" }}>
@@ -76,7 +75,7 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* responsive nav */}
+              {/* Responsive Nav */}
               <div className="header__nav responsive__nav">
                 <div className="main-menu" id="menuBig">
                   <ul className="nav">

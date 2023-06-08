@@ -1,42 +1,36 @@
-import { Button, Typography } from "@mui/material";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Box, Button, Typography } from "@mui/material";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import { AiOutlineSetting } from "react-icons/ai";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 import Navbar from "../../Components/Navbar/Navbar";
 import { getJPGtoPDFApi } from "../../Redux/Action/Pages/JPGToPDFAction";
-
-import Backdrop from '@mui/material/Backdrop';
-import CircularProgress from '@mui/material/CircularProgress';
-
-import { AiOutlineSetting } from 'react-icons/ai';
-
 import style from "../Pages.module.css";
+import Skeleton from "react-loading-skeleton";
 
 const JPGToPDF = () => {
 
-  // For Change title dynamically
+  // For redux
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const jtoPData = useSelector((state) => state.JPGtoPDFReducer.jtoPData);
+
+  // Loading state
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     document.title = "Convert JPG to PDF.";
-  }, []);
-
-  // For Redux
-  const dispatch = useDispatch();
-
-  const jtoPData = useSelector((state) => state.JPGtoPDFReducer.jtoPData);
-  // console.log(jtoPData);
-
-  useEffect(() => {
     dispatch(getJPGtoPDFApi());
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }, [dispatch]);
 
-  // For Loading data
   const [open, setOpen] = useState(false);
-
-  // For Upload file
-  const navigate = useNavigate();
-
-  const [fileList, setFileList] = useState(0);
-
+  const [fileList, setFileList] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);
 
   const handleFileChange = (e) => {
@@ -49,19 +43,18 @@ const JPGToPDF = () => {
     setSelectedImages(imageUrls);
   };
 
+  // Upload File
   const handleUploadClick = async () => {
     if (!fileList) {
       return;
-      // console.log("error");
     }
 
-    // 👇 Create new FormData object and append files
-    var formData = new FormData();
+    const formData = new FormData();
     for (let i = 0; i < fileList.length; i++) {
       formData.append("files[]", fileList[i]);
     }
 
-    var requestOptions = {
+    const requestOptions = {
       method: "POST",
       body: formData,
       redirect: "follow",
@@ -69,7 +62,6 @@ const JPGToPDF = () => {
 
     setOpen(true);
 
-    // 👇 Uploading the files using the fetch API to the server
     try {
       const url = "https://pdflover.stackholic.io/public/api/image-to-pdf";
       const response = await fetch(url, requestOptions);
@@ -80,101 +72,175 @@ const JPGToPDF = () => {
 
       const data = await response.json();
       setFileList(data);
-      // console.log(data);
       navigate("/Download_Merge_PDF");
     } catch (error) {
-      // DOMException: The user aborted a request.
       console.log("Error: ", error);
       setOpen(false);
     }
   };
 
-  // 👇 files is not an array, but it's iterable, spread to get an array of files
-  const files = fileList ? [...fileList] : [];
+  const files = [...fileList];
 
   // For Sidebar
   const [sidebar, setSidebar] = useState(false);
-  const ref = useRef();
 
   const toggleCart = () => {
     setSidebar(!sidebar);
   };
 
+  if (!jtoPData) {
+    return null;
+  }
+
+  const { title, subTitle, button } = jtoPData;
+
+
   return (
     <>
       <Navbar />
-
-      {jtoPData && (
-        <>
-          <div className={style.main}>
-            <div className={style.tool}>
-              <div className={style.tool__workarea} id="workArea">
-                <div className={style.tool__header}>
-                  <Typography
-                    variant="h4"
-                    sx={{ textTransform: "capitalize" }}
-                    className={style.tool__header__title}>
-                    {jtoPData.title}
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    sx={{ textTransform: "capitalize" }}
-                    className={style.tool__header__subtitle}>
-                    {jtoPData.subTitle}
-                  </Typography>
+      {loading ? (
+        <div className={style.main}>
+          <div className={style.tool}>
+            <div className={style.tool__workarea} id="workArea">
+              <div className={style.tool__header}>
+                <div className={style["skeleton-container"]}>
+                  <Box
+                    className={style["skeleton-box"]}
+                    sx={{
+                      width: "30%",
+                    }}
+                  >
+                    <Skeleton height={150} width={150} />
+                  </Box>
+                  <Box
+                    className={style["skeleton-box"]}
+                    sx={{
+                      width: "60%",
+                    }}
+                  >
+                    <Skeleton height={150} width={150} />
+                  </Box>
+                  <Box
+                    className={style["skeleton-box"]}
+                    sx={{
+                      width: "20%",
+                    }}
+                  >
+                    <Skeleton height={150} width={150} />
+                  </Box>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className={style.main} key={jtoPData.id}>
+          <div className={style.tool}>
+            <div className={style.tool__workarea} id="workArea">
+              <div className={style.tool__header}>
+                <Typography
+                  variant="h4"
+                  sx={{ textTransform: "capitalize" }}
+                  className={style.tool__header__title}>
+                  {title}
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ textTransform: "capitalize" }}
+                  className={style.tool__header__subtitle}>
+                  {subTitle}
+                </Typography>
+              </div>
 
-                <div className={style.side_btn}>
-                  <button className={style.toggle__btn} onClick={toggleCart}>
-                    <AiOutlineSetting />
+              {/* Toggle button */}
+              <div className={style.side_btn}>
+                <button className={style.toggle__btn} onClick={toggleCart}>
+                  <AiOutlineSetting />
+                </button>
+              </div>
+
+              {/* Select file button */}
+              <div id="uploader" className={style.uploader}>
+                <Button
+                  variant="contained"
+                  component="label"
+                  id={style.pickFiles}
+                  title={button}>
+                  <input
+                    type="file"
+                    multiple
+                    onChange={handleFileChange}
+                    accept=".png, .jpg, .jpeg, .bmp"
+                  />
+                  <span>{button}</span>
+                </Button>
+              </div>
+
+              {/* For view image */}
+              <div className={style.tool__workarea__display}>
+                {files.map((file, i) => (
+                  <div className={style.tool__workarea__rendered} key={i}>
+                    <div className={style.file}>
+                      {selectedImages && (
+                        <div className={style.file__canvas}>
+                          <img src={URL.createObjectURL(file)} alt="Selected" className={style.canvas_image} />
+                        </div>
+                      )}
+
+                      <div className={style.file__info}>
+                        <span className={style.file__info__name}>{file.name}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            {fileList.length >= 1 && (
+              <>
+                {/* Desktop */}
+                <div className={style.tool__sidebar} id={style.sidebar} style={{ overflowY: "auto" }}>
+                  <div
+                    className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                    <div className={style.option__panel__title}>
+                      IMAGE TO PDF OPTIONS
+                    </div>
+
+                    <div className={style.option__panel__content}>
+                      <div className={style.info}>
+                        Please, select more images by clicking again on ’Select
+                        JPG images’. <br />
+                        Select multiple images by maintaining pressed ’Ctrl’
+                      </div>
+                    </div>
+                  </div>
+
+                  {open && <Backdrop
+                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                    open={open}
+                  >
+                    <CircularProgress color="inherit" />
+                  </Backdrop>}
+
+                  <button
+                    onClick={handleUploadClick}
+                    className={style["btn--red"]}
+                    id={style.processTask}
+                  >
+                    Convert to PDF
+                    <i
+                      className="fa-sharp fa-regular fa-circle-right"
+                      style={{ marginLeft: "15px" }}
+                    />
                   </button>
                 </div>
 
-                {/* Uploader button */}
-                <div id="uploader" className={style.uploader}>
-                  <Button
-                    variant="contained"
-                    component="label"
-                    id={style.pickFiles}
-                    title={jtoPData.button}>
-                    <input
-                      type="file"
-                      multiple
-                      onChange={handleFileChange}
-                      accept=".png, .jpg, .jpeg, .bmp"
-                    />
-                    <span>{jtoPData.button}</span>
-                  </Button>
-                </div>
-
-                {/* For Pdf View */}
-                <div className={style.tool__workarea__display}>
-                  {files.map((file, i) => (
-                    <div className={style.tool__workarea__rendered} key={i}>
-                      <div className={style.file}>
-                        {selectedImages && (
-                          <div className={style.file__canvas}>
-                            <img src={URL.createObjectURL(file)} alt="Selected" className={style.canvas_image} />
-                          </div>
-                        )}
-
-                        <div className={style.file__info}>
-                          <span className={style.file__info__name}>{file.name}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* For Sidebar */}
-              {
-                fileList.length >= 1 && (
-                  <>
-                    {/* Desktop */}
-                    <div className={style.tool__sidebar} id={style.sidebar} style={{ overflowY: "auto" }}>
-                      <div
-                        className={`${style.option__panel} ${style["option__panel--active"]}`}>
+                {/* Mobile */}
+                {sidebar && (
+                  <div className={style.mobile__sidebar}>
+                    <div className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
+                      <div className={`${style.option__panel} ${style["option__panel--active"]}`}>
                         <div className={style.option__panel__title}>
                           IMAGE TO PDF OPTIONS
                         </div>
@@ -186,84 +252,42 @@ const JPGToPDF = () => {
                             Select multiple images by maintaining pressed ’Ctrl’
                           </div>
                         </div>
-                      </div>
 
-                      {open && <Backdrop
-                        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                        open={open}
-                      >
-                        <CircularProgress color="inherit" />
-                      </Backdrop>}
-
-                      <button
-                        onClick={handleUploadClick}
-                        className={style["btn--red"]}
-                        id={style.processTask}
-                      >
-                        Convert to PDF
-                        <i
-                          className="fa-sharp fa-regular fa-circle-right"
-                          style={{ marginLeft: "15px" }}
-                        />
-                      </button>
-                    </div>
-
-                    {/* Mobile */}
-                    {sidebar && (
-                      <div className={style.mobile__sidebar}>
                         {fileList.length >= 1 && (
                           <>
-                            <div ref={ref} className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
-                              <div
-                                className={`${style.option__panel} ${style["option__panel--active"]}`}>
-                                <div className={style.option__panel__title}>
-                                  IMAGE TO PDF OPTIONS
-                                </div>
-
-                                <div className={style.option__panel__content}>
-                                  <div className={style.info}>
-                                    Please, select more images by clicking again on ’Select
-                                    JPG images’. <br />
-                                    Select multiple images by maintaining pressed ’Ctrl’
-                                  </div>
-                                </div>
-                              </div>
-
-                              {open && <Backdrop
-                                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                                open={open}
-                              >
+                            {open && (
+                              <Backdrop sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }} open={open}>
                                 <CircularProgress color="inherit" />
-                              </Backdrop>}
+                              </Backdrop>
+                            )}
 
-                              <button
-                                onClick={handleUploadClick}
-                                className={style["btn--red"]}
-                                id={style.processTask}
-                              >
-                                Convert to PDF
-                                <i
-                                  className="fa-sharp fa-regular fa-circle-right"
-                                  style={{ marginLeft: "15px" }}
-                                />
-                              </button>
-                            </div>
+                            <button
+                              onClick={handleUploadClick}
+                              className={style["btn--red"]}
+                              id={style.processTask}
+                            >
+                              Convert to PDF
+                              <i
+                                className="fa-sharp fa-regular fa-circle-right"
+                                style={{ marginLeft: "15px" }}
+                              />
+                            </button>
                           </>
                         )}
                       </div>
-                    )}
-                  </>
-                )
-              }
-            </div>
+                    </div>
+                  </div>
+                )}
+              </>
+            )}
           </div>
-
-          {/* Footer  */}
-          <div className={style.footer}>
-            <div className={style.footer__copy}>{jtoPData.footer}</div>
-          </div>
-        </>
+        </div>
       )}
+
+      {/* Footer  */}
+      <div className={style.footer}>
+        <div className={style.footer__copy}>{jtoPData.footer}</div>
+      </div>
     </>
   );
 };

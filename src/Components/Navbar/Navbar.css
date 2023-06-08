@@ -631,6 +631,7 @@ body {
     font-size: 22px;
     display: flex !important;
     justify-content: center;
+    color: #FE4F62;
 }
 
 @media (max-width:840px) {
@@ -649,6 +650,7 @@ body {
 
     .main-menu .nav #menuSmall .nav__icon__res {
         display: block;
+        color: #FE4F62;
     }
 
     .responsive__nav {
