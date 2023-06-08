@@ -34,9 +34,12 @@ const SplitPDF = () => {
   useEffect(() => {
     document.title = "Split PDF files online.";
     dispatch(getSplitApi());
-    setTimeout(() => {
+    const delay = 2000;
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, delay);
+
+    return () => clearTimeout(timer);
   }, [dispatch]);
 
   // For Sidebar

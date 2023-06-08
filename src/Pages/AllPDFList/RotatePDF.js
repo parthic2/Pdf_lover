@@ -25,9 +25,12 @@ const RotatePDF = () => {
   useEffect(() => {
     document.title = "Rotate PDF files.";
     dispatch(getRotateApi());
-    setTimeout(() => {
+    const delay = 2000;
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, delay);
+
+    return () => clearTimeout(timer);
   }, [dispatch]);
 
   const [open, setOpen] = useState(false);

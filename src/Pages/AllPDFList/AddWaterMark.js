@@ -52,10 +52,13 @@ const AddWaterMark = () => {
 
   useEffect(() => {
     document.title = "Add watermark to a PDF files.";
-    setTimeout(() => {
-      dispatch(getAddWatermarkApi());
+    dispatch(getAddWatermarkApi());
+    const delay = 2000;
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, delay);
+
+    return () => clearTimeout(timer);
   }, [dispatch]);
 
   // For Text

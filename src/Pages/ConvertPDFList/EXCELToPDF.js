@@ -24,14 +24,16 @@ const EXCELToPDF = () => {
   useEffect(() => {
     document.title = "Convert EXCEL to PDF.";
     dispatch(getExcelToPDFApi());
-    setTimeout(() => {
+    const delay = 2000;
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, delay);
+
+    return () => clearTimeout(timer);
   }, [dispatch]);
 
   const [open, setOpen] = useState(false);
   const [fileList, setFileList] = useState([]);
-
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
