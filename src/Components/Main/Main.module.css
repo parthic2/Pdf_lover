@@ -12,7 +12,7 @@
 }
 
 .card__item:hover {
-    box-shadow:5px 5px 6px 2px #E9E9E9;
+    box-shadow: 5px 5px 6px 2px #E9E9E9;
 }
 
 .tools__item__icon img {
@@ -23,4 +23,15 @@
 .card__item:hover img {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+.skeleton-box {
+    background-color: rgba(0, 0, 0, 0.11);
+    padding: 2px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    border-radius: 6px;
 }

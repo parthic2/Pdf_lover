@@ -1,240 +1,232 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-import { Container, Grid, Typography } from "@mui/material";
-
-import style from "./Footer.module.css";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { getFooterApi } from "../../Redux/Action/Footer/FooterAction";
+import Skeleton from "react-loading-skeleton";
+import style from "./Footer.module.css";
 
 const Footer = () => {
-  // For Redux
   const dispatch = useDispatch();
-
   const footerData = useSelector((state) => state.footerReducer.footerData);
-
-  const pdfLoverLink = useSelector(
-    (state) => state.footerReducer.footerData.pdfLoverLink
-  );
-  const productLink = useSelector(
-    (state) => state.footerReducer.footerData.productLink
-  );
-  const solutionLink = useSelector(
-    (state) => state.footerReducer.footerData.solutionLink
-  );
-  const companyLink = useSelector(
-    (state) => state.footerReducer.footerData.companyLink
-  );
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getFooterApi());
+    dispatch(getFooterApi())
+      .then(() => setIsLoading(false))
+      .catch(() => setIsLoading(false));
   }, [dispatch]);
 
-  return (
-    <>
-      {footerData && (
-        <div className={style["footer-main"]}>
-          <Container>
-            {/* Footer  */}
-            <Grid container spacing={3}>
-              <Grid item xs={12} sm={6} md={4} lg={3}>
-                <Typography
-                  variant="h6"
-                  className={style.heading}
-                  sx={{ margin: "15px" }}>
-                  {footerData.pdfLover}
+  if (isLoading) {
+    return (
+      <div className={style["footer-main"]}>
+        <Container>
+          <Grid container spacing={3}>
+            {Array.from({ length: 4 }).map((_, index) => (
+              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                <Typography variant="h6" className={style.heading}>
+                  <Box
+                    className={style["skeleton-box"]}
+                    sx={{
+                      width: "20%",
+                    }}
+                  >
+                    <Skeleton height={20} />
+                  </Box>
                 </Typography>
                 <ul>
-                  {pdfLoverLink &&
-                    pdfLoverLink.map((item) => {
-                      const { id, title } = item;
-                      return (
-                        <li key={id}>
-                          <Link>
-                            <Typography
-                              variant="subtitle1"
-                              className={style.subHeading}
-                              sx={{ margin: "15px" }}>
-                              {title}
-                            </Typography>
-                          </Link>
-                        </li>
-                      );
-                    })}
+                  {Array.from({ length: 3 }).map((_, index) => (
+                    <li key={index}>
+                      <Box
+                        className={style["skeleton-box"]}
+                        sx={{
+                          width: "40%",
+                        }}
+                      >
+                        <Skeleton height={20} />
+                      </Box>
+                    </li>
+                  ))}
                 </ul>
               </Grid>
+            ))}
+          </Grid>
 
-              <Grid item xs={12} sm={6} md={4} lg={3}>
-                <Typography
-                  variant="h6"
-                  className={style.heading}
-                  sx={{ margin: "15px" }}>
-                  {footerData.product}
-                </Typography>
-                <ul>
-                  {productLink &&
-                    productLink.map((item) => {
-                      const { id, title } = item;
-                      return (
-                        <li key={id} >
-                          <Link>
-                            <Typography
-                              variant="subtitle1"
-                              className={style.subHeading}
-                              sx={{ margin: "15px" }}>
-                              {title}
-                            </Typography>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                </ul>
-              </Grid>
+          <ul className={style.app__store}>
+            <li>
+              <Box
+                className={style["skeleton-box"]}
+                sx={{
+                  width: "100px",
+                }}
+              >
+                <Skeleton height={40} />
+              </Box>
+            </li>
+            <li>
+              <Box
+                className={style["skeleton-box"]}
+                sx={{
+                  width: "100px",
+                }}
+              >
+                <Skeleton height={40} />
+              </Box>
+            </li>
+          </ul>
 
-              <Grid item xs={12} sm={6} md={4} lg={3}>
-                <Typography
-                  variant="h6"
-                  className={style.heading}
-                  sx={{ margin: "15px" }}>
-                  {footerData.solution}
-                </Typography>
-                <ul>
-                  {solutionLink &&
-                    solutionLink.map((item) => {
-                      const { id, title } = item;
-                      return (
-                        <li key={id}>
-                          <Link>
-                            <Typography
-                              variant="subtitle1"
-                              className={style.subHeading}
-                              sx={{ margin: "15px" }}>
-                              {title}
-                            </Typography>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                </ul>
-              </Grid>
+          <div className={style.separator}></div>
 
-              <Grid item xs={12} sm={6} md={4} lg={3}>
-                <Typography
-                  variant="h6"
-                  className={style.heading}
-                  sx={{ margin: "15px" }}>
-                  {footerData.company}
-                </Typography>
-                <ul>
-                  {companyLink &&
-                    companyLink.map((item) => {
-                      const { id, title } = item;
-                      return (
-                        <li key={id}>
-                          <Link>
-                            <Typography
-                              variant="subtitle1"
-                              className={style.subHeading}
-                              sx={{ margin: "15px" }}>
-                              {title}
-                            </Typography>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                </ul>
-              </Grid>
-            </Grid>
-
-            {/* Download Link  */}
-            <ul className={style.app__store}>
-              <li>
-                <Link
-                  to=""
-                  rel="noopener "
-                  target="_blank "
-                  title="Google Play">
-                  <img
-                    src={footerData.googleDrive}
-                    alt="Google Play"
-                    style={{ width: "135px" }}
-                  />
-                </Link>
-              </li>
-              <li>
-                <Link to="" rel="noopener " target="_blank " title="App Store">
-                  <img
-                    src={footerData.appStore}
-                    alt="App Store"
-                    style={{ width: "135px", paddingTop: "6px" }}
-                  />
-                </Link>
-              </li>
-            </ul>
-
-            {/* For HR Line  */}
-            <div className={style.separator}></div>
-
-            {/* Social list  */}
-            <div className={style.row}>
-              <div className={style.social__icon}>
-                <div className={style["footer-main__info"]}>
-                  <div className={style.slogan}>
-                    <p>{footerData.copyRightText}</p>
-                  </div>
-                  <div className="social">
-                    <Link
-                      to=""
-                      rel="noopener "
-                      target="_blank "
-                      title="Follow us on Twitter!">
-                      <img
-                        className={`${style.social__item}`}
-                        src={footerData.twitter}
-                        alt="twitter"
+          <div className={style.row}>
+            <div className={style.social__icon}>
+              <div className={style["footer-main__info"]}>
+                <div className={style.slogan}>
+                  <Box
+                    className={style["skeleton-box"]}
+                    sx={{
+                      width: "200px",
+                    }}
+                  >
+                    <Skeleton height={20} />
+                  </Box>
+                </div>
+                <div className="social">
+                  <Box
+                    className={style["skeleton-box"]}
+                    sx={{
+                      width: "30%",
+                    }}
+                  >
+                    {Array.from({ length: 4 }).map((_, index) => (
+                      <Skeleton
+                        key={index}
+                        circle={true}
+                        height={30}
+                        width={30}
+                        style={{ marginRight: "10px" }}
                       />
-                    </Link>
-                    <Link
-                      to=""
-                      rel="noopener "
-                      target="_blank "
-                      title="Like us on Facebook!">
-                      <img
-                        className={`${style.social__item}`}
-                        src={footerData.facebook}
-                        alt="facebook"
-                      />
-                    </Link>
-                    <Link
-                      to=""
-                      rel="noopener "
-                      target="_blank "
-                      title="LinkedIn-PDFLover">
-                      <img
-                        className={`${style.social__item}`}
-                        src={footerData.linkedin}
-                        alt="linkedin"
-                      />
-                    </Link>
-                    <Link
-                      to=""
-                      rel="noopener "
-                      target="_blank "
-                      title="Instagram-PDFLover_official">
-                      <img
-                        className={`${style.social__item}`}
-                        src={footerData.instagram}
-                        alt="instagram"
-                      />
-                    </Link>
-                  </div>
+                    ))}
+                  </Box>
                 </div>
               </div>
             </div>
-          </Container>
-        </div>
+          </div>
+        </Container>
+      </div>
+    );
+  }
+
+  return (
+    <div className={style["footer-main"]}>
+      {footerData ? (
+        <Container>
+          <Grid container spacing={3}>
+            {[
+              { title: footerData.pdfLover, links: footerData.pdfLoverLink },
+              { title: footerData.product, links: footerData.productLink },
+              { title: footerData.solution, links: footerData.solutionLink },
+              { title: footerData.company, links: footerData.companyLink },
+            ].map((section, index) => (
+              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                <Typography
+                  variant="h6"
+                  className={style.heading}
+                  sx={{ margin: "15px" }}
+                >
+                  {section.title}
+                </Typography>
+                <ul>
+                  {section.links.map((item) => (
+                    <li key={item.id}>
+                      <Link>
+                        <Typography
+                          variant="subtitle1"
+                          className={style.subHeading}
+                          sx={{ margin: "15px" }}
+                        >
+                          {item.title}
+                        </Typography>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </Grid>
+            ))}
+          </Grid>
+
+          <ul className={style.app__store}>
+            <li>
+              <Link to="" rel="noopener" target="_blank" title="Google Play">
+                <img
+                  src={footerData.googleDrive}
+                  alt="Google Play"
+                  style={{ width: "135px" }}
+                />
+              </Link>
+            </li>
+            <li>
+              <Link to="" rel="noopener" target="_blank" title="App Store">
+                <img
+                  src={footerData.appStore}
+                  alt="App Store"
+                  style={{ width: "135px", paddingTop: "6px" }}
+                />
+              </Link>
+            </li>
+          </ul>
+
+          <div className={style.separator}></div>
+
+          <div className={style.row}>
+            <div className={style.social__icon}>
+              <div className={style["footer-main__info"]}>
+                <div className={style.slogan}>
+                  <p>{footerData.copyRightText}</p>
+                </div>
+                <div className="social">
+                  {[
+                    {
+                      title: "Follow us on Twitter!",
+                      icon: footerData.twitter,
+                    },
+                    {
+                      title: "Like us on Facebook!",
+                      icon: footerData.facebook,
+                    },
+                    {
+                      title: "LinkedIn-PDFLover",
+                      icon: footerData.linkedin,
+                    },
+                    {
+                      title: "Instagram-PDFLover_official",
+                      icon: footerData.instagram,
+                    },
+                  ].map((social, index) => (
+                    <Link
+                      to=""
+                      rel="noopener"
+                      target="_blank"
+                      title={social.title}
+                      key={index}
+                    >
+                      {social.icon && (
+                        <img
+                          className={`${style.social__item}`}
+                          src={social.icon}
+                          alt={social.title}
+                        />
+                      )}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      ) : (
+        <div>Error occurred while fetching data.</div>
       )}
-    </>
+    </div>
   );
 };
 

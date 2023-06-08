@@ -39,82 +39,66 @@ const Banner = () => {
   // For Redux
   const dispatch = useDispatch();
 
-  const mainData = useSelector((state) => state.mainReducers.mainData);
-  const isLoading = useSelector((state) => state.mainReducers.isLoading);
+  const { mainData, isLoading } = useSelector((state) => state.mainReducers);
 
   useEffect(() => {
     dispatch(getMainApi());
   }, [dispatch]);
 
-  const renderSkeleton = () => (
-    <div className={style["home-title"]}>
-      <div className={style["skeleton-container"]}>
-        <ThemeProvider theme={theme}>
-          <Box
-            sx={{
-              backgroundColor: "rgba(0, 0, 0, 0.11)",
-              p: 2,
-              mb: 2,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "30%",
-              height: "10px",
-            }}
-          >
-            <Skeleton width="100%" height="100%" />
-          </Box>
-        </ThemeProvider>
-        <ThemeProvider theme={theme}>
-          <Box
-            sx={{
-              backgroundColor: "rgba(0, 0, 0, 0.11)",
-              p: 2,
-              mb: 2,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "60%",
-              height: "10px",
-            }}
-          >
-            <Skeleton width="100%" height="100%" />
-          </Box>
-        </ThemeProvider>
-      </div>
-    </div>
-  );
-
   if (isLoading || !mainData) {
-    return renderSkeleton();
+    return (
+      <div className={style["home-title"]}>
+        <div className={style["skeleton-container"]}>
+          <ThemeProvider theme={theme}>
+            <Box
+              className={style["skeleton-box"]}
+              sx={{
+                width: "30%",
+                mb: 2,
+                ...theme.typography.h3,
+              }}
+            >
+              <Skeleton width="100%" height="100%" />
+            </Box>
+            <Box
+              className={style["skeleton-box"]}
+              sx={{
+                width: "60%",
+                ...theme.typography.body1,
+              }}
+            >
+              <Skeleton width="100%" height="100%" />
+            </Box>
+          </ThemeProvider>
+        </div>
+      </div>
+    );
   }
 
   const { title, subtitle } = mainData;
 
   return (
-    <>
-      <div className={style["home-title"]}>
-        <ThemeProvider theme={theme}>
-          <Typography variant="h3" sx={{ color: "black" }}>
-            {title}
-          </Typography>
-        </ThemeProvider>
+    <div className={style["home-title"]}>
+      <ThemeProvider theme={theme}>
+        <Typography variant="h3" sx={{ color: "black" }}>
+          {title}
+        </Typography>
+      </ThemeProvider>
 
-        <ThemeProvider theme={theme}>
-          <Typography
-            variant="body1"
-            sx={{
-              color: "#383e45",
-              maxWidth: "980px",
-              margin: "15px auto 28px",
-              fontSize: "20px",
-            }}
-          >
-            {subtitle}
-          </Typography>
-        </ThemeProvider>
-      </div>
-    </>
+      <ThemeProvider theme={theme}>
+        <Typography
+          variant="body1"
+          sx={{
+            color: "#383e45",
+            maxWidth: "980px",
+            margin: "15px auto 28px",
+            fontSize: "20px",
+          }}
+        >
+          {subtitle}
+        </Typography>
+      </ThemeProvider>
+    </div>
   );
 };
 

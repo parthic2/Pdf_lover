@@ -14,15 +14,14 @@ const PreSection = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    const delay = 2000;
+    const timer = setTimeout(() => {
       dispatch(getPremiumApi());
-      setIsLoading(false)
-    }, 2000);
-  }, [dispatch]);
+      setIsLoading(false);
+    }, delay);
 
-  if (!premiumData) {
-    return;
-  }
+    return () => clearTimeout(timer);
+  }, [dispatch]);
 
   const { heading, subHeading, subHeading1, button } = premiumData;
 
@@ -40,42 +39,25 @@ const PreSection = () => {
       {isLoading ? (
         <>
           <Box
+            className={style["skeleton-box"]}
             sx={{
-              backgroundColor: "rgba(0, 0, 0, 0.11)",
-              p: 2,
-              mb: 2,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
               width: "30%",
-              height: "10px",
             }}
           >
             <Skeleton width="100%" height="100%" />
           </Box>
           <Box
+            className={style["skeleton-box"]}
             sx={{
-              backgroundColor: "rgba(0, 0, 0, 0.11)",
-              p: 2,
-              mb: 2,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
               width: "80%",
-              height: "20px",
             }}
           >
             <Skeleton width="100%" height="100%" />
           </Box>
           <Box
+            className={style["skeleton-box"]}
             sx={{
-              backgroundColor: "rgba(0, 0, 0, 0.11)",
-              p: 2,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
               width: "10%",
-              height: "20px",
             }}
           >
             <Skeleton width="100%" height="100%" />
@@ -115,7 +97,6 @@ const PreSection = () => {
           </Link>
         </>
       )}
-
     </Box>
   );
 };
