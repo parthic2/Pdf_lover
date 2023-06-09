@@ -52,9 +52,9 @@ const Main = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    dispatch(getDetailsApi());
     const delay = 2000;
     const timer = setTimeout(() => {
-      dispatch(getDetailsApi());
       setIsLoading(false);
     }, delay);
 

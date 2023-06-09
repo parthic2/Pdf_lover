@@ -13,9 +13,9 @@ const PreSection = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    dispatch(getPremiumApi());
     const delay = 2000;
     const timer = setTimeout(() => {
-      dispatch(getPremiumApi());
       setIsLoading(false);
     }, delay);
 
