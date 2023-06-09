@@ -8,7 +8,7 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import { AiOutlineSetting } from "react-icons/ai";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+// import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import Skeleton from "react-loading-skeleton";
 import style from "../Pages.module.css";
 
@@ -217,7 +217,6 @@ const SplitPDF = () => {
                 <Button variant="contained" component="label" id={style.pickFiles} title={button}>
                   <input
                     type="file"
-                    multiple
                     onChange={handleFileChange}
                     accept=".pdf"
                   />

@@ -5,7 +5,7 @@ const RootLayout = lazy(() => import("./Components/Layout/RootLayout"));
 const Index = lazy(() => import("./Components/Main/Index"));
 const DownloadMerge = lazy(() => import("./DownloadPages/DownloadMerge"));
 const MergePDF = lazy(() => import("./Pages/MergePDF/MergePDF"));
-// const SplitPDF = lazy(() => import("./Pages/SplitPDF/SplitPDF"));
+const SplitPDF = lazy(() => import("./Pages/SplitPDF/SplitPDF"));
 const CompressPDF = lazy(() => import("./Pages/CompressPDF/CompressPDF"));
 const ProtectPDF = lazy(() => import("./Pages/AllPDFList/ProtectPDF"));
 const RepairPDF = lazy(() => import("./Pages/AllPDFList/RepairPDF"));
@@ -14,7 +14,7 @@ const UnlockPDF = lazy(() => import("./Pages/AllPDFList/UnlockPDF"));
 const EXCELToPDF = lazy(() => import("./Pages/ConvertPDFList/EXCELToPDF"));
 const JPGToPDF = lazy(() => import("./Pages/ConvertPDFList/JPGToPDF"));
 const PDFToJPG = lazy(() => import("./Pages/ConvertPDFList/PDFToJPG"));
-const AddWaterMark = lazy(() => import("./Pages/AllPDFList/AddWaterMark"));
+// const AddWaterMark = lazy(() => import("./Pages/AllPDFList/AddWaterMark"));
 
 const Router = createBrowserRouter([
   {
@@ -26,10 +26,10 @@ const Router = createBrowserRouter([
     path: "/Merge_PDF",
     element: <MergePDF />,
   },
-  // {
-  //   path: "/Split_PDF",
-  //   element: <SplitPDF />,
-  // },
+  {
+    path: "/Split_PDF",
+    element: <SplitPDF />,
+  },
   {
     path: "/Compress_PDF",
     element: <CompressPDF />,
@@ -54,10 +54,10 @@ const Router = createBrowserRouter([
     path: "/Rotate_PDF",
     element: <RotatePDF />,
   },
-  {
-    path: "/Add_watermark",
-    element: <AddWaterMark />,
-  },
+  // {
+  //   path: "/Add_watermark",
+  //   element: <AddWaterMark />,
+  // },
   {
     path: "/Unlock_PDF",
     element: <UnlockPDF />,
