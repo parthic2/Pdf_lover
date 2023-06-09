@@ -10,6 +10,8 @@ import { AiOutlineSetting } from "react-icons/ai";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import Skeleton from "react-loading-skeleton";
 import style from "../Pages.module.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SplitPDF = () => {
 
@@ -110,7 +112,7 @@ const SplitPDF = () => {
 
     // 👇 Create new FormData object and append files
     var formData = new FormData();
-    formData.append("file", fileList);
+    formData.append("file", fileList[0]);
     formData.append("range", `${startPage}-${endPage}`);
 
     var requestOptions = {
@@ -124,20 +126,31 @@ const SplitPDF = () => {
     // 👇 Uploading the files using the fetch API to the server
     try {
       const url = "https://pdflover.stackholic.io/public/api/split-pdf-merge";
-      const response = await fetch(url, requestOptions);
+      const response = await toast.promise(
+        fetch(url, requestOptions),
+        {
+          pending: "Splitting Files...",
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
       }
 
       const data = await response.json();
-      setFileList(data);
-      // console.log(data);
-      navigate("/Download_Merge_PDF");
+
+      if (data.status) {
+        setFileList(data);
+        navigate("/Download_Merge_PDF");
+      } else {
+        // Handle the case when the response status is false
+        setOpen(false);
+        toast.error(`${data.msg}`);
+      }
     } catch (error) {
       // DOMException: The user aborted a request.
-      console.log("Error: ", error);
       setOpen(false);
+      toast.error("Something Went Wrong!");
     }
   };
 
@@ -150,6 +163,21 @@ const SplitPDF = () => {
   return (
     <>
       <Navbar />
+
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        style={{ padding: "10px" }}
+      />
+
       {loading ? (
         <div className={style.main}>
           <div className={style.tool}>

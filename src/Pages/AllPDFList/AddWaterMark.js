@@ -11,9 +11,12 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import { AiOutlineSetting } from 'react-icons/ai';
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import style from "../Pages.module.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddWaterMark = () => {
 
@@ -25,7 +28,7 @@ const AddWaterMark = () => {
   const [currentFont, setCurrentFont] = useState("Lohit marathi");
   const [textStyle, setTextStyle] = useState("Bold");
   const [fontSize, setFontSize] = useState(10);
-  const [transparency, setTransparency] = useState("No transparency");
+  const [transparency, setTransparency] = useState("100");
   const [mosaic, setMosaic] = useState(false);
   const [color, setColor] = useState("");
   const [rotation, setRotation] = useState(0);
@@ -126,6 +129,7 @@ const AddWaterMark = () => {
     setStartPage(Math.min(value, startPage));
   };
 
+  // Handle file change
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     setFileList([selectedFile]);
@@ -165,93 +169,113 @@ const AddWaterMark = () => {
     reader.readAsArrayBuffer(selectedFile);
   };
 
+  // Handle image
   const handleImage = (e) => {
-    // console.log(e.target.files);
-    setImgData(e.target.files[0]);
+    if (e.target.files && e.target.files[0]) {
+      setImgData(e.target.files[0]);
+    }
   }
 
-  // Text API
-  async function watermarkText() {
-    if (!fileList) {
-      return;
-      // console.log("error");
-    }
-
-    // 👇 Create new FormData object and append files
-    var formData = new FormData();
-    formData.append("file", fileList);
-    formData.append("mode", "text");
-    formData.append("text", text);
-    formData.append("pages", `${startPage}-${endPage}`);
-    formData.append("vertical_position", verticalPos);
-    formData.append("horizontal_position", horizontalPos);
-    formData.append("mosaic", mosaic);
-    formData.append("rotation", rotation);
-    formData.append("font_family", currentFont);
-    formData.append("font_style", textStyle); // not complete
-    formData.append("font_size", fontSize);
-    formData.append("font_color", color);
-    formData.append("transparency", transparency);
-
-    var requestOptions = {
-      method: 'POST',
-      body: formData,
-      redirect: 'follow'
-    };
-
+  // WaterMark API
+  async function handleButtonClick() {
     setOpen(true);
 
-    // 👇 Uploading the files using the fetch API to the server
+    let responseText;
+    let responseImage;
+
+    // Text API
     try {
+      if (!fileList) {
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", fileList[0]);
+      formData.append("mode", "text");
+      formData.append("text", text);
+      formData.append("pages", `${startPage}-${endPage}`);
+      formData.append("vertical_position", verticalPos);
+      formData.append("horizontal_position", horizontalPos);
+      formData.append("mosaic", mosaic);
+      formData.append("rotation", rotation);
+      formData.append("font_family", currentFont);
+      formData.append("font_style", textStyle);
+      formData.append("font_size", fontSize);
+      formData.append("font_color", color);
+      formData.append("transparency", transparency);
+
+      var requestOptions = {
+        method: 'POST',
+        body: formData,
+        redirect: 'follow'
+      };
+
       const url = "https://pdflover.stackholic.io/public/api/watermark-pdf";
-      const response = await fetch(url, requestOptions);
+      responseText = await toast.promise(
+        fetch(url, requestOptions), {
+        pending: "Adding Watermark (Text) Files...",
+      });
 
-      if (!response.ok) {
-        throw new Error(`Error! status: ${response.status}`);
+      if (!responseText.ok) {
+        throw new Error(`Error! status: ${responseText.status}`);
       }
 
-      const data = await response.json();
-      setFileList(data);
-      // console.log(data);
-      navigate("/Download_Merge_PDF");
-    } catch (error) {
-      // DOMException: The user aborted a request.
-      console.log("Error: ", error);
-      setOpen(false);
-    }
-  }
+      const data = await responseText.json();
 
-  // Image API
-  async function watermarkImage() {
+      if (data.status) {
+        setFileList(data);
+        navigate("/Download_Merge_PDF");
+      } else {
+        console.log("error");
+        setOpen(false);
+        toast.error(`${data.msg} (Text)`);
+      }
+    } catch (error) {
+      setOpen(false);
+      toast.error("Something Went Wrong! (Text)");
+    }
+
     // Image API
-    var formImageData = new FormData();
-    formImageData.append("file", fileList[0]);
-    formImageData.append("image", imgData);
-
-    var requestImageOptions = {
-      method: 'POST',
-      body: formImageData,
-      redirect: 'follow'
-    };
-
-    // 👇 Uploading the files using the fetch API to the server
     try {
-      const url = "https://pdflover.stackholic.io/public/api/watermark-pdf-image";
-      const response = await fetch(url, requestImageOptions);
+      setOpen(true);
 
-      if (!response.ok) {
-        throw new Error(`Error! status: ${response.status}`);
+      var formImageData = new FormData();
+      formImageData.append("file", fileList[0]);
+      formImageData.append("image", imgData);
+
+      var requestImageOptions = {
+        method: 'POST',
+        body: formImageData,
+        redirect: 'follow'
+      };
+
+      const url = "https://pdflover.stackholic.io/public/api/watermark-pdf-image";
+      responseImage = await toast.promise(
+        fetch(url, requestImageOptions), {
+        pending: "Adding Watermark (Image) Files...",
+      });
+
+      if (!responseImage.ok) {
+        throw new Error(`Error! status: ${responseImage.status}`);
       }
 
-      const data = await response.json();
-      setFileList(data);
-      // console.log(data);
-      navigate("/Download_Merge_PDF");
+      const data = await responseImage.json();
+
+      if (data.status) {
+        setFileList(data);
+        navigate("/Download_Merge_PDF");
+        toast.error(`${data.msg} (Image)`);
+      } else {
+        console.log("error");
+        setOpen(false);
+      }
     } catch (error) {
-      // DOMException: The user aborted a request.
       console.log("Error: ", error);
       setOpen(false);
+      toast.error("Something Went Wrong! (Image)");
     }
+
+    // setOpen(false);
   }
 
   // For Sidebar
@@ -268,6 +292,20 @@ const AddWaterMark = () => {
   return (
     <>
       <Navbar />
+
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
       {loading ? (
         <div className={style.main}>
           <div className={style.tool}>
@@ -365,7 +403,6 @@ const AddWaterMark = () => {
               <>
                 {/* Desktop */}
                 <div className={style.tool__sidebar} id={style.sidebar} style={{ overflowY: "auto" }}>
-
                   <div
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
                     <div className={style.option__panel__title}>WATERMARK OPTIONS</div>
@@ -448,10 +485,9 @@ const AddWaterMark = () => {
                   </Backdrop>}
 
                   <button
-                    onClick={() => {
-                      watermarkText();
-                      watermarkImage();
-                    }}
+                    onClick={
+                      handleButtonClick
+                    }
                     className={style["btn--red"]}
                     id={style.processTask}
                   >
@@ -547,10 +583,9 @@ const AddWaterMark = () => {
                             )}
 
                             <button
-                              onClick={() => {
-                                watermarkText();
-                                watermarkImage();
-                              }}
+                              onClick={
+                                handleButtonClick
+                              }
                               className={style["btn--red"]}
                               id={style.processTask}
                             >

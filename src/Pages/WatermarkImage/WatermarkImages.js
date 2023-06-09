@@ -18,7 +18,9 @@ const WatermarkImages = ({ handleImage, imgData }) => {
                 />
                 <span>Choose Image</span>
             </Button>
-            <div style={{ marginTop: "10px" }}>{imgData.name}</div>
+            <div className={style.image_display}>
+                <img alt="" src={imgData} />{imgData.name}
+            </div>
         </div>
     )
 }

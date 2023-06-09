@@ -11,6 +11,8 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { getCompressApi } from "../../Redux/Action/Pages/CompressAction";
 import Skeleton from "react-loading-skeleton";
 import style from "../Pages.module.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CompressPDF = () => {
 
@@ -37,7 +39,6 @@ const CompressPDF = () => {
 
   const [open, setOpen] = useState(false);
   const [fileList, setFileList] = useState([]);
-
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
@@ -66,21 +67,44 @@ const CompressPDF = () => {
 
     try {
       const url = "https://pdflover.stackholic.io/public/api/compress";
-      const response = await fetch(url, requestOptions);
+      const response = await toast.promise(
+        fetch(url, requestOptions),
+        {
+          pending: "Compressing Files...",
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
       }
 
       const data = await response.json();
-      setFileList(data);
-      navigate("/Download_Merge_PDF");
+
+      if (data.status) {
+        setFileList(data);
+        navigate("/Download_Merge_PDF");
+        // await toast.promise('Compressing files...', {
+        //   position: "top-left",
+        //   autoClose: 2000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   theme: "light",
+        // });
+      } else {
+        // Handle the case when the response status is false
+        setOpen(false);
+        toast.error(`${data.msg}`);
+      }
+
     } catch (error) {
-      console.log("Error: ", error);
       setOpen(false);
+      toast.error("Something Went Wrong!");
     }
   };
-
+  
   const files = [...fileList];
   const pageNumber = 1;
 
@@ -100,6 +124,20 @@ const CompressPDF = () => {
   return (
     <>
       <Navbar />
+
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
       {loading ? (
         <div className={style.main}>
           <div className={style.tool}>

@@ -11,6 +11,8 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { getProtectApi } from "../../Redux/Action/Pages/ProtectPDFAction";
 import Skeleton from "react-loading-skeleton";
 import style from "../Pages.module.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProtectPDF = () => {
 
@@ -114,18 +116,30 @@ const ProtectPDF = () => {
 
     try {
       const url = "https://pdflover.stackholic.io/public/api/lock-pdf";
-      const response = await fetch(url, requestOptions);
+      const response = await toast.promise(
+        fetch(url, requestOptions),
+        {
+          pending: "Protecting Files...",
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
       }
 
       const data = await response.json();
-      setFileList(data);
-      navigate("/Download_Merge_PDF");
+
+      if (data.status) {
+        setFileList(data);
+        navigate("/Download_Merge_PDF");
+      } else {
+        // Handle the case when the response status is false
+        setOpen(false);
+        toast.error(`${data.msg}`);
+      }
     } catch (error) {
-      console.log("Error: ", error);
       setOpen(false);
+      toast.error("Something Went Wrong!");
     }
   };
 
@@ -148,6 +162,20 @@ const ProtectPDF = () => {
   return (
     <>
       <Navbar />
+
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        style={{ padding: "10px" }}
+      />
 
       {loading ? (
         <div className={style.main}>

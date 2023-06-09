@@ -11,6 +11,8 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { getPdfToJpgApi } from "../../Redux/Action/Pages/PDFToJPGAction";
 import Skeleton from "react-loading-skeleton";
 import style from "../Pages.module.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const PDFToJPG = () => {
 
@@ -35,7 +37,6 @@ const PDFToJPG = () => {
 
   const [open, setOpen] = useState(false);
   const [fileList, setFileList] = useState([]);
-
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
@@ -64,18 +65,27 @@ const PDFToJPG = () => {
 
     try {
       const url = "https://pdflover.stackholic.io/public/api/pdf-to-images";
-      const response = await fetch(url, requestOptions);
+      const response = await toast.promise(
+        fetch(url, requestOptions), {
+        pending: "Converting PDF to JPG Files..."
+      });
 
       if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
       }
 
       const data = await response.json();
-      setFileList(data);
-      navigate("/Download_Merge_PDF");
+      if (data.status) {
+        setFileList(data);
+        navigate("/Download_Merge_PDF");
+      } else {
+        // Handle the case when the response status is false
+        setOpen(false);
+        toast.error(`${data.msg}`);
+      }
     } catch (error) {
-      console.log("Error: ", error);
       setOpen(false);
+      toast.error("Something Went Wrong!");
     }
   };
 
@@ -98,6 +108,20 @@ const PDFToJPG = () => {
   return (
     <>
       <Navbar />
+
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
       {loading ? (
         <div className={style.main}>
           <div className={style.tool}>
