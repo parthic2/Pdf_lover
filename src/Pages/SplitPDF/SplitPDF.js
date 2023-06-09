@@ -286,7 +286,7 @@ const SplitPDF = () => {
                           onClick={() => handleToggleTab(1)}
                         >
                           <div>
-                            <img src="/image/SplitRange.svg" alt="Split by Range" />
+                            <img src="/image/SplitRange.svg" alt="Split by Range" style={{ marginBottom: "5px" }} />
                           </div>
                           Split by Range
                         </button>
@@ -295,7 +295,7 @@ const SplitPDF = () => {
                           onClick={() => handleToggleTab(2)}
                         >
                           <div>
-                            <img src="/image/ExtractPage.svg" alt="Extract Pages" />
+                            <img src="/image/ExtractPage.svg" alt="Extract Pages" style={{ marginBottom: "5px" }} />
                           </div>
                           Extract Pages
                         </button>
@@ -379,7 +379,7 @@ const SplitPDF = () => {
                               onClick={() => handleToggleTab(1)}
                             >
                               <div>
-                                <img src="/image/SplitRange.svg" alt="Split by Range" />
+                                <img src="/image/SplitRange.svg" alt="Split by Range" style={{ marginBottom: "5px" }} />
                               </div>
                               Split by Range
                             </button>
@@ -388,7 +388,7 @@ const SplitPDF = () => {
                               onClick={() => handleToggleTab(2)}
                             >
                               <div>
-                                <img src="/image/ExtractPage.svg" alt="Extract Pages" />
+                                <img src="/image/ExtractPage.svg" alt="Extract Pages" style={{ marginBottom: "5px" }} />
                               </div>
                               Extract Pages
                             </button>

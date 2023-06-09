@@ -34,14 +34,6 @@
     text-align: center;
 }
 
-.tool__header__subtitle {
-    font-size: 22px;
-    font-weight: 400;
-    color: #383e45;
-    letter-spacing: 0;
-    line-height: 32px;
-}
-
 .uploader {
     margin-left: auto;
     margin-right: auto;
