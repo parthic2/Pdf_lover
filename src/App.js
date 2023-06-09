@@ -5,7 +5,7 @@ const RootLayout = lazy(() => import("./Components/Layout/RootLayout"));
 const Index = lazy(() => import("./Components/Main/Index"));
 const DownloadMerge = lazy(() => import("./DownloadPages/DownloadMerge"));
 const MergePDF = lazy(() => import("./Pages/MergePDF/MergePDF"));
-// const SplitPDF = lazy(() => import("./Pages/SplitPDF/SplitPDF"));
+const SplitPDF = lazy(() => import("./Pages/SplitPDF/SplitPDF"));
 const CompressPDF = lazy(() => import("./Pages/CompressPDF/CompressPDF"));
 const ProtectPDF = lazy(() => import("./Pages/AllPDFList/ProtectPDF"));
 const RepairPDF = lazy(() => import("./Pages/AllPDFList/RepairPDF"));
@@ -26,10 +26,10 @@ const Router = createBrowserRouter([
     path: "/Merge_PDF",
     element: <MergePDF />,
   },
-  // {
-  //   path: "/Split_PDF",
-  //   element: <SplitPDF />,
-  // },
+  {
+    path: "/Split_PDF",
+    element: <SplitPDF />,
+  },
   {
     path: "/Compress_PDF",
     element: <CompressPDF />,
