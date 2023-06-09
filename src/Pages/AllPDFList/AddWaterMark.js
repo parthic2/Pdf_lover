@@ -11,7 +11,6 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import { AiOutlineSetting } from 'react-icons/ai';
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { useNavigate } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import style from "../Pages.module.css";
