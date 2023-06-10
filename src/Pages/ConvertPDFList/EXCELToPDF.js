@@ -18,10 +18,14 @@ const EXCELToPDF = () => {
   // For redux
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const EtoPData = useSelector((state) => state.EXCELtoPDFReducer.EtoPData);
-
-  // Loading state
   const [loading, setLoading] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [fileList, setFileList] = useState([]);
+  const [sidebar, setSidebar] = useState(false);
+
+  const files = [...fileList];
+
+  const EtoPData = useSelector((state) => state.EXCELtoPDFReducer.EtoPData);
 
   useEffect(() => {
     document.title = "Convert EXCEL to PDF.";
@@ -33,9 +37,6 @@ const EXCELToPDF = () => {
 
     return () => clearTimeout(timer);
   }, [dispatch]);
-
-  const [open, setOpen] = useState(false);
-  const [fileList, setFileList] = useState([]);
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
@@ -88,11 +89,7 @@ const EXCELToPDF = () => {
     }
   };
 
-  const files = [...fileList];
-
   // For Sidebar
-  const [sidebar, setSidebar] = useState(false);
-
   const toggleCart = () => {
     setSidebar(!sidebar);
   };

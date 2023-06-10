@@ -18,10 +18,15 @@ const JPGToPDF = () => {
   // For redux
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const jtoPData = useSelector((state) => state.JPGtoPDFReducer.jtoPData);
-
-  // Loading state
   const [loading, setLoading] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [fileList, setFileList] = useState([]);
+  const [selectedImages, setSelectedImages] = useState([]);
+  const [sidebar, setSidebar] = useState(false);
+
+  const files = [...fileList];
+
+  const jtoPData = useSelector((state) => state.JPGtoPDFReducer.jtoPData);
 
   useEffect(() => {
     document.title = "Convert JPG to PDF.";
@@ -33,10 +38,6 @@ const JPGToPDF = () => {
 
     return () => clearTimeout(timer);
   }, [dispatch]);
-
-  const [open, setOpen] = useState(false);
-  const [fileList, setFileList] = useState([]);
-  const [selectedImages, setSelectedImages] = useState([]);
 
   const handleFileChange = (e) => {
     const files = e.target.files;
@@ -93,11 +94,7 @@ const JPGToPDF = () => {
     }
   };
 
-  const files = [...fileList];
-
   // For Sidebar
-  const [sidebar, setSidebar] = useState(false);
-
   const toggleCart = () => {
     setSidebar(!sidebar);
   };
@@ -107,7 +104,6 @@ const JPGToPDF = () => {
   }
 
   const { title, subTitle, button } = jtoPData;
-
 
   return (
     <>

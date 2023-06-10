@@ -19,10 +19,24 @@ const ProtectPDF = () => {
   // For redux
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+  const [fileList, setFileList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [formInput, setFormInput] = useState({
+    password: "",
+    confirmPassword: "",
+  });
+  const [formError, setFormError] = useState({
+    password: "",
+    confirmPassword: "",
+  });
+  const [sidebar, setSidebar] = useState(false);
+
+  const files = [...fileList];
+  const pageNumber = 1;
+
   const protectData = useSelector((state) => state.protectReducer.protectData);
 
-  // Loading state
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     document.title = "Protect PDF files. Tools to encrypt PDF with password.";
@@ -35,20 +49,8 @@ const ProtectPDF = () => {
     return () => clearTimeout(timer);
   }, [dispatch]);
 
-  const [open, setOpen] = useState(false);
-  const [fileList, setFileList] = useState([]);
 
   // For Password validation
-  const [formInput, setFormInput] = useState({
-    password: "",
-    confirmPassword: "",
-  });
-
-  const [formError, setFormError] = useState({
-    password: "",
-    confirmPassword: "",
-  });
-
   const handleUserInput = (name, value) => {
     setFormInput({
       ...formInput,
@@ -143,12 +145,7 @@ const ProtectPDF = () => {
     }
   };
 
-  const files = [...fileList];
-  const pageNumber = 1;
-
   // For Sidebar
-  const [sidebar, setSidebar] = useState(false);
-
   const toggleCart = () => {
     setSidebar(!sidebar);
   };

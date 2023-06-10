@@ -19,10 +19,16 @@ const RotatePDF = () => {
   // For redux
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const rotateData = useSelector((state) => state.rotateReducer.rotateData);
-
-  // Loading state
   const [loading, setLoading] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [fileList, setFileList] = useState([]);
+  const [rotation, setRotation] = useState(0);
+  const [sidebar, setSidebar] = useState(false);
+
+  const files = [...fileList];
+  const pageNumber = 1;
+
+  const rotateData = useSelector((state) => state.rotateReducer.rotateData);
 
   useEffect(() => {
     document.title = "Rotate PDF files.";
@@ -34,10 +40,6 @@ const RotatePDF = () => {
 
     return () => clearTimeout(timer);
   }, [dispatch]);
-
-  const [open, setOpen] = useState(false);
-  const [fileList, setFileList] = useState([]);
-  const [rotation, setRotation] = useState(0);
 
   const rotateRight = () => {
     if (rotation === 270) {
@@ -56,7 +58,6 @@ const RotatePDF = () => {
 
   //   // setRotation(90);
   // };
-
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
@@ -112,12 +113,7 @@ const RotatePDF = () => {
     }
   };
 
-  const files = [...fileList];
-  const pageNumber = 1;
-
   // For Sidebar
-  const [sidebar, setSidebar] = useState(false);
-
   const toggleCart = () => {
     setSidebar(!sidebar);
   };

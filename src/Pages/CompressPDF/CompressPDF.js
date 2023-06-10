@@ -19,12 +19,17 @@ const CompressPDF = () => {
   // For redux
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+  const [fileList, setFileList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
+
+  const files = [...fileList];
+  const pageNumber = 1;
+
   const compressData = useSelector(
     (state) => state.compressReducer.compressData
   );
-
-  // Loading state
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     document.title = "Compress PDF files online.";
@@ -36,9 +41,6 @@ const CompressPDF = () => {
 
     return () => clearTimeout(timer);
   }, [dispatch]);
-
-  const [open, setOpen] = useState(false);
-  const [fileList, setFileList] = useState([]);
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
@@ -104,13 +106,8 @@ const CompressPDF = () => {
       toast.error("Something Went Wrong!");
     }
   };
-  
-  const files = [...fileList];
-  const pageNumber = 1;
 
   // For Sidebar
-  const [sidebar, setSidebar] = useState(false);
-
   const toggleCart = () => {
     setSidebar(!sidebar);
   };

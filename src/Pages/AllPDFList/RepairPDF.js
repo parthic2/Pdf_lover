@@ -19,10 +19,15 @@ const RepairPDF = () => {
   // For redux
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const repairData = useSelector((state) => state.repairReducer.repairData);
-
-  // Loading state
   const [loading, setLoading] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [fileList, setFileList] = useState([]);
+  const [sidebar, setSidebar] = useState(false);
+  
+  const files = [...fileList];
+  const pageNumber = 1;
+
+  const repairData = useSelector((state) => state.repairReducer.repairData);
 
   useEffect(() => {
     document.title = "Repair PDF files online..";
@@ -35,8 +40,6 @@ const RepairPDF = () => {
     return () => clearTimeout(timer);
   }, [dispatch]);
 
-  const [open, setOpen] = useState(false);
-  const [fileList, setFileList] = useState([]);
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
@@ -89,12 +92,7 @@ const RepairPDF = () => {
     }
   };
 
-  const files = [...fileList];
-  const pageNumber = 1;
-
   // For Sidebar
-  const [sidebar, setSidebar] = useState(false);
-
   const toggleCart = () => {
     setSidebar(!sidebar);
   };

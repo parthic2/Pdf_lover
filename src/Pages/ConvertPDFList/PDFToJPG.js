@@ -19,10 +19,15 @@ const PDFToJPG = () => {
   // For redux
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const PtoJData = useSelector((state) => state.PDFtoJPGReducer.PtoJData);
-
-  // Loading state
   const [loading, setLoading] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [fileList, setFileList] = useState([]);
+  const [sidebar, setSidebar] = useState(false);
+
+  const files = [...fileList];
+  const pageNumber = 1;
+
+  const PtoJData = useSelector((state) => state.PDFtoJPGReducer.PtoJData);
 
   useEffect(() => {
     document.title = "Convert PDF to JPG.";
@@ -34,9 +39,6 @@ const PDFToJPG = () => {
 
     return () => clearTimeout(timer);
   }, [dispatch]);
-
-  const [open, setOpen] = useState(false);
-  const [fileList, setFileList] = useState([]);
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
@@ -89,12 +91,7 @@ const PDFToJPG = () => {
     }
   };
 
-  const files = [...fileList];
-  const pageNumber = 1;
-
   // For Sidebar
-  const [sidebar, setSidebar] = useState(false);
-
   const toggleCart = () => {
     setSidebar(!sidebar);
   };

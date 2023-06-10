@@ -19,10 +19,16 @@ const UnlockPDF = () => {
   // For redux
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const unlockData = useSelector((state) => state.unlockReducer.unlockData);
-
-  // Loading state
+  const [open, setOpen] = useState(false);
+  const [fileList, setFileList] = useState([]);
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
+  
+  const files = [...fileList];
+  const pageNumber = 1;
+
+  const unlockData = useSelector((state) => state.unlockReducer.unlockData);
 
   useEffect(() => {
     document.title = "Unlock PDF files. Remove PDF password.";
@@ -34,10 +40,6 @@ const UnlockPDF = () => {
 
     return () => clearTimeout(timer);
   }, [dispatch]);
-
-  const [open, setOpen] = useState(false);
-  const [fileList, setFileList] = useState([]);
-  const [password, setPassword] = useState("");
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
@@ -94,12 +96,7 @@ const UnlockPDF = () => {
     }
   };
 
-  const files = [...fileList];
-  const pageNumber = 1;
-
   // For Sidebar
-  const [sidebar, setSidebar] = useState(false);
-
   const toggleCart = () => {
     setSidebar(!sidebar);
   };

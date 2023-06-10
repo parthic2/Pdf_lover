@@ -19,10 +19,15 @@ const MergePDF = () => {
   // For redux
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const mergeData = useSelector((state) => state.mergeReducer.mergeData);
-
-  // Loading state
+  const [open, setOpen] = useState(false);
+  const [fileList, setFileList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
+
+  const files = [...fileList];
+  const pageNumber = 1;
+
+  const mergeData = useSelector((state) => state.mergeReducer.mergeData);
 
   useEffect(() => {
     document.title = "Merge PDF files online.";
@@ -34,10 +39,6 @@ const MergePDF = () => {
 
     return () => clearTimeout(timer);
   }, [dispatch]);
-
-  const [open, setOpen] = useState(false);
-  const [fileList, setFileList] = useState([]);
-
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
@@ -93,11 +94,7 @@ const MergePDF = () => {
     }
   };
 
-  const files = [...fileList];
-  const pageNumber = 1;
-
-  const [sidebar, setSidebar] = useState(false);
-
+  // For Sidebar
   const toggleCart = () => {
     setSidebar(!sidebar);
   };
