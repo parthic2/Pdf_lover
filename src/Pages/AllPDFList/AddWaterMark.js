@@ -49,7 +49,6 @@ const AddWaterMark = () => {
   const watermarkData = useSelector(
     (state) => state.addWatermarkReducer.watermarkData
   );
-  // console.log(watermarkData);
 
   useEffect(() => {
     document.title = "Add watermark to a PDF files.";
@@ -112,7 +111,6 @@ const AddWaterMark = () => {
   // For Active tabs
   const handleToggleTab = (index) => {
     setToggleStateWater(index);
-    // console.log(index);
   }
 
   // For Page Range
@@ -225,7 +223,6 @@ const AddWaterMark = () => {
         setFileList(data);
         navigate("/Download_Merge_PDF");
       } else {
-        console.log("error");
         setOpen(false);
         toast.error(`${data.msg} (Text)`);
       }
@@ -265,11 +262,9 @@ const AddWaterMark = () => {
         navigate("/Download_Merge_PDF");
         toast.error(`${data.msg} (Image)`);
       } else {
-        console.log("error");
         setOpen(false);
       }
     } catch (error) {
-      console.log("Error: ", error);
       setOpen(false);
       toast.error("Something Went Wrong! (Image)");
     }
@@ -487,9 +482,6 @@ const AddWaterMark = () => {
                     id={style.processTask}
                   >
                     Add WaterMark
-                    <i
-                      className="fa-sharp fa-regular fa-circle-right"
-                      style={{ marginLeft: "15px" }} />
                   </button>
                 </div>
 
@@ -585,9 +577,6 @@ const AddWaterMark = () => {
                               id={style.processTask}
                             >
                               Add WaterMark
-                              <i
-                                className="fa-sharp fa-regular fa-circle-right"
-                                style={{ marginLeft: "15px" }} />
                             </button>
                           </>
                         )}

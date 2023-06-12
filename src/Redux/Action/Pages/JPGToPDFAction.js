@@ -5,7 +5,6 @@ export const getJPGtoPDFApi = () => {
   return async (dispatch, getState) => {
     const response = await fetch("https://pdf-lover-data.onrender.com/detailsPages");
     const data = await response.json();
-    // console.log(data.jpg_to_pdf);
 
     dispatch({
       type: actionTypes.FETCH_JPGtoPDF_DATA,

@@ -66,7 +66,6 @@ input[type="file"] {
 }
 
 #pickFiles {
-    font-family: "Nunito Sans";
     background: #FE4F62;
     padding: 20px 50px;
     font-weight: 600;
@@ -126,8 +125,6 @@ input[type="file"] {
     width: 22em;
     height: 100%;
     border-left: 1px solid rgba(0, 0, 0, .2);
-    /* padding: 0 0 120px; */
-    /* overflow-y: auto; */
 }
 
 .option__panel--active {
@@ -158,7 +155,6 @@ input[type="file"] {
 }
 
 @media (max-width: 90em) {
-
     .option__panel__title {
         padding: 12px;
     }
@@ -368,7 +364,6 @@ textarea {
     font-weight: 400;
     color: #333;
     line-height: 1.33;
-    /* box-shadow: inset 1px 1px 3px 0 hsla(210, 2%, 49%, .2); */
 }
 
 .para {
@@ -377,7 +372,6 @@ textarea {
 
 
 /* dialogBox css */
-
 #add__button {
     background: #383e45;
     color: white;
@@ -386,7 +380,6 @@ textarea {
 
 
 /* rotate css */
-
 .rotation_text {
     width: 3em;
     border-radius: 6px;
@@ -435,7 +428,6 @@ textarea {
     padding: 16px;
     position: relative;
     border: 0;
-    -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     text-align: center;
     color: #7c7c80;
@@ -474,7 +466,6 @@ textarea {
     right: auto;
     left: 8px;
     top: 8px;
-    -webkit-transform: none;
     transform: none;
     width: 18px;
     height: 18px;
@@ -488,7 +479,6 @@ textarea {
     position: absolute;
     right: 24px;
     top: 50%;
-    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
@@ -496,7 +486,6 @@ textarea {
     color: #fff;
     width: 28px;
     height: 28px;
-    /* background: #4acd86 url() no-repeat 50%; */
     border-radius: 100%;
     text-align: center;
     line-height: 18px;
@@ -639,8 +628,12 @@ textarea {
 .tool__workarea__rendered {
     display: flex;
     justify-content: center;
-    padding: 0 0 5% 0;
+    padding: 5px;
     flex-wrap: wrap;
+}
+
+.tool__workarea__rendered:hover{
+    background: #fffc;
 }
 
 .file {
@@ -658,7 +651,6 @@ textarea {
 }
 
 .file__canvas {
-    cursor: move;
     position: relative;
     width: 80%;
 }
@@ -714,6 +706,7 @@ textarea {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding-bottom: 10%;
 }
 
 .pdf__document {
@@ -763,7 +756,6 @@ textarea {
     cursor: pointer;
     border-bottom: 1px solid rgba(0, 0, 0, 0.274);
     box-sizing: content-box;
-    /* position: relative; */
     color: black;
     outline: none;
 }
@@ -786,7 +778,6 @@ textarea {
     transform: translateX(-50%);
     width: calc(100% + 2px);
     height: 5px;
-    /* background: rgb(88, 147, 241); */
 }
 
 button {
@@ -817,7 +808,6 @@ button {
 }
 
 .content p {
-    /* width: 100%; */
     height: 100%;
 }
 
@@ -863,4 +853,41 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.range__panel {
+    padding: 16px 24px;
+    text-align: center;
+}
+
+@media (max-width: 90em) {
+    .range__panel {
+        padding: 12px 16px 4px;
+    }
+}
+
+.btn__range {
+    min-width: 200px;
+    padding: 10px 24px 14px;
+    text-shadow: none;
+    border: none;
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all .2s linear;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0;
+    cursor: pointer;
+    background-color: #383e45;
+    color: #fff;
+}
+
+.line{
+    border-bottom: 1px solid #e6e6e6;
+    margin: 0 14px 0 14px;
 }

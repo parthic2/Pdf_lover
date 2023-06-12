@@ -95,8 +95,8 @@
 		},
 
 		"footer": {
-			"googleDrive": "image/GooglePlay.png",
-			"appStore": "image/AppStore.png",
+			"googleDrive": "image/GooglePlay.svg",
+			"appStore": "image/AppStore.svg",
 			"copyRightText": "© LoverPDF 2023 ® - Your PDF Editor",
 			"twitter": "image/twitter.svg",
 			"facebook": "image/facebook.svg",

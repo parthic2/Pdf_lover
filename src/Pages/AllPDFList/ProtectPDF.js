@@ -320,10 +320,6 @@ const ProtectPDF = () => {
                     id={style.processTask}
                   >
                     Protect PDF
-                    <i
-                      className="fa-sharp fa-regular fa-circle-right"
-                      style={{ marginLeft: "15px" }}
-                    />
                   </button>
                 </div>
 
@@ -387,10 +383,6 @@ const ProtectPDF = () => {
                               id={style.processTask}
                             >
                               Protect PDF
-                              <i
-                                className="fa-sharp fa-regular fa-circle-right"
-                                style={{ marginLeft: "15px" }}
-                              />
                             </button>
                           </>
                         )}

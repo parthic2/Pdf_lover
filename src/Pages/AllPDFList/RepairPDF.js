@@ -82,7 +82,6 @@ const RepairPDF = () => {
         navigate("/Download_Merge_PDF");
       } else {
         // Handle the case when the response status is false
-        console.log("API Error:", data.msg);
         setOpen(false);
         toast.error(`${data.msg}`);
       }
@@ -240,10 +239,6 @@ const RepairPDF = () => {
                     id={style.processTask}
                   >
                     Repair PDF
-                    <i
-                      className="fa-sharp fa-regular fa-circle-right"
-                      style={{ marginLeft: "15px" }}
-                    />
                   </button>
                 </div>
 
@@ -276,10 +271,6 @@ const RepairPDF = () => {
                               id={style.processTask}
                             >
                               Repair PDF
-                              <i
-                                className="fa-sharp fa-regular fa-circle-right"
-                                style={{ marginLeft: "15px" }}
-                              />
                             </button>
                           </>
                         )}

@@ -5,7 +5,6 @@ export const getExcelToPDFApi = () => {
   return async (dispatch, getState) => {
     const response = await fetch("https://pdf-lover-data.onrender.com/detailsPages");
     const data = await response.json();
-    // console.log(data.excel_to_pdf);
 
     dispatch({
       type: actionTypes.FETCH_EXCELToPDF_DATA,

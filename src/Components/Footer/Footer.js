@@ -152,20 +152,18 @@ const Footer = () => {
 
           <ul className={style.app__store}>
             <li>
-              <Link to="" rel="noopener" target="_blank" title="Google Play">
+              <Link to="/" title="Google Play">
                 <img
                   src={footerData.googleDrive}
                   alt="Google Play"
-                  style={{ width: "135px" }}
                 />
               </Link>
             </li>
             <li>
-              <Link to="" rel="noopener" target="_blank" title="App Store">
+              <Link to="/" title="App Store">
                 <img
                   src={footerData.appStore}
                   alt="App Store"
-                  style={{ width: "135px", paddingTop: "6px" }}
                 />
               </Link>
             </li>

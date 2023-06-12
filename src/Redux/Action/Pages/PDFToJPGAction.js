@@ -5,7 +5,6 @@ export const getPdfToJpgApi = () => {
   return async (dispatch, getState) => {
     const response = await fetch("https://pdf-lover-data.onrender.com/detailsPages");
     const data = await response.json();
-    // console.log(data.pdf_to_jpg);
 
     dispatch({
       type: actionTypes.FETCH_PDFToJPG_DATA,
@@ -13,11 +12,3 @@ export const getPdfToJpgApi = () => {
     });
   };
 };
-
-// with only redux
-// export const fetchMergeData = (data) => {
-//     return {
-//         type: actionTypes.FETCH_SPLIT_DATA,
-//         payload: data
-//     }
-// }

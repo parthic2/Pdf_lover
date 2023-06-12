@@ -253,10 +253,6 @@ const CompressPDF = () => {
                     id={style.processTask}
                   >
                     Compress PDF
-                    <i
-                      className="fa-sharp fa-regular fa-circle-right"
-                      style={{ marginLeft: "15px" }}
-                    />
                   </button>
                 </div>
 
@@ -289,10 +285,6 @@ const CompressPDF = () => {
                               id={style.processTask}
                             >
                               Compress PDF
-                              <i
-                                className="fa-sharp fa-regular fa-circle-right"
-                                style={{ marginLeft: "15px" }}
-                              />
                             </button>
                           </>
                         )}

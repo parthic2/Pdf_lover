@@ -5,7 +5,6 @@ export const getAddWatermarkApi = () => {
   return async (dispatch, getState) => {
     const response = await fetch("https://pdf-lover-data.onrender.com/detailsPages");
     const data = await response.json();
-    // console.log(data.watermark);
 
     dispatch({
       type: actionTypes.FETCH_WATERMARK_DATA,

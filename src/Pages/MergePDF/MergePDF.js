@@ -227,7 +227,6 @@ const MergePDF = () => {
                         )}
                         <button onClick={handleUploadClick} className={style["btn--red"]} id={style.processTask}>
                           Merge PDF
-                          <i className="fa-sharp fa-regular fa-circle-right" style={{ marginLeft: "15px" }} />
                         </button>
                       </>
                     ) : (
@@ -237,7 +236,6 @@ const MergePDF = () => {
                         </div>
                         <button onClick={handleUploadClick} className={style["btn--grey"]} disabled id={style.processTask}>
                           Merge PDF
-                          <i className="fa-sharp fa-regular fa-circle-right" style={{ marginLeft: "15px" }} />
                         </button>
                       </>
                     )}
@@ -265,7 +263,6 @@ const MergePDF = () => {
                             )}
                             <button onClick={handleUploadClick} className={style["btn--red"]} id={style.processTask}>
                               Merge PDF
-                              <i className="fa-sharp fa-regular fa-circle-right" style={{ marginLeft: "15px" }} />
                             </button>
                           </>
                         ) : (
@@ -275,7 +272,6 @@ const MergePDF = () => {
                             </div>
                             <button onClick={handleUploadClick} className={style["btn--grey"]} disabled id={style.processTask}>
                               Merge PDF
-                              <i className="fa-sharp fa-regular fa-circle-right" style={{ marginLeft: "15px" }} />
                             </button>
                           </>
                         )}

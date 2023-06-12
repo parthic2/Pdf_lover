@@ -47,7 +47,6 @@ const Main = () => {
   const dispatch = useDispatch();
 
   const detailsData = useSelector((state) => state.detailsReducer.detailsData);
-  // console.log(detailsData);
 
   const [isLoading, setIsLoading] = useState(true);
 

@@ -5,7 +5,6 @@ export const getFooterApi = () => {
   return async (dispatch, getState) => {
     const response = await fetch("https://pdf-lover-data.onrender.com/homepage");
     const data = await response.json();
-    // console.log(data.footer);
 
     dispatch({
       type: actionTypes.FETCH_FOOTER,
@@ -14,10 +13,4 @@ export const getFooterApi = () => {
   };
 };
 
-// with redux
-// export const fetchFooterData = (data) => {
-//     return {
-//         type: actionTypes.FETCH_FOOTER,
-//         payload: data
-//     }
-// }
+

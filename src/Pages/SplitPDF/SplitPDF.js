@@ -26,6 +26,7 @@ const SplitPDF = () => {
   const [sidebar, setSidebar] = useState(false);
   const [toggleStateSplit, setToggleStateSplit] = useState(1);
   const [loading, setLoading] = useState(true);
+
   const pageNumber = 1;
 
   const files = [...fileList];
@@ -51,7 +52,6 @@ const SplitPDF = () => {
   // For Active tabs
   const handleToggleTab = (index) => {
     setToggleStateSplit(index);
-    // console.log(index);
   }
 
   const handleFileChange = (e) => {
@@ -323,6 +323,12 @@ const SplitPDF = () => {
                               onChange={handleLastPageChange}
                             />
                           </div>
+
+                          <div className={style.line}/>
+
+                          <div className={style.range__panel}>
+                            <button className={style.btn__range}>Add Range</button>
+                          </div>
                         </div>
 
                         <div
@@ -353,10 +359,6 @@ const SplitPDF = () => {
                       id={style.processTask}
                     >
                       Split PDF
-                      <i
-                        className="fa-sharp fa-regular fa-circle-right"
-                        style={{ marginLeft: "15px" }}
-                      />
                     </button>
                   </div>
                 </div>
@@ -416,6 +418,10 @@ const SplitPDF = () => {
                                   onChange={handleLastPageChange}
                                 />
                               </div>
+
+                              <div className={style.range__panel}>
+                                <button className={style.btn__range}>Add Range</button>
+                              </div>
                             </div>
 
                             <div
@@ -447,10 +453,6 @@ const SplitPDF = () => {
                               id={style.processTask}
                             >
                               Split PDF
-                              <i
-                                className="fa-sharp fa-regular fa-circle-right"
-                                style={{ marginLeft: "15px" }}
-                              />
                             </button>
                           </>
                         )}
