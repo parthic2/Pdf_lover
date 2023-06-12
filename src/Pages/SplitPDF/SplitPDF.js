@@ -324,11 +324,11 @@ const SplitPDF = () => {
                             />
                           </div>
 
-                          <div className={style.line}/>
+                          {/* <div className={style.line}/>
 
                           <div className={style.range__panel}>
                             <button className={style.btn__range}>Add Range</button>
-                          </div>
+                          </div> */}
                         </div>
 
                         <div
@@ -419,9 +419,9 @@ const SplitPDF = () => {
                                 />
                               </div>
 
-                              <div className={style.range__panel}>
+                              {/* <div className={style.range__panel}>
                                 <button className={style.btn__range}>Add Range</button>
-                              </div>
+                              </div> */}
                             </div>
 
                             <div
