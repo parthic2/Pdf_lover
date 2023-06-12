@@ -54,7 +54,7 @@ const Navbar = () => {
                       </NavLink>
                     </li>
 
-                    <li className="dropdown dropdown-full">
+                    <li className="dropdown dropdown-full" id="menuSmall">
                       <span>
                         All PDF tools
                         <i className="dropdown__icon">

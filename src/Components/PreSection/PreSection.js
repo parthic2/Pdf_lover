@@ -1,4 +1,4 @@
-import { Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -26,14 +26,7 @@ const PreSection = () => {
 
   return (
     <Box
-      sx={{
-        backgroundColor: "#FE4F62",
-        padding: "50px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        height: "auto",
-      }}
+      className={style.pre__box}
     >
       {isLoading ? (
         <>
@@ -65,30 +58,19 @@ const PreSection = () => {
       ) : (
         <>
           <Box sx={{ textAlign: "center" }}>
-            <Typography
-              variant="h1"
-              sx={{
-                fontSize: "35px",
-                color: "white",
-                fontWeight: "700",
-              }}
+            <h1
+              className={style.pre__text}
             >
               {heading}
-            </Typography>
+            </h1>
 
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "20px",
-                color: "white",
-                fontWeight: "500",
-                padding: "20px",
-              }}
+            <p
+              className={style.pre__subtext}
             >
               {subHeading}
               <br />
               {subHeading1}
-            </Typography>
+            </p>
           </Box>
 
           <Link to="" className={style["button-71"]}>

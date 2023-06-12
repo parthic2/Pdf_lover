@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -345,18 +345,14 @@ const AddWaterMark = () => {
           <div className={style.tool}>
             <div className={style.tool__workarea} id="workArea">
               <div className={style.tool__header}>
-                <Typography
-                  variant="h4"
-                  sx={{ textTransform: "capitalize" }}
+                <h4
                   className={style.tool__header__title}>
                   {title}
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  sx={{ textTransform: "capitalize" }}
+                </h4>
+                <p
                   className={style.tool__header__subtitle}>
                   {subTitle}
-                </Typography>
+                </p>
               </div>
 
               {/* Toggle button */}

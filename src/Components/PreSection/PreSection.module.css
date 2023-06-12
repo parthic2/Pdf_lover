@@ -29,3 +29,25 @@
   height: 30px;
   border-radius: 6px;
 }
+
+.pre__text {
+  font-size: 35px;
+  color: white;
+  font-weight: 700;
+}
+
+.pre__subtext {
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  padding: 20px;
+}
+
+.pre__box {
+  background-color: #FE4F62;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}

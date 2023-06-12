@@ -4,6 +4,7 @@
     border: 0;
     list-style: none;
     text-decoration: none;
+    font-family: "Nunito Sans";
 }
 
 /* width */
@@ -26,10 +27,6 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #FE4F62;
-}
-
-body {
-    font-family: "Nunito Sans";
 }
 
 .main-menu .nav li a.nav__item--active,

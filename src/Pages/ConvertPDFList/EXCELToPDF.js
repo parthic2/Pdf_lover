@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { AiOutlineSetting } from "react-icons/ai";
 import Backdrop from "@mui/material/Backdrop";
@@ -157,18 +157,14 @@ const EXCELToPDF = () => {
           <div className={style.tool}>
             <div className={style.tool__workarea} id="workArea">
               <div className={style.tool__header}>
-                <Typography
-                  variant="h4"
-                  sx={{ textTransform: "capitalize" }}
+                <h4
                   className={style.tool__header__title}>
                   {title}
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  sx={{ textTransform: "capitalize" }}
+                </h4>
+                <p
                   className={style.tool__header__subtitle}>
                   {subTitle}
-                </Typography>
+                </p>
               </div>
 
               {/* Toggle button */}

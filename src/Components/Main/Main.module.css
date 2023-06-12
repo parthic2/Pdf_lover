@@ -35,3 +35,12 @@
     height: 30px;
     border-radius: 6px;
 }
+
+.tools__text {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: #383e45;
+    margin: 10px 0 10px 0;
+}

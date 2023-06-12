@@ -90,9 +90,9 @@ const Main = () => {
                           <img src={img} alt={title} />
                         </div>
 
-                        <Typography sx={{ fontSize: 20 }} gutterBottom>
+                        <h3 className={style.tools__text}>
                           {title}
-                        </Typography>
+                        </h3>
 
                         <p>{description}</p>
                       </CardContent>

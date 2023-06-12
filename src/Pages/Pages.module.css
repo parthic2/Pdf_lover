@@ -30,8 +30,27 @@
 }
 
 .tool__header__title {
+    font-size: 42px;
+    letter-spacing: 0;
+    font-weight: 500;
     color: #383e45;
+    margin-bottom: 8px;
+    line-height: 46px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+    text-transform: capitalize;
+}
+
+.tool__header__subtitle {
+    max-width: 800px;
+    font-size: 22px;
+    font-weight: 400;
+    color: #383e45;
+    letter-spacing: 0;
+    margin: 0 auto 0;
+    line-height: 32px;
 }
 
 .uploader {
@@ -47,6 +66,7 @@ input[type="file"] {
 }
 
 #pickFiles {
+    font-family: "Nunito Sans";
     background: #FE4F62;
     padding: 20px 50px;
     font-weight: 600;

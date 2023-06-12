@@ -128,24 +128,20 @@ const Footer = () => {
               { title: footerData.company, links: footerData.companyLink },
             ].map((section, index) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                <Typography
-                  variant="h6"
+                <h6
                   className={style.heading}
-                  sx={{ margin: "15px" }}
                 >
                   {section.title}
-                </Typography>
+                </h6>
                 <ul>
                   {section.links.map((item) => (
                     <li key={item.id}>
                       <Link>
-                        <Typography
-                          variant="subtitle1"
+                        <p
                           className={style.subHeading}
-                          sx={{ margin: "15px" }}
                         >
                           {item.title}
-                        </Typography>
+                        </p>
                       </Link>
                     </li>
                   ))}
