@@ -3,7 +3,7 @@ import { actionTypes } from "../../Types/actionTypes";
 // With redux-thunk
 export const getUnlockApi = () => {
   return async (dispatch, getState) => {
-    const response = await fetch("https://pdf-lover-data.onrender.com/detailsPages");
+    const response = await fetch(`${process.env.REACT_APP_JSON_URL}/detailsPages`);
     const data = await response.json();
 
     dispatch({

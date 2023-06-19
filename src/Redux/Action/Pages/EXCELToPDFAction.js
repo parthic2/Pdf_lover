@@ -3,7 +3,7 @@ import { actionTypes } from "../../Types/actionTypes";
 // With redux-thunk
 export const getExcelToPDFApi = () => {
   return async (dispatch, getState) => {
-    const response = await fetch("https://pdf-lover-data.onrender.com/detailsPages");
+    const response = await fetch(`${process.env.REACT_APP_JSON_URL}/detailsPages`);
     const data = await response.json();
 
     dispatch({
@@ -12,11 +12,3 @@ export const getExcelToPDFApi = () => {
     });
   };
 };
-
-// with only redux
-// export const fetchMergeData = (data) => {
-//     return {
-//         type: actionTypes.FETCH_SPLIT_DATA,
-//         payload: data
-//     }
-// }

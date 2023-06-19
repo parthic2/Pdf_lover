@@ -315,7 +315,6 @@ const WatermarkText = ({
                     onChange={(event) => changeRotation(event.target.value)}
                   >
                     <option value="0">Do not rotate</option>
-                    <option value="45">45 degrees</option>
                     <option value="90">90 degrees</option>
                     <option value="180">180 degrees</option>
                     <option value="270">270 degrees</option>

@@ -207,7 +207,7 @@ const AddWaterMark = () => {
         redirect: 'follow'
       };
 
-      const url = "https://pdflover.stackholic.io/public/api/watermark-pdf";
+      const url = `${process.env.REACT_APP_API_URL}/public/api/watermark-pdf`;
       responseText = await toast.promise(
         fetch(url, requestOptions), {
         pending: "Adding Watermark (Text) Files...",
@@ -475,9 +475,7 @@ const AddWaterMark = () => {
                   </Backdrop>}
 
                   <button
-                    onClick={
-                      handleButtonClick
-                    }
+                    onClick={handleButtonClick}
                     className={style["btn--red"]}
                     id={style.processTask}
                   >
@@ -570,9 +568,7 @@ const AddWaterMark = () => {
                             )}
 
                             <button
-                              onClick={
-                                handleButtonClick
-                              }
+                              onClick={handleButtonClick}
                               className={style["btn--red"]}
                               id={style.processTask}
                             >

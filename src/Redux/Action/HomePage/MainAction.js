@@ -5,7 +5,7 @@ export const getMainApi = () => {
     dispatch({ type: actionTypes.FETCH_MAIN_START });
 
     try {
-      const response = await fetch("https://pdf-lover-data.onrender.com/homepage");
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/homepage`);
       const data = await response.json();
 
       dispatch({
@@ -13,16 +13,7 @@ export const getMainApi = () => {
         payload: data.main,
       });
     } catch (error) {
-      // Handle error if needed
+      console.log(error);
     }
   };
 };
-
-
-// with only redux
-// export const fetchMainData = (data) => {
-//     return {
-//         type: actionTypes.FETCH_MAIN,
-//         payload: data
-//     }
-// }
