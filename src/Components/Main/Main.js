@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, Grid, Typography } from "@mui/material";
+import { Card, CardContent, Grid } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
@@ -20,16 +20,14 @@ const SkeletonCard = () => (
           <Skeleton height={150} width={150} />
         </Box>
       </div>
-      <Typography sx={{ fontSize: 20 }} gutterBottom>
-        <Box
-          className={style["skeleton-box"]}
-          sx={{
-            width: "30%",
-          }}
-        >
-          <Skeleton height={30} width={200} />
-        </Box>
-      </Typography>
+      <Box
+        className={style["skeleton-box"]}
+        sx={{
+          width: "40%",
+        }}
+      >
+        <Skeleton height={30} width={200} />
+      </Box>
       <Box
         className={style["skeleton-box"]}
         sx={{
@@ -51,10 +49,10 @@ const Main = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getDetailsApi());
     const delay = 2000;
     const timer = setTimeout(() => {
       setIsLoading(false);
+      dispatch(getDetailsApi());
     }, delay);
 
     return () => clearTimeout(timer);

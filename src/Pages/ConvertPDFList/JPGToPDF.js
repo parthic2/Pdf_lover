@@ -69,7 +69,7 @@ const JPGToPDF = () => {
     setOpen(true);
 
     try {
-      const url = "https://pdflover.stackholic.io/public/api/image-to-pdf";
+      const url = `${process.env.REACT_APP_API_URL}/public/api/image-to-pdf`;
       const response = await toast.promise(
         fetch(url, requestOptions), {
         pending: "Converting JPG to PDF Files..."

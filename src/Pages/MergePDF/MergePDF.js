@@ -49,6 +49,7 @@ const MergePDF = () => {
   // Upload File
   const handleUploadClick = async () => {
     if (!fileList) {
+      toast.error("Select pdf file");
       return;
     }
 
@@ -66,7 +67,7 @@ const MergePDF = () => {
     setOpen(true);
 
     try {
-      const url = "https://pdflover.stackholic.io/public/api/merge";
+      const url = `${process.env.REACT_APP_API_URL}/public/api/merge`;
       const response = await toast.promise(
         fetch(url, requestOptions),
         {
@@ -82,7 +83,11 @@ const MergePDF = () => {
 
       if (data.status) {
         setFileList(data);
-        navigate("/Download_Merge_PDF");
+        navigate("/Download_Merge_PDF", {
+          state: {
+            name: data.data.file,
+          },
+        });
       } else {
         // Handle the case when the response status is false
         setOpen(false);

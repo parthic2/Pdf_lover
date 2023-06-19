@@ -245,7 +245,7 @@ const AddWaterMark = () => {
         redirect: 'follow'
       };
 
-      const url = "https://pdflover.stackholic.io/public/api/watermark-pdf-image";
+      const url = `${process.env.REACT_APP_API_URL}/public/api/watermark-pdf-image`;
       responseImage = await toast.promise(
         fetch(url, requestImageOptions), {
         pending: "Adding Watermark (Image) Files...",

@@ -68,7 +68,7 @@ const CompressPDF = () => {
     setOpen(true);
 
     try {
-      const url = "https://pdflover.stackholic.io/public/api/compress";
+      const url = `${process.env.REACT_APP_API_URL}/public/api/compress`;
       const response = await toast.promise(
         fetch(url, requestOptions),
         {
@@ -85,16 +85,6 @@ const CompressPDF = () => {
       if (data.status) {
         setFileList(data);
         navigate("/Download_Merge_PDF");
-        // await toast.promise('Compressing files...', {
-        //   position: "top-left",
-        //   autoClose: 2000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   theme: "light",
-        // });
       } else {
         // Handle the case when the response status is false
         setOpen(false);

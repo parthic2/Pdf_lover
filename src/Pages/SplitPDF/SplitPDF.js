@@ -125,7 +125,7 @@ const SplitPDF = () => {
 
     // 👇 Uploading the files using the fetch API to the server
     try {
-      const url = "https://pdflover.stackholic.io/public/api/split-pdf-merge";
+      const url = `${process.env.REACT_APP_API_URL}/public/api/split-pdf-merge`;
       const response = await toast.promise(
         fetch(url, requestOptions),
         {
@@ -141,7 +141,11 @@ const SplitPDF = () => {
 
       if (data.status) {
         setFileList(data);
-        navigate("/Download_Merge_PDF");
+        navigate("/Download_Merge_PDF", {
+          state: {
+            name: data.data.file,
+          },
+        });
       } else {
         // Handle the case when the response status is false
         setOpen(false);
