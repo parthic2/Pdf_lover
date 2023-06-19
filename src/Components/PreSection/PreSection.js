@@ -9,17 +9,12 @@ import style from "./PreSection.module.css";
 const PreSection = () => {
   const dispatch = useDispatch();
   const premiumData = useSelector((state) => state.premiumReducers.premiumData);
-
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const delay = 2000;
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      dispatch(getPremiumApi());
-    }, delay);
-
-    return () => clearTimeout(timer);
+    dispatch(getPremiumApi())
+      .then(() => setIsLoading(false))
+      .catch(() => setIsLoading(false));
   }, [dispatch]);
 
   const { heading, subHeading, subHeading1, button } = premiumData;

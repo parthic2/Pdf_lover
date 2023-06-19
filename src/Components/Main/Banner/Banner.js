@@ -38,7 +38,6 @@ theme.typography.body1 = {
 const Banner = () => {
   // For Redux
   const dispatch = useDispatch();
-
   const { mainData, isLoading } = useSelector((state) => state.mainReducers);
 
   useEffect(() => {

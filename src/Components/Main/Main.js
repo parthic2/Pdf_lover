@@ -43,19 +43,13 @@ const SkeletonCard = () => (
 const Main = () => {
   // For PDF Types
   const dispatch = useDispatch();
-
   const detailsData = useSelector((state) => state.detailsReducer.detailsData);
-
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const delay = 2000;
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      dispatch(getDetailsApi());
-    }, delay);
-
-    return () => clearTimeout(timer);
+    dispatch(getDetailsApi())
+      .then(() => setIsLoading(false))
+      .catch(() => setIsLoading(false));
   }, [dispatch]);
 
   return (
