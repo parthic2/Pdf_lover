@@ -9,7 +9,7 @@ export const organizeReducer = (state = initialState, action) => {
     case actionTypes.FETCH_ORGANIZE_DATA:
       return {
         ...state,
-        organizeData: action.payload, // data update
+        organizeData: action.payload, 
       };
     default:
       return state;

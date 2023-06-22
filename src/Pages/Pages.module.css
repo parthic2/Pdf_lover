@@ -125,6 +125,7 @@ input[type="file"] {
     width: 22em;
     height: 100%;
     border-left: 1px solid rgba(0, 0, 0, .2);
+    overflow-y: auto;
 }
 
 .option__panel--active {

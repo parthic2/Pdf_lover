@@ -9,7 +9,7 @@ export const PDFtoPOWERReducer = (state = initialState, action) => {
     case actionTypes.FETCH_PDFToPOWER_DATA:
       return {
         ...state,
-        PtoPData: action.payload, // data update
+        PtoPData: action.payload, 
       };
     default:
       return state;

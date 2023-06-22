@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
-
 const RootLayout = lazy(() => import("./Components/Layout/RootLayout"));
 const Index = lazy(() => import("./Components/Main/Index"));
 const DownloadMerge = lazy(() => import("./DownloadPages/DownloadMerge"));

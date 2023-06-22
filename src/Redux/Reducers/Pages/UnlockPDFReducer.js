@@ -9,7 +9,7 @@ export const unlockReducer = (state = initialState, action) => {
     case actionTypes.FETCH_UNLOCK_DATA:
       return {
         ...state,
-        unlockData: action.payload, // data update
+        unlockData: action.payload,
       };
     default:
       return state;

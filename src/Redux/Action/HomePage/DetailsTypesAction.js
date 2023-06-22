@@ -1,6 +1,5 @@
 import { actionTypes } from "../../Types/actionTypes";
 
-// with redux-thunk
 export const getDetailsApi = () => {
   return async (dispatch, getState) => {
     const response = await fetch(`${process.env.REACT_APP_JSON_URL}/homepage`);

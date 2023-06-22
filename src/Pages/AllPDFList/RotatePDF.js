@@ -49,16 +49,6 @@ const RotatePDF = () => {
     }
   };
 
-  // const rotateLeft = () => {
-  //   if (rotation === 360) {
-  //     setRotation(0);
-  //   } else {
-  //     setRotation(rotation - 90);
-  //   }
-
-  //   // setRotation(90);
-  // };
-
   const handleFileChange = (e) => {
     const fileList = e.target.files;
     const fileArray = Array.from(fileList);
@@ -229,7 +219,7 @@ const RotatePDF = () => {
             {fileList.length >= 1 && (
               <>
                 {/* Desktop */}
-                <div className={style.tool__sidebar} id={style.sidebar} style={{ overflowY: "auto" }}>
+                <div className={style.tool__sidebar} id={style.sidebar}>
                   <div
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
                     <div className={style.option__panel__title}>ROTATE PDF</div>
@@ -275,7 +265,7 @@ const RotatePDF = () => {
                 {/* Mobile */}
                 {sidebar && (
                   <div className={style.mobile__sidebar}>
-                    <div className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
+                    <div id={style.mobileSidebar}>
                       <div className={`${style.option__panel} ${style["option__panel--active"]}`}>
                         <div className={style.option__panel__title}>ROTATE PDF</div>
 

@@ -9,7 +9,7 @@ export const footerReducer = (state = initialState, action) => {
         case actionTypes.FETCH_FOOTER:
             return {
                 ...state,
-                footerData: action.payload // data update
+                footerData: action.payload 
             }
         default:
             return state;

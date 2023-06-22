@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import AllToolsList from "./AllTools/AllToolsList";
 import { Container } from "@mui/material";
-import { FaEllipsisV, FaSortDown, FaWrench } from 'react-icons/fa';
+import { FaEllipsisV, FaSortDown } from 'react-icons/fa';
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -22,14 +22,13 @@ const Navbar = () => {
             </div>
 
             <div className="top-menu">
-              {/* Desktop */}
               <div className="header__nav">
-                <div className="main-menu">
+                <div className="main-menu" id="menuBig">
                   <ul className="nav">
                     <li>
                       <NavLink
                         className={({ isActive }) =>
-                          isActive ? "nav__item--active" : ""
+                          isActive ? "nav__item--active" : undefined
                         }
                         to="/Merge_PDF">
                         Merge PDF
@@ -38,7 +37,7 @@ const Navbar = () => {
                     <li>
                       <NavLink
                         className={({ isActive }) =>
-                          isActive ? "nav__item--active" : ""
+                          isActive ? "nav__item--active" : undefined
                         }
                         to="/Split_PDF">
                         Split PDF
@@ -47,7 +46,7 @@ const Navbar = () => {
                     <li>
                       <NavLink
                         className={({ isActive }) =>
-                          isActive ? "nav__item--active" : ""
+                          isActive ? "nav__item--active" : undefined
                         }
                         to="/Compress_PDF">
                         Compress PDF
@@ -56,17 +55,19 @@ const Navbar = () => {
 
                     <li className="dropdown dropdown-full" id="menuSmall">
                       <span>
-                        All PDF tools
+                        All PDF tools{" "}
                         <i className="dropdown__icon">
                           <FaSortDown />
                         </i>
                       </span>
 
-                      <span className="nav__icon dropdown-toggle" data-toggle="dropdown">
-                        <FaWrench />
+                      <span
+                        className="nav__icon dropdown-toggle"
+                        data-toggle="dropdown">
+                        <i className="fa-solid fa-wrench" />
                       </span>
 
-                      <ul className="dropdown-menu mega menu-full" style={{ overflowX: "auto" }}>
+                      <ul className="dropdown-menu mega menu-full">
                         <AllToolsList />
                       </ul>
                     </li>
@@ -74,7 +75,7 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Responsive Nav */}
+              {/* responsive nav */}
               <div className="header__nav responsive__nav">
                 <div className="main-menu" id="menuBig">
                   <ul className="nav">
@@ -85,7 +86,7 @@ const Navbar = () => {
                         <FaEllipsisV />
                       </span>
 
-                      <ul className="dropdown-menu mega menu-full" style={{ overflowX: "auto", height: "75vh" }}>
+                      <ul className="dropdown-menu mega menu-full">
                         <AllToolsList />
                       </ul>
                     </li>

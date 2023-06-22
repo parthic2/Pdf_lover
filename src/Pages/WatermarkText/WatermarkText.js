@@ -48,7 +48,7 @@ const WatermarkText = ({
           />
         </div>
 
-        <div style={{ marginTop: "10px" }}></div>
+        <div className={style.box}></div>
 
         <p className={style.option__title}>Text format:</p>
 
@@ -133,7 +133,6 @@ const WatermarkText = ({
             {/* Font size */}
             <div
               className={style.editor__option__selector}
-              style={{ marginLeft: "9em" }}
               onClick={() => setIsOpen(!isOpen)}
             >
               <FormatSizeIcon />
@@ -207,7 +206,7 @@ const WatermarkText = ({
             </div>
           </div>
 
-          <div style={{ marginTop: "12px" }}></div>
+          <div className={style.box}></div>
 
           {/* Position */}
           <div className={style.option__panel__content}>
@@ -273,17 +272,15 @@ const WatermarkText = ({
           </div>
 
           <div className={style.form__group} style={{ display: "flex" }}>
-            <div>
-              <div className={style["d-flex"]}>
-                <input
-                  type="checkbox"
-                  name="mosaic"
-                  checked={mosaic}
-                  className={style.checkbox}
-                  onChange={() => setMosaic(!mosaic)}
-                />
-                <label style={{ fontSize: "15px", paddingTop: "6px" }}>Mosaic</label>
-              </div>
+            <div className={style["d-flex"]}>
+              <input
+                type="checkbox"
+                name="mosaic"
+                checked={mosaic}
+                className={style.checkbox}
+                onChange={() => setMosaic(!mosaic)}
+              />
+              <label style={{ fontSize: "15px", paddingTop: "6px" }}>Mosaic</label>
             </div>
           </div>
 
@@ -327,7 +324,7 @@ const WatermarkText = ({
 
           {/* Page Range */}
 
-          <div className={style.option__title} style={{ marginTop: "10px" }}>Pages:</div>
+          <div className={style.option__title}>Pages:</div>
 
           <div className={style.page__range}>
             <label htmlFor="startPageInput" style={{ fontSize: "15px" }}>From Page:</label>

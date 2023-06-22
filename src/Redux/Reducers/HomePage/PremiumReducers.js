@@ -9,7 +9,7 @@ export const premiumReducers = (state = initialState, action) => {
         case actionTypes.FETCH_PREMIUM_DATA:
             return {
                 ...state,
-                premiumData: action.payload // data update
+                premiumData: action.payload 
             }
 
         default:

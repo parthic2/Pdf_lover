@@ -9,7 +9,7 @@ export const rotateReducer = (state = initialState, action) => {
     case actionTypes.FETCH_ROTATE_DATA:
       return {
         ...state,
-        rotateData: action.payload, // data update
+        rotateData: action.payload, 
       };
     default:
       return state;

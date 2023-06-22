@@ -110,7 +110,6 @@ const SplitPDF = () => {
       return;
     }
 
-    // 👇 Create new FormData object and append files
     var formData = new FormData();
     formData.append("file", fileList[0]);
     formData.append("range", `${startPage}-${endPage}`);
@@ -123,7 +122,6 @@ const SplitPDF = () => {
 
     setOpen(true);
 
-    // 👇 Uploading the files using the fetch API to the server
     try {
       const url = `${process.env.REACT_APP_API_URL}/public/api/split-pdf-merge`;
       const response = await toast.promise(
@@ -152,7 +150,6 @@ const SplitPDF = () => {
         toast.error(`${data.msg}`);
       }
     } catch (error) {
-      // DOMException: The user aborted a request.
       setOpen(false);
       toast.error("Something Went Wrong!");
     }
@@ -274,7 +271,7 @@ const SplitPDF = () => {
             {fileList.length >= 1 && (
               <>
                 {/* Desktop */}
-                <div className={style.tool__sidebar} id={style.sidebar} style={{ overflowY: "auto" }}>
+                <div className={style.tool__sidebar} id={style.sidebar}>
                   <div
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
                     <div className={style.option__panel__title}>SPLIT PDF</div>
@@ -329,7 +326,6 @@ const SplitPDF = () => {
                           </div>
 
                           {/* <div className={style.line}/>
-
                           <div className={style.range__panel}>
                             <button className={style.btn__range}>Add Range</button>
                           </div> */}
@@ -370,7 +366,7 @@ const SplitPDF = () => {
                 {/* Mobile */}
                 {sidebar && (
                   <div className={style.mobile__sidebar}>
-                    <div className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
+                    <div id={style.mobileSidebar}>
                       <div className={`${style.option__panel} ${style["option__panel--active"]}`}>
                         <div className={style.option__panel__title}>SPLIT PDF</div>
 

@@ -9,7 +9,7 @@ export const ocrReducer = (state = initialState, action) => {
     case actionTypes.FETCH_OCR_DATA:
       return {
         ...state,
-        ocrData: action.payload, // data update
+        ocrData: action.payload, 
       };
     default:
       return state;

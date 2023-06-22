@@ -9,7 +9,7 @@ export const PDFtoPDFaReducer = (state = initialState, action) => {
     case actionTypes.FETCH_PDFToPDFa_DATA:
       return {
         ...state,
-        PtoPaData: action.payload, // data update
+        PtoPaData: action.payload,
       };
     default:
       return state;

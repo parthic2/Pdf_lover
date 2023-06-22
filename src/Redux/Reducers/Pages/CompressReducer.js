@@ -9,7 +9,7 @@ export const compressReducer = (state = initialState, action) => {
     case actionTypes.FETCH_COMPRESS_DATA:
       return {
         ...state,
-        compressData: action.payload, // data update
+        compressData: action.payload, 
       };
     default:
       return state;

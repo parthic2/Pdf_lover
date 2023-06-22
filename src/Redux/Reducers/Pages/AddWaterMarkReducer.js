@@ -9,7 +9,7 @@ export const addWatermarkReducer = (state = initialState, action) => {
     case actionTypes.FETCH_WATERMARK_DATA:
       return {
         ...state,
-        watermarkData: action.payload, // data update
+        watermarkData: action.payload, 
       };
     default:
       return state;

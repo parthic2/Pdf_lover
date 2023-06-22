@@ -20,10 +20,7 @@ const AllConvertList = () => {
             </NavLink>
           </li>
 
-          <li className="divider" style={{
-            border: "1px solid #f6f6f8",
-            margin: "7px 20px 7px 5px"
-          }}></li>
+          <li className="divider"></li>
 
           <li>
             <NavLink
@@ -36,10 +33,7 @@ const AllConvertList = () => {
             </NavLink>
           </li>
 
-          <li className="divider" style={{
-            border: "1px solid #f6f6f8",
-            margin: "7px 20px 7px 5px"
-          }}></li>
+          <li className="divider"></li>
 
         </ul>
       </li>
@@ -60,10 +54,7 @@ const AllConvertList = () => {
             </NavLink>
           </li>
 
-          <li className="divider" style={{
-            border: "1px solid #f6f6f8",
-            margin: "7px 20px 7px 5px"
-          }}></li>
+          <li className="divider" ></li>
 
         </ul>
       </li>

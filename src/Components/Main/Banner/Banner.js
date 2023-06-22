@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Typography, createTheme, ThemeProvider, Box } from "@mui/material";
 import { getMainApi } from "../../../Redux/Action/HomePage/MainAction";
 import Skeleton from "react-loading-skeleton";
-
 import style from "./Banner.module.css";
 
 const theme = createTheme();
@@ -38,10 +37,13 @@ theme.typography.body1 = {
 const Banner = () => {
   // For Redux
   const dispatch = useDispatch();
-  const { mainData, isLoading } = useSelector((state) => state.mainReducers);
+  const { mainData } = useSelector((state) => state.mainReducers);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getMainApi());
+    dispatch(getMainApi())
+      .then(() => setIsLoading(false))
+      .catch(() => setIsLoading(false));
   }, [dispatch]);
 
   if (isLoading || !mainData) {

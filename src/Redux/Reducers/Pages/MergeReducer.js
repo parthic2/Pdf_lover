@@ -9,7 +9,7 @@ export const mergeReducer = (state = initialState, action) => {
     case actionTypes.FETCH_MERGE_DATA:
       return {
         ...state,
-        mergeData: action.payload, // data update
+        mergeData: action.payload, 
       };
 
     default:

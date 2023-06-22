@@ -9,7 +9,7 @@ export const EXCELtoPDFReducer = (state = initialState, action) => {
     case actionTypes.FETCH_EXCELToPDF_DATA:
       return {
         ...state,
-        EtoPData: action.payload, // data update
+        EtoPData: action.payload, 
       };
     default:
       return state;

@@ -356,6 +356,7 @@
 
 .main-menu .nav li.dropdown:hover>ul {
     display: flex;
+    overflow-x: auto;
 }
 
 .main-menu .nav li ul {
@@ -569,6 +570,8 @@
 
     .main-menu .nav #menuSmall.open ul.menu-full {
         display: block;
+        overflow-x: auto;
+        height: 75vh;
     }
 
     .main-menu .nav #menuSmall>li>a {
@@ -689,4 +692,9 @@
 .dropdown__icon {
     margin-left: 10px;
     font-size: 20px;
+}
+
+.divider {
+    border: 1px solid #f6f6f8;
+    margin: 7px 20px 7px 5px;
 }

@@ -207,7 +207,7 @@ const PDFToJPG = () => {
             {fileList.length >= 1 && (
               <>
                 {/* Desktop */}
-                <div className={style.tool__sidebar} id={style.sidebar} style={{ overflowY: "auto" }}>
+                <div className={style.tool__sidebar} id={style.sidebar}>
                   <div
                     className={`${style.option__panel} ${style["option__panel--active"]}`}>
                     <div className={style.option__panel__title}>
@@ -240,7 +240,7 @@ const PDFToJPG = () => {
                 {/* Mobile */}
                 {sidebar && (
                   <div className={style.mobile__sidebar}>
-                    <div className={style.mobile__sidebar} id={style.mobileSidebar} style={{ overflowY: "auto" }}>
+                    <div id={style.mobileSidebar}>
                       <div className={`${style.option__panel} ${style["option__panel--active"]}`}>
                         <div className={style.option__panel__title}>
                           PDF TO JPG OPTIONS

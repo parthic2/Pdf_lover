@@ -9,7 +9,7 @@ export const detailsReducer = (state = initialState, action) => {
         case actionTypes.FETCH_DETAILS:
             return {
                 ...state,
-                detailsData: action.payload // data update
+                detailsData: action.payload
             }
         default:
             return state;

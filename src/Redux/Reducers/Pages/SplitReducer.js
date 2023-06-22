@@ -9,7 +9,7 @@ export const splitReducer = (state = initialState, action) => {
     case actionTypes.FETCH_SPLIT_DATA:
       return {
         ...state,
-        splitData: action.payload, // data update
+        splitData: action.payload,
       };
     default:
       return state;

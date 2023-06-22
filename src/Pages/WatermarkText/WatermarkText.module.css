@@ -13,7 +13,6 @@
 }
 
 .form__group label {
-    display: -ms-flexbox;
     display: flex;
     margin-bottom: 8px;
 }
@@ -28,6 +27,7 @@
     line-height: 24px;
     text-transform: uppercase;
     margin-bottom: 8px;
+    margin-top: 10px;
 }
 
 @media (max-width: 90em) {
@@ -75,22 +75,10 @@
 .editor__toolbar__block {
     padding: 0 6px;
     display: flex;
-    /* cursor: pointer;
-    transition: all .4s linear;
-    background: #fff;
-    min-width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center; */
 }
 
 .editor__toolbar__option {
-    /* min-width: 24px; */
     height: 24px;
-    /* margin: 0 2px;
-    padding: 4px 6px;
-    border-radius: 4px; */
     position: relative;
 }
 
@@ -100,11 +88,11 @@
     height: 100%;
     display: flex;
     align-items: center;
+    margin-left: 5em;
 }
 
 .editor__option__selector:after {
     content: "";
-    /* background: url() no-repeat 50%; */
     width: 4px;
     height: 4px;
     margin-left: 6px;
@@ -139,7 +127,6 @@
     position: relative;
     width: 100%;
     padding-right: 16px;
-    /* padding-left: 16px; */
 }
 
 @media (min-width: 768px) {
@@ -152,7 +139,6 @@
 select,
 select.input {
     border-radius: 4px;
-    /* background-image: url(); */
     background-repeat: no-repeat;
     background-position: right 10px center;
     padding: 2px 0px 5px 0px;
@@ -164,7 +150,6 @@ select.input {
 }
 
 input[type=checkbox] {
-    /* width: 1.5em; */
     margin-left: 1em;
     margin-right: 1em;
 }
@@ -182,19 +167,6 @@ input[type=checkbox] {
     text-align: center;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    /* padding: 1rem; */
-}
-
-.plus-minus-input .input-group-field::-webkit-inner-spin-button,
-.plus-minus-input .input-group-field ::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    appearance: none;
-}
-
-.plus-minus-input .input-group-button .circle {
-    cursor: pointer;
-    border-radius: 50%;
-    padding: 0.25em 0.8em;
 }
 
 .editor__option__content__size {
@@ -203,7 +175,6 @@ input[type=checkbox] {
     width: max-content;
     padding: 7px;
     border-radius: 4px;
-    /* left: 56em; */
     top: 15em;
     background: #fff;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
@@ -236,4 +207,8 @@ input[type=checkbox] {
     font-size: 18px;
     padding: 15px 15px 0px 15px;
     margin-bottom: 0px;
+}
+
+.box {
+    margin-top: 10px;
 }

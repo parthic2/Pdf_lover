@@ -9,7 +9,7 @@ export const protectReducer = (state = initialState, action) => {
     case actionTypes.FETCH_PROTECT_DATA:
       return {
         ...state,
-        protectData: action.payload, // data update
+        protectData: action.payload, 
       };
     default:
       return state;

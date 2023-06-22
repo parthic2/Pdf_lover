@@ -85,10 +85,6 @@ const DownloadMerge = () => {
                 onClick={handleDownload}
               >
                 <span>
-                  <i
-                    className="fa-solid fa-download"
-                    style={{ marginRight: "10px" }}
-                  />
                   Download merged PDF
                 </span>
               </Button>

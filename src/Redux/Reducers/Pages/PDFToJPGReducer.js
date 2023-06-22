@@ -9,7 +9,7 @@ export const PDFtoJPGReducer = (state = initialState, action) => {
     case actionTypes.FETCH_PDFToJPG_DATA:
       return {
         ...state,
-        PtoJData: action.payload, // data update
+        PtoJData: action.payload, 
       };
     default:
       return state;
