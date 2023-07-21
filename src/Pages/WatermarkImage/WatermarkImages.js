@@ -12,12 +12,12 @@ const WatermarkImages = ({ handleImage, imgData }) => {
                 title="choose image">
                 <input
                     type="file"
-                    multiple
                     onChange={handleImage}
-                    accept=".png, .jpg,. jpeg, .bmp"
+                    accept=".png, .jpg,. jpeg, .bmp"    
                 />
                 <span>Choose Image</span>
             </Button>
+
             <div className={style.image_display}>
                 <img alt="" src={imgData} />{imgData.name}
             </div>

@@ -88,7 +88,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    margin-left: 5em;
+    margin-left: 4.5em;
 }
 
 .editor__option__selector:after {
@@ -156,8 +156,6 @@ input[type=checkbox] {
 
 
 .plus-minus-input {
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
     display: flex;
 }
@@ -175,13 +173,14 @@ input[type=checkbox] {
     width: max-content;
     padding: 7px;
     border-radius: 4px;
-    top: 15em;
+    top: 20em;
     background: #fff;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .14);
 }
 
-.mr-10 {
-    margin: 10px;
+.font__size {
+    margin: 0 10px 0 10px;
+    padding: 0 0 0 5px;
 }
 
 .color {
@@ -211,4 +210,9 @@ input[type=checkbox] {
 
 .box {
     margin-top: 10px;
+}
+
+.format__icon {
+    font-size: 30px;
+    cursor: pointer;
 }

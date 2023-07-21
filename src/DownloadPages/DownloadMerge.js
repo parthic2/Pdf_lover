@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
@@ -7,13 +7,13 @@ import { useLocation } from 'react-router-dom';
 
 const DownloadMerge = () => {
 
-  // const handleDownload = () => {
-  //   // window.open(pdfUrl, "_blank");
-  // };
-
   const location = useLocation();
-
   const pdfUrl = location.state.name;
+
+  const handleDownload = () => {
+    window.open(pdfUrl, "_blank");
+  };
+
   // console.log(pdfUrl);
 
   // const handleDownload = async () => {
@@ -40,27 +40,27 @@ const DownloadMerge = () => {
   //   }
   // }
 
-  const handleDownload = async () => {
-    const fileUrl = pdfUrl;
-    console.log(fileUrl);
-
-    try {
-      const response = await fetch(fileUrl);
-      if (response.ok) {
-        const blob = await response.blob();
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "merged_pdf.pdf";
-        link.click();
-        // window.open(url);
-      } else {
-        console.log("Failed to fetch the PDF file.");
-      }
-    } catch (error) {
-      console.log("Error occurred while fetching the PDF file:", error);
-    }
-  }
+  // const handleDownload = async () => {
+  //   const fileUrl = pdfUrl;
+  //   console.log(fileUrl);
+  //   // "https://cors-anywhere.herokuapp.com/" + 
+  //   try {
+  //     const response = await fetch(fileUrl);
+  //     if (response.ok) {
+  //       const blob = await response.blob();
+  //       const url = URL.createObjectURL(blob);
+  //       const link = document.createElement("a");
+  //       link.href = url;
+  //       link.download = "merged_pdf.pdf";
+  //       link.click();
+  //       // window.open(url);
+  //     } else {
+  //       console.log("Failed to fetch the PDF file.");
+  //     }
+  //   } catch (error) {
+  //     console.log("Error occurred while fetching the PDF file:", error);
+  //   }
+  // }
 
   return (
     <div>
@@ -70,9 +70,9 @@ const DownloadMerge = () => {
           {/* workarea */}
           <div className={style.tool__workarea} id="workArea">
             <div className={style.tool__header}>
-              <Typography variant="h4" className={style.tool__header__title}>
-                PDFs have been merged!
-              </Typography>
+              <h4 className={style.tool__header__title}>
+                PDF's have been Ready for download!
+              </h4>
             </div>
 
             {/* Download button */}
@@ -85,7 +85,7 @@ const DownloadMerge = () => {
                 onClick={handleDownload}
               >
                 <span>
-                  Download merged PDF
+                  Download your PDF
                 </span>
               </Button>
             </div>
@@ -98,5 +98,3 @@ const DownloadMerge = () => {
 };
 
 export default DownloadMerge;
-
-// env file add karvani che

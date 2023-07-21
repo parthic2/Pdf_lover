@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Box, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { AiOutlineSetting } from "react-icons/ai";
@@ -9,10 +9,10 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import Navbar from "../../Components/Navbar/Navbar";
 import { getCompressApi } from "../../Redux/Action/Pages/CompressAction";
-import Skeleton from "react-loading-skeleton";
 import style from "../Pages.module.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SkeletonLoader from "../../Components/SkeletonLoader/SkeletonLoader";
 
 const CompressPDF = () => {
 
@@ -84,7 +84,11 @@ const CompressPDF = () => {
 
       if (data.status) {
         setFileList(data);
-        navigate("/Download_Merge_PDF");
+        navigate("/Download_PDF", {
+          state: {
+            name: data.data.file,
+          },
+        });
       } else {
         // Handle the case when the response status is false
         setOpen(false);
@@ -126,40 +130,7 @@ const CompressPDF = () => {
       />
 
       {loading ? (
-        <div className={style.main}>
-          <div className={style.tool}>
-            <div className={style.tool__workarea} id="workArea">
-              <div className={style.tool__header}>
-                <div className={style["skeleton-container"]}>
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "30%",
-                    }}
-                  >
-                    <Skeleton height={150} width={150} />
-                  </Box>
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "60%",
-                    }}
-                  >
-                    <Skeleton height={150} width={150} />
-                  </Box>
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "20%",
-                    }}
-                  >
-                    <Skeleton height={150} width={150} />
-                  </Box>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <SkeletonLoader />
       ) : (
         <div className={style.main} key={compressData.id}>
           <div className={style.tool}>

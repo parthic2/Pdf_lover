@@ -1,5 +1,5 @@
-import FormatSizeIcon from '@mui/icons-material/FormatSize';
-
+import { MdFormatSize } from 'react-icons/md';
+import { FaMinus, FaPlus } from 'react-icons/fa';
 import style from "./WatermarkText.module.css";
 
 const WatermarkText = ({
@@ -135,42 +135,38 @@ const WatermarkText = ({
               className={style.editor__option__selector}
               onClick={() => setIsOpen(!isOpen)}
             >
-              <FormatSizeIcon />
+              <MdFormatSize className={style.format__icon} />
             </div>
 
             {isOpen && (
               <div className={style.editor__option__content__size}>
                 <div className={style["plus-minus-input"]}>
-                  <div className={style["input-group-button"]}>
-                    <button
-                      type="button"
-                      className={`${style.button} ${style.hollow} ${style.circle}`}
-                      onClick={decrementFontSize}
-                    >
-                      <i className="fa-solid fa-minus" />
-                    </button>
-                  </div>
+                  <button
+                    type="button"
+                    style={{ background: "none" }}
+                    onClick={decrementFontSize}
+                  >
+                    <FaMinus />
+                  </button>
 
                   <input
-                    className={style["mr-10"]}
+                    className={style.font__size}
                     type="number"
-                    id="quantity"
-                    name="quantity"
+                    id="size"
+                    name="size"
                     value={fontSize}
                     min="1"
                     max="100"
                     onChange={(e) => setFontSize(e.target.value)}
                   />
 
-                  <div className={style["input-group-button"]}>
-                    <button
-                      type="button"
-                      className={`${style.button} ${style.hollow} ${style.circle}`}
-                      onClick={incrementFontSize}
-                    >
-                      <i className="fa-solid fa-plus" />
-                    </button>
-                  </div>
+                  <button
+                    type="button"
+                    style={{ background: "none" }}
+                    onClick={incrementFontSize}
+                  >
+                    <FaPlus />
+                  </button>
                 </div>
               </div>
             )}

@@ -66,7 +66,7 @@ const Router = createBrowserRouter([
     element: <ProtectPDF />,
   },
   {
-    path: "/Download_Merge_PDF",
+    path: "/Download_PDF",
     element: <DownloadMerge />,
   }
 ]);

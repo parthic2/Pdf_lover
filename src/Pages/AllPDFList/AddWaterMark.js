@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -12,10 +12,10 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { AiOutlineSetting } from 'react-icons/ai';
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import { useNavigate } from "react-router-dom";
-import Skeleton from "react-loading-skeleton";
 import style from "../Pages.module.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SkeletonLoader from "../../Components/SkeletonLoader/SkeletonLoader";
 
 const AddWaterMark = () => {
 
@@ -221,7 +221,11 @@ const AddWaterMark = () => {
 
       if (data.status) {
         setFileList(data);
-        navigate("/Download_Merge_PDF");
+        navigate("/Download_PDF", {
+          state: {
+            name: data.data.file,
+          },
+        });
       } else {
         setOpen(false);
         toast.error(`${data.msg} (Text)`);
@@ -259,7 +263,11 @@ const AddWaterMark = () => {
 
       if (data.status) {
         setFileList(data);
-        navigate("/Download_Merge_PDF");
+        navigate("/Download_PDF", {
+          state: {
+            name: data.data.file,
+          },
+        });
         toast.error(`${data.msg} (Image)`);
       } else {
         setOpen(false);
@@ -301,40 +309,7 @@ const AddWaterMark = () => {
       />
 
       {loading ? (
-        <div className={style.main}>
-          <div className={style.tool}>
-            <div className={style.tool__workarea} id="workArea">
-              <div className={style.tool__header}>
-                <div className={style["skeleton-container"]}>
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "30%",
-                    }}
-                  >
-                    <Skeleton height={150} width={150} />
-                  </Box>
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "60%",
-                    }}
-                  >
-                    <Skeleton height={150} width={150} />
-                  </Box>
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "20%",
-                    }}
-                  >
-                    <Skeleton height={150} width={150} />
-                  </Box>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <SkeletonLoader />
       ) : (
         <div className={style.main} key={watermarkData.id}>
           <div className={style.tool}>

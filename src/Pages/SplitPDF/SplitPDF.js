@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import {  Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,10 +8,10 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import { AiOutlineSetting } from "react-icons/ai";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
-import Skeleton from "react-loading-skeleton";
 import style from "../Pages.module.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SkeletonLoader from "../../Components/SkeletonLoader/SkeletonLoader";
 
 const SplitPDF = () => {
 
@@ -139,7 +139,7 @@ const SplitPDF = () => {
 
       if (data.status) {
         setFileList(data);
-        navigate("/Download_Merge_PDF", {
+        navigate("/Download_PDF", {
           state: {
             name: data.data.file,
           },
@@ -180,40 +180,7 @@ const SplitPDF = () => {
       />
 
       {loading ? (
-        <div className={style.main}>
-          <div className={style.tool}>
-            <div className={style.tool__workarea} id="workArea">
-              <div className={style.tool__header}>
-                <div className={style["skeleton-container"]}>
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "30%",
-                    }}
-                  >
-                    <Skeleton height={150} width={150} />
-                  </Box>
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "60%",
-                    }}
-                  >
-                    <Skeleton height={150} width={150} />
-                  </Box>
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "20%",
-                    }}
-                  >
-                    <Skeleton height={150} width={150} />
-                  </Box>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <SkeletonLoader />
       ) : (
         <div className={style.main} key={splitData.id}>
           <div className={style.tool}>
