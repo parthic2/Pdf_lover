@@ -8,59 +8,29 @@ import { useLocation } from 'react-router-dom';
 const DownloadMerge = () => {
 
   const location = useLocation();
-  const pdfUrl = location.state.name;
+  // console.log(location);
+  const pdfUrl = location.state.file;
+  const pdfName = location.state.name;
 
-  const handleDownload = () => {
-    window.open(pdfUrl, "_blank");
+  const handleDownload = async () => {
+    try {
+      const response = await fetch(pdfUrl);
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = pdfName;
+      link.style.display = "none"; // Hide the link element
+      document.body.appendChild(link);
+      link.click();
+
+      // Clean up
+      URL.revokeObjectURL(blobUrl);
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Error downloading the PDF:", error);
+    }
   };
-
-  // console.log(pdfUrl);
-
-  // const handleDownload = async () => {
-  //   try {
-  //     const url = "https://pdflover.stackholic.io/public/api/merge";
-  //     const response = await fetch(url, {
-  //       method: "POST",
-  //       body: JSON.stringify({ pdfUrl }),
-  //       headers: {
-  //         "Content-Type": "application/pdf"
-  //       },
-  //     });
-
-  //     const data = await response.blob();
-  //     const blobUrl = window.URL.createObjectURL(new Blob([data]));
-  //     const link = document.createElement("a");
-  //     link.href = blobUrl;
-  //     link.setAttribute("download", `${Date.now()}.pdf`);
-  //     document.body.appendChild(link);
-  //     link.click();
-  //     document.body.removeChild(link);
-  //   } catch (error) {
-  //     console.log("Error Downloading the PDF:", error);
-  //   }
-  // }
-
-  // const handleDownload = async () => {
-  //   const fileUrl = pdfUrl;
-  //   console.log(fileUrl);
-  //   // "https://cors-anywhere.herokuapp.com/" + 
-  //   try {
-  //     const response = await fetch(fileUrl);
-  //     if (response.ok) {
-  //       const blob = await response.blob();
-  //       const url = URL.createObjectURL(blob);
-  //       const link = document.createElement("a");
-  //       link.href = url;
-  //       link.download = "merged_pdf.pdf";
-  //       link.click();
-  //       // window.open(url);
-  //     } else {
-  //       console.log("Failed to fetch the PDF file.");
-  //     }
-  //   } catch (error) {
-  //     console.log("Error occurred while fetching the PDF file:", error);
-  //   }
-  // }
 
   return (
     <div>
@@ -77,6 +47,7 @@ const DownloadMerge = () => {
 
             {/* Download button */}
             <div id="uploader" className={style.uploader}>
+              {/* <Button><Link to="/"><BiArrowBack /></Link></Button> */}
               <Button
                 variant="contained"
                 component="label"

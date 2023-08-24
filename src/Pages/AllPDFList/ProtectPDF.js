@@ -135,7 +135,8 @@ const ProtectPDF = () => {
         setFileList(data);
         navigate("/Download_PDF", {
           state: {
-            name: data.data.file,
+            name: "Protect PDF", // Your custom string
+            file: data.data.file, // The value from data.data.file
           },
         });
       } else {

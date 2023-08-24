@@ -223,7 +223,8 @@ const AddWaterMark = () => {
         setFileList(data);
         navigate("/Download_PDF", {
           state: {
-            name: data.data.file,
+            name: "Watermark PDF", // Your custom string
+            file: data.data.file, // The value from data.data.file
           },
         });
       } else {
@@ -265,7 +266,8 @@ const AddWaterMark = () => {
         setFileList(data);
         navigate("/Download_PDF", {
           state: {
-            name: data.data.file,
+            name: "Watermark PDF", // Your custom string
+            file: data.data.file, // The value from data.data.file
           },
         });
         toast.error(`${data.msg} (Image)`);

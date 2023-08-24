@@ -48,7 +48,7 @@ const MergePDF = () => {
 
   // Upload File
   const handleUploadClick = async () => {
-    if (!fileList) {
+    if (!fileList || fileList.length < 2) {
       toast.error("Select pdf file");
       return;
     }
@@ -85,7 +85,8 @@ const MergePDF = () => {
         setFileList(data);
         navigate("/Download_PDF", {
           state: {
-            name: data.data.file,
+            name: "Merge PDF", // Your custom string
+            file: data.data.file, // The value from data.data.file
           },
         });
       } else {

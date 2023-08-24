@@ -1,4 +1,4 @@
-import {  Button } from "@mui/material";
+import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
@@ -141,7 +141,8 @@ const SplitPDF = () => {
         setFileList(data);
         navigate("/Download_PDF", {
           state: {
-            name: data.data.file,
+            name: "Splitting PDF", // Your custom string
+            file: data.data.file, // The value from data.data.file
           },
         });
       } else {

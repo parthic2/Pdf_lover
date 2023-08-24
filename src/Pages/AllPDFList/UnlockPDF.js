@@ -86,7 +86,8 @@ const UnlockPDF = () => {
         setFileList(data);
         navigate("/Download_PDF", {
           state: {
-            name: data.data.file,
+            name: "Unlock PDF", // Your custom string
+            file: data.data.file, // The value from data.data.file
           },
         });
       } else {

@@ -84,7 +84,8 @@ const JPGToPDF = () => {
         setFileList(data);
         navigate("/Download_PDF", {
           state: {
-            name: data.data.file,
+            name: "JPG to PDF", // Your custom string
+            file: data.data.file, // The value from data.data.file
           },
         });
       } else {
