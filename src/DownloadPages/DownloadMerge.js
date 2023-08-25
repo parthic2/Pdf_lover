@@ -10,6 +10,7 @@ const DownloadMerge = () => {
   const location = useLocation();
   // console.log(location);
   const pdfUrl = location.state.file;
+  // console.log(pdfUrl);
   const pdfName = location.state.name;
 
   const handleDownload = async () => {

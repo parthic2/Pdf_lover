@@ -633,7 +633,7 @@ textarea {
     flex-wrap: wrap;
 }
 
-.tool__workarea__rendered:hover{
+.tool__workarea__rendered:hover {
     background: #fffc;
 }
 
@@ -888,7 +888,7 @@ button {
     color: #fff;
 }
 
-.line{
+.line {
     border-bottom: 1px solid #e6e6e6;
     margin: 0 14px 0 14px;
 }
