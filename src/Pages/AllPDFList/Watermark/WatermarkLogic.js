@@ -33,9 +33,7 @@ const useWatermarkLogic = () => {
   const pageNumber = 1;
   const files = [...fileList];
 
-  const watermarkData = useSelector(
-    (state) => state.addWatermarkReducer.watermarkData
-  );
+  const watermarkData = useSelector((state) => state.addWatermarkReducer.watermarkData);
 
   useEffect(() => {
     document.title = "Add watermark to a PDF files.";
