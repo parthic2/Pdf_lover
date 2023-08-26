@@ -46,35 +46,35 @@ const Banner = () => {
       .catch(() => setIsLoading(false));
   }, [dispatch]);
 
-  if (isLoading || !mainData) {
-    return (
-      <div className={style["home-title"]}>
-        <div className={style["skeleton-container"]}>
-          <ThemeProvider theme={theme}>
-            <Box
-              className={style["skeleton-box"]}
-              sx={{
-                width: "30%",
-                mb: 2,
-                ...theme.typography.h3,
-              }}
-            >
-              <Skeleton width="100%" height="100%" />
-            </Box>
-            <Box
-              className={style["skeleton-box"]}
-              sx={{
-                width: "60%",
-                ...theme.typography.body1,
-              }}
-            >
-              <Skeleton width="100%" height="100%" />
-            </Box>
-          </ThemeProvider>
-        </div>
-      </div>
-    );
-  }
+  // if (isLoading || !mainData) {
+  //   return (
+  //     <div className={style["home-title"]}>
+  //       <div className={style["skeleton-container"]}>
+  //         <ThemeProvider theme={theme}>
+  //           <Box
+  //             className={style["skeleton-box"]}
+  //             sx={{
+  //               width: "30%",
+  //               mb: 2,
+  //               ...theme.typography.h3,
+  //             }}
+  //           >
+  //             <Skeleton width="100%" height="100%" />
+  //           </Box>
+  //           <Box
+  //             className={style["skeleton-box"]}
+  //             sx={{
+  //               width: "60%",
+  //               ...theme.typography.body1,
+  //             }}
+  //           >
+  //             <Skeleton width="100%" height="100%" />
+  //           </Box>
+  //         </ThemeProvider>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   const { title, subtitle } = mainData;
 

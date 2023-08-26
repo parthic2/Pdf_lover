@@ -23,7 +23,7 @@ const PreSection = () => {
     <Box
       className={style.pre__box}
     >
-      {isLoading ? (
+      {/* {isLoading ? (
         <>
           <Box
             className={style["skeleton-box"]}
@@ -51,7 +51,7 @@ const PreSection = () => {
           </Box>
         </>
       ) : (
-        <>
+        <> */}
           <Box sx={{ textAlign: "center" }}>
             <h1
               className={style.pre__text}
@@ -71,8 +71,8 @@ const PreSection = () => {
           <Link to="" className={style["button-71"]}>
             {button}
           </Link>
-        </>
-      )}
+        {/* </>
+      )} */}
     </Box>
   );
 };

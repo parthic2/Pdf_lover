@@ -20,7 +20,7 @@ const Footer = () => {
   if (isLoading) {
     return (
       <div className={style["footer-main"]}>
-        <Container>
+        {/* <Container>
           <Grid container spacing={3}>
             {Array.from({ length: 4 }).map((_, index) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
@@ -111,7 +111,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-        </Container>
+        </Container> */}
       </div>
     );
   }
