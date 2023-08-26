@@ -7,38 +7,38 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDetailsApi } from "../../Redux/Action/HomePage/DetailsTypesAction";
 import style from "./Main.module.css";
 
-// const SkeletonCard = () => (
-//   <Card variant="outlined" className={style.card__item}>
-//     <CardContent sx={{ padding: 0 }}>
-//       <div className={style.tools__item__icon}>
-//         <Box
-//           className={style["skeleton-box"]}
-//           sx={{
-//             width: "20%",
-//           }}
-//         >
-//           <Skeleton height={150} width={150} />
-//         </Box>
-//       </div>
-//       <Box
-//         className={style["skeleton-box"]}
-//         sx={{
-//           width: "40%",
-//         }}
-//       >
-//         <Skeleton height={30} width={200} />
-//       </Box>
-//       <Box
-//         className={style["skeleton-box"]}
-//         sx={{
-//           width: "90%",
-//         }}
-//       >
-//         <Skeleton count={2} height={20} />
-//       </Box>
-//     </CardContent>
-//   </Card>
-// );
+const SkeletonCard = () => (
+  <Card variant="outlined" className={style.card__item}>
+    <CardContent sx={{ padding: 0 }}>
+      <div className={style.tools__item__icon}>
+        <Box
+          className={style["skeleton-box"]}
+          sx={{
+            width: "20%",
+          }}
+        >
+          <Skeleton height={150} width={150} />
+        </Box>
+      </div>
+      <Box
+        className={style["skeleton-box"]}
+        sx={{
+          width: "40%",
+        }}
+      >
+        <Skeleton height={30} width={200} />
+      </Box>
+      <Box
+        className={style["skeleton-box"]}
+        sx={{
+          width: "90%",
+        }}
+      >
+        <Skeleton count={2} height={20} />
+      </Box>
+    </CardContent>
+  </Card>
+);
 
 const Main = () => {
   // For PDF Types
@@ -60,8 +60,7 @@ const Main = () => {
         className={style.gridStyle}
         justifyContent="center"
       >
-
-        {/* isLoading
+        {isLoading
           ? Array.from({ length: 6 }).map((_, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Box sx={{ minWidth: 270 }}>
@@ -69,8 +68,7 @@ const Main = () => {
               </Box>
             </Grid>
           ))
-          : */}
-        {detailsData &&
+          : detailsData &&
           detailsData.map((item) => {
             const { id, title, description, link, img } = item;
             return (
