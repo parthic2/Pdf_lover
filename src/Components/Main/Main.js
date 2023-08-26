@@ -60,15 +60,17 @@ const Main = () => {
         className={style.gridStyle}
         justifyContent="center"
       >
-        {isLoading
+
+        {/* isLoading
           ? Array.from({ length: 6 }).map((_, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Box sx={{ minWidth: 270 }}>
-                {/* <SkeletonCard /> */}
+                <SkeletonCard />
               </Box>
             </Grid>
           ))
-          : detailsData &&
+          : */}
+        {detailsData &&
           detailsData.map((item) => {
             const { id, title, description, link, img } = item;
             return (

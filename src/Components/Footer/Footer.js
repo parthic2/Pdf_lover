@@ -17,104 +17,104 @@ const Footer = () => {
       .catch(() => setIsLoading(false));
   }, [dispatch]);
 
-  if (isLoading) {
-    return (
-      <div className={style["footer-main"]}>
-        {/* <Container>
-          <Grid container spacing={3}>
-            {Array.from({ length: 4 }).map((_, index) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                <Typography variant="h6" className={style.heading}>
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "20%",
-                    }}
-                  >
-                    <Skeleton height={20} />
-                  </Box>
-                </Typography>
-                <ul>
-                  {Array.from({ length: 3 }).map((_, index) => (
-                    <li key={index}>
-                      <Box
-                        className={style["skeleton-box"]}
-                        sx={{
-                          width: "40%",
-                        }}
-                      >
-                        <Skeleton height={20} />
-                      </Box>
-                    </li>
-                  ))}
-                </ul>
-              </Grid>
-            ))}
-          </Grid>
+  // if (isLoading) {
+  //   return (
+  //     <div className={style["footer-main"]}>
+  //       <Container>
+  //         <Grid container spacing={3}>
+  //           {Array.from({ length: 4 }).map((_, index) => (
+  //             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+  //               <Typography variant="h6" className={style.heading}>
+  //                 <Box
+  //                   className={style["skeleton-box"]}
+  //                   sx={{
+  //                     width: "20%",
+  //                   }}
+  //                 >
+  //                   <Skeleton height={20} />
+  //                 </Box>
+  //               </Typography>
+  //               <ul>
+  //                 {Array.from({ length: 3 }).map((_, index) => (
+  //                   <li key={index}>
+  //                     <Box
+  //                       className={style["skeleton-box"]}
+  //                       sx={{
+  //                         width: "40%",
+  //                       }}
+  //                     >
+  //                       <Skeleton height={20} />
+  //                     </Box>
+  //                   </li>
+  //                 ))}
+  //               </ul>
+  //             </Grid>
+  //           ))}
+  //         </Grid>
 
-          <ul className={style.app__store}>
-            <li>
-              <Box
-                className={style["skeleton-box"]}
-                sx={{
-                  width: "100px",
-                }}
-              >
-                <Skeleton height={40} />
-              </Box>
-            </li>
-            <li>
-              <Box
-                className={style["skeleton-box"]}
-                sx={{
-                  width: "100px",
-                }}
-              >
-                <Skeleton height={40} />
-              </Box>
-            </li>
-          </ul>
+  //         <ul className={style.app__store}>
+  //           <li>
+  //             <Box
+  //               className={style["skeleton-box"]}
+  //               sx={{
+  //                 width: "100px",
+  //               }}
+  //             >
+  //               <Skeleton height={40} />
+  //             </Box>
+  //           </li>
+  //           <li>
+  //             <Box
+  //               className={style["skeleton-box"]}
+  //               sx={{
+  //                 width: "100px",
+  //               }}
+  //             >
+  //               <Skeleton height={40} />
+  //             </Box>
+  //           </li>
+  //         </ul>
 
-          <div className={style.separator}></div>
+  //         <div className={style.separator}></div>
 
-          <div className={style.row}>
-            <div className={style.social__icon}>
-              <div className={style["footer-main__info"]}>
-                <div className={style.slogan}>
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "200px",
-                    }}
-                  >
-                    <Skeleton height={20} />
-                  </Box>
-                </div>
-                <div className="social">
-                  <Box
-                    className={style["skeleton-box"]}
-                    sx={{
-                      width: "30%",
-                    }}
-                  >
-                    {Array.from({ length: 4 }).map((_, index) => (
-                      <Skeleton
-                        key={index}
-                        circle={true}
-                        height={30}
-                        width={30}
-                        style={{ marginRight: "10px" }}
-                      />
-                    ))}
-                  </Box>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container> */}
-      </div>
-    );
-  }
+  //         <div className={style.row}>
+  //           <div className={style.social__icon}>
+  //             <div className={style["footer-main__info"]}>
+  //               <div className={style.slogan}>
+  //                 <Box
+  //                   className={style["skeleton-box"]}
+  //                   sx={{
+  //                     width: "200px",
+  //                   }}
+  //                 >
+  //                   <Skeleton height={20} />
+  //                 </Box>
+  //               </div>
+  //               <div className="social">
+  //                 <Box
+  //                   className={style["skeleton-box"]}
+  //                   sx={{
+  //                     width: "30%",
+  //                   }}
+  //                 >
+  //                   {Array.from({ length: 4 }).map((_, index) => (
+  //                     <Skeleton
+  //                       key={index}
+  //                       circle={true}
+  //                       height={30}
+  //                       width={30}
+  //                       style={{ marginRight: "10px" }}
+  //                     />
+  //                   ))}
+  //                 </Box>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </Container>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className={style["footer-main"]}>
