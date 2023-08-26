@@ -54,7 +54,7 @@ const DownloadMerge = () => {
     // Start the automatic download after 3 seconds
     const downloadTimer = setTimeout(() => {
       handleDownload();
-    }, 3000); // 3000 milliseconds (3 seconds)
+    }, 5000); // 3000 milliseconds (3 seconds)
 
     return () => clearTimeout(downloadTimer); // Clear the timer if the component unmounts
   }); // Empty dependency array to ensure this effect runs only once
