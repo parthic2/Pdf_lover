@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 import style from "./MergePDF.module.css";
@@ -47,16 +47,6 @@ const DownloadMerge = () => {
       console.error("Error downloading the file:", error);
     }
   };
-
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // useEffect(() => {
-  //   // Start the automatic download after 3 seconds
-  //   const downloadTimer = setTimeout(() => {
-  //     handleDownload();
-  //   }, 3000); // 3000 milliseconds (3 seconds)
-
-  //   return () => clearTimeout(downloadTimer); // Clear the timer if the component unmounts
-  // }, []); // Empty dependency array to ensure this effect runs only once
 
   return (
     <div>
