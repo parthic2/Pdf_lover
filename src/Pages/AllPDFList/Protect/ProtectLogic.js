@@ -112,6 +112,7 @@ const useProtectLogic = () => {
       if (response.status === 200 && response.data.status) {
         setFileList(response.data);
         setStatusMessage("Success!");
+        localStorage.setItem('protectedPdfPassword', formInput.password);
         navigate("/Download_PDF", {
           state: {
             name: "Protect PDF",

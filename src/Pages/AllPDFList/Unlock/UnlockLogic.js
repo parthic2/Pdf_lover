@@ -35,7 +35,10 @@ const useUnlockLogic = () => {
     const fileList = e.target.files;
     const fileArray = Array.from(fileList);
     setFileList(fileArray);
-    setPassword(e.target.value);
+    const storedPassword = localStorage.getItem('protectedPdfPassword');
+    if (storedPassword) {
+      setPassword(storedPassword);
+    }
   };
 
   // Upload File

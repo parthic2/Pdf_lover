@@ -161,11 +161,11 @@ input[type="file"] {
     }
 }
 
-@media (max-width: 90em) {
+/* @media (max-width: 90em) { */
     .option__panel__content {
         padding: 12px 16px 4px;
     }
-}
+/* } */
 
 .option__panel .info {
     margin-bottom: 16px;
@@ -786,7 +786,7 @@ button {
 }
 
 .content-tabs {
-    flex-grow: 1;
+    padding: 14px;
 }
 
 .content {

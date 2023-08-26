@@ -10,26 +10,41 @@ const DownloadMerge = () => {
   const location = useLocation();
   // console.log(location);
   const pdfUrl = location.state.file;
-  // console.log(pdfUrl);
   const pdfName = location.state.name;
 
   const handleDownload = async () => {
     try {
       const response = await fetch(pdfUrl);
       const blob = await response.blob();
+      let fileExtension = "";
+
+      // Determine the appropriate file extension based on content type
+      const contentType = response.headers.get("content-type");
+      if (contentType === "application/pdf") {
+        fileExtension = ".pdf";
+      } else if (contentType === "image/png") {
+        fileExtension = ".png";
+      } else if (contentType === "image/jpeg") {
+        fileExtension = ".jpg";
+      }
+
+      // Create a Blob URL with the correct file extension
       const blobUrl = URL.createObjectURL(blob);
+
       const link = document.createElement("a");
       link.href = blobUrl;
-      link.download = pdfName;
-      link.style.display = "none"; // Hide the link element
+
+      // Set the download filename based on the file extension
+      link.download = pdfName + fileExtension;
+
+      link.style.display = "none";
       document.body.appendChild(link);
       link.click();
 
-      // Clean up
       URL.revokeObjectURL(blobUrl);
       document.body.removeChild(link);
     } catch (error) {
-      console.error("Error downloading the PDF:", error);
+      console.error("Error downloading the file:", error);
     }
   };
 

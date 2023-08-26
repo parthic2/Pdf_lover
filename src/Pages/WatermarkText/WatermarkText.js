@@ -323,24 +323,31 @@ const WatermarkText = ({
           <div className={style.option__title}>Pages:</div>
 
           <div className={style.page__range}>
-            <label htmlFor="startPageInput" style={{ fontSize: "15px" }}>From Page:</label>
-            <input
-              type="number"
-              id={style.startPageInput}
-              min={1}
-              max={pageCount}
-              value={startPage}
-              onChange={handleStartPageChange}
-            />
-            <label htmlFor="lastPageInput" style={{ fontSize: "15px" }}>To Page:</label>
-            <input
-              type="number"
-              id={style.lastPageInput}
-              min={1}
-              max={pageCount}
-              value={endPage}
-              onChange={handleLastPageChange}
-            />
+            <div className={style.row}>
+              <div className={style["col-md-6"]}>
+                <label htmlFor="startPageInput" style={{ fontSize: "15px", marginRight: "5px" }}>From Page:</label>
+                <input
+                  type="number"
+                  id={style.startPageInput}
+                  min={1}
+                  max={pageCount}
+                  value={startPage}
+                  onChange={handleStartPageChange}
+                />
+              </div>
+
+              <div className={style["col-md-6"]}>
+                <label htmlFor="lastPageInput" style={{ fontSize: "15px", marginRight: "5px" }}>To Page:</label>
+                <input
+                  type="number"
+                  id={style.lastPageInput}
+                  min={1}
+                  max={pageCount}
+                  value={endPage}
+                  onChange={handleLastPageChange}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
