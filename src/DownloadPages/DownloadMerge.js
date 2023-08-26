@@ -48,6 +48,7 @@ const DownloadMerge = () => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     // Start the automatic download after 3 seconds
     const downloadTimer = setTimeout(() => {
