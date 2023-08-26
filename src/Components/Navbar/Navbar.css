@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito Sans");
+
 * {
     margin: 0;
     padding: 0;
@@ -381,6 +383,7 @@
     height: 40px;
     margin-bottom: 2px;
     margin-top: 1px;
+    font-size: 15px;
 }
 
 .main-menu .nav li ul li a img,

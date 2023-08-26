@@ -3,7 +3,6 @@ import { Button } from "@mui/material";
 import { AiOutlineSetting } from "react-icons/ai";
 import Navbar from "../../Components/Navbar/Navbar";
 import style from "../Pages.module.css";
-import 'react-toastify/dist/ReactToastify.css';
 import SkeletonLoader from "../../Components/SkeletonLoader/SkeletonLoader";
 import useCompressLogic from "./CompressLogic";
 import ViewPdf from "../../ViewPdf/ViewPdf";
