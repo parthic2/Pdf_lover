@@ -156,6 +156,8 @@ const Footer = () => {
                 <img
                   src={footerData.googleDrive}
                   alt="Google Play"
+                  width={100}
+                  height={30}
                 />
               </Link>
             </li>
@@ -164,6 +166,8 @@ const Footer = () => {
                 <img
                   src={footerData.appStore}
                   alt="App Store"
+                  width={100}
+                  height={30}
                 />
               </Link>
             </li>
@@ -208,6 +212,8 @@ const Footer = () => {
                           className={`${style.social__item}`}
                           src={social.icon}
                           alt={social.title}
+                          width={100}
+                          height={30}
                         />
                       )}
                     </Link>
