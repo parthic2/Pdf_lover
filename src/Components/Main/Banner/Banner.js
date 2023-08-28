@@ -41,10 +41,20 @@ const Banner = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getMainApi())
-      .then(() => setIsLoading(false))
-      .catch(() => setIsLoading(false));
+    dispatch(getMainApi());
+    const delay = 500;
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, delay);
+
+    return () => clearTimeout(timer);
   }, [dispatch]);
+
+  // useEffect(() => {
+  //   dispatch(getMainApi())
+  //     .then(() => setIsLoading(false))
+  //     .catch(() => setIsLoading(false));
+  // }, [dispatch]);
 
   if (isLoading || !mainData) {
     return (

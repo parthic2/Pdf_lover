@@ -12,10 +12,20 @@ const PreSection = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getPremiumApi())
-      .then(() => setIsLoading(false))
-      .catch(() => setIsLoading(false));
+    dispatch(getPremiumApi());
+    const delay = 500;
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, delay);
+
+    return () => clearTimeout(timer);
   }, [dispatch]);
+
+  // useEffect(() => {
+  //   dispatch(getPremiumApi())
+  //     .then(() => setIsLoading(false))
+  //     .catch(() => setIsLoading(false));
+  // }, [dispatch]);
 
   const { heading, subHeading, subHeading1, button } = premiumData;
 
