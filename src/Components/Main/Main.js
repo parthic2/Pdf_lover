@@ -56,12 +56,6 @@ const Main = () => {
     return () => clearTimeout(timer);
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   dispatch(getDetailsApi())
-  //     .then(() => setIsLoading(false))
-  //     .catch(() => setIsLoading(false));
-  // }, [dispatch]);
-  
   return (
     <Container>
       <Grid
@@ -88,7 +82,7 @@ const Main = () => {
                     <Card variant="outlined" className={style.card__item}>
                       <CardContent sx={{ padding: 0 }}>
                         <div className={style.tools__item__icon}>
-                          <img src={img} alt={title} />
+                          <img src={img} alt={title} loading="lazy" />
                         </div>
 
                         <h3 className={style.tools__text}>

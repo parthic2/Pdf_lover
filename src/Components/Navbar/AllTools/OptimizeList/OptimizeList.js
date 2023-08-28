@@ -15,7 +15,7 @@ const OptimizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Compress_PDF">
-              <img src="/image/Compress.svg" alt="Compress PDF" />
+              <img src="/image/Compress.svg" alt="Compress PDF" loading="lazy" />
               Compress PDF
             </NavLink>
           </li>
@@ -28,7 +28,7 @@ const OptimizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Repair_PDF">
-              <img src="/image/Repair.svg" alt="Repair PDF" />
+              <img src="/image/Repair.svg" alt="Repair PDF" loading="lazy" />
               Repair PDF
             </NavLink>
           </li>

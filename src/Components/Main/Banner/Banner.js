@@ -50,12 +50,6 @@ const Banner = () => {
     return () => clearTimeout(timer);
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   dispatch(getMainApi())
-  //     .then(() => setIsLoading(false))
-  //     .catch(() => setIsLoading(false));
-  // }, [dispatch]);
-
   if (isLoading || !mainData) {
     return (
       <div className={style["home-title"]}>

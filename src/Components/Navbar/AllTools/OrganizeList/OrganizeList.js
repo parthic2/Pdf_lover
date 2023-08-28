@@ -15,7 +15,7 @@ const OrganizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Merge_PDF">
-              <img src="/image/Merger.svg" alt="Merger PDF" />
+              <img src="/image/Merger.svg" alt="Merger PDF" loading="lazy" />
               Merger PDF
             </NavLink>
           </li>
@@ -28,7 +28,7 @@ const OrganizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Split_PDF">
-              <img src="/image/Merger.svg" alt="Split PDF" />
+              <img src="/image/Merger.svg" alt="Split PDF" loading="lazy" />
               Split PDF
             </NavLink>
           </li>
@@ -41,7 +41,7 @@ const OrganizeList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Split_PDF">
-              <img src="/image/Merger.svg" alt="Extract pages" />
+              <img src="/image/Merger.svg" alt="Extract pages" loading="lazy" />
               Extract pages
             </NavLink>
           </li>

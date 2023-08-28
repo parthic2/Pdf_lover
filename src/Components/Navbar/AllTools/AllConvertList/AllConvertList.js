@@ -15,7 +15,7 @@ const AllConvertList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/jpg_to_pdf">
-              <img src="/image/JtoP.svg" alt="JPG to PDF" />
+              <img src="/image/JtoP.svg" alt="JPG to PDF"  loading="lazy" />
               JPG to PDF
             </NavLink>
           </li>
@@ -28,7 +28,7 @@ const AllConvertList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/excel_to_pdf">
-              <img src="/image/JtoP.svg" alt="EXCEL to PDF" />
+              <img src="/image/JtoP.svg" alt="EXCEL to PDF" loading="lazy" />
               EXCEL to PDF
             </NavLink>
           </li>
@@ -49,7 +49,7 @@ const AllConvertList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/pdf_to_jpg">
-              <img src="/image/PtoJ.svg" alt="PDF to JPG" />
+              <img src="/image/PtoJ.svg" alt="PDF to JPG" loading="lazy" />
               PDF to JPG
             </NavLink>
           </li>
