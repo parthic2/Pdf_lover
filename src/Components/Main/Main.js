@@ -47,13 +47,9 @@ const Main = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getDetailsApi());
-    const delay = 100;
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, delay);
-
-    return () => clearTimeout(timer);
+    dispatch(getDetailsApi())
+      .then(() => setIsLoading(false))
+      .catch(() => setIsLoading(false));
   }, [dispatch]);
 
   return (
