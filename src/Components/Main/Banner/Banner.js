@@ -42,7 +42,7 @@ const Banner = () => {
 
   useEffect(() => {
     dispatch(getMainApi());
-    const delay = 500;
+    const delay = 100;
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, delay);
