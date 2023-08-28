@@ -56,12 +56,6 @@ const Main = () => {
     return () => clearTimeout(timer);
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   dispatch(getDetailsApi())
-  //     .then(() => setIsLoading(false))
-  //     .catch(() => setIsLoading(false));
-  // }, [dispatch]);
-
   return (
     <Container>
       <Grid

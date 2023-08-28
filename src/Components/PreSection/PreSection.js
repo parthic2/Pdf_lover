@@ -21,12 +21,6 @@ const PreSection = () => {
     return () => clearTimeout(timer);
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   dispatch(getPremiumApi())
-  //     .then(() => setIsLoading(false))
-  //     .catch(() => setIsLoading(false));
-  // }, [dispatch]);
-
   const { heading, subHeading, subHeading1, button } = premiumData;
 
   return (
