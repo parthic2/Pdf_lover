@@ -7,7 +7,7 @@ const ViewExcel = ({ files }) => {
             {files.map((file, i) => (
                 <div className={style.tool__workarea__rendered} key={i}>
                     <div className={style.file}>
-                        <img src="image/Excel.svg" alt="svg" loading="lazy" />
+                        <img src="image/Excel.svg" alt="svg" />
 
                         <div className={style.file__info}>
                             <span className={style.file__info__name}>{file.name}</span>

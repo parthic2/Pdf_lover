@@ -9,7 +9,7 @@ const ViewImage = ({ files, selectedImages }) => {
                     <div className={style.file}>
                         {selectedImages && (
                             <div className={style.file__canvas}>
-                                <img src={URL.createObjectURL(file)} alt="Selected" className={style.canvas_image} loading="lazy" />
+                                <img src={URL.createObjectURL(file)} alt="Selected" className={style.canvas_image} />
                             </div>
                         )}
 

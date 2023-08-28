@@ -34,7 +34,7 @@ const Sidebar = ({
                 onClick={() => handleToggleTab(1)}
               >
                 <div>
-                  <img src="/image/SplitRange.svg" alt="Split by Range" style={{ marginBottom: "5px" }} loading="lazy" />
+                  <img src="/image/SplitRange.svg" alt="Split by Range" style={{ marginBottom: "5px" }} />
                 </div>
                 Split by Range
               </button>
@@ -43,7 +43,7 @@ const Sidebar = ({
                 onClick={() => handleToggleTab(2)}
               >
                 <div>
-                  <img src="/image/ExtractPage.svg" alt="Extract Pages" style={{ marginBottom: "5px" }} loading="lazy" />
+                  <img src="/image/ExtractPage.svg" alt="Extract Pages" style={{ marginBottom: "5px" }} />
                 </div>
                 Extract Pages
               </button>
@@ -124,7 +124,7 @@ const Sidebar = ({
                     onClick={() => handleToggleTab(1)}
                   >
                     <div>
-                      <img src="/image/SplitRange.svg" alt="Split by Range" style={{ marginBottom: "5px" }} loading="lazy" />
+                      <img src="/image/SplitRange.svg" alt="Split by Range" style={{ marginBottom: "5px" }} />
                     </div>
                     Split by Range
                   </button>
@@ -133,7 +133,7 @@ const Sidebar = ({
                     onClick={() => handleToggleTab(2)}
                   >
                     <div>
-                      <img src="/image/ExtractPage.svg" alt="Extract Pages" style={{ marginBottom: "5px" }} loading="lazy" />
+                      <img src="/image/ExtractPage.svg" alt="Extract Pages" style={{ marginBottom: "5px" }} />
                     </div>
                     Extract Pages
                   </button>

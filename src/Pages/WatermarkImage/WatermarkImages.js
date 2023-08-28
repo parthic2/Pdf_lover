@@ -19,7 +19,7 @@ const WatermarkImages = ({ handleImage, imgData }) => {
             </Button>
 
             <div className={style.image_display}>
-                <img alt="" src={imgData} loading="lazy" />{imgData.name}
+                <img alt="" src={imgData} />{imgData.name}
             </div>
         </div>
     )

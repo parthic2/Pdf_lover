@@ -158,7 +158,6 @@ const Footer = () => {
                   alt="Google Play"
                   width={100}
                   height={30}
-                  loading="lazy"
                 />
               </Link>
             </li>
@@ -169,7 +168,6 @@ const Footer = () => {
                   alt="App Store"
                   width={100}
                   height={30}
-                  loading="lazy"
                 />
               </Link>
             </li>
@@ -216,7 +214,6 @@ const Footer = () => {
                           alt={social.title}
                           width={100}
                           height={30}
-                          loading="lazy"
                         />
                       )}
                     </Link>

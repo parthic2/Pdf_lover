@@ -15,7 +15,7 @@ const EditList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Rotate_PDF">
-              <img src="/image/Rotate.svg" alt="Rotate PDF" loading="lazy" />
+              <img src="/image/Rotate.svg" alt="Rotate PDF" />
               Rotate PDF
             </NavLink>
           </li>
@@ -28,7 +28,7 @@ const EditList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Add_watermark">
-              <img src="/image/Watermark.svg" alt="Add watermark" loading="lazy" />
+              <img src="/image/Watermark.svg" alt="Add watermark" />
               Add watermark
             </NavLink>
           </li>

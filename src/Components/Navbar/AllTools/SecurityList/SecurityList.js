@@ -15,7 +15,7 @@ const SecurityList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Unlock_PDF">
-              <img src="/image/Unlock.svg" alt="Unlock PDF" loading="lazy" />
+              <img src="/image/Unlock.svg" alt="Unlock PDF" />
               Unlock PDF
             </NavLink>
           </li>
@@ -28,7 +28,7 @@ const SecurityList = () => {
                 isActive ? "nav__item--active" : undefined
               }
               to="/Protect_PDF">
-              <img src="/image/Protect.svg" alt="Protect PDF" loading="lazy" />
+              <img src="/image/Protect.svg" alt="Protect PDF" />
               Protect PDF
             </NavLink>
           </li>
