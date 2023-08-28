@@ -1,8 +1,7 @@
-import React from "react";
-import PreSection from "../PreSection/PreSection";
-import Banner from "./Banner/Banner";
-import Main from "./Main";
-import { useEffect } from "react";
+import React, { useEffect, lazy } from "react";
+const PreSection = lazy(() => import("../PreSection/PreSection"));
+const Banner = lazy(() => import("./Banner/Banner"));
+const Main = lazy(() => import("./Main"));
 
 const Index = () => {
 
