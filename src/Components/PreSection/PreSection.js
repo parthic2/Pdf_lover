@@ -13,12 +13,8 @@ const PreSection = () => {
 
   useEffect(() => {
     dispatch(getPremiumApi())
-    const delay = 500;
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, delay);
-
-    return () => clearTimeout(timer);
+      .then(() => setIsLoading(false))
+      .catch(() => setIsLoading(false));
   }, [dispatch]);
 
   const { heading, subHeading, subHeading1, button } = premiumData;

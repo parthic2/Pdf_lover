@@ -48,12 +48,8 @@ const Main = () => {
 
   useEffect(() => {
     dispatch(getDetailsApi())
-    const delay = 500;
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, delay);
-
-    return () => clearTimeout(timer);
+      .then(() => setIsLoading(false))
+      .catch(() => setIsLoading(false));
   }, [dispatch]);
 
   return (
