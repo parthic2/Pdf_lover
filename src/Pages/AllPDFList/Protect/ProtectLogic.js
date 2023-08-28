@@ -30,7 +30,7 @@ const useProtectLogic = () => {
   useEffect(() => {
     document.title = "Protect PDF files. Tools to encrypt PDF with password.";
     dispatch(getProtectApi());
-    const delay = 2000;
+    const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);

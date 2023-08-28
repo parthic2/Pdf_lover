@@ -23,7 +23,7 @@ const useUnlockLogic = () => {
   useEffect(() => {
     document.title = "Unlock PDF files. Remove PDF password.";
     dispatch(getUnlockApi());
-    const delay = 2000;
+    const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);

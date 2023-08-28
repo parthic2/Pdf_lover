@@ -21,7 +21,7 @@ const useExcelLogic = () => {
   useEffect(() => {
     document.title = "Convert EXCEL to PDF.";
     dispatch(getExcelToPDFApi());
-    const delay = 2000;
+    const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);

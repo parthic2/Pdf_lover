@@ -26,7 +26,7 @@ const useSplitPDFLogic = () => {
   useEffect(() => {
     document.title = "Split PDF files online.";
     dispatch(getSplitApi());
-    const delay = 2000;
+    const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);

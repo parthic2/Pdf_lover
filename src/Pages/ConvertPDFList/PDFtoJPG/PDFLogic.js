@@ -22,7 +22,7 @@ const usePDFLogic = () => {
   useEffect(() => {
     document.title = "Convert PDF to JPG.";
     dispatch(getPdfToJpgApi());
-    const delay = 2000;
+    const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);

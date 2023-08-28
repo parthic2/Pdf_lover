@@ -38,7 +38,7 @@ const useWatermarkLogic = () => {
   useEffect(() => {
     document.title = "Add watermark to a PDF files.";
     dispatch(getAddWatermarkApi());
-    const delay = 2000;
+    const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);

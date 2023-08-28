@@ -22,7 +22,7 @@ const useRepairLogic = () => {
   useEffect(() => {
     document.title = "Repair PDF files online..";
     dispatch(getRepairApi());
-    const delay = 2000;
+    const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);
