@@ -82,7 +82,7 @@ const Main = () => {
                     <Card variant="outlined" className={style.card__item}>
                       <CardContent sx={{ padding: 0 }}>
                         <div className={style.tools__item__icon}>
-                          <img src={img} alt={title} />
+                          <img src={img} alt={title} width={50} height={50} />
                         </div>
 
                         <h3 className={style.tools__text}>
