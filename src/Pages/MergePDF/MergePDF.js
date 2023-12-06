@@ -64,7 +64,7 @@ const MergePDF = () => {
                 </Button>
 
                 {fileList.length === 0 && (
-                  <div className="banner" style={{ marginTop: "10px" }}><Ads /></div>
+                  <div className="banner" style={{ marginTop: "10px" }}><Ads dataAdSlot="7135941684" /></div>
                 )}
               </div>
 
