@@ -7,6 +7,7 @@ import SkeletonLoader from "../../Components/SkeletonLoader/SkeletonLoader";
 import useMergePDFLogic from "./MergePDFLogic";
 import Sidebar from "./Sidebar";
 import ViewPdf from "../../ViewPdf/ViewPdf";
+import Ads from "../../Ads";
 
 const MergePDF = () => {
   const {
@@ -50,19 +51,21 @@ const MergePDF = () => {
                 </p>
               </div>
 
-              {/* Toggle button */}
               <div className={style.side_btn}>
                 <button className={style.toggle__btn} onClick={toggleCart}>
                   <AiOutlineSetting />
                 </button>
               </div>
 
-              {/* Select file button */}
               <div id="uploader" className={style.uploader}>
                 <Button variant="contained" component="label" id={style.pickFiles} title={button}>
                   <input type="file" multiple onChange={handleFileChange} accept=".pdf" />
                   <span>{button}</span>
                 </Button>
+
+                {fileList.length === 0 && (
+                  <div className="banner" style={{ marginTop: "10px" }}><Ads /></div>
+                )}
               </div>
 
               {/* For view Pdf */}
@@ -85,7 +88,6 @@ const MergePDF = () => {
         </div>
       )}
 
-      {/* Footer */}
       <div className={style.footer}>
         <div className={style.footer__copy}>{mergeData.footer}</div>
       </div>
