@@ -1,8 +1,7 @@
 import React from "react";
-import Backdrop from "@mui/material/Backdrop";
-import CircularProgress from "@mui/material/CircularProgress";
 import style from "../../Pages.module.css";
 import { Box } from "@mui/system";
+import LoaderBackdrop from "../../../Common/Backdrop";
 
 const Sidebar = ({
   open,
@@ -40,11 +39,7 @@ const Sidebar = ({
           </div>
         </div>
 
-        {isMerging && <Backdrop sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1, display: "flex", flexDirection: "column" }} open={open}>
-          <CircularProgress color="inherit" sx={{ marginBottom: "30px" }} />
-          <div>{statusMessage}</div>
-          {error && <div>{error}</div>}
-        </Backdrop>}
+        {isMerging && <LoaderBackdrop statusMessage={statusMessage} error={error} open={open} />}
 
         <Box height={25} />
         <button
@@ -82,11 +77,7 @@ const Sidebar = ({
               {fileList.length >= 1 && (
                 <>
                   {isMerging && (
-                    <Backdrop sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1, display: "flex", flexDirection: "column" }} open={open}>
-                      <CircularProgress color="inherit" sx={{ marginBottom: "30px" }} />
-                      <div>{statusMessage}</div>
-                      {error && <div>{error}</div>}
-                    </Backdrop>
+                    <LoaderBackdrop statusMessage={statusMessage} error={error} open={open} />
                   )}
 
                   <button
