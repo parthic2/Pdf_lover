@@ -1,23 +1,25 @@
 import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getPremiumApi } from "../../Redux/Action/HomePage/PremiumAction";
 import Skeleton from "react-loading-skeleton";
 import style from "./PreSection.module.css";
 
 const PreSection = () => {
-  const dispatch = useDispatch();
-  const premiumData = useSelector((state) => state.premiumReducers.premiumData);
   const [isLoading, setIsLoading] = useState(true);
+  const [preSection, setPreSection] = useState(true);
 
   useEffect(() => {
-    dispatch(getPremiumApi())
-      .then(() => setIsLoading(false))
-      .catch(() => setIsLoading(false));
-  }, [dispatch]);
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/homepage`);
+      const data = await response.json();
+      setPreSection(data.premium);
+      setIsLoading(false);
+    }
 
-  const { heading, subHeading, subHeading1, button } = premiumData;
+    fetchData();
+  }, []);
+
+  const { heading, subHeading, subHeading1, button } = preSection;
 
   return (
     <Box

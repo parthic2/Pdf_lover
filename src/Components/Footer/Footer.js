@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { getFooterApi } from "../../Redux/Action/Footer/FooterAction";
 import Skeleton from "react-loading-skeleton";
 import style from "./Footer.module.css";
 
 const Footer = () => {
-  const dispatch = useDispatch();
-  const footerData = useSelector((state) => state.footerReducer.footerData);
+  const [footerData, setFooterData] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getFooterApi())
-      .then(() => setIsLoading(false))
-      .catch(() => setIsLoading(false));
-  }, [dispatch]);
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/homepage`);
+      const data = await response.json();
+      setFooterData(data.footer);
+      setIsLoading(false);
+    }
+
+    fetchData();
+  }, []);
 
   if (isLoading) {
     return (

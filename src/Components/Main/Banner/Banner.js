@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Typography, createTheme, ThemeProvider, Box } from "@mui/material";
-import { getMainApi } from "../../../Redux/Action/HomePage/MainAction";
 import Skeleton from "react-loading-skeleton";
 import style from "./Banner.module.css";
 
@@ -36,15 +34,19 @@ theme.typography.body1 = {
 
 const Banner = () => {
   // For Redux
-  const dispatch = useDispatch();
-  const { mainData } = useSelector((state) => state.mainReducers);
+  const [mainData, setMainData] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getMainApi())
-      .then(() => setIsLoading(false))
-      .catch(() => setIsLoading(false));
-  }, [dispatch]);
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/homepage`);
+      const data = await response.json();
+      setMainData(data.main);
+      setIsLoading(false);
+    }
+
+    fetchData();
+  }, []);
 
   if (isLoading || !mainData) {
     return (

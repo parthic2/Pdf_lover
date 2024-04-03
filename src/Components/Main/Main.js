@@ -3,8 +3,6 @@ import { Card, CardContent, Grid } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-import { useDispatch, useSelector } from "react-redux";
-import { getDetailsApi } from "../../Redux/Action/HomePage/DetailsTypesAction";
 import style from "./Main.module.css";
 
 const SkeletonCard = () => (
@@ -42,15 +40,20 @@ const SkeletonCard = () => (
 
 const Main = () => {
   // For PDF Types
-  const dispatch = useDispatch();
-  const detailsData = useSelector((state) => state.detailsReducer.detailsData);
+  const [detailsData, setDetailsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getDetailsApi())
-      .then(() => setIsLoading(false))
-      .catch(() => setIsLoading(false));
-  }, [dispatch]);
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/homepage`);
+      const data = await response.json();
+
+      setDetailsData(data.details);
+      setIsLoading(false);
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <Container>
