@@ -11,7 +11,7 @@ const useMergePDFLogic = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [isMerging, setIsMerging] = useState(false);
   const [error, setError] = useState(null);
-  const [mergeData, setMergeData] = useState({});
+  const [mergeData, setMergeData] = useState("");
   const files = [...fileList];
   const pageNumber = 1;
 
@@ -35,7 +35,7 @@ const useMergePDFLogic = () => {
     }
 
     fetchData();
-  })
+  }, []);
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;

@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getSplitApi } from "../../Redux/Action/Pages/SplitAction";
 import axios from "axios";
 
 const useSplitPDFLogic = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [fileList, setFileList] = useState([]);
   const [pageCount, setPageCount] = useState(0);
@@ -17,22 +14,30 @@ const useSplitPDFLogic = () => {
   const [loading, setLoading] = useState(true); const [statusMessage, setStatusMessage] = useState("");
   const [isMerging, setIsMerging] = useState(false);
   const [error, setError] = useState(null);
+  const [splitData, setSplitData] = useState("");
 
   const pageNumber = 1;
   const files = [...fileList];
 
-  const splitData = useSelector((state) => state.splitReducer.splitData);
-
   useEffect(() => {
     document.title = "Split PDF files online.";
-    dispatch(getSplitApi());
     const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/detailsPages`);
+      const data = await response.json();
+      setSplitData(data.split);
+    }
+
+    fetchData();
+  }, []);
 
   // For Sidebar
   const toggleCart = () => {

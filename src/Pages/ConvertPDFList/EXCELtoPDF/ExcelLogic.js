@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getExcelToPDFApi } from "../../../Redux/Action/Pages/EXCELToPDFAction";
 import axios from "axios";
 
 const useExcelLogic = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
@@ -14,20 +11,28 @@ const useExcelLogic = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [isMerging, setIsMerging] = useState(false);
   const [error, setError] = useState(null);
+  const [EtoPData, setEtoPData] = useState("");
   const files = [...fileList];
-
-  const EtoPData = useSelector((state) => state.EXCELtoPDFReducer.EtoPData);
 
   useEffect(() => {
     document.title = "Convert EXCEL to PDF.";
-    dispatch(getExcelToPDFApi());
     const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/detailsPages`);
+      const data = await response.json();
+      setEtoPData(data.excel_to_pdf);
+    }
+
+    fetchData();
+  }, []);
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;

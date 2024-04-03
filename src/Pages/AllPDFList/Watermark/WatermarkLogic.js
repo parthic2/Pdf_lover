@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getAddWatermarkApi } from "../../../Redux/Action/Pages/AddWaterMarkAction";
 import axios from "axios";
 
 const useWatermarkLogic = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [text, setText] = useState("PDFLover");
@@ -30,21 +27,29 @@ const useWatermarkLogic = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [isMerging, setIsMerging] = useState(false);
   const [error, setError] = useState(null);
+  const [watermarkData, setWatermarkData] = useState("");
   const pageNumber = 1;
   const files = [...fileList];
 
-  const watermarkData = useSelector((state) => state.addWatermarkReducer.watermarkData);
-
   useEffect(() => {
     document.title = "Add watermark to a PDF files.";
-    dispatch(getAddWatermarkApi());
     const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/detailsPages`);
+      const data = await response.json();
+      setWatermarkData(data.watermark);
+    }
+
+    fetchData();
+  }, []);
 
   // For Text
   const changeText = (e) => {
@@ -218,7 +223,7 @@ const useWatermarkLogic = () => {
     // Image API
     try {
       setIsMerging(true);
-      setStatusMessage("Adding Watermark (Image) Files..."); 
+      setStatusMessage("Adding Watermark (Image) Files...");
       setError(null);
       setOpen(true);
 

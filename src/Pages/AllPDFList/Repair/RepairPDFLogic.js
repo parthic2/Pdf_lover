@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getRepairApi } from "../../../Redux/Action/Pages/RepairPDFAction";
 import axios from "axios";
 
 const useRepairLogic = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
@@ -14,22 +11,29 @@ const useRepairLogic = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [isMerging, setIsMerging] = useState(false);
   const [error, setError] = useState(null);
+  const [repairData, setRepairData] = useState("");
   const files = [...fileList];
   const pageNumber = 1;
 
-  const repairData = useSelector((state) => state.repairReducer.repairData);
-
   useEffect(() => {
     document.title = "Repair PDF files online..";
-    dispatch(getRepairApi());
     const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/detailsPages`);
+      const data = await response.json();
+      setRepairData(data.repair);
+    }
+
+    fetchData();
+  }, []);
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;

@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getRotateApi } from "../../../Redux/Action/Pages/RotatePDFAction";
 import axios from "axios";
 
 const useRotateLogic = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
@@ -15,21 +12,29 @@ const useRotateLogic = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [isMerging, setIsMerging] = useState(false);
   const [error, setError] = useState(null);
+  const [rotateData, setRotateData] = useState("");
   const files = [...fileList];
   const pageNumber = 1;
 
-  const rotateData = useSelector((state) => state.rotateReducer.rotateData);
-
   useEffect(() => {
     document.title = "Rotate PDF files.";
-    dispatch(getRotateApi());
     const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/detailsPages`);
+      const data = await response.json();
+      setRotateData(data.rotate);
+    }
+
+    fetchData();
+  }, []);
 
   const rotateRight = () => {
     if (rotation === 270) {

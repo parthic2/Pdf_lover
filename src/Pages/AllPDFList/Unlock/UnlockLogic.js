@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getUnlockApi } from "../../../Redux/Action/Pages/UnlockPDFAction";
 import axios from "axios";
 
 const useUnlockLogic = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [fileList, setFileList] = useState([]);
@@ -15,21 +12,29 @@ const useUnlockLogic = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [isMerging, setIsMerging] = useState(false);
   const [error, setError] = useState(null);
+  const [unlockData, setUnlockData] = useState("");
   const files = [...fileList];
   const pageNumber = 1;
 
-  const unlockData = useSelector((state) => state.unlockReducer.unlockData);
-
   useEffect(() => {
     document.title = "Unlock PDF files. Remove PDF password.";
-    dispatch(getUnlockApi());
     const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/detailsPages`);
+      const data = await response.json();
+      setUnlockData(data.unlock);
+    }
+
+    fetchData();
+  }, []);
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;

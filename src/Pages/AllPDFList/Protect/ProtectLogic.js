@@ -1,11 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getProtectApi } from "../../../Redux/Action/Pages/ProtectPDFAction";
 
 const useProtectLogic = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [fileList, setFileList] = useState([]);
@@ -22,22 +19,29 @@ const useProtectLogic = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [isMerging, setIsMerging] = useState(false);
   const [error, setError] = useState(null);
+  const [protectData, setProtectData] = useState("");
   const files = [...fileList];
   const pageNumber = 1;
 
-  const protectData = useSelector((state) => state.protectReducer.protectData);
-
   useEffect(() => {
     document.title = "Protect PDF files. Tools to encrypt PDF with password.";
-    dispatch(getProtectApi());
     const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/detailsPages`);
+      const data = await response.json();
+      setProtectData(data.protect);
+    }
+
+    fetchData();
+  }, []);
 
   // For Password validation
   const handleUserInput = (name, value) => {

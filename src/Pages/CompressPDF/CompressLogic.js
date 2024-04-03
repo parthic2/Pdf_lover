@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getCompressApi } from "../../Redux/Action/Pages/CompressAction";
 import axios from "axios";
 
 const useCompressLogic = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [fileList, setFileList] = useState([]);
@@ -14,22 +11,29 @@ const useCompressLogic = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [isMerging, setIsMerging] = useState(false);
   const [error, setError] = useState(null);
-
+  const [compressData, setCompressData] = useState("");
   const files = [...fileList];
   const pageNumber = 1;
 
-  const compressData = useSelector((state) => state.compressReducer.compressData);
-
   useEffect(() => {
     document.title = "Compress PDF files online.";
-    dispatch(getCompressApi());
     const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/detailsPages`);
+      const data = await response.json();
+      setCompressData(data.compress);
+    }
+
+    fetchData();
+  }, []);
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
@@ -65,11 +69,11 @@ const useCompressLogic = () => {
         setStatusMessage("Success!");
         navigate("/Download_PDF", {
           state: {
-            name: "Compress PDF", 
+            name: "Compress PDF",
             file: response.data.data.file,
           },
         });
-      }else{
+      } else {
         setOpen(false);
         setError(response.data.msg || "An error occurred")
       }

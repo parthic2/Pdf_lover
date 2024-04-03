@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getPdfToJpgApi } from "../../../Redux/Action/Pages/PDFToJPGAction";
 import axios from "axios";
 
 const usePDFLogic = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
@@ -14,21 +11,29 @@ const usePDFLogic = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [isMerging, setIsMerging] = useState(false);
   const [error, setError] = useState(null);
+  const [PtoJData, setPtoJData] = useState("");
   const files = [...fileList];
   const pageNumber = 1;
 
-  const PtoJData = useSelector((state) => state.PDFtoJPGReducer.PtoJData);
-
   useEffect(() => {
     document.title = "Convert PDF to JPG.";
-    dispatch(getPdfToJpgApi());
     const delay = 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${process.env.REACT_APP_JSON_URL}/detailsPages`);
+      const data = await response.json();
+      setPtoJData(data.pdf_to_jpg);
+    }
+
+    fetchData();
+  }, []);
 
   const handleFileChange = (e) => {
     const fileList = e.target.files;
